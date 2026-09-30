@@ -1,0 +1,283 @@
+<title>WKConversions 30s Storyboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column; each beat is a row with its build frame beside its notes, stacking on phones. */
+:root {
+  --page: #F7F7F8; --card: #FFFFFF; --surface: #EFF0F2; --line: #E2E3E6;
+  --ink: #050F19; --muted: #575E68; --faint: #838A94;
+  --blue: #3F8CE8; --blue-text: #1266C9; --soft: #E6F0FD;
+  --display: "Inter Tight", "Inter", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius: 18px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0B1219; --card: #121B24; --surface: #18222D; --line: #243140;
+    --ink: #EEF2F6; --muted: #A5AEB9; --faint: #7C8794;
+    --blue: #5BA0F0; --blue-text: #7DB4F5; --soft: #15283F; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0B1219; --card: #121B24; --surface: #18222D; --line: #243140;
+  --ink: #EEF2F6; --muted: #A5AEB9; --faint: #7C8794;
+  --blue: #5BA0F0; --blue-text: #7DB4F5; --soft: #15283F; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--page); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55;
+  padding-inline: 20px; padding-block: 40px 80px;
+  background-image: radial-gradient(color-mix(in srgb, var(--line) 80%, transparent) 1.2px, transparent 1.6px);
+  background-size: 22px 22px;
+}
+.wrap { max-width: 1080px; margin: 0 auto; display: grid; gap: 48px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 800; letter-spacing: -0.04em; line-height: 1; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(40px, 7vw, 72px); }
+h1 .blue, h2 .blue { color: var(--blue); }
+h2 { font-size: clamp(28px, 4vw, 40px); }
+h3 { font-size: 22px; letter-spacing: -0.03em; }
+p { margin: 0; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px; font-family: var(--body); font-weight: 600; font-size: 13px;
+  letter-spacing: 0.04em; text-transform: uppercase; color: #fff; background: var(--blue); border-radius: 999px; padding: 6px 12px;
+}
+.lede { max-width: 64ch; color: var(--muted); font-size: 18px; }
+header { display: grid; gap: 20px; }
+.status { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font-size: 13px; font-weight: 500; color: var(--muted); background: var(--card); border: 1px solid var(--line);
+  border-radius: 999px; padding: 5px 12px; white-space: nowrap;
+}
+.chip b { color: var(--ink); font-weight: 600; }
+.chip.ok b { color: var(--blue-text); }
+
+.film { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.film video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; max-width: 100%; }
+.film .cap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; padding: 14px 18px; font-size: 14px; color: var(--muted); }
+
+.direction { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.direction div { background: var(--card); padding: 16px 18px; display: grid; gap: 4px; min-width: 0; }
+.label { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); }
+.direction p { font-size: 15px; }
+
+section { display: grid; gap: 20px; }
+.beats { display: grid; gap: 18px; }
+.beat {
+  display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 22px; align-items: start;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px;
+}
+.beat figure { margin: 0; display: grid; gap: 8px; }
+.beat img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); display: block; }
+.beat figcaption { font-family: var(--mono); font-size: 12px; color: var(--faint); }
+.beat .text { display: grid; gap: 12px; min-width: 0; }
+.beat .head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.tc { font-family: var(--mono); font-size: 13px; color: var(--blue-text); background: var(--soft); border-radius: 6px; padding: 2px 8px; }
+.role { font-size: 13px; font-weight: 600; color: var(--muted); }
+.vo { font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: -0.02em; line-height: 1.2; }
+.vo::before { content: "VO  "; font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: 0; color: var(--faint); vertical-align: 3px; }
+dl { margin: 0; display: grid; gap: 8px; }
+dl div { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 10px; font-size: 14.5px; }
+dt { color: var(--faint); font-weight: 500; }
+dd { margin: 0; color: var(--ink); }
+q { font-style: normal; color: var(--blue-text); }
+q::before, q::after { content: ""; }
+
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.panel ul, .panel ol { margin: 0; padding-left: 20px; display: grid; gap: 8px; font-size: 15px; }
+.panel li::marker { color: var(--blue); }
+.ask { border-color: var(--blue); background: color-mix(in srgb, var(--soft) 55%, var(--card)); }
+
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--faint); white-space: nowrap; }
+.scroll { overflow-x: auto; }
+.metric { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.metric div { border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; gap: 2px; }
+.metric b { font-family: var(--display); font-weight: 800; font-size: 28px; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.metric span { font-size: 13px; color: var(--muted); }
+details { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 18px; }
+details + details { margin-top: 12px; }
+summary { cursor: pointer; font-family: var(--display); font-weight: 700; font-size: 17px; letter-spacing: -0.02em; }
+summary:focus-visible, a:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
+details[open] summary { margin-bottom: 12px; }
+pre { font-family: var(--mono); font-size: 12.5px; background: var(--surface); border-radius: 10px; padding: 14px; overflow-x: auto; margin: 0; }
+a { color: var(--blue-text); }
+@media (max-width: 760px) {
+  .beat { grid-template-columns: 1fr; }
+  dl div { grid-template-columns: 80px minmax(0, 1fr); }
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Storyboard · for Karl's approval</span>
+    <h1>Who WKConversions is, <span class="blue">in 30 seconds.</span></h1>
+    <p class="lede">A 16:9 brand film built on Hook, Problem, Solution, Showing something, Outro. The spine is the site's own claim: a video should explain what you do in seconds. The frames below are rendered from the Remotion project itself, so what you approve is what gets animated.</p>
+    <div class="status">
+      <span class="chip ok"><b>Draft rendered</b> · silent, with motion blur</span>
+      <span class="chip"><b>0:30</b> · 1920×1080 · 30 fps</span>
+      <span class="chip"><b>No voice-over or music yet</b> · timed at 2.5 words/s</span>
+    </div>
+  </header>
+
+  <div class="film">
+    <video src="{{VIDEO}}" controls muted playsinline preload="metadata" poster="{{POSTER}}"></video>
+    <div class="cap"><span>Draft film, silent. The VO lines are timed into the picture; record them to the timecodes below.</span><span>WKConversions · 30 s</span></div>
+  </div>
+
+  <section>
+    <h2>Direction</h2>
+    <div class="direction">
+      <div><span class="label">Purpose</span><p>Introduce WKConversions on the website, LinkedIn and in outreach: who they are, what they do, and why it works.</p></div>
+      <div><span class="label">Audience</span><p>Founders and marketers at SaaS, e-commerce and brands whose product is hard to explain.</p></div>
+      <div><span class="label">Core message</span><p>Your visitors give you three seconds; two motion designers turn your paragraph into a video people get in that time.</p></div>
+      <div><span class="label">Style and brand</span><p>No intake style chosen, so the WKConversions look: light page with the dot grid, ink type, blue for what matters, Inter Tight 800 headlines.</p></div>
+      <div><span class="label">Art direction</span><p>One built world, no stock: the visitor's browser, real founder photos, the real ClearScaler work. No mixed media beyond that.</p></div>
+      <div><span class="label">Motion personality</span><p>Precise and settled: arrivals on <code>cubic-bezier(.22,1,.36,1)</code>, no bounce, a camera that never locks, motion blur on fast moves.</p></div>
+      <div><span class="label">Transition family</span><p>Camera reveal (zoom out of an object), object becomes object (paragraph → video), scale-through into the next frame.</p></div>
+      <div><span class="label">Voice-over and music</span><p>Not recorded. Script timed at about 2.5 words per second; music to be chosen.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The six beats</h2>
+    <div class="beats">
+      {{BEATS}}
+    </div>
+  </section>
+
+  <section>
+    <h2>Measured on the render</h2>
+    <div class="panel">
+      <div class="metric">
+        {{METRICS}}
+      </div>
+      <p style="font-size:14px;color:var(--muted)">Motion check from the skill's <code>motion_check.py</code> (the last 2 seconds excluded). Karl's benchmark film, Addx Studio's "sends", measures 97%, 3.2% and 0.8 s.</p>
+    </div>
+  </section>
+
+  <div class="cols">
+    <div class="panel ask">
+      <h3>Open questions</h3>
+      <ol>
+        <li><b>Script.</b> No script was given, so this one is mine, built from the site's own copy. Change any line and the build follows.</li>
+        <li><b>Voice-over.</b> Will you or Raphael record it? Send the file and I'll re-time every hit to the real words.</li>
+        <li><b>Music.</b> A licensed track, or does music go on in the edit? The cut would follow its beat.</li>
+        <li><b>ClearScaler.</b> OK to show their clip and Magnus's words? I used only the UI animation part of the case video, not the film footage.</li>
+        <li><b>Formats.</b> 16:9 only, or also a 9:16 cut for social (a re-layout, not a crop)?</li>
+      </ol>
+    </div>
+    <div class="panel">
+      <h3>Notes and assumptions</h3>
+      <ul>
+        <li>You asked for the video directly, so I built and rendered it before this approval step instead of after. Revisions go through the same project.</li>
+        <li>Format 16:9 at 30 s, picked for a "who we are" film on the site and LinkedIn.</li>
+        <li><b>Illustrative, not claims:</b> "yourproduct.com", the finance paragraph and the countdown reading "2.1s" stand for a visitor's experience. They aren't a client or a statistic.</li>
+        <li>Every factual line comes from wkconversions.com: "Two motion designers" (About), Raphael and Karl, the ClearScaler case and Magnus's testimonial ("…the work came back fast and better than the brief"), "Motion design that makes it click."</li>
+        <li>Kept clear of the September ad: no highlight hopping through a paragraph, no keyframe timeline, no 16:9/1:1/9:16 split, no founders' chat.</li>
+      </ul>
+    </div>
+  </div>
+
+  <section>
+    <h2>Revision log</h2>
+    <div class="panel scroll">
+      <table>
+        <thead><tr><th>Scene</th><th>What was weak</th><th>What changed</th></tr></thead>
+        <tbody>
+          <tr><td>1 → 2</td><td>The hook shrank into the page while the page faded in: a crossfade between layouts.</td><td>The page's camera now starts inside the countdown pill, its "3" pixel-matched to the hook's "3", and zooms out. One object, one move.</td></tr>
+          <tr><td>2</td><td>The countdown was 38 px, about 18 px when the video plays 900 px wide.</td><td>Pill text is 52 px on a taller browser bar.</td></tr>
+          <tr><td>3</td><td>The founders' portraits were too small to be the subject. The paragraph card sat visible at the top from the first frame.</td><td>Portraits are 300 px. The card only slides into view when the founders reach for it.</td></tr>
+          <tr><td>3 → 4</td><td>8 near-still frames where the card lands.</td><td>The camera settle now runs to the last frame of the scene.</td></tr>
+          <tr><td>4</td><td>Karl's cursor stayed in frame after the pull-back. A page-side block popped in outside the page's reveal mask.</td><td>The cursor leaves the frame. The block now sits inside the mask and is revealed with the page.</td></tr>
+          <tr><td>5 → 6</td><td>Half a second of empty canvas between the quote and the outro.</td><td>The outro starts under the exit, with the logo writing on at once.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Assets and tool requests</h2>
+    <div class="cols">
+      <div class="panel">
+        <h3>Harvested from wkconversions.com</h3>
+        <ul>
+          <li>Raphael and Karl portraits (<code>/assets/img/team/</code>)</li>
+          <li>The handwritten "wkc" mark (inline SVG symbol)</li>
+          <li>ClearScaler case video, 22.5–31 s (UI animation only), and the ClearScaler logo</li>
+          <li>Magnus portrait and testimonial</li>
+          <li>Inter Tight 800 and Inter 400–600, from Fontsource</li>
+        </ul>
+        <p style="font-size:14px;color:var(--muted)">External asset requests: none. Every scene is built from brand and case material.</p>
+      </div>
+      <div class="panel">
+        <h3>Tool requests</h3>
+<pre>[
+  {"id": "R01", "type": "video_render", "status": "fulfilled",
+   "input": {"project": "films/wkconversions-30s", "composition": "Film",
+             "size": "1920x1080", "fps": 30, "blur_samples": 8},
+   "result": {"path": "out/wkconversions-30s.mp4"}},
+  {"id": "R02", "type": "voice_over_recording", "status": "requested",
+   "input": {"script": "six lines, see beats", "pace": "2.5 words/s",
+             "format": "48 kHz WAV"},
+   "fallback": "silent film, VO timed into picture"},
+  {"id": "R03", "type": "music_track", "status": "requested",
+   "input": {"length": "30 s", "mood": "calm, confident, premium",
+             "license": "commercial use"},
+   "fallback": "music added in the edit"}
+]</pre>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Appendix</h2>
+    <div>
+      <details>
+        <summary>Beat sheet</summary>
+        <div class="scroll"><table>
+          <thead><tr><th>#</th><th>Time</th><th>Core meaning</th><th>Viewer must understand</th><th>Imp.</th><th>Tone</th><th>Type</th><th>Strategy (runner-up)</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>0.0–3.2</td><td>Attention on a website is short.</td><td>Three seconds.</td><td>1</td><td>tension</td><td>Hook</td><td>Counter, huge number (visitor cursor on a page)</td></tr>
+            <tr><td>2</td><td>3.2–7.4</td><td>A paragraph can't explain your product in that time.</td><td>They leave before they get it.</td><td>1</td><td>frustration</td><td>Problem</td><td>Before state: paragraph + countdown + scroll away (split: paragraph vs clock)</td></tr>
+            <tr><td>3</td><td>7.2–12.4</td><td>WKConversions is two motion designers.</td><td>Two real people, named.</td><td>2</td><td>confidence</td><td>Solution (who)</td><td>People as collaborating cursors (portraits side by side)</td></tr>
+            <tr><td>4</td><td>12.4–17.4</td><td>They turn that paragraph into a video people get fast.</td><td>Text becomes a clear picture, and the visitor stays.</td><td>1</td><td>relief</td><td>Solution (how)</td><td>Object transformation + callback (before/after split)</td></tr>
+            <tr><td>5</td><td>17.4–24.1</td><td>A real client says it worked.</td><td>Real work, real words.</td><td>2</td><td>pride</td><td>Proof / show</td><td>Real clip + quote (quote alone, set large)</td></tr>
+            <tr><td>6</td><td>23.7–30.0</td><td>The brand promise and the next step.</td><td>WKConversions, and where to go.</td><td>1</td><td>resolve</td><td>CTA</td><td>Statement + click resolving into URL (logo alone)</td></tr>
+          </tbody>
+        </table></div>
+      </details>
+      <details>
+        <summary>Variety check</summary>
+        <div class="scroll"><table>
+          <thead><tr><th>Scene</th><th>Structure</th><th>Centered?</th><th>Primary element</th><th>Distance</th><th>Density</th><th>Exit</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Number with negative space</td><td>No, left third</td><td>Number, 900 px</td><td>Close</td><td>Empty</td><td>Zoom out</td></tr>
+            <tr><td>2</td><td>Browser, then push-in</td><td>Wide, then offset</td><td>Paragraph + timer</td><td>Wide → medium</td><td>Dense</td><td>Up</td></tr>
+            <tr><td>3</td><td>Diagonal: people upper right, statement lower left</td><td>No</td><td>Two faces, 300 px</td><td>Medium</td><td>Sparse</td><td>Down (card pulled in)</td></tr>
+            <tr><td>4</td><td>Object transformation, then page reveal</td><td>Offset</td><td>The video/panel</td><td>Close → wide</td><td>Medium</td><td>Scale-through</td></tr>
+            <tr><td>5</td><td>Split: clip left, quote right</td><td>No</td><td>Real clip, then quote</td><td>Full → medium</td><td>Medium</td><td>Left</td></tr>
+            <tr><td>6</td><td>Centered statement and CTA</td><td>Yes (brand statement)</td><td>Headline, 140 px</td><td>Medium</td><td>Empty</td><td>End card, slow push</td></tr>
+          </tbody>
+        </table></div>
+        <p style="font-size:14px;color:var(--muted);margin-top:10px">Centered: 1 of 6. Card-led scenes: 2 (2 and 4, one of them the deliberate callback). Primary element changes every scene.</p>
+      </details>
+      <details>
+        <summary>Continuity table</summary>
+        <div class="scroll"><table>
+          <thead><tr><th>Scene</th><th>Focal point in</th><th>Focal point out</th><th>Camera</th><th>Entrance</th><th>Exit → next entrance</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>"3" left third</td><td>"3" left third</td><td>Slow push 1.00→1.05</td><td>"3" out of depth, from 70%</td><td>"seconds." and visitor clear; the "3" stays</td></tr>
+            <tr><td>2</td><td>Same "3", now the pill's</td><td>Paragraph, then empty</td><td>17× → 1× log zoom, push to 1.13</td><td>Camera reveal from inside the pill</td><td>Page flicked up; the grid follows</td></tr>
+            <tr><td>3</td><td>Founders upper right</td><td>Card center</td><td>Push 1.04, settles to 1.00</td><td>Cursors from outside the frame, left and right</td><td>They pull the scrolled-away card back down</td></tr>
+            <tr><td>4</td><td>Card center</td><td>Video center</td><td>Hold, pull back to page, push through</td><td>Same card, same pixels</td><td>Scale-through into the video frame</td></tr>
+            <tr><td>5</td><td>Full-frame clip</td><td>Quote right</td><td>Slow push 4.5%</td><td>The video from scene 4, still playing</td><td>Clip leaves left, quote lifts</td></tr>
+            <tr><td>6</td><td>Mark, top center</td><td>Button, center</td><td>Settles from 1.07, pushes 4%</td><td>Mark writes on under the exit</td><td>Click resolves into the URL; end card keeps moving</td></tr>
+          </tbody>
+        </table></div>
+      </details>
+    </div>
+  </section>
+</div>
