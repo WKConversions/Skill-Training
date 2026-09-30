@@ -1,0 +1,41 @@
+# Motion typography
+
+## When words appear
+
+Type is imagery, not information laid over animation, and it can be the primary material of a scene.
+But words appear only when they communicate better than a picture (the rule is in
+`planning/script-analysis.md`). A single emphasized word is often stronger than a whole sentence set
+large or bold.
+
+## Hierarchy and line breaks
+
+Control family, weight, size, line height, tracking, case, alignment, color and line breaks. Break
+lines by meaning; never split a tight phrase. Prefer compact phrases to subtitle-like paragraphs.
+Minimum sizes are in `design/visual-hierarchy.md`; the style or brand sets the typeface.
+
+## Words build on the voice
+
+When a headline is used, it assembles word by word as it is spoken, each word arriving with a small
+offset and a little blur, and the line re-centers smoothly as it grows. Headlines swap in 3–5
+frames. No bouncing letters.
+
+**Two lines of type never overlap.** When a headline changes, the outgoing text clears or is masked
+out before the incoming text reaches the same area; words swapping in one slot share one slot mask.
+In the WKConversions intake video, "strategy." and "creative." sat on top of each other for five
+frames because they didn't. Check every text change frame by frame (`evaluation/quality-check.md`).
+
+## Kinetic type
+
+Animate groups by meaning. Useful behaviors: a word replaces a word; a sentence expands from a
+keyword; type becomes a mask; a word physically demonstrates its meaning; a line reorganizes into a
+diagram or interface; type becomes an object for the next scene. Save bigger kinetic moves for the
+moments that deserve emphasis; most text appears simply and then sits still to be read.
+
+Character-by-character animation suits precise title construction, typing concepts, rhythmic
+editorial motion and intentional typographic reveals. It is never a default entrance.
+
+## Readability
+
+Never sacrifice legibility for motion. Give text enough hold after it moves, and don't scale text
+through unreadable sizes while its words are being spoken. Blur on text follows
+`motion/animation-grammar.md`.
