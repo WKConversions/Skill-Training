@@ -57,12 +57,13 @@ for b in BEATS:
     img = data_uri(f"out/test/f{b['frame']:04d}.png")
     extra = ""
     if b.get("extra"):
-        extra = f'<img src="{data_uri(f"out/test/f{b["extra"]:04d}.png", 960)}" alt="Scene {b["n"]}, after the pull-back: the same page with a video hero">'
+        extra_src = data_uri("out/test/f%04d.png" % b["extra"], 960)
+        extra = '<img src="%s" alt="Scene %d, after the pull-back: the same page with a video hero">' % (extra_src, b["n"])
     rows.append(f'''<article class="beat" id="beat-{b['n']}">
         <figure>
           <img src="{img}" alt="Scene {b['n']} settled frame">
           {extra}
-          <figcaption>Scene {b['n']} · frame {b['frame']}{f" and {b['extra']}" if b.get("extra") else ""} · from the build</figcaption>
+          <figcaption>Scene {b['n']} · frame {b['frame']}{(" and %d" % b["extra"]) if b.get("extra") else ""} · from the build</figcaption>
         </figure>
         <div class="text">
           <div class="head"><h3>{b['n']}</h3><span class="tc">{b['tc']}</span><span class="role">{b['role']}</span></div>
