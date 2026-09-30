@@ -18,6 +18,21 @@ then look at the storyboard cold: frames first, notes second. When the session c
 subagent, give a fresh agent the beat sheet, the storyboard and this module and ask it for the
 critique, so the work isn't grading itself. Either way, you make the revisions.
 
+## Three lenses
+
+Look at each scene three times, each time asking one question, and write down what each lens
+finds:
+- **Restraint: should this move at all?** Cut movement that carries no meaning, elements that
+  compete, a second idea in one scene. The best motion goes unnoticed as motion; the viewer should
+  notice the idea.
+- **Polish: is it finished?** Settles, follow-through, blur on fast moves, readable sizes, clean
+  hand-offs, no motion gaps, no overlapping type.
+- **Invention: what could this become?** Is there a stronger, more surprising concrete idea for this
+  line: an object that becomes the next scene, a callback, a better use of the camera?
+
+The lenses weigh differently by beat: importance-1 beats get the most invention, connective beats the
+most restraint.
+
 ## Every scene
 
 Ask each question of each scene, and write one line for every one that fails.
@@ -87,7 +102,8 @@ For intake-form films, also run the style's copy check (`styles/README.md`).
    (`motion/continuity.md`) for each changed scene and its neighbors.
 5. Run the pass again on the revised storyboard, twice at most. Anything still unresolved becomes an
    open question for Karl.
-6. Keep a short revision log (scene, what was weak, what changed) for the storyboard notes.
+6. Keep a short revision log for the storyboard notes, one Before / After / Why row per change
+   (`evaluation/troubleshooting.md`).
 
 ## Scorecard
 

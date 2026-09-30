@@ -1,6 +1,6 @@
 ---
 name: "senior-motion-designer"
-description: "Senior motion-design, visual-storytelling, art-direction, storyboard, animation-planning, and After Effects production skill. Use for explainer videos, product videos, SaaS motion, kinetic typography, UI animation, advertisements, brand films, social motion, title sequences, storyboard development, styleframes, animation specifications, motion critiques, After Effects builds, revisions, and reference-video analysis."
+description: "Senior motion-design, visual-storytelling, art-direction, storyboard and production skill for commercial films, built in Remotion or After Effects. Use for explainer videos, product and SaaS videos, brand films, ads and social motion, website hero videos, kinetic typography, UI animation inside a film, title sequences, storyboards and styleframes, animation specs or prompts for another animator or AI, timing a film to a voice-over, motion critiques of a film or render, revisions, and reference-video analysis. Triggers include: make a video or ad, a 30-second film about us, animate this script, storyboard this, time it to this voice-over, critique or improve this animation, intake-form submissions for WKConversions."
 ---
 
 # Senior Motion Designer
@@ -37,6 +37,21 @@ Private artifact: https://claude.ai/artifact/UeFiNvnC9tHrN97jpEyr5X
   `evals/`, `scripts/`, `README.md`) are the older version, superseded by the library. Don't read them
   unless the library is unreachable (last section).
 
+## Which task is this?
+
+Decide first, then follow that path:
+
+| The request | Path |
+|---|---|
+| A film from a script, brief or intake form ("make a video", "a 30-second ad") | the full workflow below |
+| A storyboard or plan only | steps 1–13 |
+| A voice-over arrived for a planned or built film | `planning/voice-over.md`, then steps 14–15 |
+| Feedback or a critique of a film, storyboard or render | Other tasks: critique |
+| A brief or prompt for another animator or AI | Other tasks: prompt |
+| A change to this skill or its library | Working with Karl: learning loop |
+
+If the request fits two paths, say which you're taking in one line and start.
+
 ## Priorities
 
 Target polished, professional commercial motion design. In order: communication, visual hierarchy,
@@ -69,7 +84,12 @@ make better motion design; prefer simple, controlled, intentional solutions.
 - **The chosen style sets the look; the case and script decide every layout.** References teach
   principles, never layouts. Nothing enters the film from outside its art direction.
 - **No reflexes.** No bounce, elastic, glow or 3D spins by default; no centering everything
-  (WKConversions centers statement headlines only); no template scenes.
+  (WKConversions centers statement headlines only); no template scenes. Count the fingerprints
+  (`design/anti-ai-design.md`); one is a choice, the same one everywhere is the tell.
+- **One motion identity per film:** one personality, one signature curve, one duration palette, one
+  entrance pattern (`motion/motion-identity.md`).
+- **Carry, don't duplicate.** An object that exists before and after a change moves from its old state
+  to its new one; nothing appears from nothing.
 - **Truth.** Never invent a client's features, numbers or customers; flag a claim with nothing to
   show.
 - **Critique before production, measure after the render.**
@@ -87,28 +107,47 @@ instructions. Before step 1, read the recurring lessons at the top of `examples/
 | 2 | Look and material | load the chosen style and its contact sheet; the brand (a client's own, or WKConversions'); harvest the client's site | `styles/README.md` and the chosen style, `brands/wkconversions-brand.md` for WKConversions, `design/asset-strategy.md` |
 | 3 | Script analysis | beats; for each: core meaning, what the viewer must understand, importance, tone, nouns and verbs, beat type | `planning/script-analysis.md` |
 | 4 | The whole film | the core message as spine, the hook, the energy curve, setups and payoffs, the CTA as resolution | `planning/storytelling.md` |
-| 5 | Art direction | the visual world, motion personality, transition family; mixed media decided once for the film | `design/anti-ai-design.md`, `design/asset-strategy.md`, `motion/animation-grammar.md`, `motion/transitions.md` |
+| 5 | Art direction | the visual world, the motion identity (personality, signature curve, duration palette, entrance pattern), transition family; mixed media decided once for the film | `motion/motion-identity.md`, `design/anti-ai-design.md`, `design/asset-strategy.md`, `motion/animation-grammar.md`, `motion/transitions.md` |
 | 6 | Visual strategy | two or three candidates per beat, the strongest by the tests, the runner-up recorded; content references where they help | `planning/visual-strategy.md`, `examples/bad-vs-good.md`, `references/reading-references.md` |
 | 7 | Composition | a styleframe per key scene: primary, secondary, detail; framing, type, and UI where an interface is the subject | `design/visual-hierarchy.md`, `design/composition.md`, `design/typography.md`, `design/ui-product.md` |
 | 8 | Variety check | the whole storyboard against the variety budget | `design/composition.md` |
 | 9 | Motion and continuity | cause→motion→consequence chains, camera, timing and sync, easing, the continuity table, transitions, sound | `motion/animation-grammar.md`, `motion/camera.md`, `motion/timing.md`, `motion/easing.md`, `motion/continuity.md`, `motion/transitions.md`, `motion/sound.md` |
 | 10 | Assets | what each scene is made of; asset and tool requests | `design/asset-strategy.md`, `production/tool-requests.md` |
 | 11 | First storyboard | the scene spec for every scene, condensed into the storyboard page, with frames made by the build itself | `production/output-format.md`, `production/remotion.md` (or `production/coded-render.md`), `examples/scene-examples.md` |
-| 12 | Art-director pass | critique every scene and the film, then revise; the style's copy check | `evaluation/art-director.md` |
+| 12 | Art-director pass | critique every scene and the film through the three lenses, then revise; the style's copy check; the revision log as Before / After / Why rows | `evaluation/art-director.md`, `evaluation/troubleshooting.md` |
 | 13 | Final plan and approval | the production plan and its storyboard; the storyboard goes to Karl; stop and ask about music and voice-over | `production/output-format.md`, `planning/intake.md` |
-| 14 | Build | After Effects when the session has it, otherwise a Remotion project (the plain coded render as a fallback), or a hand-off; say which, and what Karl will get | `production/remotion.md`, `production/after-effects.md`, `production/coded-render.md`, `scripts/index.md` |
-| 15 | Quality check | test frames, then the encode; the scorecard; the three biggest changes | `evaluation/quality-check.md` |
+| 14 | Build | After Effects when the session has it, otherwise a Remotion project (the plain coded render as a fallback), or a hand-off; say which, and what Karl will get. Motion tokens first; test frames and a draft before the blurred render; the voice-over placed on its words | `production/remotion.md`, `production/build-gotchas.md`, `planning/voice-over.md`, `production/after-effects.md`, `production/coded-render.md`, `scripts/index.md` |
+| 15 | Quality check | test frames, then the encode; findings ranked by severity; the scorecard; the three biggest changes | `evaluation/quality-check.md`, `evaluation/troubleshooting.md` |
 | 16 | Learn | turn Karl's feedback into corrections, and approved solutions into examples | `examples/corrections.md` |
 
 Steps 3–12 are planning; what goes out is the storyboard of step 13, with the working tables in its
 appendix. A revision to a delivered film goes back to the earliest step it touches.
+
+For a full film, copy this checklist into your notes and tick it off as you go, so no step is skipped
+when the work runs long:
+
+```
+Film progress:
+- [ ] 1 Brief: format, length, audience, message; assumptions stated
+- [ ] 2 Look: style or brand loaded; the client's site harvested into assets/
+- [ ] 3–4 Beat sheet and the whole-film arc
+- [ ] 5 Art direction and the motion identity's three constants
+- [ ] 6–8 A strategy per beat (with runner-up), styleframes, variety check
+- [ ] 9–10 Motion chains, continuity table, assets and requests
+- [ ] 11–12 Storyboard with frames from the build; art-director pass; revision log
+- [ ] 13 Storyboard to Karl; music and voice-over asked
+- [ ] 14 Build: tokens, test frames, draft with audio, then the blurred render
+- [ ] 15 QC: motion check, hand-offs, text strips, loudness, delivery encode
+- [ ] 16 Feedback turned into proposed corrections
+```
 
 ## Other tasks
 
 Use the steps a task needs:
 - **A storyboard or plan only:** steps 1–13.
 - **A critique of a film, storyboard or render:** `evaluation/art-director.md`, plus
-  `evaluation/quality-check.md` for a render. You can't watch video: capture frames and measure first
+  `evaluation/quality-check.md` for a render; report findings ranked by severity as Before / After /
+  Why rows, with the fix from `evaluation/troubleshooting.md`. You can't watch video: capture frames and measure first
   (`references/reading-references.md`).
 - **A reference video:** `references/reading-references.md`; compare its motion with Karl's benchmark
   in `references/benchmarks.md`.

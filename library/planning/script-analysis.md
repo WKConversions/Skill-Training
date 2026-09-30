@@ -19,7 +19,8 @@ Fill in, for each beat:
 - **Viewer must understand:** the single thing a first-time viewer has to get, ideally with the
   sound off.
 - **Importance:** 1 carries the film, 2 supports it, 3 connects.
-- **Emotional tone:** frustration, relief, confidence, curiosity, urgency, pride.
+- **Emotional tone:** frustration, relief, confidence, curiosity, urgency, pride. The tone adjusts
+  tempo and path inside the film's motion personality (`motion/motion-identity.md`).
 - **Visualizable nouns:** concrete things that could appear (the product, a person, an invoice, a
   number).
 - **Visualizable verbs:** changes that could be shown (grows, connects, disappears, speeds up,

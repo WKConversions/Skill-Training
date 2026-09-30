@@ -23,7 +23,9 @@ cut it.
 
 Define the film's motion personality before animating: precise, energetic, elegant, playful,
 technical, cinematic, mechanical, organic, aggressive or calm. Not every move uses the same curve,
-but every move belongs to the same world. The brand or style usually decides it.
+but every move belongs to the same world. The brand or style usually decides it; the personality
+table and the film's three constants (signature curve, duration palette, entrance pattern) are in
+`motion/motion-identity.md`.
 
 ## Hierarchy and choreography
 
@@ -40,13 +42,38 @@ but every move belongs to the same world. The brand or style usually decides it.
   automatically stagger every letter, word, icon and card; random stagger is noise. Avoid
   simultaneous entrances unless you want an impact.
 
+## Layers, paths and reactions
+
+- **Three layers, three amplitudes.** The primary move carries the meaning at full amplitude. The
+  secondary layer reacts at 30–50% of it, 2–4 frames later, on a different curve (a shadow spreading
+  as a card lands, siblings making room, an icon settling). The ambient layer (the camera drift, the
+  canvas, a video playing inside a frame) runs at 10–20% and never competes. A scene with only the
+  primary layer moving reads as flat.
+- **Paths arc.** Travel of more than a few hundred pixels curves slightly (a perpendicular offset of
+  about 5% of the distance at the midpoint for precise films, more for playful ones). Straight lines
+  are for mechanical motion, UI that slides on its rail, and the camera.
+- **The third rule.** A single move that crosses more than a third of the frame gets help: motion
+  blur, a camera move sharing the distance, or a change of speed on the way. With three or more
+  elements, no more than a third of them are in their main move at the same moment.
+- **Counter-motion.** When the hero moves one way, the layer behind can shift slightly the other way
+  (20–30% of the speed), or its shadow can spread as it lifts. Use it to give a move weight, not on
+  every move.
+- **One trigger, one origin.** Elements reacting to the same cause start within 2 frames of each
+  other and move away from the cause; they can land at different times.
+- **Carry, don't duplicate.** An object visible before and after a change is the same object moving
+  from its old state to its new one, never a hidden copy swapped for a shown one.
+
 ## Entrances and exits
 
 - An element enters from where it comes from in the story: from the thing that caused it, from
   outside the frame in the direction of travel, or out of depth (from about 70% scale, or from behind
   another element). Arrivals from outside the frame are fast (6–12 frames) on a strong ease-out, and
   they settle.
-- Exits are quicker (3–6 frames) and blur away, or they become the next scene.
+- Nothing appears from nothing: arrivals out of depth start from about 70% scale, UI pops from
+  85–95%, never from zero.
+- Exits are quicker (3–6 frames, or 65–75% of the matching entrance) and subtler (a shorter
+  distance), and they blur away or become the next scene. The viewer's attention has already moved
+  on.
 - Don't fade a layout in where it stands, and don't crossfade one layout into the next.
 - Vary entrances across the film; the same entrance type no more than twice in a row (tracked in
   `motion/continuity.md`). Repeated scale-ins and fade-ups are an AI fingerprint.

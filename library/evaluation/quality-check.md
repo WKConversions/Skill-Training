@@ -34,6 +34,16 @@ space, focal point, crop, accidental tangencies, and consistency with the style 
   1.5% of its area in motion. Karl's benchmark measures 97%, 0.8 s and 3% (`references/benchmarks.md`).
   A result below target points at the working holds and the camera, not at adding elements.
 
+- **Motion gaps.** List every change of state in the film (a text swap, a color change, an element
+  appearing or leaving, a value updating) and check that each one moves. A change that snaps from one
+  frame to the next, with nothing carrying it, is a gap; it reads as a glitch more than as a cut.
+- **Hand-offs.** For every scene change that carries an object across, compare the two frames around
+  the cut (`scripts/cut_match.py`); the object's box must match within 2 px.
+- **Blur quality.** Step through the fastest moves frame by frame; separate copies instead of a smear
+  mean the move needs more frames or more samples.
+- **Review slowly, then fresh.** Step key transitions at 2-frame intervals, then look at the whole
+  contact sheet again after other work; problems invisible at full speed show up both ways.
+
 ## Pass 4: Rhythm
 
 Read the film through: the 2-frames-per-second contact sheet top to bottom, and the per-second
@@ -76,6 +86,19 @@ edge cases.
 - Nothing missing: fonts, assets, and in After Effects, broken expressions, missing footage and color
   management.
 - Every claim on screen matches the client's own material; nothing invented.
+
+## Severity
+
+Rank every finding before fixing, and fix from the top:
+- **Critical, never ships:** a line whose meaning doesn't read; invented facts; unreadable text where
+  it plays; overlapping type; a frozen frame; a visible jump at a cut; audio out of sync or clipping;
+  a wrong logo or brand color.
+- **High:** a locked camera; one framing distance; a crossfade between layouts; motion gaps; the same
+  entrance three times in a row; missing secondary motion; the motion check below target.
+- **Medium:** missing arcs or counter-motion; blur stepping on one move; a settle a few frames short;
+  small alignment or spacing issues.
+
+Report findings as Before / After / Why rows (`evaluation/troubleshooting.md`).
 
 ## Red flags
 

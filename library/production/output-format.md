@@ -89,4 +89,6 @@ shown, the motion, and the transition into the next beat. Then:
 - **Appendix:** the working tables (beat sheet, variety check, continuity table), collapsed.
 
 Build it as an HTML page: publish it as a private artifact when the session can, otherwise send the
-file.
+file. Once a render exists, put the film at the top of the page (a web encode published next to the
+page as `film.mp4`), with the motion-check numbers beside it, and build the page from a small script
+that fills in the frames and numbers, so every revision republishes the same page with fresh frames.

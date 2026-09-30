@@ -13,10 +13,16 @@ saved file into the build folder.
 | `reference_frames.js` | captures frames of an online video inside its page | `references/reading-references.md` |
 | `site_extract.js` | extracts brand values, logo, images and text from a client's site | `design/asset-strategy.md` |
 | `grab.js` | downloads a file from inside a page as base64 | `design/asset-strategy.md` |
+| `stills.mjs` | renders a list of test frames from a Remotion project, bundled once | `production/remotion.md` |
+| `cut_match.py` | compares the carried object's box across a cut | `production/build-gotchas.md` |
+| `vo_align.py` | transcribes voice-over files and force-aligns the script for word timings | `planning/voice-over.md` |
 
 **Requirements.** Node with `playwright` and `sharp` in the build folder (tested with Playwright 1.56.0
 against a pre-installed Chromium, and sharp 0.34.5); Python with Pillow, numpy and
 opencv-python-headless.
+
+**Also:** `stills.mjs` needs the Remotion project's own packages (run it from the project folder);
+`vo_align.py` needs `pip install pocketsphinx` and ffmpeg.
 
 **Usage.**
 - `node render.mjs test 0,45,120` renders those frames to `test/` as PNG; `node render.mjs full 0 899 4 8`

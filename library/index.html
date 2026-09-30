@@ -274,7 +274,8 @@ const GROUPS = [
     ['planning/intake.md', 'Intake-form submissions: reading them, style mapping, format and timing, the approval stop, the project brief.'],
     ['planning/script-analysis.md', 'Beats, and for each: core meaning, what the viewer must understand, importance, tone, nouns, verbs and beat type.'],
     ['planning/storytelling.md', 'The film as a whole: arc, hook, energy curve, setup and payoff, callbacks, the call to action.'],
-    ['planning/visual-strategy.md', 'Literal meaning, choosing a strategy, beat type to method, the catalog of methods, variety.']]],
+    ['planning/visual-strategy.md', 'Literal meaning, choosing a strategy, beat type to method, the catalog of methods, variety.'],
+    ['planning/voice-over.md', 'A recorded voice-over: identifying takes, word timings, placing lines, retiming the picture.']]],
   ['Design', [
     ['design/visual-hierarchy.md', 'Primary, secondary and detail; hierarchy, reduction, contrast; readable sizes.'],
     ['design/composition.md', 'Styleframes, grid, space, scale, crop, depth; the variety check and its budget.'],
@@ -283,10 +284,11 @@ const GROUPS = [
     ['design/asset-strategy.md', 'What scenes are made of, imagery rules, harvesting a client site, asset requests.'],
     ['design/anti-ai-design.md', 'AI motion-design fingerprints, principles, the technique budget.']]],
   ['Motion', [
-    ['motion/animation-grammar.md', 'Cause, motion, consequence; hierarchy, overlap, entrances, blur, working holds, the end card.'],
+    ['motion/motion-identity.md', 'The film’s motion personality, its three constants, emotion to motion, weight.'],
+    ['motion/animation-grammar.md', 'Cause, motion, consequence; hierarchy, layers, arcs, overlap, entrances, blur, working holds, the end card.'],
     ['motion/camera.md', 'A camera that never stops and never wanders; depth, cuts, atmosphere.'],
-    ['motion/timing.md', 'Durations, holds, rhythm, sync to the voice.'],
-    ['motion/easing.md', 'Easing by intent, the three named curves, velocity continuity.'],
+    ['motion/timing.md', 'Durations, distance and weight, stagger budget, the shape of a move, holds, rhythm, sync.'],
+    ['motion/easing.md', 'Easing by intent, the three named curves, springs, material, velocity continuity.'],
     ['motion/transitions.md', 'Transition families, a small family per film, what to avoid.'],
     ['motion/continuity.md', 'The continuity table and the hand-off rules.'],
     ['motion/sound.md', 'Sound layers, silence, music, delivery.']]],
@@ -299,12 +301,14 @@ const GROUPS = [
     ['examples/scene-examples.md', 'Two scenes written out in the full production format.']]],
   ['Evaluation', [
     ['evaluation/art-director.md', 'The critic’s questions, the revision loop, the scorecard.'],
-    ['evaluation/quality-check.md', 'Seven passes, motion targets, delivery checks, red flags.']]],
+    ['evaluation/quality-check.md', 'Seven passes, motion gaps, hand-offs, motion targets, severity, delivery checks, red flags.'],
+    ['evaluation/troubleshooting.md', 'Symptom, cause and fix; the Before / After / Why report row.']]],
   ['Production', [
     ['production/output-format.md', 'Project direction, the scene spec, precision, the storyboard page.'],
     ['production/remotion.md', 'The default coded build: a Remotion project Karl can edit in Studio, with the motion system translated.'],
     ['production/coded-render.md', 'The fallback coded build: timing to the voice, the render page, test frames, render, encode.'],
     ['production/after-effects.md', 'After Effects builds and hand-offs: naming, construction, blur, curves, previews.'],
+    ['production/build-gotchas.md', 'Where coded builds went wrong: hand-offs, fonts, audio, encode, tools, render times.'],
     ['production/tool-requests.md', 'The tools a session has, and requests for the ones it lacks.']]],
   ['Styles and brand', [
     ['styles/README.md', 'What a style decides, loading one, the copy check.'],
@@ -320,14 +324,17 @@ const GROUPS = [
     ['scripts/motion_check.py', 'Measures how constantly and how much a video moves.'],
     ['scripts/reference_frames.js', 'Captures frames of an online video inside its page.'],
     ['scripts/site_extract.js', 'Extracts brand values, logo, images and text from a client site.'],
-    ['scripts/grab.js', 'Downloads a file from inside a page as base64.']]]
+    ['scripts/grab.js', 'Downloads a file from inside a page as base64.'],
+    ['scripts/stills.mjs', 'Renders a list of test frames from a Remotion project, bundled once.'],
+    ['scripts/cut_match.py', 'Compares the carried object across a cut.'],
+    ['scripts/vo_align.py', 'Transcribes voice-over files and force-aligns the script.']]]
 ];
 const STEPS = [
   ['Brief', 'Deliverable, audience, message, format and timing; intake-form submissions read and mapped.', ['planning/intake.md']],
   ['Look and material', 'The chosen style and its contact sheet, the brand, the client’s website.', ['styles/README.md', 'brands/wkconversions-brand.md', 'design/asset-strategy.md']],
   ['Script analysis', 'Beats, and what the viewer must understand in each.', ['planning/script-analysis.md']],
   ['The whole film', 'The core message as spine, the hook, the energy curve, the call to action.', ['planning/storytelling.md']],
-  ['Art direction', 'The visual world, motion personality and transition family; mixed media decided once.', ['design/anti-ai-design.md', 'design/asset-strategy.md', 'motion/animation-grammar.md', 'motion/transitions.md']],
+  ['Art direction', 'The visual world, motion personality and transition family; mixed media decided once.', ['motion/motion-identity.md', 'design/anti-ai-design.md', 'design/asset-strategy.md', 'motion/animation-grammar.md', 'motion/transitions.md']],
   ['Visual strategy', 'Two or three candidates per beat, the strongest chosen, the runner-up kept.', ['planning/visual-strategy.md', 'examples/bad-vs-good.md', 'references/reading-references.md']],
   ['Composition', 'A styleframe per key scene: primary, secondary, detail.', ['design/visual-hierarchy.md', 'design/composition.md', 'design/typography.md', 'design/ui-product.md']],
   ['Variety check', 'The whole storyboard against the variety budget.', ['design/composition.md']],
@@ -336,8 +343,8 @@ const STEPS = [
   ['First storyboard', 'Every scene specified, condensed into the storyboard with frames from the build.', ['production/output-format.md', 'production/remotion.md', 'examples/scene-examples.md']],
   ['Art-director pass', 'Every scene and the film critiqued, then revised.', ['evaluation/art-director.md']],
   ['Final plan and approval', 'The production plan and its storyboard; Karl approves before anything is built.', ['production/output-format.md', 'planning/intake.md']],
-  ['Build', 'Remotion, After Effects, the plain coded render, or a hand-off.', ['production/remotion.md', 'production/after-effects.md', 'production/coded-render.md', 'scripts/index.md']],
-  ['Quality check', 'Test frames, then the encode; the scorecard.', ['evaluation/quality-check.md']],
+  ['Build', 'Remotion, After Effects, the plain coded render, or a hand-off.', ['production/remotion.md', 'production/build-gotchas.md', 'planning/voice-over.md', 'production/after-effects.md', 'production/coded-render.md', 'scripts/index.md']],
+  ['Quality check', 'Test frames, then the encode; the scorecard.', ['evaluation/quality-check.md', 'evaluation/troubleshooting.md']],
   ['Learn', 'Karl’s feedback becomes corrections; approved solutions become examples.', ['examples/corrections.md']]
 ];
 const DESC = new Map(GROUPS.flatMap(g => g[1]));

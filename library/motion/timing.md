@@ -15,6 +15,35 @@ Starting ranges at 30 fps (adapt to distance, scale, audio, readability and tone
 - major scene transformation: ~16–36 frames,
 - deliberate cinematic reveal: often 24+ frames.
 
+## Distance and weight scale the duration
+
+Take the base duration from the film's palette (`motion/motion-identity.md`), then scale it by how far
+the element travels at 1080p:
+
+| Travel | about 100 px | 200 px | 400 px | 800 px | across the frame |
+|---|---|---|---|---|---|
+| Multiplier | 1.0× | 1.3× | 1.6× | 1.8× | 2.0× |
+
+Heavy elements (a full-frame card, a browser window) take the upper end; light ones (a pill, a
+cursor, an icon) the lower. Exits run at 65–75% of the matching entrance.
+
+## Stagger budget
+
+Within a group, stagger 2–4 frames per element and keep the whole group's stagger under about 15
+frames; a longer cascade reads as waiting. Stagger along the reading order or away from the cause;
+every element in a group uses the same curve, and only the start time changes.
+
+## The shape of one move
+
+A move that matters has four parts; skip the first and third on small moves.
+
+| Part | Share | What happens |
+|---|---|---|
+| Anticipation | 10–20% | a small counter-move or a hold before the release |
+| Action | 30–50% | the primary move |
+| Reaction | 10–20% | secondary elements respond, 2–4 frames behind |
+| Resolution | 20–30% | the settle, then a working hold |
+
 ## Settle and holds
 
 After important information arrives, give the viewer time to understand it; don't start the next

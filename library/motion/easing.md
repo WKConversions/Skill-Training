@@ -20,6 +20,27 @@ These worked in the WKConversions builds and suit most films; styles and brands 
 - depart: `cubic-bezier(.64,0,.78,0)`,
 - move / reframe: `cubic-bezier(.65,0,.35,1)`.
 
+The signature curve covers about 80% of the moves in a film (`motion/motion-identity.md`); depart
+and move cover most of the rest.
+
+## Springs
+
+A spring suits physical response (a card settling into a stack, a pressed button releasing). In
+Remotion, `Easing.spring({damping: 200})` is a push without bounce; with `spring()`:
+
+| Feel | stiffness | damping | Use |
+|---|---|---|---|
+| Stiff, no bounce | 300–400 | 30 | premium UI settles |
+| Standard | 250 | 20–24 | small physical responses |
+| Gentle | 100–150 | 20–25 | large, heavy settles |
+| Bouncy | 150–250 | 10–15 | playful films only |
+
+## Material
+
+What a thing is made of sets its motion: rigid objects (glass, metal, a device) move a little slower
+with no overshoot; paper-like cards 3–5% overshoot at most, and none in premium films; soft or
+liquid shapes can lag and stretch slightly, and smoke or light moves slowest.
+
 ## Treat curves as authored motion
 
 Inspect velocity rather than trusting a default ease. Anchor points matter as much as the curve: set

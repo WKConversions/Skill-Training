@@ -43,6 +43,14 @@ text-highlights, audio, voiceover, parameters, multi-scene-video, connected-comp
   logo, copy and product screens as a Zod schema so a new client is a props change, not a rebuild.
 - Don't overwrite changes Karl made in Studio; treat surprising edits as intentional.
 
+## Motion tokens
+
+Put the film's motion identity (`motion/motion-identity.md`) in one file, for example `src/lib.tsx`,
+and build every scene from it: the brand colors, the three named curves, the duration palette, a
+tween helper `tw(frame, from, to, a, b, ease)` with clamping, the camera component, and the recurring
+pieces (cursor, pill, portrait). Scenes then share one language the way component variants do in UI
+motion libraries, and a new client changes the tokens, not the scenes.
+
 ## The motion system in Remotion
 
 - **Curves** (`motion/easing.md`): arrive `Easing.bezier(0.22, 1, 0.36, 1)`, depart
@@ -66,8 +74,9 @@ text-highlights, audio, voiceover, parameters, multi-scene-video, connected-comp
   `@remotion/layout-utils` after fonts load (pass `validateFontIsLoaded: true`). Word-by-word builds
   are one `Interactive.Span` per word, each with its own offset. Hand-drawn highlights from
   `@remotion/rough-notation` only where the style is hand-drawn; the three intake styles are not.
-- **Audio** (`motion/sound.md`): `<Audio>` from `@remotion/media`, one per voice-over line, placed
-  with `from` on the line's frame. A composition can size itself to the recording with
+- **Audio** (`motion/sound.md`, `planning/voice-over.md`): `<Audio>` from `@remotion/media`, one per
+  voice-over line, each in a `<Sequence from={frame} layout="none">` on the line's frame, and always
+  outside the motion-blur wrapper (`production/build-gotchas.md`). A composition can size itself to the recording with
   `calculateMetadata`. Captions (`@remotion/captions`) only when Karl asks for burned-in subtitles;
   they never replace the visual strategy.
 - **3D and maps:** `@remotion/three` inside `<ThreeCanvas width height>`, animated only from
@@ -75,11 +84,18 @@ text-highlights, audio, voiceover, parameters, multi-scene-video, connected-comp
 
 ## Frames, render, delivery
 
-- Storyboard frames: `npx remotion render <Comp> out/frames --frames=0,45,120 --image-format=png`
-  (or `npx remotion still`), then tile them as in `production/coded-render.md`. The frames Karl
-  approves come from the project itself.
+- **Carried objects across scenes:** end one scene and start the next in exactly the same state,
+  computed from the first scene's constants (export them), and verify the cut with
+  `scripts/cut_match.py`. A hard cut between identical frames is invisible.
+- Storyboard and test frames: `node stills.mjs 0,45,120` (`scripts/stills.mjs`, one bundle for all
+  frames), then tile them as in `production/coded-render.md`. The frames Karl approves come from the
+  project itself.
 - Final render only after approval: `npx remotion render <Comp> out/film.mp4`. A 60-frame 720p test
   with 8-sample blur took 16 seconds in the sandbox.
+- Render a draft without blur first (`--props='{"blurSamples":1}'`), check timing and sync on it,
+  then spend the blurred render once (times in `production/build-gotchas.md`).
+- Re-encode the delivery: TV-range BT.709 `yuv420p`, loudness-normalized audio at 48 kHz, cut to the
+  exact length (`production/build-gotchas.md`).
 - Check the MP4 exactly like any other build (`evaluation/quality-check.md`), including the motion
   check and `ffprobe` for frame rate, size and a 48 kHz audio track.
 - Deliver the MP4 and the project folder (zipped, without `node_modules`). Karl opens it with

@@ -27,6 +27,23 @@ Avoid these defaults. None is forbidden outright, but each needs a reason in thi
 - decorative elements without a communication purpose, and effects compensating for weak layout,
 - a sound effect on every movement.
 
+## Count them
+
+A fingerprint is about frequency and uniformity: one instance can be a choice, the same instance
+everywhere is the tell. Count across the storyboard and the test frames, and redesign when a count is
+reached:
+
+| Pattern | Flag when |
+|---|---|
+| The same entrance (fade-up, scale-in, blur-in) | on 3 or more elements in one scene, or opening 3 scenes in a row |
+| Blur-in on every entering element | 3 or more distinct elements in one scene enter blurred without moving; blur belongs to fast moves |
+| Stagger cascades | 2 or more groups in one scene cascade; one cascade is a moment, two are a habit |
+| Looping attention motion (pulsing dots, breathing buttons, glowing rings) | any instance; the CTA gets a click, not a pulse |
+| Springs with bounce | any bounce outside a playful film |
+| Motion on content that should just be there (captions, body text, labels) | the move carries no meaning and delays reading |
+| Scale-from-zero pops | any instance (`motion/animation-grammar.md`) |
+| Every scene centered, or every scene built on cards | beyond the variety budget (`design/composition.md`) |
+
 A client-chosen style's own vocabulary (the UI style's cards and pills, the gradient style's glass
 and cables) counts as a reason, as long as it shows the client's real product and numbers, never
 generic stand-ins, and stays within the variety budget in `design/composition.md`.
