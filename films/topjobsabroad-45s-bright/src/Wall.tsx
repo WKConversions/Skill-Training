@@ -89,7 +89,10 @@ export const Wall: React.FC<{ g: number; tx?: number; ty?: number; hide?: string
         if (drop && (y0 < -760 || dy > 2400)) return null;
         const y = y0 + dy;
         return (
-          <div key={`${c}:${j}`} style={{ position: "absolute", left: x - TW / 2, top: y - TH / 2, width: TW, height: TH, rotate: `${ROLL + dr}deg`, borderRadius: 20, overflow: "hidden",
+          // placed with a transform, not left/top: box offsets snap to whole pixels, and under the hook's
+          // 3.8× zoom every snap would be a visible jolt
+          <div key={`${c}:${j}`} style={{ position: "absolute", left: 0, top: 0, width: TW, height: TH, transform: `translate(${x - TW / 2}px, ${y - TH / 2}px) rotate(${ROLL + dr}deg)`,
+            borderRadius: 20, overflow: "hidden",
             boxShadow: "0 30px 60px -30px rgba(0,17,53,.35)" }}>
             <Tile id={itemAt(c, j)} />
           </div>

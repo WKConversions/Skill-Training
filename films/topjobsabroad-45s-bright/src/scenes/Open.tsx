@@ -133,7 +133,7 @@ export const Open: React.FC<{ g: number }> = ({ g }) => {
         const x = lerp(sx, px, e), y = lerp(sy, py, e) - Math.sin(e * Math.PI) * 60;
         const w = lerp(TW * WALL_S, 64, e), h = lerp(TH * WALL_S, 64, e);
         return (
-          <div key={c.id} style={{ position: "absolute", left: x - w / 2, top: y - h / 2, width: w, height: h, rotate: `${lerp(-8, 0, e)}deg`, overflow: "hidden",
+          <div key={c.id} style={{ position: "absolute", left: 0, top: 0, width: w, height: h, transform: `translate(${x - w / 2}px, ${y - h / 2}px) rotate(${lerp(-8, 0, e)}deg)`, overflow: "hidden",
             borderRadius: lerp(14, 32, e), border: `${4 * e}px solid #fff`, boxSizing: "border-box", boxShadow: "0 20px 40px -16px rgba(0,17,53,.45)", zIndex: 5 }}>
             <Tile id={c.id} label={1 - clamp01(e * 3)} />
           </div>

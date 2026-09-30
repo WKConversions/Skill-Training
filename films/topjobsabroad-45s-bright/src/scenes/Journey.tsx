@@ -23,7 +23,7 @@ const at = (t: number) => bez(A, P1, P2, B, t);
 export const WHIP: [number, number] = [1056, 1076];
 
 const Plane: React.FC<{ x: number; y: number; deg: number }> = ({ x, y, deg }) => (
-  <svg width={84} height={84} viewBox="0 0 24 24" style={{ position: "absolute", left: x - 42, top: y - 42, rotate: `${deg + 90}deg`, filter: "drop-shadow(0 10px 12px rgba(0,17,53,.3))" }}>
+  <svg width={84} height={84} viewBox="0 0 24 24" style={{ position: "absolute", left: 0, top: 0, translate: `${x - 42}px ${y - 42}px`, rotate: `${deg + 90}deg`, filter: "drop-shadow(0 10px 12px rgba(0,17,53,.3))" }}>
     <path d="M12 2c.8 0 1.4.9 1.4 2v5.2l7.6 4.4v2l-7.6-2.3v4.9l2.3 1.7V21L12 20l-3.7 1v-1.1l2.3-1.7v-4.9L3 15.6v-2l7.6-4.4V4c0-1.1.6-2 1.4-2z" fill={C.navy} />
   </svg>
 );
@@ -101,7 +101,7 @@ export const Journey: React.FC<{ g: number }> = ({ g }) => {
           const [rx, ry] = at(Math.max(0, pt - 0.07));
           const k = tw(g, 832, 846, 0, 1, ARRIVE) * (1 - tw(g, 930, 940, 0, 1, DEPART));
           return k > 0 && (
-            <div style={{ position: "absolute", right: 1920 - rx + 40, top: ry - 36, display: "flex", alignItems: "center", gap: 12, background: C.white, borderRadius: 999, padding: "6px 20px 6px 6px",
+            <div style={{ position: "absolute", right: 1920, top: 0, translate: `${rx - 40}px ${ry - 36}px`, display: "flex", alignItems: "center", gap: 12, background: C.white, borderRadius: 999, padding: "6px 20px 6px 6px",
               boxShadow: SHADOW, opacity: k, scale: String(lerp(0.8, 1, k)), whiteSpace: "nowrap" }}>
               <span style={{ width: 58, height: 58, borderRadius: 29, overflow: "hidden", border: `3px solid ${C.goldHi}` }}>
                 <Img src={staticFile("people/recruiter.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "60% 30%", scale: "1.7", transformOrigin: "52% 32%" }} />

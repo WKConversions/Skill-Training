@@ -103,7 +103,7 @@ export const Help: React.FC<{ g: number }> = ({ g }) => {
         }
         const dim = isM ? 1 : lerp(1, 0.35, lift);
         return (
-          <div key={j.title + j.city} style={{ position: "absolute", left: x, top: y, transformOrigin: isM ? "0% 0%" : "50% 50%", scale: String(s), opacity: isM ? 1 : dim * (1 - othersOut),
+          <div key={j.title + j.city} style={{ position: "absolute", left: 0, top: 0, translate: `${x}px ${y}px`, transformOrigin: isM ? "0% 0%" : "50% 50%", scale: String(s), opacity: isM ? 1 : dim * (1 - othersOut),
             filter: !isM && lift > 0 ? `blur(${lift * 3 + othersOut * 6}px)` : undefined, rotate: isM ? `${(1 - lift) * 0 - onward * 6}deg` : undefined, zIndex: isM ? 3 : 1 }}>
             <JobCard j={j} matched={isM ? matched : 0} />
           </div>
