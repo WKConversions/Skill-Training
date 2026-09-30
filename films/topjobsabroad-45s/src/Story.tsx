@@ -41,7 +41,7 @@ const CityCard: React.FC<{ c: (typeof CITIES)[number]; x: number; y: number; w: 
   );
 
 const JOBS = [
-  { title: "Danish Speaking Customer Support", city: "Benalmádena", country: "Spain", flag: "es", code: "DK", photo: "benalmadena", pills: ["Customer Service", "Danish"] },
+  { title: "Danish Speaking Customer Support", city: "Athens", country: "Greece", flag: "gr", code: "DK", photo: "athens", pills: ["Customer Service", "Danish"] },
   { title: "Dutch Customer Support", city: "Sliema", country: "Malta", flag: "mt", code: "NL", photo: "sliema", pills: ["Customer Service", "Dutch"] },
   { title: "Czech Speaking Sales Representative", city: "Madrid", country: "Spain", flag: "es", code: "CZ", photo: "madrid", pills: ["Sales", "Czech"] },
 ];
