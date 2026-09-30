@@ -43,24 +43,24 @@ export const S3Founders: React.FC = () => {
   const u = useCurrentFrame();
 
   // the pull: cursors reach up to the card peeking in at the top, grab it on u118, drag it down
-  const reach = tw(u, 116, 130, 0, 1, MOVE);
-  const drag = tw(u, 132, 160, 0, 1, ARRIVE);
+  const reach = tw(u, 122, 134, 0, 1, MOVE);
+  const drag = tw(u, 136, 162, 0, 1, ARRIVE);
   const cardY = -640 + reach * 140 + drag * (CARD.y + 500);
-  const grabbed = u >= 130;
-  const press = tw(u, 128, 132, 0, 1, LINEAR) - tw(u, 160, 164, 0, 1, LINEAR);
+  const grabbed = u >= 134;
+  const press = tw(u, 132, 136, 0, 1, LINEAR) - tw(u, 162, 166, 0, 1, LINEAR);
 
-  const rx = grabbed ? GRIP_R.x : tw(u, 6, 20, -360, 880, ARRIVE) + tw(u, 20, 116, 0, 34, MOVE) + reach * (GRIP_R.x - 914);
-  const ry = grabbed ? cardY + CARD.h : tw(u, 6, 20, 60, 110, ARRIVE) + tw(u, 20, 116, 0, 14, MOVE) + reach * (-500 + CARD.h - 124);
-  const kx = grabbed ? GRIP_K.x : tw(u, 12, 26, 2300, 1440, ARRIVE) + tw(u, 26, 116, 0, -30, MOVE) + reach * (GRIP_K.x - 1410);
-  const ky = grabbed ? cardY + CARD.h : tw(u, 12, 26, 760, 280, ARRIVE) + tw(u, 26, 116, 0, 12, MOVE) + reach * (-500 + CARD.h - 292);
+  const rx = grabbed ? GRIP_R.x : tw(u, 6, 20, -360, 880, ARRIVE) + tw(u, 20, 122, 0, 34, MOVE) + reach * (GRIP_R.x - 914);
+  const ry = grabbed ? cardY + CARD.h : tw(u, 6, 20, 60, 110, ARRIVE) + tw(u, 20, 122, 0, 14, MOVE) + reach * (-500 + CARD.h - 124);
+  const kx = grabbed ? GRIP_K.x : tw(u, 12, 26, 2300, 1440, ARRIVE) + tw(u, 26, 122, 0, -30, MOVE) + reach * (GRIP_K.x - 1410);
+  const ky = grabbed ? cardY + CARD.h : tw(u, 12, 26, 760, 280, ARRIVE) + tw(u, 26, 122, 0, 12, MOVE) + reach * (-500 + CARD.h - 292);
 
-  const shrink = tw(u, 114, 134, 0, 1, MOVE);
-  const labels = tw(u, 112, 118, 1, 0, LINEAR);
-  const textOut = tw(u, 136, 142, 0, 1, DEPART);
+  const shrink = tw(u, 122, 138, 0, 1, MOVE);
+  const labels = tw(u, 124, 130, 1, 0, LINEAR);
+  const textOut = tw(u, 138, 144, 0, 1, DEPART);
 
   return (
     <AbsoluteFill>
-      <Camera fx={960} fy={540} s={keys(u, [[0, 1.0], [112, 1.04], [168, 1.0]])}>
+      <Camera fx={960} fy={540} s={keys(u, [[0, 1.0], [118, 1.04], [168, 1.0]])}>
         <Interactive.Div
           name="Eyebrow"
           style={{

@@ -13,8 +13,8 @@ import { S6Outro, S6_DURATION, S6_START } from "./scenes/S6Outro";
 // WKConversions · who we are · 30 s, 1920×1080, 30 fps.
 // VO: ElevenLabs "Christina", placed on these frames (word timings force-aligned with pocketsphinx):
 //  f12   vo1 "Your visitors give you three seconds."                  ("seconds" f62)
-//  —     vo2 "Your product takes a paragraph to explain… so they scroll on."  NOT RECORDED YET:
-//        its slot is f108–234, with "paragraph" near f150 and "scroll" on f208
+//  f102  vo2 "Your product takes a paragraph to explain… so they scroll on."  ("paragraph" f130,
+//             "scroll" f208, when the page is flicked away)
 //  f246  vo3 "We're WKConversions: two motion designers who turn that paragraph into a video
 //             people understand in seconds."                          ("two" f310, "turn" f348,
 //             "video" f396, "understand" f419, "seconds" f445)
@@ -24,7 +24,7 @@ export const FILM_DURATION = 900;
 
 /** The page canvas under every scene: a slow constant drift, flicked up when the page is scrolled away. */
 export const Canvas: React.FC<{ g: number }> = ({ g }) => {
-  const y = -0.35 * g - tw(g, 207, 226, 0, 620, ARRIVE) + tw(g, 348, 378, 0, 260, ARRIVE);
+  const y = -0.35 * g - tw(g, 207, 226, 0, 620, ARRIVE) + tw(g, 352, 378, 0, 260, ARRIVE);
   const x = -0.12 * g - tw(g, 708, 724, 0, 520, MOVE);
   const scale = tw(g, 430, 464, 1, 0.82, MOVE) * tw(g, 488, 522, 1, 1.5, MOVE) * tw(g, 522, 760, 1, 0.82, LINEAR);
   return <DotGrid x={x} y={y} scale={scale} />;
@@ -62,6 +62,9 @@ const VoiceOver: React.FC = () => (
   <>
     <Sequence name="VO 1" from={12} layout="none">
       <Audio src={staticFile("vo/vo1.mp3")} />
+    </Sequence>
+    <Sequence name="VO 2" from={102} layout="none">
+      <Audio src={staticFile("vo/vo2.mp3")} />
     </Sequence>
     <Sequence name="VO 3" from={246} layout="none">
       <Audio src={staticFile("vo/vo3.mp3")} />

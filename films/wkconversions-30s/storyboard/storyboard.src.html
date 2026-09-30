@@ -116,15 +116,16 @@ a { color: var(--blue-text); }
     <h1>Who WKConversions is, <span class="blue">in 30 seconds.</span></h1>
     <p class="lede">A 16:9 brand film built on Hook, Problem, Solution, Showing something, Outro. The spine is the site's own claim: a video should explain what you do in seconds. The frames below are rendered from the Remotion project itself, so what you approve is what gets animated.</p>
     <div class="status">
-      <span class="chip ok"><b>Draft rendered</b> · silent, with motion blur</span>
+      <span class="chip ok"><b>Final render</b> · motion blur and voice-over</span>
       <span class="chip"><b>0:30</b> · 1920×1080 · 30 fps</span>
-      <span class="chip"><b>No voice-over or music yet</b> · timed at 2.5 words/s</span>
+      <span class="chip ok"><b>Voice-over</b> · ElevenLabs "Christina", timed to the word</span>
+      <span class="chip"><b>No music yet</b></span>
     </div>
   </header>
 
   <div class="film">
-    <video src="{{VIDEO}}" controls muted playsinline preload="metadata" poster="{{POSTER}}"></video>
-    <div class="cap"><span>Draft film, silent. The VO lines are timed into the picture; record them to the timecodes below.</span><span>WKConversions · 30 s</span></div>
+    <video src="{{VIDEO}}" controls playsinline preload="metadata" poster="{{POSTER}}"></video>
+    <div class="cap"><span>Final render with voice-over, normalized to −15 LUFS. No music yet.</span><span>WKConversions · 30 s</span></div>
   </div>
 
   <section>
@@ -137,7 +138,7 @@ a { color: var(--blue-text); }
       <div><span class="label">Art direction</span><p>One built world, no stock: the visitor's browser, real founder photos, the real ClearScaler work. No mixed media beyond that.</p></div>
       <div><span class="label">Motion personality</span><p>Precise and settled: arrivals on <code>cubic-bezier(.22,1,.36,1)</code>, no bounce, a camera that never locks, motion blur on fast moves.</p></div>
       <div><span class="label">Transition family</span><p>Camera reveal (zoom out of an object), object becomes object (paragraph → video), scale-through into the next frame.</p></div>
-      <div><span class="label">Voice-over and music</span><p>Not recorded. Script timed at about 2.5 words per second; music to be chosen.</p></div>
+      <div><span class="label">Voice-over and music</span><p>ElevenLabs "Christina" (energetic commercial), five takes, force-aligned so every hit lands on its word. Music to be chosen.</p></div>
     </div>
   </section>
 
@@ -154,7 +155,7 @@ a { color: var(--blue-text); }
       <div class="metric">
         {{METRICS}}
       </div>
-      <p style="font-size:14px;color:var(--muted)">Motion check from the skill's <code>motion_check.py</code> (the last 2 seconds excluded). Karl's benchmark film, Addx Studio's "sends", measures 97%, 3.2% and 0.8 s.</p>
+      <p style="font-size:14px;color:var(--muted)">Voice-over placed at 0.4 s, 3.4 s, 8.2 s, 17.9 s and 25.7 s. Motion check from the skill's <code>motion_check.py</code> (the last 2 seconds excluded). Karl's benchmark film, Addx Studio's "sends", measures 97%, 3.2% and 0.8 s.</p>
     </div>
   </section>
 
@@ -163,8 +164,7 @@ a { color: var(--blue-text); }
       <h3>Open questions</h3>
       <ol>
         <li><b>Script.</b> No script was given, so this one is mine, built from the site's own copy. Change any line and the build follows.</li>
-        <li><b>Voice-over.</b> Will you or Raphael record it? Send the file and I'll re-time every hit to the real words.</li>
-        <li><b>Music.</b> A licensed track, or does music go on in the edit? The cut would follow its beat.</li>
+                <li><b>Music.</b> A licensed track, or does music go on in the edit? The cut would follow its beat.</li>
         <li><b>ClearScaler.</b> OK to show their clip and Magnus's words? I used only the UI animation part of the case video, not the film footage.</li>
         <li><b>Formats.</b> 16:9 only, or also a 9:16 cut for social (a re-layout, not a crop)?</li>
       </ol>
@@ -173,8 +173,9 @@ a { color: var(--blue-text); }
       <h3>Notes and assumptions</h3>
       <ul>
         <li>You asked for the video directly, so I built and rendered it before this approval step instead of after. Revisions go through the same project.</li>
+        <li>Of the voice-over files, the shorter take of "We're WKConversions: two motion designers" is unused; the full take of that line (with "…who turn that paragraph…") carries scenes 3 and 4.</li>
         <li>Format 16:9 at 30 s, picked for a "who we are" film on the site and LinkedIn.</li>
-        <li><b>Illustrative, not claims:</b> "yourproduct.com", the finance paragraph and the countdown reading "2.1s" stand for a visitor's experience. They aren't a client or a statistic.</li>
+        <li><b>Illustrative, not claims:</b> "yourproduct.com", the finance paragraph and the countdown reading "2.5s" stand for a visitor's experience. They aren't a client or a statistic.</li>
         <li>Every factual line comes from wkconversions.com: "Two motion designers" (About), Raphael and Karl, the ClearScaler case and Magnus's testimonial ("…the work came back fast and better than the brief"), "Motion design that makes it click."</li>
         <li><b>Polish left:</b> on the two fastest exits (the visitor leaving at 7.0 s, the clip whipping out at 23.9 s) the 8-sample blur shows slight steps. 16 samples on those frames would smooth them.</li>
         <li>Kept clear of the September ad: no highlight hopping through a paragraph, no keyframe timeline, no 16:9/1:1/9:16 split, no founders' chat.</li>
@@ -193,6 +194,7 @@ a { color: var(--blue-text); }
           <tr><td>3</td><td>The founders' portraits were too small to be the subject. The paragraph card sat visible at the top from the first frame.</td><td>Portraits are 300 px. The card only slides into view when the founders reach for it.</td></tr>
           <tr><td>3 → 4</td><td>8 near-still frames where the card lands.</td><td>The camera settle now runs to the last frame of the scene.</td></tr>
           <tr><td>4</td><td>Karl's cursor stayed in frame after the pull-back. A page-side block popped in outside the page's reveal mask.</td><td>The cursor leaves the frame. The block now sits inside the mask and is revealed with the page.</td></tr>
+          <tr><td>All</td><td>The picture was timed to an estimated 2.5 words per second.</td><td>Re-timed to the recording: "seconds." on "seconds", the grab on "turn", the video on "video", the check and the stopped countdown on "understand", the quote word by word, the click on "click", the page flicked away on "scroll".</td></tr>
           <tr><td>5 → 6</td><td>Half a second of empty canvas between the quote and the outro.</td><td>The outro starts under the exit, with the logo writing on at once.</td></tr>
         </tbody>
       </table>
@@ -220,10 +222,9 @@ a { color: var(--blue-text); }
    "input": {"project": "films/wkconversions-30s", "composition": "Film",
              "size": "1920x1080", "fps": 30, "blur_samples": 8},
    "result": {"path": "out/wkconversions-30s.mp4"}},
-  {"id": "R02", "type": "voice_over_recording", "status": "requested",
-   "input": {"script": "six lines, see beats", "pace": "2.5 words/s",
-             "format": "48 kHz WAV"},
-   "fallback": "silent film, VO timed into picture"},
+  {"id": "R02", "type": "voice_over_recording", "status": "fulfilled",
+   "result": {"source": "ElevenLabs, Christina", "files": "public/vo/vo1-5.mp3",
+              "timing": "force-aligned with pocketsphinx"}},
   {"id": "R03", "type": "music_track", "status": "requested",
    "input": {"length": "30 s", "mood": "calm, confident, premium",
              "license": "commercial use"},
@@ -243,8 +244,8 @@ a { color: var(--blue-text); }
           <tbody>
             <tr><td>1</td><td>0.0–3.2</td><td>Attention on a website is short.</td><td>Three seconds.</td><td>1</td><td>tension</td><td>Hook</td><td>Counter, huge number (visitor cursor on a page)</td></tr>
             <tr><td>2</td><td>3.2–7.4</td><td>A paragraph can't explain your product in that time.</td><td>They leave before they get it.</td><td>1</td><td>frustration</td><td>Problem</td><td>Before state: paragraph + countdown + scroll away (split: paragraph vs clock)</td></tr>
-            <tr><td>3</td><td>7.2–12.4</td><td>WKConversions is two motion designers.</td><td>Two real people, named.</td><td>2</td><td>confidence</td><td>Solution (who)</td><td>People as collaborating cursors (portraits side by side)</td></tr>
-            <tr><td>4</td><td>12.4–17.4</td><td>They turn that paragraph into a video people get fast.</td><td>Text becomes a clear picture, and the visitor stays.</td><td>1</td><td>relief</td><td>Solution (how)</td><td>Object transformation + callback (before/after split)</td></tr>
+            <tr><td>3</td><td>7.2–12.8</td><td>WKConversions is two motion designers.</td><td>Two real people, named.</td><td>2</td><td>confidence</td><td>Solution (who)</td><td>People as collaborating cursors (portraits side by side)</td></tr>
+            <tr><td>4</td><td>12.8–17.4</td><td>They turn that paragraph into a video people get fast.</td><td>Text becomes a clear picture, and the visitor stays.</td><td>1</td><td>relief</td><td>Solution (how)</td><td>Object transformation + callback (before/after split)</td></tr>
             <tr><td>5</td><td>17.4–24.1</td><td>A real client says it worked.</td><td>Real work, real words.</td><td>2</td><td>pride</td><td>Proof / show</td><td>Real clip + quote (quote alone, set large)</td></tr>
             <tr><td>6</td><td>23.7–30.0</td><td>The brand promise and the next step.</td><td>WKConversions, and where to go.</td><td>1</td><td>resolve</td><td>CTA</td><td>Statement + click resolving into URL (logo alone)</td></tr>
           </tbody>
