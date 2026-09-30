@@ -75,7 +75,7 @@ export const Help: React.FC<{ g: number }> = ({ g }) => {
       <div style={{ position: "absolute", left: 100, top: 206, width: 1500, height: 112, overflow: "hidden" }}>
         {ITEMS.map((t, i) => {
           const inK = tw(g, ITEM_AT[i], ITEM_AT[i] + 16, 0, 1, ARRIVE);
-          const outK = i < 3 ? tw(g, ITEM_AT[i + 1], ITEM_AT[i + 1] + 12, 0, 1, MOVE) : 0;
+          const outK = i < 3 ? tw(g, ITEM_AT[i + 1], ITEM_AT[i + 1] + 16, 0, 1, ARRIVE) : 0; // same curve as the next line, so they stay one slot apart
           if (inK <= 0 || outK >= 1) return null;
           return (
             <div key={t} style={{ position: "absolute", left: 20, top: 14, fontFamily: SERIF, fontWeight: 600, fontSize: 80, lineHeight: 1.05, color: C.navy, whiteSpace: "nowrap",
