@@ -1,6 +1,7 @@
 import { CameraMotionBlur } from "@remotion/motion-blur";
 import React from "react";
-import { AbsoluteFill, Sequence, useCurrentFrame } from "remotion";
+import { Audio } from "@remotion/media";
+import { AbsoluteFill, Sequence, staticFile, useCurrentFrame } from "remotion";
 import { ARRIVE, DotGrid, LINEAR, MOVE, tw } from "./lib";
 import { S1Hook, S1_DURATION } from "./scenes/S1Hook";
 import { S2Problem, S2_DURATION, S2_START } from "./scenes/S2Problem";
@@ -10,20 +11,22 @@ import { S5Proof, S5_DURATION, S5_START } from "./scenes/S5Proof";
 import { S6Outro, S6_DURATION, S6_START } from "./scenes/S6Outro";
 
 // WKConversions · who we are · 30 s, 1920×1080, 30 fps.
-// VO (timed at ~2.5 words/s until a recording exists):
-//  0.4–2.8   "Your visitors give you three seconds."
-//  3.6–7.8   "Your product takes a paragraph to explain… so they scroll on."
-//  8.3–10.5  "We're WKConversions: two motion designers"
-// 10.7–15.1  "who turn that paragraph into a video people understand in seconds."
-// 18.0–22.2  "ClearScaler put it simply: fast, and better than the brief."
-// 25.4–27.8  "Motion design that makes it click."
+// VO: ElevenLabs "Christina", placed on these frames (word timings force-aligned with pocketsphinx):
+//  f12   vo1 "Your visitors give you three seconds."                  ("seconds" f62)
+//  —     vo2 "Your product takes a paragraph to explain… so they scroll on."  NOT RECORDED YET:
+//        its slot is f108–234, with "paragraph" near f150 and "scroll" on f208
+//  f246  vo3 "We're WKConversions: two motion designers who turn that paragraph into a video
+//             people understand in seconds."                          ("two" f310, "turn" f348,
+//             "video" f396, "understand" f419, "seconds" f445)
+//  f537  vo4 "ClearScaler put it simply: fast, and better than the brief."  ("fast" f597, "brief" f644)
+//  f771  vo5 "Motion design that makes it click."                     ("click" f823)
 export const FILM_DURATION = 900;
 
 /** The page canvas under every scene: a slow constant drift, flicked up when the page is scrolled away. */
 export const Canvas: React.FC<{ g: number }> = ({ g }) => {
-  const y = -0.35 * g - tw(g, 207, 226, 0, 620, ARRIVE) + tw(g, 334, 364, 0, 260, ARRIVE);
+  const y = -0.35 * g - tw(g, 207, 226, 0, 620, ARRIVE) + tw(g, 348, 378, 0, 260, ARRIVE);
   const x = -0.12 * g - tw(g, 708, 724, 0, 520, MOVE);
-  const scale = tw(g, 434, 468, 1, 0.82, MOVE) * tw(g, 488, 522, 1, 1.5, MOVE) * tw(g, 522, 760, 1, 0.82, LINEAR);
+  const scale = tw(g, 430, 464, 1, 0.82, MOVE) * tw(g, 488, 522, 1, 1.5, MOVE) * tw(g, 522, 760, 1, 0.82, LINEAR);
   return <DotGrid x={x} y={y} scale={scale} />;
 };
 
@@ -54,13 +57,35 @@ const FilmBody: React.FC = () => {
   );
 };
 
-export const Film: React.FC<{ blurSamples: number }> = ({ blurSamples }) =>
-  blurSamples > 1 ? (
-    <CameraMotionBlur samples={blurSamples} shutterAngle={180}>
+// The voice-over sits outside the motion blur, which renders the picture several times per frame.
+const VoiceOver: React.FC = () => (
+  <>
+    <Sequence name="VO 1" from={12} layout="none">
+      <Audio src={staticFile("vo/vo1.mp3")} />
+    </Sequence>
+    <Sequence name="VO 3" from={246} layout="none">
+      <Audio src={staticFile("vo/vo3.mp3")} />
+    </Sequence>
+    <Sequence name="VO 4" from={537} layout="none">
+      <Audio src={staticFile("vo/vo4.mp3")} />
+    </Sequence>
+    <Sequence name="VO 5" from={771} layout="none">
+      <Audio src={staticFile("vo/vo5.mp3")} />
+    </Sequence>
+  </>
+);
+
+export const Film: React.FC<{ blurSamples: number }> = ({ blurSamples }) => (
+  <AbsoluteFill>
+    {blurSamples > 1 ? (
+      <CameraMotionBlur samples={blurSamples} shutterAngle={180}>
+        <FilmBody />
+      </CameraMotionBlur>
+    ) : (
       <FilmBody />
-    </CameraMotionBlur>
-  ) : (
-    <FilmBody />
-  );
+    )}
+    <VoiceOver />
+  </AbsoluteFill>
+);
 
 

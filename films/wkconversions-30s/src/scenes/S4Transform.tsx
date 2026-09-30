@@ -5,14 +5,14 @@ import { BROWSER, Browser, HERO, TimerPill } from "../Browser";
 import { ARRIVE, BODY, C, Camera, CursorArrow, DEPART, DISPLAY, LINEAR, MOVE, PARAGRAPH, Pill, Portrait, shadow, tw } from "../lib";
 import { CARD, GRIP_K, GRIP_R } from "./S3Founders";
 
-// Scene 4 · Solution (how) · 0:12.4–0:17.4 (global frames 372–522)
+// Scene 4 · Solution (how) · 0:12.8–0:17.4 (global frames 384–522)
 // VO: "…who turn that paragraph into a video people understand in seconds."
 // Karl clicks the paragraph: its lines turn into shapes, the card becomes a video, and three
 // tools snap into one place. The camera pulls back: it's the same page, now with a video hero,
 // the countdown stops with time to spare and the visitor stays. Then the camera pushes through
 // the video into real work.
-export const S4_START = 372;
-export const S4_DURATION = 150;
+export const S4_START = 384;
+export const S4_DURATION = 138;
 
 // the camera at the start matches scene 3's last frame exactly: screen = (world − F)·s0 + S
 const S0 = 1.3333;
@@ -37,12 +37,12 @@ export const S4Transform: React.FC = () => {
   const v = useCurrentFrame();
 
   // camera: hold on the video, pull back to the page, push through the video
-  const s = v < 62 ? tw(v, 0, 62, S0, 1.36, LINEAR) : v < 96 ? tw(v, 62, 96, 1.36, 0.98, MOVE) : v < 116 ? tw(v, 96, 116, 0.98, 1.0, LINEAR) : tw(v, 116, 150, 1.0, 1760 / HERO.w, MOVE);
-  const fx = v < 62 ? F0.x : v < 116 ? tw(v, 62, 96, F0.x, 960, MOVE) : tw(v, 116, 150, 960, F0.x, MOVE);
-  const fy = v < 62 ? F0.y : v < 116 ? tw(v, 62, 96, F0.y, 550, MOVE) : tw(v, 116, 150, 550, F0.y, MOVE);
+  const s = v < 46 ? tw(v, 0, 46, S0, 1.36, LINEAR) : v < 80 ? tw(v, 46, 80, 1.36, 0.98, MOVE) : v < 104 ? tw(v, 80, 104, 0.98, 1.0, LINEAR) : tw(v, 104, 138, 1.0, 1760 / HERO.w, MOVE);
+  const fx = v < 46 ? F0.x : v < 104 ? tw(v, 46, 80, F0.x, 960, MOVE) : tw(v, 104, 138, 960, F0.x, MOVE);
+  const fy = v < 46 ? F0.y : v < 104 ? tw(v, 46, 80, F0.y, 550, MOVE) : tw(v, 104, 138, 550, F0.y, MOVE);
 
   // the card becomes the video
-  const morph = tw(v, 14, 40, 0, 1, MOVE);
+  const morph = tw(v, 10, 30, 0, 1, MOVE);
   const box = {
     x: lerp(CARD_W.x, HERO.x, morph),
     y: lerp(CARD_W.y, HERO.y, morph),
@@ -50,11 +50,11 @@ export const S4Transform: React.FC = () => {
     h: lerp(CARD.h * INV, HERO.h, morph),
     r: lerp(34 * INV, 24, morph),
   };
-  const textOut = tw(v, 10, 18, 1, 0, LINEAR);
-  const toClip = tw(v, 120, 128, 0, 1, LINEAR);
+  const textOut = tw(v, 6, 14, 1, 0, LINEAR);
+  const toClip = tw(v, 108, 116, 0, 1, LINEAR);
 
   // the page appears around the video: a mask grows from the video's edges to the browser's
-  const reveal = tw(v, 62, 92, 0, 1, MOVE);
+  const reveal = tw(v, 46, 76, 0, 1, MOVE);
   const inset = {
     t: (HERO.y - BROWSER.y) * (1 - reveal),
     r: (BROWSER.x + BROWSER.w - HERO.x - HERO.w) * (1 - reveal),
@@ -62,23 +62,23 @@ export const S4Transform: React.FC = () => {
     l: (HERO.x - BROWSER.x) * (1 - reveal),
   };
 
-  // the countdown runs while the video plays and stops when it lands (v58): time to spare
-  const left = 3 - tw(v, 30, 58, 0, 28 / 30, LINEAR);
-  const done = v >= 58;
+  // the countdown runs while the video plays and stops when it lands (v36, on "understand")
+  const left = 3 - tw(v, 22, 36, 0, 14 / 30, LINEAR);
+  const done = v >= 36;
 
-  // Karl clicks the paragraph (v8), Raphael steps out; then both leave
-  const kx = tw(v, 0, 8, K0.x, 760, MOVE) + tw(v, 22, 32, 0, 1700, DEPART);
-  const ky = tw(v, 0, 8, K0.y, 700, MOVE) + tw(v, 22, 32, 0, 700, DEPART);
+  // Karl clicks the paragraph (v6, on "into"), Raphael steps out; then both leave
+  const kx = tw(v, 0, 6, K0.x, 760, MOVE) + tw(v, 16, 26, 0, 1700, DEPART);
+  const ky = tw(v, 0, 6, K0.y, 700, MOVE) + tw(v, 16, 26, 0, 700, DEPART);
   const rx = R0.x + tw(v, 4, 14, 0, -700, DEPART);
   const ry = R0.y + tw(v, 4, 14, 0, 240, DEPART);
-  const kPress = tw(v, 7, 9, 0, 1, LINEAR) - tw(v, 11, 14, 0, 1, LINEAR);
+  const kPress = tw(v, 5, 7, 0, 1, LINEAR) - tw(v, 9, 12, 0, 1, LINEAR);
 
   return (
     <AbsoluteFill>
       <Camera fx={fx} fy={fy} s={s}>
         <Browser
           style={{
-            opacity: v < 60 ? 0 : 1,
+            opacity: v < 44 ? 0 : 1,
             clipPath: `inset(${inset.t}px ${inset.r}px ${inset.b}px ${inset.l}px round ${lerp(24, 40, reveal)}px)`,
           }}
           timer={
@@ -87,7 +87,7 @@ export const S4Transform: React.FC = () => {
               color={done ? C.blueText : C.ink}
               bg={done ? C.soft : C.card}
               border={done ? C.blue : C.border}
-              check={done ? tw(v, 58, 66, 0.4, 1, ARRIVE) : 0}
+              check={done ? tw(v, 36, 44, 0.4, 1, ARRIVE) : 0}
             />
           }
         >
@@ -155,18 +155,18 @@ export const S4Transform: React.FC = () => {
               lineHeight: 0.96,
               letterSpacing: "-0.05em",
               color: C.ink,
-              opacity: tw(v, 58, 64, 0, 1, LINEAR) * (1 - toClip),
-              translate: `0px ${tw(v, 58, 68, 30, 0, ARRIVE)}px`,
+              opacity: tw(v, 38, 44, 0, 1, LINEAR) * (1 - toClip),
+              translate: `0px ${tw(v, 38, 48, 30, 0, ARRIVE)}px`,
             }}
           >
             Your finance, <span style={{ color: C.blue }}>in one place.</span>
           </div>
           {/* scrubber: the video is playing */}
-          <div style={{ position: "absolute", left: 40, bottom: 26, width: HERO.w - 80, height: 6, borderRadius: 3, background: C.faint, opacity: tw(v, 30, 36, 0, 1, LINEAR) * (1 - toClip) }}>
-            <div style={{ width: `${tw(v, 30, 150, 2, 100, LINEAR)}%`, height: "100%", borderRadius: 3, background: C.blue }} />
+          <div style={{ position: "absolute", left: 40, bottom: 26, width: HERO.w - 80, height: 6, borderRadius: 3, background: C.faint, opacity: tw(v, 22, 28, 0, 1, LINEAR) * (1 - toClip) }}>
+            <div style={{ width: `${tw(v, 22, 138, 2, 100, LINEAR)}%`, height: "100%", borderRadius: 3, background: C.blue }} />
           </div>
           {/* real work takes over the frame as the camera pushes through */}
-          <Sequence from={120} layout="none">
+          <Sequence from={108} layout="none">
             <div style={{ position: "absolute", inset: 0, opacity: toClip, background: "#000" }}>
               <Video src={staticFile("video/clearscaler-ui.mp4")} muted style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
@@ -180,12 +180,12 @@ export const S4Transform: React.FC = () => {
           const lineY = CARD_W.y + (56 + i * 45 + 13) * INV;
           const lineW = (i === LINES - 1 ? 520 : 952 - ((i * 37) % 90)) * INV;
           const lineH = 20 * INV;
-          const appear = tw(v, 10 + i, 16 + i, 0, 1, LINEAR);
+          const appear = tw(v, 6 + i, 12 + i, 0, 1, LINEAR);
           // follow the card while it morphs
           const bx = lineX + (box.x - CARD_W.x);
           const by = lineY + (box.y - CARD_W.y);
           if (!tile) {
-            const out = tw(v, 18 + i, 28 + i, 0, 1, DEPART);
+            const out = tw(v, 12 + i, 22 + i, 0, 1, DEPART);
             return (
               <div
                 key={i}
@@ -204,8 +204,8 @@ export const S4Transform: React.FC = () => {
           }
           // bar → separate tile → row of one panel
           const k = TILES.indexOf(tile);
-          const toTile = tw(v, 18 + k * 3, 40 + k * 3, 0, 1, MOVE);
-          const toRow = tw(v, 42 + k * 3, 58 + k * 3, 0, 1, MOVE);
+          const toTile = tw(v, 12 + k * 3, 28 + k * 3, 0, 1, MOVE);
+          const toRow = tw(v, 30 + k * 2, 42 + k * 2, 0, 1, MOVE);
           const tileRect = { x: tile.spread[0], y: tile.spread[1], w: 250, h: 96 };
           const rowRect = { x: PANEL.x + 30, y: PANEL.y + 84 + tile.row * 76, w: PANEL.w - 60, h: 62 };
           const x = lerp(lerp(bx, tileRect.x, toTile), rowRect.x, toRow);
@@ -239,8 +239,8 @@ export const S4Transform: React.FC = () => {
                 zIndex: 2,
               }}
             >
-              <span style={{ width: 22, height: 22, borderRadius: 7, background: C.blue, flexShrink: 0, opacity: tw(v, 30 + k * 3, 36 + k * 3, 0, 1, LINEAR) }} />
-              <span style={{ opacity: tw(v, 30 + k * 3, 36 + k * 3, 0, 1, LINEAR), whiteSpace: "nowrap" }}>{tile.label}</span>
+              <span style={{ width: 22, height: 22, borderRadius: 7, background: C.blue, flexShrink: 0, opacity: tw(v, 20 + k * 2, 26 + k * 2, 0, 1, LINEAR) }} />
+              <span style={{ opacity: tw(v, 20 + k * 2, 26 + k * 2, 0, 1, LINEAR), whiteSpace: "nowrap" }}>{tile.label}</span>
             </div>
           );
         })}
@@ -256,8 +256,8 @@ export const S4Transform: React.FC = () => {
             background: C.card,
             border: `2px solid ${C.border}`,
             boxShadow: "0 30px 60px -36px rgba(5,15,25,.4)",
-            opacity: tw(v, 40, 46, 0, 1, LINEAR) * (1 - toClip),
-            scale: String(tw(v, 40, 54, 0.9, 1, ARRIVE)),
+            opacity: tw(v, 28, 34, 0, 1, LINEAR) * (1 - toClip),
+            scale: String(tw(v, 28, 40, 0.9, 1, ARRIVE)),
             zIndex: 1,
           }}
         >
@@ -274,7 +274,7 @@ export const S4Transform: React.FC = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              scale: String(tw(v, 56, 66, 0, 1, ARRIVE)),
+              scale: String(tw(v, 36, 44, 0, 1, ARRIVE)),
             }}
           >
             <svg width={28} height={28} viewBox="0 0 24 24">
@@ -291,7 +291,7 @@ export const S4Transform: React.FC = () => {
             left: 0,
             top: 0,
             zIndex: 3,
-            translate: `${tw(v, 74, 88, 2100, 1130, ARRIVE) + tw(v, 88, 150, 0, -70, MOVE)}px ${tw(v, 74, 88, 1000, 760, ARRIVE) + tw(v, 88, 150, 0, -30, MOVE)}px`,
+            translate: `${tw(v, 58, 72, 2100, 1130, ARRIVE) + tw(v, 72, 138, 0, -70, MOVE)}px ${tw(v, 58, 72, 1000, 760, ARRIVE) + tw(v, 72, 138, 0, -30, MOVE)}px`,
           }}
         >
           <CursorArrow size={64} />

@@ -12,17 +12,17 @@ export const S6_DURATION = 188;
 const SIZE = 140;
 const LINES: { w: string; at: number; blue?: boolean }[][] = [
   [
-    { w: "Motion", at: 50 },
-    { w: "design", at: 62 },
-    { w: "that", at: 74 },
+    { w: "Motion", at: 59 },
+    { w: "design", at: 73 },
+    { w: "that", at: 92 },
   ],
   [
-    { w: "makes", at: 86, blue: true },
-    { w: "it", at: 96, blue: true },
-    { w: "click.", at: 106, blue: true },
+    { w: "makes", at: 96, blue: true },
+    { w: "it", at: 106, blue: true },
+    { w: "click.", at: 111, blue: true },
   ],
 ];
-const CLICK = 106;
+const CLICK = 111;
 
 const measureDisplay = (text: string, size: number) => measure(text, size, DISPLAY, "800", "-0.05em");
 
@@ -104,8 +104,8 @@ export const S6Outro: React.FC = () => {
             background: C.blue,
             overflow: "hidden",
             boxShadow: "0 30px 60px -30px rgba(18,102,201,.55)",
-            opacity: tw(z, 79, 85, 0, 1, LINEAR),
-            translate: `0px ${tw(z, 79, 93, 60, 0, ARRIVE)}px`,
+            opacity: tw(z, 84, 90, 0, 1, LINEAR),
+            translate: `0px ${tw(z, 84, 98, 60, 0, ARRIVE)}px`,
             scale: String(1 - press * 0.06),
           }}
         >
@@ -158,8 +158,8 @@ export const S6Outro: React.FC = () => {
             position: "absolute",
             left: 0,
             top: 0,
-            translate: `${tw(z, 73, 93, 2050, 1080, ARRIVE) + tw(z, 93, CLICK - 3, 0, 20, MOVE) + tw(z, CLICK + 10, 188, 0, 60, MOVE)}px ${
-              tw(z, 73, 93, 1150, 780, ARRIVE) + tw(z, 93, CLICK - 3, 0, -14, MOVE) + tw(z, CLICK + 10, 188, 0, 40, MOVE)
+            translate: `${tw(z, 80, 100, 2050, 1080, ARRIVE) + tw(z, 100, CLICK - 3, 0, 20, MOVE) + tw(z, CLICK + 10, 188, 0, 60, MOVE)}px ${
+              tw(z, 80, 100, 1150, 780, ARRIVE) + tw(z, 100, CLICK - 3, 0, -14, MOVE) + tw(z, CLICK + 10, 188, 0, 40, MOVE)
             }px`,
           }}
         >

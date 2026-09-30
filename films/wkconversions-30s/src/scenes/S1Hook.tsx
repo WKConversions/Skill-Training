@@ -49,8 +49,8 @@ export const S1Hook: React.FC = () => {
               lineHeight: 1,
               letterSpacing: "-0.05em",
               color: C.blue,
-              translate: `${tw(f, 54, 66, 160, 0, ARRIVE) + out * 320}px 0px`,
-              opacity: tw(f, 54, 60, 0, 1, LINEAR) * (1 - out),
+              translate: `${tw(f, 60, 72, 160, 0, ARRIVE) + out * 320}px 0px`,
+              opacity: tw(f, 60, 66, 0, 1, LINEAR) * (1 - out),
             }}
           >
             seconds.

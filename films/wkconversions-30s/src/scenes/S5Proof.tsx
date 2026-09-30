@@ -26,12 +26,12 @@ export const S5Proof: React.FC = () => {
   const attribOut = tw(w, 190, 196, 0, 1, DEPART);
 
   const words: { w: string; at: number; blue?: boolean }[] = [
-    { w: "“…fast", at: 72 },
-    { w: "and", at: 84 },
-    { w: "better", at: 94, blue: true },
-    { w: "than", at: 106, blue: true },
-    { w: "the", at: 114, blue: true },
-    { w: "brief.”", at: 124, blue: true },
+    { w: "“…fast", at: 75 },
+    { w: "and", at: 99 },
+    { w: "better", at: 107, blue: true },
+    { w: "than", at: 115, blue: true },
+    { w: "the", at: 120, blue: true },
+    { w: "brief.”", at: 123, blue: true },
   ];
 
   return (
@@ -58,8 +58,8 @@ export const S5Proof: React.FC = () => {
               position: "absolute",
               left: 30,
               top: 28,
-              opacity: tw(w, 6, 12, 0, 1, LINEAR),
-              translate: `0px ${tw(w, 6, 16, -30, 0, ARRIVE)}px`,
+              opacity: tw(w, 12, 18, 0, 1, LINEAR),
+              translate: `0px ${tw(w, 12, 22, -30, 0, ARRIVE)}px`,
             }}
           >
             <Pill size={36}>
@@ -112,8 +112,8 @@ export const S5Proof: React.FC = () => {
             display: "flex",
             alignItems: "center",
             gap: 24,
-            opacity: tw(w, 132, 140, 0, 1, LINEAR) * (1 - attribOut),
-            translate: `0px ${tw(w, 132, 146, 40, 0, ARRIVE) - 70 * attribOut}px`,
+            opacity: tw(w, 130, 138, 0, 1, LINEAR) * (1 - attribOut),
+            translate: `0px ${tw(w, 130, 144, 40, 0, ARRIVE) - 70 * attribOut}px`,
           }}
         >
           <Portrait src="img/magnus.png" size={112} ring={5} />
