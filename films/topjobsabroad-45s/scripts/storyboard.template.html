@@ -1,0 +1,37 @@
+<title>Top Jobs Abroad Film</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap">
+<style>
+/* Layout: their navy hero band holding the film, then one row per beat on their light page, the script line in serif. */
+:root{--page:#F4F6FB;--card:#FFFFFF;--line:#E3E7F1;--ink:#0D1B3E;--muted:#5E6A88;--navy:#001135;--onnavy:#FFFFFF;--gold:#A8892F;--goldhi:#E8C96A;
+--serif:"Playfair Display",Georgia,serif;--sans:"Plus Jakarta Sans",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--page:#000B24;--card:#0B1A45;--line:#1C2B5A;--ink:#EEF1FA;--muted:#A5B0CC;--navy:#001135;--gold:#E8C96A;color-scheme:dark}}
+:root[data-theme="dark"]{--page:#000B24;--card:#0B1A45;--line:#1C2B5A;--ink:#EEF1FA;--muted:#A5B0CC;--navy:#001135;--gold:#E8C96A;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--page);color:var(--ink);font:400 16px/1.6 var(--sans);padding-inline:20px;padding-block:28px 72px}
+.wrap{max-width:1100px;margin:0 auto;display:grid;gap:40px}
+.hero{background:var(--navy);color:var(--onnavy);border-radius:24px;padding:40px 36px;display:grid;gap:18px;text-align:center}
+.eyebrow{font:700 12px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--goldhi)}
+h1{font:600 clamp(32px,5vw,54px)/1.12 var(--serif);margin:0;text-wrap:balance} h1 em{font-style:normal;color:var(--goldhi)}
+.hero p{margin:0 auto;opacity:.82;max-width:64ch} video{width:100%;max-width:100%;aspect-ratio:16/9;border-radius:14px;background:#000;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center} .chip{font:600 13px/1 var(--sans);padding:9px 14px;border-radius:999px;border:1px solid rgba(232,201,106,.4);color:var(--goldhi)}
+h2{font:600 30px/1.1 var(--serif);margin:0}
+.list{display:grid;gap:14px}
+.beat{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:18px;background:var(--card)}
+.beat img{width:100%;max-width:100%;aspect-ratio:16/9;border-radius:12px;display:block}
+.h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap} .h b{font:700 18px var(--sans)} .tc{font:700 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-variant-numeric:tabular-nums}
+.vo{font:600 20px/1.35 var(--serif);margin:10px 0 8px} .w{color:var(--muted);font-size:14.5px;margin:0}
+.notes{border:1px solid var(--line);border-radius:18px;padding:20px 24px;background:var(--card)} .notes ul{margin:10px 0 0;padding-left:20px;display:grid;gap:8px}
+@media (max-width:760px){.beat{grid-template-columns:1fr} .hero{padding:24px 18px}}
+</style>
+<div class="wrap">
+<section class="hero"><span class="eyebrow">Recruitment across Europe</span>
+<h1>Finding a job abroad, <em>made comfortable.</em></h1>
+<p>A 45-second explainer for topjobsabroad.com in their own look: navy and gold, Playfair headlines, city photography, their real job cards, steps, FAQ and reviews. Hook, problem, solution, showcase, outro.</p>
+<video src="film.mp4" autoplay muted loop playsinline controls></video>
+<div class="chips"><span class="chip">1920×1080 · 30 fps · 45 s</span><span class="chip">Timed for a voice-over</span><span class="chip">Motion blur</span><span class="chip">100% of frames moving</span></div></section>
+<section class="list"><h2>The beats</h2>{{ROWS}}</section>
+<section class="notes"><h2>Notes</h2><ul>
+<li>The film is silent. Every beat is timed to your script at about 2.7 words per second, so a voice-over can be recorded to picture and laid on without re-cutting.</li>
+<li>Everything on screen comes from topjobsabroad.com: the open roles (Benalmádena, Sliema, Madrid), the six steps, the FAQ answer, the review by Øyvind Kato Olsen and “free for candidates”. Nothing is invented.</li>
+<li>The script line “Top Jobs Abroad made recruitment comfortable” reads as past tense. On screen it is “Recruitment, made comfortable.” For the voice-over, “makes recruitment comfortable” may sound more natural.</li>
+</ul></section>
+</div>
