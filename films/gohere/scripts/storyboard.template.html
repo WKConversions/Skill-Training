@@ -1,0 +1,38 @@
+<title>GoHere Hero Film</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,700;6..12,800&display=swap">
+<style>
+/* Layout: their white page with a soft light-green glow; the film first, then one row per line of the script. */
+:root{--page:#FFFFFF;--card:#FFFFFF;--soft:#F5F8F7;--line:#E6E8EF;--ink:#141430;--muted:#4B5372;--mint:#A3D2C2;--mintpale:#E4F2ED;--font:"Nunito Sans",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--page:#0E0E22;--card:#17172E;--soft:#141430;--line:#27274A;--ink:#F1F3F8;--muted:#B6BCD0;--mintpale:#1F3A33;color-scheme:dark}}
+:root[data-theme="dark"]{--page:#0E0E22;--card:#17172E;--soft:#141430;--line:#27274A;--ink:#F1F3F8;--muted:#B6BCD0;--mintpale:#1F3A33;color-scheme:dark}
+*{box-sizing:border-box} body{background:var(--page);color:var(--ink);font:400 16px/1.6 var(--font);padding-inline:20px;padding-block:28px 72px}
+.wrap{max-width:1100px;margin:0 auto;display:grid;gap:40px}
+.hero{background:radial-gradient(ellipse 70% 60% at 0% 0%,rgba(163,210,194,.35),transparent 70%),radial-gradient(ellipse 60% 60% at 100% 100%,rgba(163,210,194,.28),transparent 70%),var(--soft);border-radius:28px;padding:40px 36px;display:grid;gap:18px}
+.eyebrow{justify-self:start;font:800 12px/1 var(--font);letter-spacing:.14em;text-transform:uppercase;background:var(--mintpale);color:var(--ink);padding:9px 14px;border-radius:999px}
+h1{font:800 clamp(32px,5vw,56px)/1.08 var(--font);letter-spacing:-.02em;margin:0;text-wrap:balance}
+.hero p{margin:0;color:var(--muted);max-width:64ch;font-size:17px} video{width:100%;max-width:100%;aspect-ratio:16/9;border-radius:18px;background:#000;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:8px} .chip{font:700 13px/1 var(--font);padding:9px 14px;border-radius:999px;border:1.5px solid var(--line);color:var(--ink);background:var(--card)}
+h2{font:800 30px/1.1 var(--font);letter-spacing:-.02em;margin:0}
+.list{display:grid;gap:14px}
+.beat{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px;align-items:center;padding:14px;border:1.5px solid var(--line);border-radius:20px;background:var(--card)}
+.beat img{width:100%;max-width:100%;aspect-ratio:16/9;border-radius:12px;display:block}
+.h{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap} .h b{font:800 18px var(--font)} .tc{font:800 12px var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-variant-numeric:tabular-nums}
+.vo{font:800 20px/1.35 var(--font);margin:10px 0 8px;background:linear-gradient(transparent 62%,rgba(163,210,194,.55) 62%);display:inline} .w{color:var(--muted);font-size:15px;margin:10px 0 0}
+.notes{border:1.5px solid var(--line);border-radius:20px;padding:20px 24px;background:var(--card)} .notes ul{margin:10px 0 0;padding-left:20px;display:grid;gap:8px}
+@media (max-width:760px){.beat{grid-template-columns:1fr} .hero{padding:24px 18px}}
+</style>
+<div class="wrap">
+<section class="hero"><span class="eyebrow">Website hero film</span>
+<h1>Your own app, in 37 seconds.</h1>
+<p>The hero film for gohere.app, cut to the voice-over and set in GoHere's bright style. The app and the portal are rebuilt from the real software and animated live: the homepage of tiles, the map, a tip page, the bucket list and the portal's Home page.</p>
+<video src="film.mp4" autoplay muted loop playsinline controls></video>
+<div class="chips"><span class="chip">1920×1080 · 30 fps · 37 s</span><span class="chip">Voice-over, word-synced</span><span class="chip">Muted version for autoplay</span><span class="chip">98% of frames moving</span></div></section>
+<section class="list"><h2>Line by line</h2>{{ROWS}}</section>
+<section class="notes"><h2>Notes</h2><ul>
+<li>Every key action lands on its spoken word: the website on “websites”, the photos swiping on “photos”, the route drawing on “directions”, the tile moving in the portal on “portal”.</li>
+<li>Real proof, as the owner asked: the four client apps (Terschelling Tips, Transavia Tips, Ciao Tutti, BarcelonaTips) with their own app icons and colours, and the real portal layout and tile types.</li>
+<li>Sample content follows GoHere's own demo: Rome, and “Your favourite restaurant” as the placeholder tip, so no real business is given invented details.</li>
+<li>Music is not in yet. The brief asks for calm, optimistic music low in the mix; it goes under the voice-over at about −20 dB.</li>
+<li>For the website hero, use the muted file for autoplay; the version with voice suits LinkedIn, sales follow-ups and fairs.</li>
+</ul></section>
+</div>
