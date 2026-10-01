@@ -24,8 +24,25 @@ restaurant" is their demo placeholder tip.
 | 31–37 | Want to see your own app? Get a free preview at gohere.app. | the logo, "Get your free preview", gohere.app, and the four client apps |
 
 Assets: GoHere's logo, client app icons and the Terschelling app screen from gohere.app; photos from
-Pexels (free licence); map data © OpenStreetMap contributors (credited in the map view). No music yet:
-the brief asks for calm, optimistic music low in the mix; add it under the voice-over at about −20 dB.
+Pexels (free licence); map data © OpenStreetMap contributors (credited in the map view).
+
+## Sound
+
+One finished mix, `public/audio/mix-found.wav` (−15 LUFS, peaks under −1.5 dB, 48 kHz, 37.00 s), made by
+`library/scripts/sound_mix.py` from `sound/cues.json`: the voice-over at −16 LUFS, the music bed 11 dB
+under it and ducked 5 dB more while she speaks ("calm music low in the mix"), and 41 effects from
+Karl's library, each on its picture frame (taps on the touches, pops on the landings, whooshes at the
+middle of the moves, a success sound on "save", a run of pops climbing a scale on the four logos). The
+mixer's level check: every effect clears the music by 3 dB or more, none crowds the voice.
+
+Music, two versions over the same cues:
+- **found** (default): "Piano Reflections" by Ahjay Stelino, Mixkit Stock Music Free License (commercial
+  use, no credit needed), cut by `music_fit.py`: solo piano under the problem, the bass enters at 9.0 s
+  on "GoHere brings them together", the song's final section from 25 s, its last chord on the end
+  card at 33.0 s, ringing out to the end.
+- **composed**: `sound/music-composed.flac`, scored for the film by `music_make.py` from
+  `sound/music-brief.json` (108 BPM, D major, calm-optimistic; lifts at 8.9 and 15.6 s).
+Render the other with `--props='{"blurSamples":8,"music":"composed"}'`.
 
 `npx remotion studio` to edit; `node scripts/stills.mjs 40,400,700` for test frames;
 `python3 scripts/motion_check.py out/draft.mp4` (draft: 98% of frames moving, median 3.0%, longest still 0.47 s).

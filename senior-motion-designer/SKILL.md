@@ -88,6 +88,8 @@ make better motion design; prefer simple, controlled, intentional solutions.
   (`design/anti-ai-design.md`); one is a choice, the same one everywhere is the tell.
 - **One motion identity per film:** one personality, one signature curve, one duration palette, one
   entrance pattern (`motion/motion-identity.md`).
+- **The brief's tone leads.** Calm, confident or energetic sets the durations, the camera, the motion
+  targets and the sound's density; the defaults never override the prompt (`motion/timing.md`).
 - **Carry, don't duplicate.** An object that exists before and after a change moves from its old state
   to its new one; nothing appears from nothing.
 - **Truth.** Never invent a client's features, numbers or customers; flag a claim with nothing to
@@ -111,13 +113,13 @@ instructions. Before step 1, read the recurring lessons at the top of `examples/
 | 6 | Visual strategy | two or three candidates per beat, the strongest by the tests, the runner-up recorded; content references where they help | `planning/visual-strategy.md`, `examples/bad-vs-good.md`, `references/reading-references.md` |
 | 7 | Composition | a styleframe per key scene: primary, secondary, detail; framing, type, and UI where an interface is the subject | `design/visual-hierarchy.md`, `design/composition.md`, `design/typography.md`, `design/ui-product.md` |
 | 8 | Variety check | the whole storyboard against the variety budget | `design/composition.md` |
-| 9 | Motion and continuity | cause→motion→consequence chains, camera, timing and sync, easing, the continuity table, transitions, sound | `motion/animation-grammar.md`, `motion/camera.md`, `motion/timing.md`, `motion/easing.md`, `motion/continuity.md`, `motion/transitions.md`, `motion/sound.md` |
-| 10 | Assets | what each scene is made of; asset and tool requests | `design/asset-strategy.md`, `production/tool-requests.md` |
+| 9 | Motion and continuity | cause→motion→consequence chains, camera, timing and sync (the brief's tone row), easing, the continuity table, transitions, sound | `motion/animation-grammar.md`, `motion/camera.md`, `motion/timing.md`, `motion/easing.md`, `motion/continuity.md`, `motion/transitions.md`, `motion/sound.md` |
+| 10 | Assets | what each scene is made of; royalty-free photos and footage sourced and credited (`scripts/stock.py`); asset and tool requests for the rest | `design/asset-strategy.md`, `production/tool-requests.md` |
 | 11 | First storyboard | the scene spec for every scene, condensed into the storyboard page, with frames made by the build itself | `production/output-format.md`, `production/remotion.md` (or `production/coded-render.md`), `examples/scene-examples.md` |
 | 12 | Art-director pass | critique every scene and the film through the three lenses, then revise; the style's copy check; the revision log as Before / After / Why rows | `evaluation/art-director.md`, `evaluation/troubleshooting.md` |
-| 13 | Final plan and approval | the production plan and its storyboard; the storyboard goes to Karl; stop and ask about music and voice-over | `production/output-format.md`, `planning/intake.md` |
-| 14 | Build | After Effects when the session has it, otherwise a Remotion project (the plain coded render as a fallback), or a hand-off; say which, and what Karl will get. Motion tokens first; test frames and a draft before the blurred render; the voice-over placed on its words | `production/remotion.md`, `production/build-gotchas.md`, `planning/voice-over.md`, `production/after-effects.md`, `production/coded-render.md`, `scripts/index.md` |
-| 15 | Quality check | test frames, then the encode; findings ranked by severity; the scorecard; the three biggest changes | `evaluation/quality-check.md`, `evaluation/troubleshooting.md` |
+| 13 | Final plan and approval | the production plan and its storyboard; the storyboard goes to Karl; stop and ask about music and voice-over (without a track: find one or compose one to the film's vibe) | `production/output-format.md`, `planning/intake.md`, `motion/sound.md` |
+| 14 | Build | After Effects when the session has it, otherwise a Remotion project (the plain coded render as a fallback), or a hand-off; say which, and what Karl will get. Motion tokens first; test frames and a draft before the blurred render; the voice-over placed on its words; the sound mixed from a cue sheet (Karl's effects on their frames, the music fitted or composed) | `production/remotion.md`, `production/build-gotchas.md`, `planning/voice-over.md`, `motion/sound.md`, `production/after-effects.md`, `production/coded-render.md`, `scripts/index.md` |
+| 15 | Quality check | test frames, then the encode; the automatic checks (`scripts/qc.sh`: motion, shake, pops, transition strips) on the draft and the final; the mix's level report; findings ranked by severity; the scorecard; the three biggest changes | `evaluation/quality-check.md`, `evaluation/troubleshooting.md` |
 | 16 | Learn | turn Karl's feedback into corrections, and approved solutions into examples | `examples/corrections.md` |
 
 Steps 3–12 are planning; what goes out is the storyboard of step 13, with the working tables in its
@@ -133,11 +135,11 @@ Film progress:
 - [ ] 3–4 Beat sheet and the whole-film arc
 - [ ] 5 Art direction and the motion identity's three constants
 - [ ] 6–8 A strategy per beat (with runner-up), styleframes, variety check
-- [ ] 9–10 Motion chains, continuity table, assets and requests
+- [ ] 9–10 Motion chains (at the brief's tone), continuity table, assets sourced and credited, requests
 - [ ] 11–12 Storyboard with frames from the build; art-director pass; revision log
 - [ ] 13 Storyboard to Karl; music and voice-over asked
-- [ ] 14 Build: tokens, test frames, draft with audio, then the blurred render
-- [ ] 15 QC: motion check, hand-offs, text strips, loudness, delivery encode
+- [ ] 14 Build: tokens, test frames, cue sheet and mix, draft with audio, then the blurred render
+- [ ] 15 QC: qc.sh on draft and final (no SHAKE, every POP explained), the mix report, loudness, delivery encode
 - [ ] 16 Feedback turned into proposed corrections
 ```
 
