@@ -30,6 +30,18 @@ new one (the learning loop in `examples/corrections.md` covers taste; this file 
   reveal mask, or it pops in on its own.
 - **Motion blur can step.** At 8 samples a move of more than about 150 px per frame shows separate
   copies. Lengthen the move, or raise the samples for those frames.
+- **Place anything that moves with a transform, never `left`/`top`.** Box offsets snap to whole pixels:
+  under a camera zoom, a slow push or a slow drift the element moves in 1 px steps while its neighbours
+  glide, and it shakes (a background photo, a caption word, a background glow). `jitter_check.py`
+  reports it as a `SHAKE` with regular steps.
+- **Slow text still steps a pixel at a time, even with transforms,** because glyphs are drawn on
+  whole pixels; motion blur doesn't hide it (on a slow move all 8 samples land on the same pixel).
+  Give slowly moving text its own layer (`will-change: transform` on the moving span), then render in
+  contiguous chunks, one tab each (`scripts/render_chunks.sh`): with `--concurrency` above 1, Remotion
+  gives neighbouring frames to different tabs, each layer keeps a sub-pixel offset that depends on its
+  tab's history, and the text trembles ±0.85 px from frame to frame (measured on the GoHere captions:
+  one tab glides 0, −0.1, −0.2, −0.3, −0.6 px a frame; four tabs alternate +0.85, −0.87, +0.46, −0.91).
+  A layer recreated every frame snaps again, and a tiny rotation only half-helps.
 
 ## Sound
 
@@ -39,8 +51,12 @@ new one (the learning loop in `examples/corrections.md` covers taste; this file 
 - **Check every voice-over file before placing it.** Files arrive as alternate takes, partial takes and
   out of order. Transcribe each one and match it to the script before timing anything
   (`planning/voice-over.md`).
-- **Normalize at encode:** `loudnorm=I=-15:TP=-1.5:LRA=11` with `-ar 48000`, and cut to the film's exact
-  length with `-t`.
+- **Mix with `scripts/sound_mix.py`** (`motion/sound.md`): its output is already −15 LUFS with peaks
+  under −1.5 dB, at the film's exact length; encode it as it is, without a second `loudnorm`. A plain
+  voice-over without the mixer: normalize at encode, `loudnorm=I=-15:TP=-1.5:LRA=11` with `-ar 48000`,
+  cut to the film's exact length with `-t`.
+- **ffmpeg's own stereo-to-mono downmix sums the channels:** a peak read from `-ac 1` is up to 6 dB too
+  high. Decode stereo and average it yourself (the sound scripts do).
 
 ## Encode and tools
 

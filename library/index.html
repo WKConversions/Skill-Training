@@ -281,17 +281,17 @@ const GROUPS = [
     ['design/composition.md', 'Styleframes, grid, space, scale, crop, depth; the variety check and its budget.'],
     ['design/typography.md', 'When words appear, line breaks, word builds, no overlapping type, kinetic type.'],
     ['design/ui-product.md', 'Product demonstrations: focus, simplification, interaction hierarchy, cursor, cards.'],
-    ['design/asset-strategy.md', 'What scenes are made of, imagery rules, harvesting a client site, asset requests.'],
+    ['design/asset-strategy.md', 'What scenes are made of, imagery rules, harvesting a client site, sourcing royalty-free photos and footage, asset requests.'],
     ['design/anti-ai-design.md', 'AI motion-design fingerprints, principles, the technique budget.']]],
   ['Motion', [
     ['motion/motion-identity.md', 'The film’s motion personality, its three constants, emotion to motion, weight.'],
     ['motion/animation-grammar.md', 'Cause, motion, consequence; hierarchy, layers, arcs, overlap, entrances, blur, working holds, the end card.'],
     ['motion/camera.md', 'A camera that never stops and never wanders; depth, cuts, atmosphere.'],
-    ['motion/timing.md', 'Durations, distance and weight, stagger budget, the shape of a move, holds, rhythm, sync.'],
+    ['motion/timing.md', 'Durations, the brief’s tone and its motion targets, distance and weight, stagger budget, the shape of a move, holds, rhythm, sync.'],
     ['motion/easing.md', 'Easing by intent, the three named curves, springs, material, velocity continuity.'],
     ['motion/transitions.md', 'Transition families, a small family per film, what to avoid.'],
     ['motion/continuity.md', 'The continuity table and the hand-off rules.'],
-    ['motion/sound.md', 'Sound layers, silence, music, delivery.']]],
+    ['motion/sound.md', 'Which sound for which moment, sync from the waveform, density by tone, levels, music by vibe (find, fit or compose), the workflow.']]],
   ['References', [
     ['references/reading-references.md', 'Style, content and motion references; what to analyze; the record; capturing frames from video.'],
     ['references/benchmarks.md', 'Karl’s motion benchmark, measured and broken down frame by frame.']]],
@@ -308,8 +308,11 @@ const GROUPS = [
     ['production/remotion.md', 'The default coded build: a Remotion project Karl can edit in Studio, with the motion system translated.'],
     ['production/coded-render.md', 'The fallback coded build: timing to the voice, the render page, test frames, render, encode.'],
     ['production/after-effects.md', 'After Effects builds and hand-offs: naming, construction, blur, curves, previews.'],
-    ['production/build-gotchas.md', 'Where coded builds went wrong: hand-offs, fonts, audio, encode, tools, render times.'],
+    ['production/build-gotchas.md', 'Where coded builds went wrong: hand-offs, fonts, pixel snapping, audio, encode, tools, render times.'],
     ['production/tool-requests.md', 'The tools a session has, and requests for the ones it lacks.']]],
+  ['Sound', [
+    ['sound/catalogue.md', 'Karl’s sound effects by role, each with its character, sync point and licence; the generated ones.'],
+    ['sound/categories.json', 'The role and character judged for every sound in Karl’s folder.']]],
   ['Styles and brand', [
     ['styles/README.md', 'What a style decides, loading one, the copy check.'],
     ['styles/minimal-user-interface.md', 'Minimal User Interface Style, defined.'],
@@ -327,7 +330,21 @@ const GROUPS = [
     ['scripts/grab.js', 'Downloads a file from inside a page as base64.'],
     ['scripts/stills.mjs', 'Renders a list of test frames from a Remotion project, bundled once.'],
     ['scripts/cut_match.py', 'Compares the carried object across a cut.'],
-    ['scripts/vo_align.py', 'Transcribes voice-over files and force-aligns the script.']]]
+    ['scripts/vo_align.py', 'Transcribes voice-over files and force-aligns the script.'],
+    ['scripts/render_chunks.sh', 'Renders a Remotion film in contiguous chunks, one tab each, and lays the mix under it.'],
+    ['scripts/qc.sh', 'Runs the motion, shake, pop and strip checks on an encode.'],
+    ['scripts/jitter_check.py', 'Finds shake: motion that moves in steps instead of gliding.'],
+    ['scripts/handoff_check.py', 'Finds pops: a place that changes in one frame.'],
+    ['scripts/strips.py', 'Strips of frames around every transition, or around given frames.'],
+    ['scripts/stock.py', 'Searches royalty-free footage and photos, measures them, keeps the credits.'],
+    ['scripts/sound_mix.py', 'Mixes voice-over, music and effects from a cue sheet, each effect on its frame.'],
+    ['scripts/music_find.py', 'Finds royalty-free music by mood and tempo and measures it.'],
+    ['scripts/music_fit.py', 'Cuts a found track to the film: a lift on the turn, its ending on the end card.'],
+    ['scripts/music_make.py', 'Composes a music bed to a brief: tempo, key, vibe, sections by bar.'],
+    ['scripts/audio_look.py', 'A sound file as a spectrogram over its loudness curve.'],
+    ['scripts/sfx_index.py', 'Measures sound effects from their waveforms and draws them.'],
+    ['scripts/sfx_build.py', 'Trims and files Karl’s sounds by role, with the index and catalogue.'],
+    ['scripts/sfx_synth.py', 'Generates whooshes, risers, impacts and swells with exact sync points.']]]
 ];
 const STEPS = [
   ['Brief', 'Deliverable, audience, message, format and timing; intake-form submissions read and mapped.', ['planning/intake.md']],
@@ -338,13 +355,13 @@ const STEPS = [
   ['Visual strategy', 'Two or three candidates per beat, the strongest chosen, the runner-up kept.', ['planning/visual-strategy.md', 'examples/bad-vs-good.md', 'references/reading-references.md']],
   ['Composition', 'A styleframe per key scene: primary, secondary, detail.', ['design/visual-hierarchy.md', 'design/composition.md', 'design/typography.md', 'design/ui-product.md']],
   ['Variety check', 'The whole storyboard against the variety budget.', ['design/composition.md']],
-  ['Motion and continuity', 'Cause and consequence, camera, timing, easing, hand-offs, sound.', ['motion/animation-grammar.md', 'motion/camera.md', 'motion/timing.md', 'motion/easing.md', 'motion/continuity.md', 'motion/transitions.md', 'motion/sound.md']],
-  ['Assets', 'What each scene is made of; asset and tool requests.', ['design/asset-strategy.md', 'production/tool-requests.md']],
+  ['Motion and continuity', 'Cause and consequence, camera, timing at the brief’s tone, easing, hand-offs, sound.', ['motion/animation-grammar.md', 'motion/camera.md', 'motion/timing.md', 'motion/easing.md', 'motion/continuity.md', 'motion/transitions.md', 'motion/sound.md']],
+  ['Assets', 'What each scene is made of; royalty-free photos and footage sourced and credited; requests for the rest.', ['design/asset-strategy.md', 'production/tool-requests.md']],
   ['First storyboard', 'Every scene specified, condensed into the storyboard with frames from the build.', ['production/output-format.md', 'production/remotion.md', 'examples/scene-examples.md']],
   ['Art-director pass', 'Every scene and the film critiqued, then revised.', ['evaluation/art-director.md']],
-  ['Final plan and approval', 'The production plan and its storyboard; Karl approves before anything is built.', ['production/output-format.md', 'planning/intake.md']],
-  ['Build', 'Remotion, After Effects, the plain coded render, or a hand-off.', ['production/remotion.md', 'production/build-gotchas.md', 'planning/voice-over.md', 'production/after-effects.md', 'production/coded-render.md', 'scripts/index.md']],
-  ['Quality check', 'Test frames, then the encode; the scorecard.', ['evaluation/quality-check.md', 'evaluation/troubleshooting.md']],
+  ['Final plan and approval', 'The production plan and its storyboard; Karl approves before anything is built; music and voice-over asked.', ['production/output-format.md', 'planning/intake.md', 'motion/sound.md']],
+  ['Build', 'Remotion, After Effects, the plain coded render, or a hand-off; the sound mixed from a cue sheet.', ['production/remotion.md', 'production/build-gotchas.md', 'planning/voice-over.md', 'motion/sound.md', 'production/after-effects.md', 'production/coded-render.md', 'scripts/index.md']],
+  ['Quality check', 'Test frames, then the encode; the automatic checks and the mix report; the scorecard.', ['evaluation/quality-check.md', 'evaluation/troubleshooting.md']],
   ['Learn', 'Karl’s feedback becomes corrections; approved solutions become examples.', ['examples/corrections.md']]
 ];
 const DESC = new Map(GROUPS.flatMap(g => g[1]));

@@ -91,7 +91,9 @@ motion libraries, and a new client changes the tokens, not the scenes.
   frames), then tile them as in `production/coded-render.md`. The frames Karl approves come from the
   project itself.
 - Final render only after approval: `npx remotion render <Comp> out/film.mp4`. A 60-frame 720p test
-  with 8-sample blur took 16 seconds in the sandbox.
+  with 8-sample blur took 16 seconds in the sandbox. When the film has slowly moving layered text, render
+  it with `scripts/render_chunks.sh` instead, boundaries where no layered text moves
+  (`production/build-gotchas.md`).
 - Render a draft without blur first (`--props='{"blurSamples":1}'`), check timing and sync on it,
   then spend the blurred render once (times in `production/build-gotchas.md`).
 - Re-encode the delivery: TV-range BT.709 `yuv420p`, loudness-normalized audio at 48 kHz, cut to the

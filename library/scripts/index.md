@@ -14,6 +14,7 @@ saved file into the build folder.
 | `site_extract.js` | extracts brand values, logo, images and text from a client's site | `design/asset-strategy.md` |
 | `grab.js` | downloads a file from inside a page as base64 | `design/asset-strategy.md` |
 | `stills.mjs` | renders a list of test frames from a Remotion project, bundled once | `production/remotion.md` |
+| `render_chunks.sh` | renders a Remotion film in contiguous chunks, one tab each, in parallel, and lays the mix under it | `production/remotion.md`, `production/build-gotchas.md` |
 | `cut_match.py` | compares the carried object's box across a cut | `production/build-gotchas.md` |
 | `vo_align.py` | transcribes voice-over files and force-aligns the script for word timings | `planning/voice-over.md` |
 | `qc.sh` | runs the four automatic checks below on an encode, results in one folder | `evaluation/quality-check.md` |
@@ -52,6 +53,8 @@ and `pip install pyloudnorm`, and `sound_mix.py` reads the library's `sound/` fo
 - `python3 strips.py film.mp4 strips/ [--at 140,146]`: without `--at` it finds the transitions itself.
 - `python3 motion_check.py out.mp4 --profile` prints the three motion numbers (the last 2 seconds are
   ignored on films longer than 4 seconds) and, with `--profile`, one line per second.
+- `bash render_chunks.sh Film out/final.mp4 '{"blurSamples":8}' 0,252,600,870,1110 public/audio/mix.wav`
+  from the project folder: the boundaries are each chunk's first frame, then the total.
 - `python3 sound_mix.py sound/cues.json public/audio/mix.wav --sheet mix.png [--music other.wav]`: cue
   format in the script's header; prints the level report (effects masked by the bed, effects crowding
   the voice) and the final loudness. About 10 seconds.

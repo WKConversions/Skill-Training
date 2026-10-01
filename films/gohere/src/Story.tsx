@@ -172,14 +172,15 @@ export const Story: React.FC = () => {
         {g >= 160 && gather < 1 && (() => {
           const pull = (x: number, y: number) => ({ x: lerp(x, px, gather), y: lerp(y, py, gather), s: lerp(1, 0.15, gather) });
           const into = clamp01((1 - gather) * 3.5);             // fades out over the last stretch, into the phone
+          // each fragment drifts slowly on its own layer, so its text glides instead of stepping a pixel
           const drift = (k: number) => Math.sin((g + k * 40) / 50) * 6;
           const w = pull(140 + 320, 500 + 210), b = pull(900 + 285, 420 + 200), c = pull(1340 + 235, 150 + 120);
           const wk = tw(g, 168, 192, 0, 1), bk = tw(g, 192, 216, 0, 1), ck = tw(g, 224, 246, 0, 1);
           return (
             <>
-              {wk > 0 && <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${w.x - 320 - (1 - wk) * 200}px, ${w.y - 210 + drift(0)}px) rotate(${lerp(-6, -2, wk) + gather * 20}deg) scale(${w.s})`, opacity: clamp01(wk * 2) * into }}><Website /></div>}
-              {bk > 0 && <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${b.x - 285}px, ${b.y - 200 + (1 - bk) * 240 + drift(1)}px) rotate(${lerp(10, 5, bk) - gather * 20}deg) scale(${b.s})`, opacity: clamp01(bk * 2) * into }}><Brochure open={bk} /></div>}
-              {ck > 0 && <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${c.x - 235}px, ${c.y - 120 + drift(2)}px) scale(${c.s})`, opacity: into }}><Chat g={g} at={224} /></div>}
+              {wk > 0 && <div style={{ position: "absolute", left: 0, top: 0, willChange: "transform", transform: `translate(${w.x - 320 - (1 - wk) * 200}px, ${w.y - 210 + drift(0)}px) rotate(${lerp(-6, -2, wk) + gather * 20}deg) scale(${w.s})`, opacity: clamp01(wk * 2) * into }}><Website /></div>}
+              {bk > 0 && <div style={{ position: "absolute", left: 0, top: 0, willChange: "transform", transform: `translate(${b.x - 285}px, ${b.y - 200 + (1 - bk) * 240 + drift(1)}px) rotate(${lerp(10, 5, bk) - gather * 20}deg) scale(${b.s})`, opacity: clamp01(bk * 2) * into }}><Brochure open={bk} /></div>}
+              {ck > 0 && <div style={{ position: "absolute", left: 0, top: 0, willChange: "transform", transform: `translate(${c.x - 235}px, ${c.y - 120 + drift(2)}px) scale(${c.s})`, opacity: into }}><Chat g={g} at={224} /></div>}
             </>
           );
         })()}
@@ -187,7 +188,7 @@ export const Story: React.FC = () => {
         {/* 3–9 · the phone */}
         {/* hidden only while the four client phones are drawn: they start exactly on top of it, so the hand-over is invisible */}
         {g >= 296 && (fan <= 0.001 || g > 440) && (
-          <Stage x={px} y={py} s={ps} z={2} o={clamp01(phoneIn * 2) * (fan > 0.001 ? tw(g, 462, 470, 0, 1, LINEAR) : 1)}>
+          <Stage x={px} y={py} s={ps} z={fan > 0.001 ? 2 : undefined} o={clamp01(phoneIn * 2) * (fan > 0.001 ? tw(g, 462, 470, 0, 1, LINEAR) : 1)}>
             <Phone>{screen}</Phone>
           </Stage>
         )}

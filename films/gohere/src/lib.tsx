@@ -77,6 +77,8 @@ export const Caption: React.FC<{ lines: Word[][]; g: number; at: number; out: nu
                 background: C.mint, transformOrigin: "0 50%", scale: `${mark} 1`, opacity: 0.85 }} />}
               <span style={{ position: "relative", fontFamily: FONT, fontWeight: 800, fontSize: size, lineHeight: `${size}px`, letterSpacing: "-0.02em", color,
                 // its own layer, so the slow rise glides instead of stepping a whole pixel at a time
+                // its own layer: slow moves glide instead of stepping a whole pixel (render it in contiguous
+                // chunks, one tab each: library/scripts/render_chunks.sh)
                 display: "inline-block", willChange: "transform", opacity: tw(g, t0, t0 + 9, 0, 1, LINEAR), translate: `0px ${tw(g, t0, t0 + 22, size * 0.38, 0)}px`,
                 filter: `blur(${tw(g, t0, t0 + 12, 8, 0, LINEAR)}px)` }}>{w.w}</span>
             </span>
@@ -90,9 +92,10 @@ export const Caption: React.FC<{ lines: Word[][]; g: number; at: number; out: nu
 /** The calm background: white with two soft light-green glows that drift very slowly, as on their hero. */
 export const Glow: React.FC<{ g: number; o?: number }> = ({ g, o = 1 }) => (
   <AbsoluteFill style={{ background: C.white, opacity: o }}>
-    <div style={{ position: "absolute", width: 1300, height: 1300, borderRadius: "50%", left: -420 + Math.sin(g / 160) * 60, top: -560 + Math.cos(g / 190) * 40,
+    {/* drifted with transforms: left/top snap to whole pixels and a slow drift would step */}
+    <div style={{ position: "absolute", width: 1300, height: 1300, borderRadius: "50%", left: 0, top: 0, transform: `translate(${-420 + Math.sin(g / 160) * 60}px, ${-560 + Math.cos(g / 190) * 40}px)`,
       background: "radial-gradient(circle, rgba(163,210,194,.55) 0%, rgba(163,210,194,0) 62%)" }} />
-    <div style={{ position: "absolute", width: 1500, height: 1500, borderRadius: "50%", left: 1020 + Math.cos(g / 170) * 70, top: 180 + Math.sin(g / 210) * 50,
+    <div style={{ position: "absolute", width: 1500, height: 1500, borderRadius: "50%", left: 0, top: 0, transform: `translate(${1020 + Math.cos(g / 170) * 70}px, ${180 + Math.sin(g / 210) * 50}px)`,
       background: "radial-gradient(circle, rgba(163,210,194,.42) 0%, rgba(163,210,194,0) 60%)" }} />
   </AbsoluteFill>
 );
