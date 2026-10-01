@@ -186,9 +186,10 @@ export const Story: React.FC = () => {
         })()}
 
         {/* 3–9 · the phone */}
-        {/* hidden only while the four client phones are drawn: they start exactly on top of it, so the hand-over is invisible */}
+        {/* hidden only while the four client phones are drawn: they start exactly on top of it, so the hand-over is invisible;
+            on the way back it is fully opaque (frame 466) before they are removed (470), so their colours never vanish at once */}
         {g >= 296 && (fan <= 0.001 || g > 440) && (
-          <Stage x={px} y={py} s={ps} z={fan > 0.001 ? 2 : undefined} o={clamp01(phoneIn * 2) * (fan > 0.001 ? tw(g, 462, 470, 0, 1, LINEAR) : 1)}>
+          <Stage x={px} y={py} s={ps} z={fan > 0.001 ? 2 : undefined} o={clamp01(phoneIn * 2) * (fan > 0.001 ? tw(g, 456, 466, 0, 1, LINEAR) : 1)}>
             <Phone>{screen}</Phone>
           </Stage>
         )}
