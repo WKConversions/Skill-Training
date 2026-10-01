@@ -114,8 +114,13 @@ export const Open: React.FC<{ g: number }> = ({ g }) => {
       {/* the world of the hook: the wall under the camera */}
       {g < 196 && (
         <Cam x={camX} y={camY} s={camS} r={camR}>
-          <Wall g={g} tx={wtx} ty={wty} drop={g >= 146 ? drop : undefined} fadeFrom={lerp(-2600, 748, slide)} hide={flights.map((f) => `${f.t![0]}:${f.t![1]}`)} />
+          <Wall g={g} tx={wtx} ty={wty} drop={g >= 146 ? drop : undefined} hide={flights.map((f) => `${f.t![0]}:${f.t![1]}`)} />
         </Cam>
+      )}
+      {/* the wall fades into the page under the copy column. A gradient laid over it, not a mask: a mask
+          would also clip the wall to its layer's box, cutting its edges once the camera pulls out */}
+      {g < 196 && slide > 0 && (
+        <AbsoluteFill style={{ background: `linear-gradient(90deg, ${C.page} 0px, ${C.page} ${lerp(-500, 820, slide)}px, rgba(244,246,251,0) ${lerp(-200, 1040, slide)}px)` }} />
       )}
       {/* a soft white scrim for the hook headline */}
       {g < 100 && <AbsoluteFill style={{ background: "linear-gradient(90deg, rgba(244,246,251,.94) 0%, rgba(244,246,251,.78) 34%, rgba(244,246,251,0) 58%)", opacity: 1 - tw(g, 82, 96, 0, 1, LINEAR) }} />}
