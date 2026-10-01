@@ -1,0 +1,6 @@
+{
+  "_why": "GoHere: warm, human, calm, optimistic (the owner's brief), low under an energetic voice. 108 BPM so bar lines land on the film's turns: bar 4 starts at 8.89 s on 'GoHere brings them together' (8.94 s), bar 7 at 15.56 s on the homepage beat, bar 16 at 35.56 s on the end card. D major, I-V-vi-IV. Sparse for the problem, the groove comes in with the solution, a breakdown on 'Want to see your own app?', the tonic chord rings out on the end card.",
+  "bpm": 108, "key": "D", "mode": "major", "length": 37.0, "vibe": "calm-optimistic",
+  "progression": ["I", "V", "vi", "IV"],
+  "sections": [[0, 0], [1, 1], [4, 2], [7, 3], [14, 1], [15, 2], [16, "end"]]
+}

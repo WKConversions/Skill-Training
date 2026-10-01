@@ -34,6 +34,19 @@ space, focal point, crop, accidental tangencies, and consistency with the style 
   1.5% of its area in motion. Karl's benchmark measures 97%, 0.8 s and 3% (`references/benchmarks.md`).
   A result below target points at the working holds and the camera, not at adding elements.
 
+- **Run the automatic checks** on the draft and again on the final encode: `bash scripts/qc.sh film.mp4
+  qc/`. They find what the eye only catches at full speed, after delivery:
+  - **Shake** (`jitter_check.py`): motion that moves in steps instead of gliding. A `SHAKE` line is an
+    error. The usual cause is an element placed with `left`/`top` under a zoomed camera: box offsets snap
+    to whole pixels, so position anything that moves with a transform.
+  - **Pops** (`handoff_check.py`): a place that changes in one frame, where nothing moves to explain it.
+    Look at every strip it writes. A blink (a layer hidden one frame before the next one shows), a
+    carried object redrawn at a different size, a mask that stops clipping, or a layer appearing without
+    a move is a bug; a designed text change or hard cut can be passed over.
+  - **Transition strips** (`strips.py`): every transition, every 2 frames. Read them all, looking for two
+    texts overlapping, a jump in size or position, and anything that blinks.
+  These found the hook shake, the labels that jumped as cards left the wall, and the phone that blinked
+  before splitting into four: three defects that had reached Karl or a delivery.
 - **Motion gaps.** List every change of state in the film (a text swap, a color change, an element
   appearing or leaving, a value updating) and check that each one moves. A change that snaps from one
   frame to the next, with nothing carrying it, is a gap; it reads as a glitch more than as a cut.
