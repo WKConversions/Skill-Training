@@ -71,11 +71,13 @@ export const Caption: React.FC<{ lines: Word[][]; g: number; at: number; out: nu
           cx += w.width + sp;
           const mark = w.hl ? tw(g, t0 + 8, t0 + 26, 0, 1, MOVE) : 0;
           return (
-            <span key={`${li}.${wi}`} style={{ position: "absolute", left, top: y + li * lh, height: size, whiteSpace: "nowrap" }}>
+            // placed with a transform: fractional left/top snap to whole pixels under the push and the words shake
+            <span key={`${li}.${wi}`} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${left}px, ${y + li * lh}px)`, height: size, whiteSpace: "nowrap" }}>
               {w.hl && <span style={{ position: "absolute", left: -size * 0.1, right: -size * 0.1, top: size * 0.52, height: size * 0.42, borderRadius: size * 0.12,
                 background: C.mint, transformOrigin: "0 50%", scale: `${mark} 1`, opacity: 0.85 }} />}
               <span style={{ position: "relative", fontFamily: FONT, fontWeight: 800, fontSize: size, lineHeight: `${size}px`, letterSpacing: "-0.02em", color,
-                display: "inline-block", opacity: tw(g, t0, t0 + 9, 0, 1, LINEAR), translate: `0px ${tw(g, t0, t0 + 22, size * 0.38, 0)}px`,
+                // its own layer, so the slow rise glides instead of stepping a whole pixel at a time
+                display: "inline-block", willChange: "transform", opacity: tw(g, t0, t0 + 9, 0, 1, LINEAR), translate: `0px ${tw(g, t0, t0 + 22, size * 0.38, 0)}px`,
                 filter: `blur(${tw(g, t0, t0 + 12, 8, 0, LINEAR)}px)` }}>{w.w}</span>
             </span>
           );

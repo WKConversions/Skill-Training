@@ -43,8 +43,8 @@ const slotAt = (g: number) => (id: string): number => {
 };
 
 /** A phone at its place on the stage. */
-const Stage: React.FC<{ x: number; y: number; s: number; o?: number; children: React.ReactNode; rot?: number }> = ({ x, y, s, o = 1, children, rot = 0 }) => (
-  <div style={{ position: "absolute", left: 0, top: 0, width: PHONE.w, height: PHONE.h, transform: `translate(${x - PHONE.w / 2}px, ${y - PHONE.h / 2}px) scale(${s}) rotate(${rot}deg)`, opacity: o }}>
+const Stage: React.FC<{ x: number; y: number; s: number; o?: number; z?: number; children: React.ReactNode; rot?: number }> = ({ x, y, s, o = 1, z, children, rot = 0 }) => (
+  <div style={{ position: "absolute", left: 0, top: 0, width: PHONE.w, height: PHONE.h, transform: `translate(${x - PHONE.w / 2}px, ${y - PHONE.h / 2}px) scale(${s}) rotate(${rot}deg)`, opacity: o, zIndex: z }}>
     {children}
   </div>
 );
@@ -97,7 +97,7 @@ export const Story: React.FC = () => {
   const toMap = tw(g, 530, 538, 0, 1, LINEAR);
   const toDetail = tw(g, 618, 642, 0, 1);
   const toBucket = tw(g, 762, 786, 0, 1);
-  const toHome = tw(g, 822, 832, 0, 1, LINEAR);
+  const toHome = tw(g, 822, 836, 0, 1, LINEAR);
   const mapView = { mx: keys(g, [[530, 760], [600, 860], [620, 880]]), my: keys(g, [[530, 470], [600, 560], [620, 580]]), ms: keys(g, [[530, 0.6], [620, 0.72]]) };
   const favS: [number, number] = [SW / 2 + (POI.fav[0] - mapView.mx) * mapView.ms, 400 + (POI.fav[1] - mapView.my) * mapView.ms];
 
@@ -105,7 +105,7 @@ export const Story: React.FC = () => {
     <>
       {/* home (and again after the bucket list, live with the portal) */}
       {(toMap < 1 || toHome > 0) && (
-        <div style={{ position: "absolute", inset: 0, opacity: g < 700 ? 1 - toMap : toHome }}>
+        <div style={{ position: "absolute", inset: 0, opacity: g < 700 ? 1 - toMap : 1 }}>
           <Home skin={skin} tiles={ALL} slot={slotAt(g)} hl={(id) => (id === "pasta" ? tw(g, 506, 512, 0, 1) * (1 - tw(g, 520, 530, 0, 1)) : id === "gems" ? tw(g, 866, 872, 0, 1) * (1 - tw(g, 904, 914, 0, 1)) : 0)}
             scroll={tw(g, 1000, 1110, 0, 80, MOVE)} />
           <TabBar active={0} accent={skin.accent} />
@@ -127,7 +127,7 @@ export const Story: React.FC = () => {
       )}
       {/* bucket list */}
       {toBucket > 0 && toHome < 1 && (
-        <div style={{ position: "absolute", inset: 0, transform: push(toBucket).incoming }}>
+        <div style={{ position: "absolute", inset: 0, transform: push(toBucket).incoming, opacity: 1 - toHome }}>
           <Bucket skin={skin} added={tw(g, 780, 796, 0, 1)} share={tw(g, 803, 820, 0, 1)} />
         </div>
       )}
@@ -163,7 +163,7 @@ export const Story: React.FC = () => {
           const out = tw(g, 168 + i * 9, 186 + i * 9, 0, 1, DEPART);
           return (
             <div key={p as string} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${(x as number) - 110}px, ${(y as number) - 80 + (1 - k) * 60 + Math.sin((g + i * 30) / 40) * 6}px) rotate(${r}deg) scale(${lerp(0.8, 1, k) * (1 - 0.4 * out)})`,
-              opacity: clamp01(k * 2) * (1 - out), width: 220, height: 160, borderRadius: 16, overflow: "hidden", boxShadow: SHADOW, border: "5px solid #fff" }}>
+              opacity: tw(g, 124 + i * 5, 134 + i * 5, 0, 1, LINEAR) * (1 - out), width: 220, height: 160, borderRadius: 16, overflow: "hidden", boxShadow: SHADOW, border: "5px solid #fff" }}>
               <Img src={staticFile(`photos/${p}.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
           );
@@ -171,21 +171,23 @@ export const Story: React.FC = () => {
         {/* 2 · the fragments */}
         {g >= 160 && gather < 1 && (() => {
           const pull = (x: number, y: number) => ({ x: lerp(x, px, gather), y: lerp(y, py, gather), s: lerp(1, 0.15, gather) });
+          const into = clamp01((1 - gather) * 3.5);             // fades out over the last stretch, into the phone
           const drift = (k: number) => Math.sin((g + k * 40) / 50) * 6;
           const w = pull(140 + 320, 500 + 210), b = pull(900 + 285, 420 + 200), c = pull(1340 + 235, 150 + 120);
           const wk = tw(g, 168, 192, 0, 1), bk = tw(g, 192, 216, 0, 1), ck = tw(g, 224, 246, 0, 1);
           return (
             <>
-              {wk > 0 && <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${w.x - 320 - (1 - wk) * 200}px, ${w.y - 210 + drift(0)}px) rotate(${lerp(-6, -2, wk) + gather * 20}deg) scale(${w.s})`, opacity: clamp01(wk * 2) }}><Website /></div>}
-              {bk > 0 && <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${b.x - 285}px, ${b.y - 200 + (1 - bk) * 240 + drift(1)}px) rotate(${lerp(10, 5, bk) - gather * 20}deg) scale(${b.s})`, opacity: clamp01(bk * 2) }}><Brochure open={bk} /></div>}
-              {ck > 0 && <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${c.x - 235}px, ${c.y - 120 + drift(2)}px) scale(${c.s})` }}><Chat g={g} at={224} /></div>}
+              {wk > 0 && <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${w.x - 320 - (1 - wk) * 200}px, ${w.y - 210 + drift(0)}px) rotate(${lerp(-6, -2, wk) + gather * 20}deg) scale(${w.s})`, opacity: clamp01(wk * 2) * into }}><Website /></div>}
+              {bk > 0 && <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${b.x - 285}px, ${b.y - 200 + (1 - bk) * 240 + drift(1)}px) rotate(${lerp(10, 5, bk) - gather * 20}deg) scale(${b.s})`, opacity: clamp01(bk * 2) * into }}><Brochure open={bk} /></div>}
+              {ck > 0 && <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${c.x - 235}px, ${c.y - 120 + drift(2)}px) scale(${c.s})`, opacity: into }}><Chat g={g} at={224} /></div>}
             </>
           );
         })()}
 
         {/* 3–9 · the phone */}
-        {g >= 296 && (fan < 0.02 || g > 466) && (
-          <Stage x={px} y={py} s={ps} o={clamp01(phoneIn * 2) * (g > 362 && g < 470 ? tw(g, 462, 470, 0, 1, LINEAR) : 1)}>
+        {/* hidden only while the four client phones are drawn: they start exactly on top of it, so the hand-over is invisible */}
+        {g >= 296 && (fan <= 0.001 || g > 440) && (
+          <Stage x={px} y={py} s={ps} z={2} o={clamp01(phoneIn * 2) * (fan > 0.001 ? tw(g, 462, 470, 0, 1, LINEAR) : 1)}>
             <Phone>{screen}</Phone>
           </Stage>
         )}
@@ -194,7 +196,7 @@ export const Story: React.FC = () => {
           const fx = 360 + i * 400, fy = 650;
           const k = clamp01(fan * 1.15 - i * 0.05);
           return (
-            <Stage key={id} x={lerp(px, fx, k)} y={lerp(py, fy, k)} s={lerp(1, 0.7, k)} rot={lerp(0, (i - 1.5) * 2, k)}>
+            <Stage key={id} x={lerp(px, fx, k)} y={lerp(py, fy, k)} s={lerp(1, 0.7, k)} rot={lerp(0, (i - 1.5) * 2, k)} o={i === 0 ? 1 : clamp01(k * 4)}>
               <ClientPhone g={g} i={i} />
             </Stage>
           );

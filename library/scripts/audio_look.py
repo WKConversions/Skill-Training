@@ -9,7 +9,9 @@ SR = 22050
 path, out = sys.argv[1], sys.argv[2]
 marks = [float(m) for m in sys.argv[sys.argv.index("--marks") + 1].split(",")] if "--marks" in sys.argv else []
 title = sys.argv[sys.argv.index("--title") + 1] if "--title" in sys.argv else path
-x = np.frombuffer(subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"], capture_output=True).stdout, dtype=np.float32)
+# decoded as stereo and averaged here: ffmpeg's own mono downmix sums the channels and overstates the peak
+st = np.frombuffer(subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-ac", "2", "-ar", str(SR), "-f", "f32le", "-"], capture_output=True).stdout, dtype=np.float32).reshape(-1, 2)
+x = st.mean(axis=1)
 N, H = 2048, 256; W = 1800
 frames = [x[i:i + N] * np.hanning(N) for i in range(0, len(x) - N, H)]
 S = 20 * np.log10(np.abs(np.fft.rfft(np.array(frames), axis=1)) + 1e-6)
@@ -21,7 +23,7 @@ col = (np.stack([img * 255, img ** 0.7 * 210, (1 - img) * 90 + img * 60], -1)).a
 spec = Image.fromarray(col).resize((W, rows * 2))
 rms = np.sqrt(np.array([np.mean(f ** 2) for f in frames]) + 1e-12); db = 20 * np.log10(rms / rms.max())
 canvas = Image.new("RGB", (W + 60, rows * 2 + 200), "white"); canvas.paste(spec, (60, 30)); d = ImageDraw.Draw(canvas)
-d.text((60, 8), title + f"   peak {20*np.log10(np.abs(x).max()+1e-9):.1f} dBFS", fill=(0, 0, 0))
+d.text((60, 8), title + f"   peak {20*np.log10(np.abs(st).max()+1e-9):.1f} dBFS", fill=(0, 0, 0))
 for f in (100, 1000, 10000):
     y = 30 + int(np.argmin(np.abs(logf[::-1] - f)) * 2); d.text((4, y - 6), f"{f if f < 1000 else str(f // 1000) + 'k'}Hz", fill=(0, 0, 0))
 y0 = rows * 2 + 40; dur = len(x) / SR

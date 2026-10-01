@@ -15,6 +15,23 @@ Starting ranges at 30 fps (adapt to distance, scale, audio, readability and tone
 - major scene transformation: ~16–36 frames,
 - deliberate cinematic reveal: often 24+ frames.
 
+## The brief's tone leads
+
+The prompt sets the intensity; the defaults never override it. Read the brief's tone words (and the
+client's own notes) before choosing durations, camera, density and sound, and pick the row:
+
+| Tone in the brief | Durations | Camera | Motion targets: moving · median · longest still | Sound |
+|---|---|---|---|---|
+| calm, warm, human, premium | the upper end of every range above; soft ease-outs, small overshoots | slow pushes that breathe, 2–4% over a beat | 95% · 1% or more · 1.2 s | sparse and soft (`motion/sound.md`) |
+| not stated, or confident and clear | the middle | pushes and pans on the beats | 95% · 1.5% · 0.8 s (Karl's benchmark: 97%, 3%, 0.8 s) | standard |
+| energetic, bold, youthful, fast | the lower end; snappy curves, real overshoot | whips, zooms, push-ins on the hits | 97% · 3% · 0.5 s | dense, crisp |
+
+Calm doesn't mean static: the camera still never locks, and the film still moves in 95% of its frames;
+it moves less and slower. Energetic doesn't mean everything moves at once: the hierarchy and the holds
+stay. When a brief mixes tones (a calm voice with a bright, visual product), the voice and the client's
+words set the pace, and the visuals carry the variety. Measured: the GoHere hero film, briefed "warm,
+human, calm", lands at 98%, 3.2% and 0.3 s; the energy comes from its visual changes, not its speed.
+
 ## Distance and weight scale the duration
 
 Take the base duration from the film's palette (`motion/motion-identity.md`), then scale it by how far

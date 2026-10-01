@@ -60,6 +60,36 @@ How:
    ask Karl for the logo and product screenshots.
 3. The build machine usually can't download from websites directly. Try once, then use the browser.
 
+## Sourcing royalty-free photos and footage
+
+When a scene needs external imagery the client doesn't have, source it yourself before writing an asset
+request: `scripts/stock.py` searches the sources that answer scripts from the build sandbox, measures
+every candidate, and keeps the credits.
+
+1. Write the query from the scene's need, not its topic: the subject, the action, the light ("tourist
+   with phone sunny street", not "travel").
+2. `python3 stock.py search "<query>" --kind video --out stock/` (Mixkit clips; free licence, no credit)
+   or `--kind photo` (Openverse: CC0, public domain, CC BY, CC BY-SA from Flickr, Wikimedia and others;
+   add Pexels photos by ID with `--pexels`, IDs found by a web search such as "site:pexels.com rome
+   street"). Add `--min-width 1600` for full-frame photos.
+3. Judge `stock/candidates.png` against the scene, then the numbers:
+   - **room** is the calmest third: put the type there, or pick a frame whose room matches the layout;
+   - **busy** is the edge density: under about 0.1 sits behind type, over 0.2 needs a scrim or a blur;
+   - **camera** (static, drift, pan, fast) must match the film's camera: a handheld pan cut into a
+     film of slow pushes reads as stock; a static clip can take the film's own push;
+   - **cuts inside** must be 0 for a clip used as one shot;
+   - **palette**: the three main colours, against the film's palette; grade towards it or skip it.
+4. `python3 stock.py get stock/candidates.json 3,7 --to public/footage` downloads the full sizes (the
+   best free file, after checking the clip's licence on its own page) and writes `CREDITS.md` and
+   `credits.json`. A clip below 1080p is flagged: use it small, behind blur, or not full frame.
+5. Copy every credit line that isn't "not required" into the film's README and, for CC BY and BY-SA,
+   into the delivery description. CC BY-SA also asks that changed versions keep the same licence:
+   prefer CC0, public domain, Pexels and Mixkit for anything you transform heavily.
+
+Unsplash, Pixabay and the Pexels search pages block scripts; Pexels images still load by ID. Never use
+an image whose licence you can't record. When nothing fits after two searches, write the asset request
+below and build the scene without it.
+
 ## Asset requests
 
 When a scene needs an external image or clip that isn't at hand, write an asset request. Put all

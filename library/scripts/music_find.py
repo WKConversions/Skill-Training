@@ -1,6 +1,6 @@
 # Finds royalty-free music for a film and measures it, so the choice is made on facts, not titles.
 #   python3 music_find.py --mood positive,hopeful,confident --feel bright,uplifting --bpm 95-120 --min 40 --out music/
-#        [--n 8] [--avoid children,country]
+#        [--n 8] [--avoid children,country]   (matched against genre and title; seasonal titles are avoided by default)
 # Mixkit moods include positive, hopeful, confident, motivating, calm, relaxed, cheerful, friendly,
 # dreamy, elegant, energetic, inspiring-like 'motivating', futuristic, atmospheric (see mixkit.co/free-stock-music).
 #
@@ -116,8 +116,8 @@ def main():
     feels = [f.lower() for f in arg("--feel", "bright,uplifting").split(",") if f]
     b = arg("--bpm"); bpm = tuple(int(v) for v in b.split("-")) if b else None
     minlen, n = int(arg("--min", 30)), int(arg("--n", 8))
-    avoid = [a.lower() for a in arg("--avoid", "children").split(",") if a]
-    ok = lambda c: c["length"] >= minlen and not any(a in (c.get("genre") or "").lower() for a in avoid)
+    avoid = [a.lower() for a in arg("--avoid", "children,christmas,xmas,holiday,halloween").split(",") if a]   # genre or title words
+    ok = lambda c: c["length"] >= minlen and not any(a in (c.get("genre") or "").lower() + " " + c["title"].lower() for a in avoid)
     cands = [c for c in mixkit(moods) if ok(c)][: n] + [c for c in incompetech(feels, bpm) if ok(c)][: n // 2]
     seen, keep = set(), []
     for c in cands:

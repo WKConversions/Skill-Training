@@ -2,15 +2,113 @@
 
 Sound reinforces motion hierarchy. A sound earns its place when it confirms an impact, clarifies a
 transition, adds scale, builds anticipation, adds texture, establishes an environment or guides the
-rhythm.
+rhythm. Sound is mixed after the picture is locked to the voice-over, from a cue sheet, by measurement:
+the build sandbox has no speakers, so every level and every sync point is read from the waveform, and
+Karl's ear has the final say.
 
-- **Layers:** music, ambience or bed, impacts, whooshes, UI interactions, risers, tonal transitions,
-  textures. Don't add a whoosh to every movement.
-- **Sync:** sound follows the picture's sync rule (`motion/timing.md`).
-- **Silence:** reduced sound makes the next impact stronger; treat silence as part of the rhythm.
+## The sound library
+
+Karl's effects are filed by role in `sound/sfx/<category>/`, listed in `sound/catalogue.md` with each
+sound's character, sync point, length and licence. Generated whooshes, risers, impacts, a stamp, a
+shimmer and a swell fill what the folder lacks (`scripts/sfx_synth.py`; royalty-free, sync exact).
+Sounds marked `apple` are Apple's system sounds: reference and internal drafts only, never a client
+delivery (the mixer refuses them). New sounds: `sfx_index.py` measures them and draws their waveforms,
+you judge their role in `sound/categories.json`, then `sfx_build.py` and `sfx_synth.py` rebuild the library.
+
+## Which sound for which moment
+
+| Picture event | Category | How |
+|---|---|---|
+| a finger or cursor touches a button | tap | one tap sound for the whole film: it becomes the product's voice; a cursor click is crisper than a finger tap |
+| a toggle, a press-and-release | double-tap | |
+| something small appears: a pin, a badge, a tile landing | pop | a run of them: one pop each on the stagger, pitched up a scale (+2, +4, +7 semitones), never the same pitch four times |
+| many items in an even stagger | ticker | a ticker whose spacing matches the stagger (`floraphonic-ui-pop-up-15`: a tick every 0.1 s, 3 frames at 30 fps) |
+| a sheet, card or window opens | appear-rise | |
+| something closes, leaves, switches off | dismiss-fall | |
+| a message arrives | chime | the first message only, not every bubble |
+| saved, sent, done, paid | success | the payoff: once or twice a film, on the action the voice names |
+| a screen pushes in, a soft slide | swipe | |
+| a camera move, a card flying, a pan | whoosh | short for cards and words, medium for camera moves, whip for whip pans, deep for a big pull-back |
+| a build into a reveal | riser | ends on the reveal frame |
+| a landing, a logo locking in, a stamp | impact | soft for a UI landing, deep for the end card |
+| a brand moment, a reveal | stinger (shimmer) | |
+| a scene breathing in, a slow push | swell | |
+
+## Sync, from the waveform
+
+- Every sound has a measured sync point (`sync` in `sound/sfx/index.json`): the first strong transient
+  of a click or pop, the loudest moment of a whoosh or swell, the end of a riser's climb. The cue gives the
+  picture frame; the mixer starts the file `sync` seconds before it.
+- The picture frame: a tap on the frame the finger or cursor touches (the ripple's first frame, the
+  button's press); a pop on the frame the element reaches full size (with an overshoot ease, the
+  overshoot's peak), not its first visible frame; a whoosh at the middle of the move, its fastest frame;
+  a riser on the reveal; an impact on the landing; a chime when the bubble is readable.
+- On the frame, or one frame late; never early. Viewers notice sound before picture at about 45 ms,
+  but sound after picture only at about 125 ms.
+- Staggered items get their sounds on the same stagger. Read the frames from the code's keys (the
+  `tw(g, start, end)` spans): the cue is part of the timing sheet, not a guess from the render.
+
+## Density and tone
+
+- The brief's tone sets the density, as it sets the motion (`motion/timing.md`). Calm, warm or human:
+  sparse, soft, rounded sounds, few whooshes, one success. Energetic or tech: denser, crisper, whips
+  and risers.
+- Sound the actions the voice-over names and the actions a viewer would do (taps, saves, shares); let
+  secondary motion (drift, parallax, the camera's breathing) stay silent.
+- Measured: the GoHere film (calm, 37 s) carries 41 effects, about 1.1 a second, every one under the
+  voice. Treat that as the upper end for a calm film; an energetic 30 s promo can carry 1.5 to 2 a second.
+- Leave a short silence before the payoff; the end card's last chord or impact needs room.
+- Under speech: only the action itself, nothing that covers a word.
+
+## Levels
+
+- Voice −16 LUFS, the reference. Music bed −27 LUFS, ducked 5–6 dB more while the voice speaks; a
+  client who asks for "music low in the mix" gets exactly this. Effects by role: taps −31, pops and
+  appear-rises −29, whooshes −30, chimes −28, success and impacts −27 (`sound_mix.py`, `ROLE_LUFS`).
+- The mixer measures each effect against what plays under it, over the loudest 100 ms (the ear's window
+  for short sounds): an effect that doesn't clear the bed by 3 dB is felt, not heard, and is lifted up to
+  4 dB, but never to within 4 dB of the speaking voice. Read its report; repeated lifts on one bed mean
+  the bed is too busy under the effects.
+- Master: −15 LUFS integrated with peaks under −1.5 dBFS, 48 kHz, exactly the film's length; the
+  web encode carries it as it is (`production/coded-render.md`).
+
+## Music
+
+Choose by the brief's vibe, then measure:
+
+| Vibe | Instruments | Tempo | Density |
+|---|---|---|---|
+| calm, warm, human | piano, acoustic guitar, soft pads | 80–110 BPM | under 2 onsets a second |
+| optimistic, confident | folk pop, corporate pop | 100–120 BPM | 2–2.5 |
+| tech, precise | minimal electronic, plucks | 110–125 BPM | 2–3 |
+| cinematic, premium | film score, strings, swells | 70–100 BPM | slow builds |
+| playful | ukulele, glockenspiel, claps | 110–130 BPM | 2.5–3 |
+
+- **Find** (`music_find.py`) when a produced track fits: real instruments and a real mix beat anything
+  synthesized. Mixkit tracks need no credit; Incompetech's need "Music by Kevin MacLeod (incompetech.com),
+  CC BY 4.0". Never commercial songs; Pixabay and similar block scripts and can't be checked anyway.
+  Look at the candidates' energy curves: a dense track fights the voice.
+- **Fit** (`music_fit.py`): the music opens up on the film's turn (`--lift`, the problem-to-solution
+  moment), the song's own ending lands on the end card (back-timed through one join on a bar line, where
+  the two bars sound most alike), and the edit is pre-rolled so the film never opens in silence.
+- **Compose** (`music_make.py`) when nothing found fits the arc, the length is odd, or the film needs its
+  hits on exact frames: a brief with the tempo, key, vibe and sections by bar, each lift on a film beat.
+- When unsure, mix both over the same cues (`sound_mix.py --music`) and deliver both, saying which you'd
+  pick and why.
+- Read the bed and the mix by eye with `audio_look.py`: the sections arrive where planned, the voice's
+  harmonics stay above the bed, the last chord rings out after the last word, nothing clips.
+- Credit the track in the film's README (title, artist, source, licence).
+
+## The workflow
+
+1. After the picture is locked to the voice-over, list the picture events with their frames.
+2. Write `sound/cues.json`: one line per cue with a `note` saying what it is for.
+3. Find or compose the music; fit it to the film.
+4. `python3 sound_mix.py sound/cues.json public/audio/mix.wav --sheet mix.png`; read the level report
+   and the sheet (voice, music and effects on one timeline, every effect's frame marked).
+5. Point the film's audio at the mix, render, and run the quality check.
+
 - **Voice-over:** placing a recording and retiming the picture to its words is in
   `planning/voice-over.md`.
 - **Music first:** music shapes the cut, so ask for the track at the storyboard stop
-  (`planning/intake.md`). Without licensed music, say so; it is usually the biggest missing lift.
-- **Delivery:** mix to one 48 kHz WAV exactly as long as the video and loudness-normalize at encode
-  (`production/coded-render.md`).
+  (`planning/intake.md`); if Karl has none, find or compose one as above and say which.

@@ -20,13 +20,23 @@ saved file into the build folder.
 | `jitter_check.py` | finds shake: motion that moves in steps instead of gliding | `evaluation/quality-check.md` |
 | `handoff_check.py` | finds pops: a place that changes in one frame (a blink, a jump in size, a layer appearing) | `evaluation/quality-check.md` |
 | `strips.py` | strips of frames around every transition, or around given frames | `evaluation/quality-check.md` |
+| `sfx_index.py` | measures sound effects from their waveforms (sync point, hits, decay, loudness, pitch) and draws them | `motion/sound.md` |
+| `sfx_build.py` | trims and files Karl's sounds by role into `sound/sfx/`, writes the index and catalogue | `motion/sound.md` |
+| `sfx_synth.py` | generates whooshes, risers, impacts, a stamp, a shimmer and a swell with exact sync points | `motion/sound.md` |
+| `sound_mix.py` | mixes voice-over, music and effects from a cue sheet, each effect on its frame, to −15 LUFS | `motion/sound.md` |
+| `music_find.py` | finds royalty-free tracks by mood and tempo and measures them | `motion/sound.md` |
+| `music_fit.py` | cuts a found track to the film: a lift on the turn, its real ending on the end card | `motion/sound.md` |
+| `music_make.py` | composes a bed to a brief: tempo, key, vibe and sections by bar | `motion/sound.md` |
+| `stock.py` | searches royalty-free footage (Mixkit) and photos (Openverse, Pexels by ID), measures them, keeps credits | `design/asset-strategy.md` |
+| `audio_look.py` | a sound file as a spectrogram over its loudness curve, with marks | `motion/sound.md` |
 
 **Requirements.** Node with `playwright` and `sharp` in the build folder (tested with Playwright 1.56.0
 against a pre-installed Chromium, and sharp 0.34.5); Python with Pillow, numpy and
 opencv-python-headless.
 
 **Also:** `stills.mjs` needs the Remotion project's own packages (run it from the project folder);
-`vo_align.py` needs `pip install pocketsphinx` and ffmpeg.
+`vo_align.py` needs `pip install pocketsphinx` and ffmpeg; the sound scripts need ffmpeg, numpy, Pillow
+and `pip install pyloudnorm`, and `sound_mix.py` reads the library's `sound/` folder.
 
 **Usage.**
 - `node render.mjs test 0,45,120` renders those frames to `test/` as PNG; `node render.mjs full 0 899 4 8`
@@ -42,6 +52,19 @@ opencv-python-headless.
 - `python3 strips.py film.mp4 strips/ [--at 140,146]`: without `--at` it finds the transitions itself.
 - `python3 motion_check.py out.mp4 --profile` prints the three motion numbers (the last 2 seconds are
   ignored on films longer than 4 seconds) and, with `--profile`, one line per second.
+- `python3 sound_mix.py sound/cues.json public/audio/mix.wav --sheet mix.png [--music other.wav]`: cue
+  format in the script's header; prints the level report (effects masked by the bed, effects crowding
+  the voice) and the final loudness. About 10 seconds.
+- `python3 music_find.py --mood calm,hopeful --feel calming,bright --bpm 85-115 --min 40 --out music/`
+  downloads and measures candidates; read `music/candidates.png`.
+- `python3 music_fit.py track.mp3 bed.wav --length 37 --lift 9.0 --sheet fit.png` prints the plan (the
+  tempo, the start, the join, where each entry and the last chord land in the film).
+- `python3 music_make.py brief.json bed.wav`: the brief format is in the script's header.
+- `python3 audio_look.py mix.wav look.png --marks 9.0,25.0`.
+- `python3 sfx_index.py <folder> waves/` measures every sound and draws the waveform sheets; then
+  `sfx_build.py <folder> <library/sound>` and `sfx_synth.py <library/sound>`.
+- `python3 stock.py search "tourist phone street" --kind video --out stock/`, then
+  `python3 stock.py get stock/candidates.json 3,7 --to public/footage`; read `stock/candidates.png`.
 - `reference_frames.js`: run it in the video's page, then `await sheet([0.5, 2, 3.5])` and screenshot the
   canvas.
 - `site_extract.js`: run it in the client's page after scrolling once; it returns one object.

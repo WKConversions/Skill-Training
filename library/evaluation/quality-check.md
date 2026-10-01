@@ -32,6 +32,8 @@ space, focal point, crop, accidental tangencies, and consistency with the style 
 - Run `scripts/motion_check.py` on the encode. Targets: something moves in at least 95% of the frames,
   nothing holds still for more than 0.8 seconds before the end card, and a typical frame has at least
   1.5% of its area in motion. Karl's benchmark measures 97%, 0.8 s and 3% (`references/benchmarks.md`).
+  These are the targets for a brief that doesn't set a tone; a calm brief and an energetic one have their
+  own rows in `motion/timing.md` ("The brief's tone leads"), and the brief's row is the one to pass.
   A result below target points at the working holds and the camera, not at adding elements.
 
 - **Run the automatic checks** on the draft and again on the final encode: `bash scripts/qc.sh film.mp4
@@ -95,6 +97,10 @@ edge cases.
   eighth and the right edge, where platform captions and buttons sit.
 - The end card follows its rule in `motion/animation-grammar.md`.
 - Audio at 48 kHz, loudness-normalized, without clipping, and exactly as long as the video.
+- Sound (`motion/sound.md`): the mixer's report says every effect clears the bed and none crowds the
+  voice; on the mix sheet each effect's mark sits on its picture event, and the effects match the
+  brief's density; the music's sections land on the film's turns (`audio_look.py --marks`); no Apple
+  sound in a client mix; the track and its licence are credited in the README.
 - The logo: the right version, undistorted, with clear space.
 - Nothing missing: fonts, assets, and in After Effects, broken expressions, missing footage and color
   management.
