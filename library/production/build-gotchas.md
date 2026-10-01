@@ -28,6 +28,16 @@ new one (the learning loop in `examples/corrections.md` covers taste; this file 
   scene reaches.
 - **Masks, not pops.** An element that belongs to a page being revealed goes inside that page's
   reveal mask, or it pops in on its own.
+- **Hand an object over to its copies on the same frame, and back only once the original covers them.**
+  One phone that becomes four: hide the original on the frame the copies appear, start them exactly on
+  top of it, and fade copies 2 to 4 in as they leave (stacked, their shadows add up and darken in one
+  frame). On the way back, bring the original to full opacity above the copies first, fade the last copy
+  out under it, then remove them; at 75% the copies' colours vanish at once, and a copy removed at full
+  opacity takes its shadow with it. `handoff_check.py` finds all three; the strip shows them only as a
+  darker outline or a tint.
+- **Never clamp a share of an eased curve.** `clamp01(k * 1.15 - i * 0.05)` cuts the ease off at 87%,
+  while the element still moves fast: it stops dead (sharp after blurred frames) and on the way back it
+  starts at full speed. Give each element its own eased span, staggered, instead.
 - **Motion blur can step.** At 8 samples a move of more than about 150 px per frame shows separate
   copies. Lengthen the move, or raise the samples for those frames.
 - **Place anything that moves with a transform, never `left`/`top`.** Box offsets snap to whole pixels:
