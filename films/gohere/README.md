@@ -44,5 +44,14 @@ Music, two versions over the same cues:
   `sound/music-brief.json` (108 BPM, D major, calm-optimistic; lifts at 8.9 and 15.6 s).
 Render the other with `--props='{"blurSamples":8,"music":"composed"}'`.
 
-`npx remotion studio` to edit; `node scripts/stills.mjs 40,400,700` for test frames;
-`python3 scripts/motion_check.py out/draft.mp4` (draft: 98% of frames moving, median 3.0%, longest still 0.47 s).
+`npx remotion studio` to edit; `node scripts/stills.mjs 40,400,700` for test frames.
+
+Final render, in four contiguous chunks so the layered captions glide (`production/build-gotchas.md`), then the
+delivery files (1080p with each music version, 720p web with sound and muted):
+
+    bash ../../library/scripts/render_chunks.sh Film out/final-raw.mp4 '{"blurSamples":8,"music":"none"}' 0,252,510,875,1110 public/audio/mix-found.wav
+    bash scripts/deliver.sh
+
+Checked with `library/scripts/qc.sh`: 98% of frames moving, median 3.3%, longest still 0.33 s; no shake in
+1110 frames; every remaining pop flag looked at in its strip and found designed (pins, words, the share
+sheet, the portal's hover row, fast moves under blur) or a flat-area false flag.
