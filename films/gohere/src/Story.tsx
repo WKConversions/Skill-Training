@@ -196,11 +196,12 @@ export const Story: React.FC = () => {
         {/* 4 · one app becomes four client apps */}
         {fan > 0.001 && CLIENTS.map((id, i) => {
           const fx = 360 + i * 400, fy = 650;
-          // each phone on its own eased curve, 2 frames apart: a clamped share of one curve cut the ease off
+          // phones 2-4 fade while stacked and phone 1 fades under the opaque brand phone at the end, so no two
+          // shadows add up on one spot; each phone on its own eased curve, 2 frames apart: a clamped share of one curve cut the ease off
           // mid-move, so the phones stopped dead on the way out and started at full speed on the way back
           const k = tw(g, 364 + i * 2, 386 + i * 2, 0, 1, MOVE) * (1 - tw(g, 446 + i, 466 + i, 0, 1, MOVE));
           return (
-            <Stage key={id} x={lerp(px, fx, k)} y={lerp(py, fy, k)} s={lerp(1, 0.7, k)} rot={lerp(0, (i - 1.5) * 2, k)} o={i === 0 ? 1 : clamp01(k * 4)}>
+            <Stage key={id} x={lerp(px, fx, k)} y={lerp(py, fy, k)} s={lerp(1, 0.7, k)} rot={lerp(0, (i - 1.5) * 2, k)} o={i === 0 ? 1 - tw(g, 465, 470, 0, 1, LINEAR) : clamp01(k * 4)}>
               <ClientPhone g={g} i={i} />
             </Stage>
           );
