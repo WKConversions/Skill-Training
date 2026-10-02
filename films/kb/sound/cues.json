@@ -1,0 +1,436 @@
+{
+ "fps": 30,
+ "frames": 1125,
+ "library": "../../../library/sound",
+ "vo": {
+  "file": "../public/audio/vo.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "music.flac",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.3,
+  "fade_out": 1.5,
+  "note": "Raising Me Higher (Ahjay Stelino, Mixkit Stock Music Free License) cut by music_fit.py --length 37.5 --lift 4.3: an entry on 'K.B helps'"
+ },
+ "sfx": [
+  {
+   "frame": 25,
+   "id": "kenney-scroll-003",
+   "note": "the work items run along the lane",
+   "db": -6
+  },
+  {
+   "frame": 60,
+   "id": "cinematic-fast-whoosh",
+   "note": "the lane speeds up",
+   "db": -5
+  },
+  {
+   "frame": 64,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the underline under 'faster,'",
+   "db": -4
+  },
+  {
+   "frame": 86,
+   "id": "ui-backspace",
+   "note": "items jam against it",
+   "db": -5
+  },
+  {
+   "frame": 91,
+   "id": "kenney-error-005",
+   "note": "the manual step drops in; the work piles up",
+   "db": -2
+  },
+  {
+   "frame": 106,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "'back.' struck out",
+   "db": -2,
+   "pitch": -3
+  },
+  {
+   "frame": 110,
+   "id": "riser",
+   "note": "build into the badge",
+   "db": -8
+  },
+  {
+   "frame": 131,
+   "id": "gen-impact-soft",
+   "note": "the K.B badge lands",
+   "db": 1
+  },
+  {
+   "frame": 133,
+   "id": "cinematic-fast-normal-whoosh",
+   "note": "the jam is blown apart",
+   "db": -2
+  },
+  {
+   "frame": 160,
+   "id": "cinematic-mediam-whoosh",
+   "note": "the steps fly back in",
+   "db": -5
+  },
+  {
+   "frame": 162,
+   "id": "gen-whoosh-medium",
+   "note": "the badge goes to the corner",
+   "db": -4
+  },
+  {
+   "frame": 174,
+   "id": "middle-gear",
+   "note": "they lock into one row",
+   "db": -5
+  },
+  {
+   "frame": 188,
+   "id": "kenney-select-004",
+   "note": "step 1 ticks",
+   "db": -5
+  },
+  {
+   "frame": 195,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the mark under 'systems.'",
+   "db": -4
+  },
+  {
+   "frame": 200,
+   "id": "kenney-select-004",
+   "note": "step 3 ticks",
+   "db": -5,
+   "pitch": 4
+  },
+  {
+   "frame": 206,
+   "id": "sweet-ui-open",
+   "note": "the dashboard",
+   "db": -3
+  },
+  {
+   "frame": 212,
+   "id": "kenney-select-004",
+   "note": "step 5 ticks",
+   "db": -5,
+   "pitch": 7
+  },
+  {
+   "frame": 230,
+   "id": "smooth-pop",
+   "note": "the workflow",
+   "db": -3
+  },
+  {
+   "frame": 240,
+   "id": "data-collect-2",
+   "note": "the pulse runs the workflow",
+   "db": -8
+  },
+  {
+   "frame": 247,
+   "id": "ui-typing",
+   "note": "the question types in",
+   "db": -10
+  },
+  {
+   "frame": 262,
+   "id": "premium-and-smooth-pop",
+   "note": "the support agent",
+   "db": -3
+  },
+  {
+   "frame": 276,
+   "id": "kenney-glass-001",
+   "note": "the agent answers",
+   "db": -3
+  },
+  {
+   "frame": 282,
+   "id": "cinematic-low-whoosh",
+   "note": "pale cyan opens; the axis draws",
+   "db": -3
+  },
+  {
+   "frame": 298,
+   "id": "kenney-pluck-001",
+   "note": "Strategy",
+   "db": -4
+  },
+  {
+   "frame": 320,
+   "id": "rjd-riser",
+   "note": "the card rides the axis",
+   "db": -8
+  },
+  {
+   "frame": 326,
+   "id": "kenney-confirmation-002",
+   "note": "the plan becomes the live system",
+   "db": -3
+  },
+  {
+   "frame": 356,
+   "id": "cinematic-data",
+   "note": "the tangle draws",
+   "db": -6
+  },
+  {
+   "frame": 360,
+   "id": "universfield-bubble-pop-03",
+   "note": "idea note 1",
+   "db": -7
+  },
+  {
+   "frame": 364,
+   "id": "universfield-bubble-pop-03",
+   "note": "idea note 2",
+   "db": -7,
+   "pitch": 3
+  },
+  {
+   "frame": 368,
+   "id": "universfield-bubble-pop-03",
+   "note": "idea note 3",
+   "db": -7,
+   "pitch": 5
+  },
+  {
+   "frame": 372,
+   "id": "universfield-bubble-pop-03",
+   "note": "idea note 4",
+   "db": -7,
+   "pitch": 7
+  },
+  {
+   "frame": 400,
+   "id": "ui-stretch",
+   "note": "the tangle straightens into a flow",
+   "db": -4
+  },
+  {
+   "frame": 424,
+   "id": "kenney-select-004",
+   "note": "flow step 1 ticks",
+   "db": -5
+  },
+  {
+   "frame": 439,
+   "id": "kenney-select-004",
+   "note": "flow step 3 ticks",
+   "db": -5,
+   "pitch": 5
+  },
+  {
+   "frame": 452,
+   "id": "ui-premium-open",
+   "note": "the client's app closes round the flow",
+   "db": -6
+  },
+  {
+   "frame": 498,
+   "id": "cinematic-fast-whoosh",
+   "note": "the camera pulls out to their tools",
+   "db": 1
+  },
+  {
+   "frame": 506,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "tool tile 1",
+   "db": -6
+  },
+  {
+   "frame": 509,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "tool tile 3",
+   "db": -6,
+   "pitch": 2
+  },
+  {
+   "frame": 512,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "tool tile 5",
+   "db": -6,
+   "pitch": 4
+  },
+  {
+   "frame": 515,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "tool tile 7",
+   "db": -6,
+   "pitch": 7
+  },
+  {
+   "frame": 519,
+   "id": "data-whoosh",
+   "note": "the links draw; data runs along them",
+   "db": -5
+  },
+  {
+   "frame": 538,
+   "id": "kenney-scroll-001",
+   "note": "the copy-paste rows stack",
+   "db": -1
+  },
+  {
+   "frame": 558,
+   "id": "long-speed-gear",
+   "note": "each row turns automatic",
+   "db": -5
+  },
+  {
+   "frame": 580,
+   "id": "smooth-and-premium-gear",
+   "note": "they fold into one rule",
+   "db": -5
+  },
+  {
+   "frame": 590,
+   "id": "kenney-confirmation-001",
+   "note": "Runs automatically",
+   "db": -3
+  },
+  {
+   "frame": 594,
+   "id": "cinematic-mediam-whoosh",
+   "note": "the client's app",
+   "db": -5
+  },
+  {
+   "frame": 644,
+   "id": "normal-pop",
+   "note": "a dashboard joins",
+   "db": -3
+  },
+  {
+   "frame": 651,
+   "id": "normal-pop",
+   "note": "a mobile app joins",
+   "db": -4,
+   "pitch": 3
+  },
+  {
+   "frame": 656,
+   "id": "normal-pop",
+   "note": "an AI agent joins",
+   "db": -4,
+   "pitch": 7
+  },
+  {
+   "frame": 659,
+   "id": "data-collect",
+   "note": "the team grows",
+   "db": -10
+  },
+  {
+   "frame": 676,
+   "id": "cinematic-low-whoosh",
+   "note": "the lavender field opens",
+   "db": -4
+  },
+  {
+   "frame": 696,
+   "id": "universfield-new-notification-04",
+   "note": "Anna asks in the channel",
+   "db": -3
+  },
+  {
+   "frame": 711,
+   "id": "kenney-glass-004",
+   "note": "K.B replies",
+   "db": -4
+  },
+  {
+   "frame": 718,
+   "id": "smooth-riser",
+   "note": "the loop forms",
+   "db": -9
+  },
+  {
+   "frame": 735,
+   "id": "soundshelfstudio-ui-success-bloom",
+   "note": "Invoices are live",
+   "db": -3
+  },
+  {
+   "frame": 737,
+   "id": "soft-gear-2",
+   "note": "the version dial rolls",
+   "db": -7
+  },
+  {
+   "frame": 760,
+   "id": "soundreality-ui-pop-up",
+   "note": "support item 1",
+   "db": -7
+  },
+  {
+   "frame": 787,
+   "id": "soundreality-ui-pop-up",
+   "note": "support item 2",
+   "db": -7,
+   "pitch": 2
+  },
+  {
+   "frame": 812,
+   "id": "soundreality-ui-pop-up",
+   "note": "support item 3",
+   "db": -7,
+   "pitch": 4
+  },
+  {
+   "frame": 821,
+   "id": "soundreality-ui-pop-up",
+   "note": "support item 4",
+   "db": -7,
+   "pitch": 7
+  },
+  {
+   "frame": 840,
+   "id": "cinematic-fast-normal-whoosh",
+   "note": "white opens out of the pulse",
+   "db": 4
+  },
+  {
+   "frame": 849,
+   "id": "gen-impact-deep",
+   "note": "the badge",
+   "db": -2
+  },
+  {
+   "frame": 851,
+   "id": "gen-shimmer",
+   "note": "the tool tiles orbit",
+   "db": -6
+  },
+  {
+   "frame": 902,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the mark under 'partner'",
+   "db": -3
+  },
+  {
+   "frame": 987,
+   "id": "cinematic-data-collect-2",
+   "note": "the systems behind light up",
+   "db": 0
+  },
+  {
+   "frame": 1029,
+   "id": "ui-pop-sound",
+   "note": "Book a free discovery call",
+   "db": 0
+  },
+  {
+   "frame": 1065,
+   "id": "cinematic-click",
+   "note": "the cursor clicks it",
+   "db": 0
+  }
+ ]
+}
