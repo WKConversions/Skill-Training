@@ -1,0 +1,479 @@
+{
+ "fps": 30,
+ "frames": 1185,
+ "library": "../../../library/sound",
+ "vo": {
+  "file": "../public/audio/vo.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "music.flac",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.3,
+  "fade_out": 1.5,
+  "note": "Tech House vibes (Alejandro Magana, Mixkit Stock Music Free License) cut by music_fit.py --length 39.5 --lift 3.6: an entry on 'with Zapify', the last hit at 35.9 s on 'autopilot'"
+ },
+ "sfx": [
+  {
+   "frame": 7,
+   "id": "soundreality-ui-pop-up",
+   "note": "interactions pop in (1)",
+   "db": -8
+  },
+  {
+   "frame": 14,
+   "id": "soundreality-ui-pop-up",
+   "note": "interactions pop in (2)",
+   "db": -8,
+   "pitch": 2
+  },
+  {
+   "frame": 20,
+   "id": "soundreality-ui-pop-up",
+   "note": "interactions pop in (3)",
+   "db": -8,
+   "pitch": 4
+  },
+  {
+   "frame": 27,
+   "id": "soundreality-ui-pop-up",
+   "note": "interactions pop in (4)",
+   "db": -8,
+   "pitch": 7
+  },
+  {
+   "frame": 41,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the black block wipes on behind 'interaction'",
+   "db": -5
+  },
+  {
+   "frame": 78,
+   "id": "gen-riser-1s",
+   "note": "the stream accelerates into a spiral",
+   "db": -8
+  },
+  {
+   "frame": 79,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the underline under 'momentum.'",
+   "db": -7,
+   "pitch": 2
+  },
+  {
+   "frame": 105,
+   "id": "gen-shimmer",
+   "note": "the bubble opens out of the stream",
+   "db": -5
+  },
+  {
+   "frame": 115,
+   "id": "gen-impact-soft",
+   "note": "the bolt lands",
+   "db": -4
+  },
+  {
+   "frame": 136,
+   "id": "gen-whoosh-medium",
+   "note": "the logo goes to the corner",
+   "db": -6
+  },
+  {
+   "frame": 143,
+   "id": "universfield-bubble-pop-03",
+   "note": "comment 1",
+   "db": -9
+  },
+  {
+   "frame": 148,
+   "id": "universfield-bubble-pop-03",
+   "note": "comment 2",
+   "db": -9,
+   "pitch": 2
+  },
+  {
+   "frame": 154,
+   "id": "universfield-bubble-pop-03",
+   "note": "comment 3",
+   "db": -9,
+   "pitch": 4
+  },
+  {
+   "frame": 155,
+   "id": "gen-whoosh-short",
+   "note": "the inbox card",
+   "db": -7,
+   "pitch": 2
+  },
+  {
+   "frame": 181,
+   "id": "gen-whoosh-short",
+   "note": "the Story card",
+   "db": -7,
+   "pitch": 4
+  },
+  {
+   "frame": 195,
+   "id": "soundreality-ui-bubble",
+   "note": "the fire reactions rise",
+   "db": -7
+  },
+  {
+   "frame": 220,
+   "id": "gen-whoosh-whip",
+   "note": "the bolt zaps across all three",
+   "db": -3
+  },
+  {
+   "frame": 232,
+   "id": "ui-pop-sound",
+   "note": "Automated pill 1",
+   "db": -7
+  },
+  {
+   "frame": 237,
+   "id": "ui-pop-sound",
+   "note": "Automated pill 2",
+   "db": -7,
+   "pitch": 3
+  },
+  {
+   "frame": 242,
+   "id": "soundshelfstudio-ui-success-bloom",
+   "note": "Automated pill 3",
+   "db": -7
+  },
+  {
+   "frame": 253,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the mark under 'automated.'",
+   "db": -7
+  },
+  {
+   "frame": 260,
+   "id": "gen-whoosh-medium",
+   "note": "the cards merge into the phone",
+   "db": -4
+  },
+  {
+   "frame": 294,
+   "id": "gen-whoosh-deep",
+   "note": "the lavender field opens from the phone; the phone slides left",
+   "db": -5
+  },
+  {
+   "frame": 303,
+   "id": "universfield-bubble-pop-03",
+   "note": "Mike asks",
+   "db": -8
+  },
+  {
+   "frame": 352,
+   "id": "ui-pop-sound",
+   "note": "the reply",
+   "db": -6
+  },
+  {
+   "frame": 359,
+   "id": "soundshelfstudio-ui-soft-glass-ping",
+   "note": "the link card",
+   "db": -6
+  },
+  {
+   "frame": 366,
+   "id": "gen-whoosh-deep",
+   "note": "the peach field",
+   "db": -6,
+   "pitch": 2
+  },
+  {
+   "frame": 372,
+   "id": "universfield-bubble-pop-03",
+   "note": "Jess asks for the meal plan",
+   "db": -8
+  },
+  {
+   "frame": 384,
+   "id": "ui-pop-sound",
+   "note": "the reply asks for her email",
+   "db": -7
+  },
+  {
+   "frame": 413,
+   "id": "gen-whoosh-short",
+   "note": "the address flies into Subscribers",
+   "db": -6
+  },
+  {
+   "frame": 431,
+   "id": "soundshelfstudio-ui-success-bloom",
+   "note": "it lands in the list",
+   "db": -6
+  },
+  {
+   "frame": 442,
+   "id": "gen-whoosh-deep",
+   "note": "the pink field; the post",
+   "db": -6,
+   "pitch": 4
+  },
+  {
+   "frame": 465,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "DM sent tick 1",
+   "db": -8
+  },
+  {
+   "frame": 466,
+   "id": "universfield-new-notification-04",
+   "note": "the reply DM lands beside the phone",
+   "db": -8
+  },
+  {
+   "frame": 472,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "DM sent tick 2",
+   "db": -8,
+   "pitch": 3
+  },
+  {
+   "frame": 480,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "DM sent tick 3",
+   "db": -8,
+   "pitch": 7
+  },
+  {
+   "frame": 484,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the mark under 'automatically.'",
+   "db": -7
+  },
+  {
+   "frame": 508,
+   "id": "gen-whoosh-deep",
+   "note": "the mint field; the Story",
+   "db": -6,
+   "pitch": 5
+  },
+  {
+   "frame": 550,
+   "id": "soundreality-ui-bubble",
+   "note": "fire reactions",
+   "db": -7,
+   "pitch": 3
+  },
+  {
+   "frame": 569,
+   "id": "gen-whoosh-short",
+   "note": "'Story reactions' rolls to 'Real engagement.'",
+   "db": -7
+  },
+  {
+   "frame": 580,
+   "id": "ui-pop-sound",
+   "note": "Alex's reply",
+   "db": -7
+  },
+  {
+   "frame": 595,
+   "id": "soundshelfstudio-ui-soft-glass-ping",
+   "note": "the travel guide link",
+   "db": -6
+  },
+  {
+   "frame": 620,
+   "id": "gen-whoosh-medium",
+   "note": "the phone leaves; the white page",
+   "db": -5
+  },
+  {
+   "frame": 638,
+   "id": "ui-pop-sound",
+   "note": "audience card 1",
+   "db": -6
+  },
+  {
+   "frame": 659,
+   "id": "ui-pop-sound",
+   "note": "audience card 2",
+   "db": -6,
+   "pitch": 3
+  },
+  {
+   "frame": 683,
+   "id": "ui-pop-sound",
+   "note": "audience card 3",
+   "db": -6,
+   "pitch": 7
+  },
+  {
+   "frame": 712,
+   "id": "gen-whoosh-short",
+   "note": "the headline rolls",
+   "db": -7
+  },
+  {
+   "frame": 738,
+   "id": "soundshelfstudio-ui-radio-select",
+   "note": "card 1 replies",
+   "db": -9
+  },
+  {
+   "frame": 744,
+   "id": "soundshelfstudio-ui-radio-select",
+   "note": "card 2 replies",
+   "db": -9,
+   "pitch": 2
+  },
+  {
+   "frame": 749,
+   "id": "soundshelfstudio-ui-radio-select",
+   "note": "card 3 replies",
+   "db": -9,
+   "pitch": 4
+  },
+  {
+   "frame": 756,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the mark under 'responsive.'",
+   "db": -7
+  },
+  {
+   "frame": 780,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "opportunity 1 joins the stream",
+   "db": -8
+  },
+  {
+   "frame": 794,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "opportunity 3 joins the stream",
+   "db": -8,
+   "pitch": 4
+  },
+  {
+   "frame": 804,
+   "id": "gen-swell",
+   "note": "the stream runs off the frame",
+   "db": -8
+  },
+  {
+   "frame": 807,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "opportunity 5 joins the stream",
+   "db": -8,
+   "pitch": 7
+  },
+  {
+   "frame": 828,
+   "id": "floraphonic-multi-pop-2",
+   "note": "the copy-paste bubbles stack up",
+   "db": -8
+  },
+  {
+   "frame": 847,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "'manual' struck out",
+   "db": -5,
+   "pitch": -3
+  },
+  {
+   "frame": 859,
+   "id": "gen-whoosh-short",
+   "note": "the stack collapses into one",
+   "db": -6,
+   "pitch": -2
+  },
+  {
+   "frame": 870,
+   "id": "gen-whoosh-deep",
+   "note": "the yellow field opens out of the last bubble",
+   "db": -4
+  },
+  {
+   "frame": 878,
+   "id": "gen-impact-soft",
+   "note": "'More'",
+   "db": -9
+  },
+  {
+   "frame": 912,
+   "id": "soundreality-ui-pop-up",
+   "note": "Mon fills with conversations",
+   "db": -8
+  },
+  {
+   "frame": 920,
+   "id": "soundreality-ui-pop-up",
+   "note": "Wed fills with conversations",
+   "db": -8,
+   "pitch": 4
+  },
+  {
+   "frame": 927,
+   "id": "soundreality-ui-pop-up",
+   "note": "Fri fills with conversations",
+   "db": -8,
+   "pitch": 7
+  },
+  {
+   "frame": 934,
+   "id": "soundreality-ui-pop-up",
+   "note": "Sun fills with conversations",
+   "db": -8,
+   "pitch": 12
+  },
+  {
+   "frame": 956,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the underline under 'day.'",
+   "db": -9
+  },
+  {
+   "frame": 964,
+   "id": "gen-whoosh-medium",
+   "note": "the white field; the logo returns to the centre",
+   "db": -4
+  },
+  {
+   "frame": 974,
+   "id": "gen-shimmer",
+   "note": "the gold ring; the name",
+   "db": -5
+  },
+  {
+   "frame": 1055,
+   "id": "universfield-bubble-pop-03",
+   "note": "the interactions return (1)",
+   "db": -8
+  },
+  {
+   "frame": 1061,
+   "id": "universfield-bubble-pop-03",
+   "note": "the interactions return (2)",
+   "db": -8,
+   "pitch": 4
+  },
+  {
+   "frame": 1067,
+   "id": "universfield-bubble-pop-03",
+   "note": "the interactions return (3)",
+   "db": -8,
+   "pitch": 7
+  },
+  {
+   "frame": 1083,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the mark under 'autopilot.'",
+   "db": -5
+  },
+  {
+   "frame": 1090,
+   "id": "ui-pop-sound",
+   "note": "Start free",
+   "db": -4
+  }
+ ]
+}
