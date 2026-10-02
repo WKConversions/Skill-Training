@@ -22,9 +22,9 @@ client's own notes) before choosing durations, camera, density and sound, and pi
 
 | Tone in the brief | Durations | Camera | Motion targets: moving · median · longest still | Sound |
 |---|---|---|---|---|
-| calm, warm, human, premium | the upper end of every range above; soft ease-outs, small overshoots | slow pushes that breathe, 2–4% over a beat | 95% · 1% or more · 1.2 s | sparse and soft (`motion/sound.md`) |
-| not stated, or confident and clear | the middle | pushes and pans on the beats | 95% · 1.5% · 0.8 s (Karl's benchmark: 97%, 3%, 0.8 s) | standard |
-| energetic, bold, youthful, fast | the lower end; snappy curves, real overshoot | whips, zooms, push-ins on the hits | 97% · 3% · 0.5 s | dense, crisp |
+| calm, warm, human, premium | the upper end of every range above; soft ease-outs, small overshoots | slow pushes that breathe, 2–4% over a beat | 95% · 2% or more · 1.2 s | sparse and soft (`motion/sound.md`) |
+| not stated, or confident and clear | the middle | pushes and pans on the beats | 95% · 3% · 0.8 s (Karl's references: 97%, 3.5%, 0.2 s) | standard |
+| energetic, bold, youthful, fast | the lower end; snappy curves, real overshoot | whips, zooms, push-ins on the hits | 97% · 4% · 0.5 s | dense, crisp |
 
 Calm doesn't mean static: the camera still never locks, and the film still moves in 95% of its frames;
 it moves less and slower. Energetic doesn't mean everything moves at once: the hierarchy and the holds

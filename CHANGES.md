@@ -1,3 +1,10 @@
+# Motion target raised to 3%, 2 October 2026
+
+Karl's decision after the reference films: a typical frame must change 3% of its area or more (was 1.5%);
+calm briefs 2% (was 1%), energetic 4% (was 3%). In `scripts/motion_check.py`, `evaluation/quality-check.md`
+(with how to get there: second and third layers moving, arrivals that travel further), `motion/timing.md`,
+and a correction plus a recurring lesson in `examples/corrections.md`. Zapify measures 1.8% against it.
+
 # Reference films, 2 October 2026: 25 films Karl selected, read frame by frame
 
 - **New module `references/technique-catalogue.md`:** what the 25 films have in common, measured (they move

@@ -14,7 +14,7 @@ frac = np.array(frac); cut = int(2 * fps) if len(frac) > 4 * fps else 0
 body = frac[:len(frac) - cut]; still = body < 0.001; runs, r = [0], 0
 for s in still: r = r + 1 if s else 0; runs.append(r)
 print(f"moving in {100 * (1 - still.mean()):.0f}% of frames (target 95+), "
-      f"median {100 * np.median(frac):.1f}% of the frame in motion (target 1.5+, benchmark 3), "
+      f"median {100 * np.median(frac):.1f}% of the frame in motion (target 3+; calm 2+, energetic 4+), "
       f"longest still {max(runs) / fps:.2f} s (target 0.8 or less)")
 if '--profile' in sys.argv:
     n = max(1, round(fps))

@@ -9,6 +9,8 @@ planning; read the entries of the categories you are working on when a decision 
 - Give every beat its own idea; one example can run through a film, one device can't answer every
   line.
 - Constant, purposeful motion: nothing static, nothing useless; the camera never locks.
+- Move enough of the frame: a typical frame changes 3% or more (Karl's reference films: 3.5%); keep a
+  second and third layer moving under the subject, not one small drift.
 - Every phrase gets its own visual, on one continuous stage: never a page that holds while the voice
   explains it, never a presentation; think outside the box for the visuals and the transitions.
 - References are examples of a look or a technique, never layouts to reproduce.
@@ -96,6 +98,17 @@ you don't see the animations".
 FINAL APPROACH: The motion craft: moving camera, motion blur, arrivals from outside the frame,
 overlapping waves (`references/benchmarks.md`).
 GENERAL LESSON: Smoothness comes from craft, not frame rate; measure motion, not just stills.
+
+CATEGORY: Animation
+DATE / PROJECT: October 2026, the 25 reference films against Bruno v3, MindMirror, Amargier and Zapify
+ORIGINAL IDEA: Something moves in 98–99% of frames, but a typical frame changed only 1.8–2.3% of its
+area: one small thing drifting while the rest held.
+WHY IT WAS WEAK: Karl's reference films measure a median of 3.5%: they keep several layers moving at once
+(blooms, orbiting icons, screens turning on tilted planes) and their arrivals travel further.
+USER CORRECTION: Karl: raise the motion target to 3%.
+FINAL APPROACH: The default target is 3% (calm briefs 2%, energetic 4%) in `motion_check.py`,
+`evaluation/quality-check.md` and `motion/timing.md`; the techniques are in `references/technique-catalogue.md`.
+GENERAL LESSON: Measure how much of the frame moves, not only whether something does.
 
 ## Style corrections
 

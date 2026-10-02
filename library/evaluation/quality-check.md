@@ -35,10 +35,14 @@ space, focal point, crop, accidental tangencies, and consistency with the style 
 - The camera never locks and never wanders.
 - Run `scripts/motion_check.py` on the encode. Targets: something moves in at least 95% of the frames,
   nothing holds still for more than 0.8 seconds before the end card, and a typical frame has at least
-  1.5% of its area in motion. Karl's benchmark measures 97%, 0.8 s and 3% (`references/benchmarks.md`).
+  3% of its area in motion (raised from 1.5% in October 2026, Karl's decision: the 25 reference films he
+  selected measure a median of 3.5%, our October films 1.8–2.3%; `references/technique-catalogue.md`).
   These are the targets for a brief that doesn't set a tone; a calm brief and an energetic one have their
   own rows in `motion/timing.md` ("The brief's tone leads"), and the brief's row is the one to pass.
-  A result below target points at the working holds and the camera, not at adding elements.
+  A result below target points at the working holds and the camera, not at adding elements: keep a second
+  and third layer moving under the subject (a drifting bloom, icons orbiting a hub, satellites bobbing, a
+  screen turning slowly on a tilted plane, a camera push of 4–6% over a beat) and make arrivals travel
+  further. Read the `--profile` lines for the stretches under 3%.
 
 - **Run the automatic checks** on the draft and again on the final encode: `bash scripts/qc.sh film.mp4
   qc/`. They find what the eye only catches at full speed, after delivery:
