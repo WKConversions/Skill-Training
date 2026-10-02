@@ -7,7 +7,7 @@ import { Disc, Iris, Line, LIN, POP, Roll, T, measure, off } from "./kit";
 // rises like a curtain onto his stage; the mark on "stick." floods the frame red for the numbers; two hundred
 // dots become the one organiser; the viewer's idea comes back and becomes a result; his red closes the film.
 
-const RED = "radial-gradient(circle at 68% 38%, #CC2222 0%, #BD1717 42%, #971111 100%)";
+const RED = C.red;                       // flat, like his brand: a large gradient bands into rings under the camera push
 const SAND = "#EDE6DC";
 const NIGHT = "#141210";
 const Check: React.FC<{ size?: number; color?: string }> = ({ size = 22, color = C.green }) => (
@@ -153,7 +153,7 @@ export const Proof: React.FC<{ g: number }> = ({ g }) => {
   return (
     <>
       {shrink <= 0 ? (
-        <div style={{ position: "absolute", left: box.x, top: box.y, width: box.w, height: box.h, borderRadius: lerp(12, 0, flood), background: flood < 0.05 ? C.red : RED }} />
+        <div style={{ position: "absolute", left: box.x, top: box.y, width: box.w, height: box.h, borderRadius: lerp(12, 0, flood), background: RED }} />
       ) : (
         <Iris x={P.x} y={P.y} r={2300 * (1 - shrink)} bg={RED} />
       )}
