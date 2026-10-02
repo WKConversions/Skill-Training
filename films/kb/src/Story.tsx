@@ -313,7 +313,7 @@ const Stay: React.FC<{ g: number }> = ({ g }) => {
           {msg(<Avatar t="" kb s={60} />, "K.B", <>On it. It goes live tomorrow, and we will watch the first runs with you.</>, "w:involved", true)}
           {msg(<Avatar t="" kb s={60} />, "K.B", <span style={{ color: C.cyanDeep }}>Invoices are live ✓</span>, "w:involved+0.8", true)}
         </Card></div>
-      {[["Monitoring", "check"], ["Backups", "shield"], ["Uptime 100%", "chart"], ["Integration updated", "loop"], ["Alert resolved", "check"], ["Deploy", "bolt"]].map(([t, ic], n) => {
+      {[["Monitoring", "check"], ["Backups", "shield"], ["Uptime monitoring", "chart"], ["Integration updated", "loop"], ["Alert resolved", "check"], ["Deploy", "bolt"]].map(([t, ic], n) => {
         const p = ((g / 30 - T.s("stay")) / 2.4 + n / 6) % 1; if (g / 30 < T.s("stay")) return null;
         const side = n % 2 ? 1 : -1, x = 960 + side * (560 + (n % 3) * 30), y = lerp(900, 260, p);
         return <div key={t} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${x - 120}px, ${y}px)`, opacity: Math.sin(Math.PI * p) * e }}><Chip s={24} bg={C.white} icon={ic}>{t}</Chip></div>; })}
@@ -436,7 +436,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       <Sign g={g} />
       {ring > 0 && ring < 1 && <div style={{ position: "absolute", left: 960 - 200, top: 540 - 200, width: 400, height: 400, borderRadius: 999, border: `8px solid ${C.cyan}`, transform: `scale(${0.1 + ring * 1.8})`, opacity: 1 - ring }} />}
       {dr > 0.5 && <div style={{ position: "absolute", left: 0, top: 0, width: 2 * dr, height: 2 * dr, borderRadius: 99, background: C.cyan, transform: `translate(${dx - dr}px, ${dy - dr}px)`,
-        boxShadow: `0 0 0 ${dr * 0.5}px rgba(56,200,255,.18)`, willChange: "transform" }} />}
+        boxShadow: `0 0 0 ${dr * 0.5}px #38C8FF2E`, willChange: "transform" }} />}
     </>
   );
 };
