@@ -11,7 +11,9 @@ Karl's ear has the final say.
 Karl's effects are filed by role in `sound/sfx/<category>/`, listed in `sound/catalogue.md` with each
 sound's character, sync point, length and licence. Generated whooshes, risers, impacts, a stamp, a
 shimmer and a swell fill what the folder lacks (`scripts/sfx_synth.py`; royalty-free, sync exact).
-Sounds marked `apple` are Apple's system sounds: reference and internal drafts only, never a client
+Sounds marked `karl` come from Karl's own motion-design pack (October 2026): cinematic whooshes and
+risers, gears, money, data and glitch sounds, and more taps and pops; use them in client films. Sounds marked `cc0` are Kenney's Interface Sounds (public domain): clean, short UI
+sounds, and the only `error` sounds. Sounds marked `apple` are Apple's system sounds: reference and internal drafts only, never a client
 delivery (the mixer refuses them). New sounds: `sfx_index.py` measures them and draws their waveforms,
 you judge their role in `sound/categories.json`, then `sfx_build.py` and `sfx_synth.py` rebuild the library.
 
@@ -28,8 +30,13 @@ you judge their role in `sound/categories.json`, then `sfx_build.py` and `sfx_sy
 | a message arrives | chime | the first message only, not every bubble |
 | saved, sent, done, paid | success | the payoff: once or twice a film, on the action the voice names |
 | a screen pushes in, a soft slide | swipe | |
-| a camera move, a card flying, a pan | whoosh | short for cards and words, medium for camera moves, whip for whip pans, deep for a big pull-back |
+| a camera move, a card flying, a pan | whoosh | short for cards and words, medium for camera moves, whip for whip pans, deep for a big pull-back; Karl's cinematic whooshes for a colour field or scene opening, the generated ones for small, exact moves |
 | a build into a reveal | riser | ends on the reveal frame |
+| a dial turns, a counter winds, a part fits into a system, a process runs | gear | a short ratchet under a rotation or a counter rolling; under a long process, a soft one, low |
+| a payment, a sale, revenue, a price | money | literal: only where money is the subject the voice names, once |
+| data loads, is collected, scanned or analysed; an AI thinks | data | under the visual of the data moving, low; a stream for a scan, blips for items found |
+| something fails, is rejected, breaks: the problem beat | error | soft and short, once: the viewer should feel the problem, not be startled |
+| a screen switches, text glitches, a tech reveal | glitch | only in a film whose look is digital; once or twice |
 | a landing, a logo locking in, a stamp | impact | soft for a UI landing, deep for the end card |
 | a brand moment, a reveal | stinger (shimmer) | |
 | a scene breathing in, a slow push | swell | |

@@ -23,7 +23,8 @@ import pyloudnorm as pyln
 
 SR = 48000
 ROLE_LUFS = {"tap": -31, "double-tap": -31, "pop": -29, "appear-rise": -29, "dismiss-fall": -30, "chime": -28, "success": -27,
-             "ticker": -32, "swipe": -31, "whoosh": -30, "riser": -29, "impact": -27, "stinger": -28, "camera": -29}
+             "ticker": -32, "swipe": -31, "whoosh": -30, "riser": -29, "impact": -27, "stinger": -28, "camera": -29,
+             "gear": -32, "money": -29, "data": -33, "glitch": -31, "error": -30}
 VO_LUFS, MUSIC_LUFS, MASTER_LUFS, CEILING_DB = -16.0, -27.0, -15.0, -1.5
 meter = pyln.Meter(SR)
 

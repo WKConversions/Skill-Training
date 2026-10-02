@@ -115,7 +115,7 @@ def main():
     seen, items = {}, []
     for root, _, files in os.walk(src):
         for f in sorted(files):
-            if not f.lower().endswith((".mp3", ".wav", ".m4a", ".aac", ".ogg", ".mp4", ".aif", ".aiff", ".flac")): continue
+            if not f.lower().endswith((".mp3", ".wav", ".m4a", ".aac", ".ogg", ".mp4", ".aif", ".aiff", ".flac", ".wma")): continue
             p = os.path.join(root, f)
             tag = os.path.basename(root)
             x = decode(p)

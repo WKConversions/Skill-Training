@@ -1,3 +1,18 @@
+# Sound library, 2 October 2026: Karl's second pack and Kenney's CC0 interface sounds
+
+- **Karl's second pack (70 sounds, licence `karl`):** cinematic whooshes and risers, gears, money, data and
+  glitch sounds, camera shutters, more taps and pops. Measured from their waveforms and filed by role;
+  files holding several takes were cut to one take, and two (a 29-second mouse-click recording, a 9-second
+  all-in-one reel) were left out.
+- **Kenney's Interface Sounds (32 sounds, licence `cc0`, public domain):** clean, short UI sounds, and the
+  library's only `error` sounds.
+- **New roles:** gear, money, data, glitch, error, and Karl's sounds join the generated whooshes and risers.
+  Each has a row in `motion/sound.md` (when to use it), a level in `sound_mix.py`, and its sync point (the
+  loudest moment for whooshes and risers).
+- **Tools:** `sfx_build.py` takes several source folders; `sfx_index.py` reads .wma. The library now has 195
+  sounds: 70 `karl`, 61 `pixabay`, 32 `cc0`, 11 generated, and 21 `apple` (reference only, never in a
+  client mix).
+
 # Skill improvements, 2 October 2026: phrase by phrase
 
 Karl's standing direction, given on every film this month, is now a rule of the skill: the visuals show

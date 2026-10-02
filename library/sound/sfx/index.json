@@ -1764,6 +1764,2377 @@
   ]
  },
  {
+  "id": "fast-gear-2",
+  "file": "sfx/gear/fast-gear-2.wav",
+  "category": "gear",
+  "character": "fast ratchet, slowing then racing",
+  "licence": "karl",
+  "sync": 1.58,
+  "transients": [
+   0.65,
+   0.76,
+   0.85,
+   0.915,
+   0.92,
+   0.965,
+   1.06,
+   1.155,
+   1.155,
+   1.29,
+   1.43,
+   1.555
+  ],
+  "length": 2.162,
+  "decay": 0.15,
+  "lufs": -21.7,
+  "brightness_hz": 3318,
+  "pitch_move_semitones": -52.3,
+  "hits": 18,
+  "original": [
+   "Gear/Fast Gear 2.mp3"
+  ]
+ },
+ {
+  "id": "fast-gear",
+  "file": "sfx/gear/fast-gear.wav",
+  "category": "gear",
+  "character": "dense fast ratchet",
+  "licence": "karl",
+  "sync": 0.915,
+  "transients": [
+   0.035,
+   0.815,
+   0.915,
+   1.03,
+   1.135,
+   1.395,
+   1.575,
+   1.74,
+   1.83,
+   1.845,
+   1.94,
+   2.05
+  ],
+  "length": 2.827,
+  "decay": 0.205,
+  "lufs": -24.9,
+  "brightness_hz": 4943,
+  "pitch_move_semitones": -33.7,
+  "hits": 17,
+  "original": [
+   "Gear/Fast Gear.wav"
+  ]
+ },
+ {
+  "id": "smooth-and-premium-gear",
+  "file": "sfx/gear/smooth-and-premium-gear.wav",
+  "category": "gear",
+  "character": "sparse premium ticks, a dial turning",
+  "licence": "karl",
+  "sync": 0.26,
+  "transients": [
+   0.1,
+   0.175,
+   0.26,
+   0.35,
+   0.45,
+   0.55,
+   0.64,
+   0.75,
+   0.825,
+   0.905,
+   0.97,
+   1.045
+  ],
+  "length": 1.342,
+  "decay": 0.01,
+  "lufs": -22.2,
+  "brightness_hz": 11077,
+  "pitch_move_semitones": -8.9,
+  "hits": 15,
+  "original": [
+   "Gear/Smooth And Premium Gear.wav"
+  ]
+ },
+ {
+  "id": "soft-gear-1",
+  "file": "sfx/gear/soft-gear-1.wav",
+  "category": "gear",
+  "character": "soft, a few ticks",
+  "licence": "karl",
+  "sync": 0.01,
+  "transients": [
+   0.01,
+   0.1,
+   0.14,
+   0.215,
+   0.34
+  ],
+  "length": 0.635,
+  "decay": 0.005,
+  "lufs": -38.9,
+  "brightness_hz": 10750,
+  "pitch_move_semitones": 0.0,
+  "hits": 5,
+  "original": [
+   "Gear/Soft Gear 1.wav"
+  ]
+ },
+ {
+  "id": "soft-gear-2",
+  "file": "sfx/gear/soft-gear-2.wav",
+  "category": "gear",
+  "character": "soft, slow ticks",
+  "licence": "karl",
+  "sync": 0.025,
+  "transients": [
+   0.025,
+   0.12,
+   0.21,
+   0.31,
+   0.31,
+   0.375,
+   0.45,
+   0.535,
+   0.645,
+   0.785,
+   0.94,
+   1.365
+  ],
+  "length": 1.465,
+  "decay": 0.005,
+  "lufs": -33.6,
+  "brightness_hz": 13635,
+  "pitch_move_semitones": 0.1,
+  "hits": 12,
+  "original": [
+   "Gear/Soft Gear 2.wav"
+  ]
+ },
+ {
+  "id": "long-speed-gear",
+  "file": "sfx/gear/long-speed-gear.wav",
+  "category": "gear",
+  "character": "quick ratchet that runs down, 0.5 s",
+  "licence": "karl",
+  "sync": 0.04,
+  "transients": [
+   0.04,
+   0.09,
+   0.19,
+   0.215,
+   0.24,
+   0.31,
+   0.38,
+   0.38
+  ],
+  "length": 0.452,
+  "decay": 0.01,
+  "lufs": -22.5,
+  "brightness_hz": 8593,
+  "pitch_move_semitones": 0.0,
+  "hits": 8,
+  "original": [
+   "Gear/long speed gear.wav"
+  ]
+ },
+ {
+  "id": "middle-gear",
+  "file": "sfx/gear/middle-gear.wav",
+  "category": "gear",
+  "character": "even ratchet, 0.7 s",
+  "licence": "karl",
+  "sync": 0.025,
+  "transients": [
+   0.025,
+   0.065,
+   0.15,
+   0.15,
+   0.245,
+   0.27,
+   0.32,
+   0.37,
+   0.395,
+   0.44,
+   0.505,
+   0.55
+  ],
+  "length": 0.672,
+  "decay": 0.005,
+  "lufs": -24.0,
+  "brightness_hz": 8854,
+  "pitch_move_semitones": -0.2,
+  "hits": 14,
+  "original": [
+   "Gear/middle gear.wav"
+  ]
+ },
+ {
+  "id": "camera-shutter",
+  "file": "sfx/camera/camera-shutter.wav",
+  "category": "camera",
+  "character": "soft shutter",
+  "licence": "karl",
+  "sync": 0.085,
+  "transients": [
+   0.085,
+   0.085
+  ],
+  "length": 0.215,
+  "decay": 0.015,
+  "lufs": -25.6,
+  "brightness_hz": 9123,
+  "pitch_move_semitones": -2.1,
+  "hits": 2,
+  "original": [
+   "Camera Shutters/Camera Shutter.wav",
+   "Clicks/Click_2.wav"
+  ]
+ },
+ {
+  "id": "little-bit-hard-cammera-shutter",
+  "file": "sfx/camera/little-bit-hard-cammera-shutter.wav",
+  "category": "camera",
+  "character": "firm shutter",
+  "licence": "karl",
+  "sync": 0.03,
+  "transients": [
+   0.03,
+   0.055,
+   0.12,
+   0.32
+  ],
+  "length": 0.398,
+  "decay": 0.01,
+  "lufs": -23.3,
+  "brightness_hz": 7066,
+  "pitch_move_semitones": -17.6,
+  "hits": 4,
+  "original": [
+   "Camera Shutters/Little Bit Hard Cammera Shutter.wav"
+  ]
+ },
+ {
+  "id": "smooth-cammera-shutter",
+  "file": "sfx/camera/smooth-cammera-shutter.wav",
+  "category": "camera",
+  "character": "smooth shutter with a wind-on",
+  "licence": "karl",
+  "sync": 0.045,
+  "transients": [
+   0.045,
+   0.115,
+   0.15,
+   0.28
+  ],
+  "length": 0.52,
+  "decay": 0.015,
+  "lufs": -21.1,
+  "brightness_hz": 6640,
+  "pitch_move_semitones": -0.1,
+  "hits": 4,
+  "original": [
+   "Camera Shutters/Smooth Cammera Shutter.wav"
+  ]
+ },
+ {
+  "id": "ui-beatbox-click-01",
+  "file": "sfx/tap/ui-beatbox-click-01.wav",
+  "category": "tap",
+  "character": "punchy beatbox click",
+  "licence": "karl",
+  "sync": 0.045,
+  "transients": [
+   0.045,
+   0.1,
+   0.13
+  ],
+  "length": 0.176,
+  "decay": 0.015,
+  "lufs": -32.7,
+  "brightness_hz": 9187,
+  "pitch_move_semitones": -38.7,
+  "hits": 3,
+  "original": [
+   "Ui Sound Effects/UI Beatbox Click 01.wav"
+  ]
+ },
+ {
+  "id": "ui-premium-open",
+  "file": "sfx/appear-rise/ui-premium-open.wav",
+  "category": "appear-rise",
+  "character": "premium open, a long low swell",
+  "licence": "karl",
+  "sync": 0.095,
+  "transients": [
+   0.095,
+   0.19,
+   0.265,
+   0.34,
+   0.37,
+   0.52,
+   0.65,
+   0.725,
+   0.785,
+   0.85,
+   1.005,
+   1.065
+  ],
+  "length": 3.78,
+  "decay": 0.08,
+  "lufs": -20.1,
+  "brightness_hz": 445,
+  "pitch_move_semitones": 3.9,
+  "hits": 30,
+  "original": [
+   "Ui Sound Effects/UI Premium Open.wav"
+  ]
+ },
+ {
+  "id": "ui-backspace",
+  "file": "sfx/tap/ui-backspace.wav",
+  "category": "tap",
+  "character": "low thock, a backspace",
+  "licence": "karl",
+  "sync": 0.015,
+  "transients": [
+   0.015
+  ],
+  "length": 0.31,
+  "decay": 0.07,
+  "lufs": -28.2,
+  "brightness_hz": 142,
+  "pitch_move_semitones": -7.9,
+  "hits": 1,
+  "original": [
+   "Ui Sound Effects/Ui BackSpace.wav"
+  ]
+ },
+ {
+  "id": "ui-click-digital-03",
+  "file": "sfx/tap/ui-click-digital-03.wav",
+  "category": "tap",
+  "character": "digital, bright",
+  "licence": "karl",
+  "sync": 0.055,
+  "transients": [
+   0.055,
+   0.055,
+   0.105
+  ],
+  "length": 0.211,
+  "decay": 0.015,
+  "lufs": -34.4,
+  "brightness_hz": 7111,
+  "pitch_move_semitones": -7.7,
+  "hits": 3,
+  "original": [
+   "Ui Sound Effects/Ui Click Digital 03.wav"
+  ]
+ },
+ {
+  "id": "ui-click-digital-04",
+  "file": "sfx/tap/ui-click-digital-04.wav",
+  "category": "tap",
+  "character": "digital, faint",
+  "licence": "karl",
+  "sync": 0.015,
+  "transients": [
+   0.015,
+   0.07,
+   0.15
+  ],
+  "length": 0.169,
+  "decay": 0.025,
+  "lufs": -50.8,
+  "brightness_hz": 7449,
+  "pitch_move_semitones": 2.8,
+  "hits": 3,
+  "original": [
+   "Ui Sound Effects/Ui Click Digital 04.wav"
+  ]
+ },
+ {
+  "id": "ui-click",
+  "file": "sfx/tap/ui-click.wav",
+  "category": "tap",
+  "character": "low click with a soft tail",
+  "licence": "karl",
+  "sync": 0.23,
+  "transients": [
+   0.11,
+   0.23,
+   0.335
+  ],
+  "length": 1.298,
+  "decay": 0.075,
+  "lufs": -20.8,
+  "brightness_hz": 578,
+  "pitch_move_semitones": -5.2,
+  "hits": 3,
+  "original": [
+   "Ui Sound Effects/Ui Click.wma"
+  ]
+ },
+ {
+  "id": "ui-digital-click",
+  "file": "sfx/dismiss-fall/ui-digital-click.wav",
+  "category": "dismiss-fall",
+  "character": "digital blip, falling",
+  "licence": "karl",
+  "sync": 0.11,
+  "transients": [
+   0.035,
+   0.11
+  ],
+  "length": 0.54,
+  "decay": 0.31,
+  "lufs": -23.4,
+  "brightness_hz": 817,
+  "pitch_move_semitones": -27.9,
+  "hits": 2,
+  "original": [
+   "Ui Sound Effects/Ui Digital Click.wav"
+  ]
+ },
+ {
+  "id": "ui-enter",
+  "file": "sfx/tap/ui-enter.wav",
+  "category": "tap",
+  "character": "low, soft enter",
+  "licence": "karl",
+  "sync": 0.025,
+  "transients": [
+   0.025,
+   0.18,
+   0.23
+  ],
+  "length": 0.42,
+  "decay": 0.06,
+  "lufs": -26.9,
+  "brightness_hz": 102,
+  "pitch_move_semitones": -4.8,
+  "hits": 3,
+  "original": [
+   "Ui Sound Effects/Ui Enter.wav"
+  ]
+ },
+ {
+  "id": "ui-glitch-click",
+  "file": "sfx/glitch/ui-glitch-click.wav",
+  "category": "glitch",
+  "character": "glitchy click",
+  "licence": "karl",
+  "sync": 0.075,
+  "transients": [
+   0.075,
+   0.115,
+   0.235
+  ],
+  "length": 0.315,
+  "decay": 0.01,
+  "lufs": -21.3,
+  "brightness_hz": 4657,
+  "pitch_move_semitones": -33.4,
+  "hits": 3,
+  "original": [
+   "Ui Sound Effects/Ui Glitch Click.wav"
+  ]
+ },
+ {
+  "id": "ui-glitch-flicker-text",
+  "file": "sfx/glitch/ui-glitch-flicker-text.wav",
+  "category": "glitch",
+  "character": "flicker, a text glitch",
+  "licence": "karl",
+  "sync": 0.14,
+  "transients": [
+   0.05,
+   0.14,
+   0.14,
+   0.245
+  ],
+  "length": 0.41,
+  "decay": 0.06,
+  "lufs": -17.5,
+  "brightness_hz": 9112,
+  "pitch_move_semitones": 5.5,
+  "hits": 4,
+  "original": [
+   "Ui Sound Effects/Ui Glitch, Flicker, Text  (2).wav"
+  ]
+ },
+ {
+  "id": "ui-granular-button-select",
+  "file": "sfx/double-tap/ui-granular-button-select.wav",
+  "category": "double-tap",
+  "character": "granular select",
+  "licence": "karl",
+  "sync": 0.025,
+  "transients": [
+   0.025,
+   0.095
+  ],
+  "length": 0.214,
+  "decay": 0.03,
+  "lufs": -21.4,
+  "brightness_hz": 4881,
+  "pitch_move_semitones": -1.0,
+  "hits": 2,
+  "original": [
+   "Ui Sound Effects/Ui Granular, Button, Select   (9).wav"
+  ]
+ },
+ {
+  "id": "ui-granular-button-select-2",
+  "file": "sfx/double-tap/ui-granular-button-select-2.wav",
+  "category": "double-tap",
+  "character": "granular, rising",
+  "licence": "karl",
+  "sync": 0.06,
+  "transients": [
+   0.06,
+   0.13,
+   0.16
+  ],
+  "length": 0.167,
+  "decay": 0.01,
+  "lufs": -16.9,
+  "brightness_hz": 872,
+  "pitch_move_semitones": 16.3,
+  "hits": 3,
+  "original": [
+   "Ui Sound Effects/Ui Granular, Button, Select.wav"
+  ]
+ },
+ {
+  "id": "ui-open",
+  "file": "sfx/appear-rise/ui-open.wav",
+  "category": "appear-rise",
+  "character": "airy open, 1.5 s",
+  "licence": "karl",
+  "sync": 0.22,
+  "transients": [
+   0.11,
+   0.22,
+   0.54,
+   0.605,
+   0.66,
+   0.735,
+   0.8,
+   0.925,
+   0.99,
+   1.05
+  ],
+  "length": 1.535,
+  "decay": 0.045,
+  "lufs": -28.6,
+  "brightness_hz": 6315,
+  "pitch_move_semitones": 4.7,
+  "hits": 10,
+  "original": [
+   "Ui Sound Effects/Ui Open.wav"
+  ]
+ },
+ {
+  "id": "ui-typing",
+  "file": "sfx/ticker/ui-typing.wav",
+  "category": "ticker",
+  "character": "typing, soft and low",
+  "licence": "karl",
+  "sync": 0.54,
+  "transients": [
+   0.085,
+   0.115,
+   0.245,
+   0.32,
+   0.54,
+   0.54,
+   0.68,
+   0.735,
+   0.735,
+   1.02,
+   1.14,
+   1.535
+  ],
+  "length": 2.08,
+  "decay": 0.54,
+  "lufs": -15.8,
+  "brightness_hz": 141,
+  "pitch_move_semitones": 0.0,
+  "hits": 16,
+  "original": [
+   "Ui Sound Effects/Ui Typing.wma"
+  ]
+ },
+ {
+  "id": "ui-button",
+  "file": "sfx/pop/ui-button.wav",
+  "category": "pop",
+  "character": "bubbly button, rising",
+  "licence": "karl",
+  "sync": 0.03,
+  "transients": [
+   0.03,
+   0.08,
+   0.12
+  ],
+  "length": 0.242,
+  "decay": 0.015,
+  "lufs": -14.7,
+  "brightness_hz": 7217,
+  "pitch_move_semitones": 15.9,
+  "hits": 3,
+  "original": [
+   "Ui Sound Effects/Ui button.wav"
+  ]
+ },
+ {
+  "id": "ui-stretch",
+  "file": "sfx/swipe/ui-stretch.wav",
+  "category": "swipe",
+  "character": "elastic stretch",
+  "licence": "karl",
+  "sync": 0.22,
+  "transients": [
+   0.12,
+   0.17,
+   0.22,
+   0.475
+  ],
+  "length": 1.135,
+  "decay": 0.345,
+  "lufs": -13.6,
+  "brightness_hz": 4266,
+  "pitch_move_semitones": 1.7,
+  "hits": 4,
+  "original": [
+   "Ui Sound Effects/Ui stretch.wav"
+  ]
+ },
+ {
+  "id": "ui",
+  "file": "sfx/data/ui.wav",
+  "category": "data",
+  "character": "digital sparkle chatter, falling",
+  "licence": "karl",
+  "sync": 0.33,
+  "transients": [
+   0.045,
+   0.165,
+   0.165,
+   0.22,
+   0.245,
+   0.33,
+   0.375,
+   0.445,
+   0.555,
+   0.625,
+   0.625
+  ],
+  "length": 0.735,
+  "decay": 0.01,
+  "lufs": -19.2,
+  "brightness_hz": 11529,
+  "pitch_move_semitones": -23.1,
+  "hits": 11,
+  "original": [
+   "Ui Sound Effects/Ui.wav"
+  ]
+ },
+ {
+  "id": "uu-click-digital-01",
+  "file": "sfx/glitch/uu-click-digital-01.wav",
+  "category": "glitch",
+  "character": "digital noise click",
+  "licence": "karl",
+  "sync": 0.135,
+  "transients": [
+   0.07,
+   0.135
+  ],
+  "length": 0.461,
+  "decay": 0.23,
+  "lufs": -31.9,
+  "brightness_hz": 12159,
+  "pitch_move_semitones": 0.2,
+  "hits": 2,
+  "original": [
+   "Ui Sound Effects/Uu Click Digital 01.wav"
+  ]
+ },
+ {
+  "id": "v4-type-delete",
+  "file": "sfx/tap/v4-type-delete.wav",
+  "category": "tap",
+  "character": "tiny key tap",
+  "licence": "karl",
+  "sync": 0.015,
+  "transients": [
+   0.015
+  ],
+  "length": 0.115,
+  "decay": 0.01,
+  "lufs": -29.6,
+  "brightness_hz": 2093,
+  "pitch_move_semitones": 0.0,
+  "hits": 1,
+  "original": [
+   "Ui Sound Effects/v4) type & delete (2).wav"
+  ]
+ },
+ {
+  "id": "cinematic-fast-normal-whoosh",
+  "file": "sfx/whoosh/cinematic-fast-normal-whoosh.wav",
+  "category": "whoosh",
+  "character": "fast, cinematic, short",
+  "licence": "karl",
+  "sync": 0.53,
+  "transients": [
+   0.11,
+   0.53
+  ],
+  "length": 0.836,
+  "decay": 0.005,
+  "lufs": -27.8,
+  "brightness_hz": 978,
+  "pitch_move_semitones": -5.1,
+  "hits": 2,
+  "original": [
+   "Whooshes/Cinematic Fast Normal Whoosh.wav"
+  ]
+ },
+ {
+  "id": "cinematic-fast-whoosh",
+  "file": "sfx/whoosh/cinematic-fast-whoosh.wav",
+  "category": "whoosh",
+  "character": "fast, airy, cinematic",
+  "licence": "karl",
+  "sync": 0.58,
+  "transients": [
+   0.58,
+   0.655,
+   0.99,
+   1.06,
+   1.18
+  ],
+  "length": 1.193,
+  "decay": 0.02,
+  "lufs": -31.0,
+  "brightness_hz": 2419,
+  "pitch_move_semitones": 3.9,
+  "hits": 5,
+  "original": [
+   "Whooshes/Cinematic Fast Whoosh.wav"
+  ]
+ },
+ {
+  "id": "cinematic-long-whoosh",
+  "file": "sfx/whoosh/cinematic-long-whoosh.wav",
+  "category": "whoosh",
+  "character": "long cinematic pass",
+  "licence": "karl",
+  "sync": 1.94,
+  "transients": [
+   1.94,
+   2.13,
+   2.175,
+   2.275,
+   2.39,
+   2.935
+  ],
+  "length": 3.815,
+  "decay": 0.16,
+  "lufs": -31.4,
+  "brightness_hz": 577,
+  "pitch_move_semitones": -3.9,
+  "hits": 6,
+  "original": [
+   "Whooshes/Cinematic Long Whoosh.wav"
+  ]
+ },
+ {
+  "id": "cinematic-low-whoosh",
+  "file": "sfx/whoosh/cinematic-low-whoosh.wav",
+  "category": "whoosh",
+  "character": "low, cinematic, 2 s",
+  "licence": "karl",
+  "sync": 0.795,
+  "transients": [
+   0.22,
+   0.265,
+   0.36,
+   0.39,
+   0.55,
+   0.62,
+   0.71,
+   0.795,
+   0.855,
+   1.22,
+   1.295,
+   1.39
+  ],
+  "length": 1.92,
+  "decay": 0.31,
+  "lufs": -25.9,
+  "brightness_hz": 389,
+  "pitch_move_semitones": 0.0,
+  "hits": 12,
+  "original": [
+   "Whooshes/Cinematic Low Whoosh.wav"
+  ]
+ },
+ {
+  "id": "cinematic-mediam-whoosh",
+  "file": "sfx/whoosh/cinematic-mediam-whoosh.wav",
+  "category": "whoosh",
+  "character": "medium, cinematic",
+  "licence": "karl",
+  "sync": 0.605,
+  "transients": [
+   0.1,
+   0.27,
+   0.365,
+   0.48,
+   0.605,
+   1.04,
+   1.085
+  ],
+  "length": 1.52,
+  "decay": 0.165,
+  "lufs": -29.4,
+  "brightness_hz": 985,
+  "pitch_move_semitones": -5.0,
+  "hits": 7,
+  "original": [
+   "Whooshes/Cinematic Mediam Whoosh.wav"
+  ]
+ },
+ {
+  "id": "data-whoosh",
+  "file": "sfx/whoosh/data-whoosh.wav",
+  "category": "whoosh",
+  "character": "digital, a data whoosh",
+  "licence": "karl",
+  "sync": 0.435,
+  "transients": [
+   0.08,
+   0.14,
+   0.155,
+   0.23,
+   0.285,
+   0.435,
+   0.435
+  ],
+  "length": 1.225,
+  "decay": 0.315,
+  "lufs": -31.4,
+  "brightness_hz": 4057,
+  "pitch_move_semitones": 3.9,
+  "hits": 7,
+  "original": [
+   "Whooshes/Data_Whoosh.wav"
+  ]
+ },
+ {
+  "id": "fast-whoosh",
+  "file": "sfx/whoosh/fast-whoosh.wav",
+  "category": "whoosh",
+  "character": "fast, airy, falling",
+  "licence": "karl",
+  "sync": 0.485,
+  "transients": [
+   0.175,
+   0.31,
+   0.485,
+   0.555,
+   0.7
+  ],
+  "length": 0.93,
+  "decay": 0.25,
+  "lufs": -29.2,
+  "brightness_hz": 2693,
+  "pitch_move_semitones": -3.9,
+  "hits": 5,
+  "original": [
+   "Whooshes/Fast Whoosh .wav"
+  ]
+ },
+ {
+  "id": "fast-whoosh-2",
+  "file": "sfx/whoosh/fast-whoosh-2.wav",
+  "category": "whoosh",
+  "character": "rising pass, 2.6 s",
+  "licence": "karl",
+  "sync": 0.61,
+  "transients": [
+   0.415,
+   0.585,
+   0.61
+  ],
+  "length": 1.53,
+  "decay": 0.29,
+  "lufs": -27.9,
+  "brightness_hz": 1439,
+  "pitch_move_semitones": 9.7,
+  "hits": 3,
+  "original": [
+   "Whooshes/Fast Whoosh.wav"
+  ]
+ },
+ {
+  "id": "high-and-fast-whoosh",
+  "file": "sfx/whoosh/high-and-fast-whoosh.wav",
+  "category": "whoosh",
+  "character": "fast, clean pass",
+  "licence": "karl",
+  "sync": 0.365,
+  "transients": [
+   0.365
+  ],
+  "length": 1.09,
+  "decay": 0.17,
+  "lufs": -15.6,
+  "brightness_hz": 654,
+  "pitch_move_semitones": 0.0,
+  "hits": 1,
+  "original": [
+   "Whooshes/High And Fast Whoosh.wav"
+  ]
+ },
+ {
+  "id": "high-and-fast-woosh",
+  "file": "sfx/whoosh/high-and-fast-woosh.wav",
+  "category": "whoosh",
+  "character": "fast pass, fuller",
+  "licence": "karl",
+  "sync": 0.8,
+  "transients": [
+   0.235,
+   0.31,
+   0.395,
+   0.515,
+   0.515,
+   0.745,
+   0.8,
+   0.885,
+   0.99,
+   1.155,
+   1.26,
+   1.375
+  ],
+  "length": 2.11,
+  "decay": 0.235,
+  "lufs": -17.7,
+  "brightness_hz": 701,
+  "pitch_move_semitones": 0.0,
+  "hits": 15,
+  "original": [
+   "Whooshes/High And Fast Woosh.wav"
+  ]
+ },
+ {
+  "id": "long-whoosh",
+  "file": "sfx/whoosh/long-whoosh.wav",
+  "category": "whoosh",
+  "character": "long, soft",
+  "licence": "karl",
+  "sync": 0.71,
+  "transients": [
+   0.265,
+   0.305,
+   0.345,
+   0.41,
+   0.485,
+   0.56,
+   0.595,
+   0.71,
+   0.97,
+   1.0,
+   1.05,
+   1.225
+  ],
+  "length": 3.99,
+  "decay": 0.215,
+  "lufs": -22.7,
+  "brightness_hz": 414,
+  "pitch_move_semitones": 0.0,
+  "hits": 24,
+  "original": [
+   "Whooshes/Long Whoosh.wav"
+  ]
+ },
+ {
+  "id": "simple-whoosh-2",
+  "file": "sfx/whoosh/simple-whoosh-2.wav",
+  "category": "whoosh",
+  "character": "deep double swoosh",
+  "licence": "karl",
+  "sync": 0.42,
+  "transients": [
+   0.125,
+   0.235,
+   0.25,
+   0.42
+  ],
+  "length": 0.995,
+  "decay": 0.155,
+  "lufs": -15.8,
+  "brightness_hz": 72,
+  "pitch_move_semitones": 0.0,
+  "hits": 4,
+  "original": [
+   "Whooshes/Simple Whoosh 2.wav"
+  ]
+ },
+ {
+  "id": "simple-whoosh",
+  "file": "sfx/whoosh/simple-whoosh.wav",
+  "category": "whoosh",
+  "character": "soft, simple",
+  "licence": "karl",
+  "sync": 0.795,
+  "transients": [
+   0.16,
+   0.255,
+   0.265,
+   0.325,
+   0.425,
+   0.735,
+   0.795,
+   0.96
+  ],
+  "length": 1.295,
+  "decay": 0.06,
+  "lufs": -25.3,
+  "brightness_hz": 205,
+  "pitch_move_semitones": 0.0,
+  "hits": 8,
+  "original": [
+   "Whooshes/Simple Whoosh.wav"
+  ]
+ },
+ {
+  "id": "slow-and-smooth-whoosh",
+  "file": "sfx/whoosh/slow-and-smooth-whoosh.wav",
+  "category": "whoosh",
+  "character": "slow, smooth",
+  "licence": "karl",
+  "sync": 0.705,
+  "transients": [
+   0.095,
+   0.24,
+   0.29,
+   0.31,
+   0.4,
+   0.4,
+   0.5,
+   0.54,
+   0.675,
+   0.705,
+   0.785,
+   0.855
+  ],
+  "length": 2.255,
+  "decay": 0.035,
+  "lufs": -21.9,
+  "brightness_hz": 313,
+  "pitch_move_semitones": 0.0,
+  "hits": 23,
+  "original": [
+   "Whooshes/Slow And Smooth Whoosh .wav",
+   "Whooshes/Smooth Like A Butter Whoosh.wav"
+  ]
+ },
+ {
+  "id": "smooth-and-fast-whoosh",
+  "file": "sfx/whoosh/smooth-and-fast-whoosh.wav",
+  "category": "whoosh",
+  "character": "smooth, fast, deep",
+  "licence": "karl",
+  "sync": 0.5,
+  "transients": [
+   0.22,
+   0.38,
+   0.5,
+   0.53,
+   0.71
+  ],
+  "length": 1.025,
+  "decay": 0.19,
+  "lufs": -15.3,
+  "brightness_hz": 192,
+  "pitch_move_semitones": 0.0,
+  "hits": 5,
+  "original": [
+   "Whooshes/Smooth And Fast Whoosh.wav"
+  ]
+ },
+ {
+  "id": "whoosh-deep-light-2",
+  "file": "sfx/whoosh/whoosh-deep-light-2.wav",
+  "category": "whoosh",
+  "character": "deep, light, long",
+  "licence": "karl",
+  "sync": 0.765,
+  "transients": [
+   0.085,
+   0.21,
+   0.26,
+   0.425,
+   0.425,
+   0.505,
+   0.57,
+   0.66,
+   0.765,
+   0.84,
+   0.925,
+   1.06
+  ],
+  "length": 2.84,
+  "decay": 0.06,
+  "lufs": -19.3,
+  "brightness_hz": 548,
+  "pitch_move_semitones": 0.0,
+  "hits": 25,
+  "original": [
+   "Whooshes/Whoosh Deep Light 2.wav"
+  ]
+ },
+ {
+  "id": "whoosh-deep-short",
+  "file": "sfx/whoosh/whoosh-deep-short.wav",
+  "category": "whoosh",
+  "character": "deep, short",
+  "licence": "karl",
+  "sync": 0.15,
+  "transients": [
+   0.06,
+   0.115,
+   0.15,
+   0.215,
+   0.42,
+   0.505,
+   0.505,
+   0.575,
+   0.64,
+   0.7,
+   0.835,
+   0.945
+  ],
+  "length": 1.515,
+  "decay": 0.185,
+  "lufs": -20.8,
+  "brightness_hz": 139,
+  "pitch_move_semitones": 0.0,
+  "hits": 12,
+  "original": [
+   "Whooshes/Whoosh Deep Short.wav"
+  ]
+ },
+ {
+  "id": "epic-fast-whoosh",
+  "file": "sfx/whoosh/epic-fast-whoosh.wav",
+  "category": "whoosh",
+  "character": "epic, short, pulsing",
+  "licence": "pixabay",
+  "sync": 0.18,
+  "transients": [
+   0.05,
+   0.165,
+   0.18,
+   0.315
+  ],
+  "length": 0.482,
+  "decay": 0.04,
+  "lufs": -24.6,
+  "brightness_hz": 95,
+  "pitch_move_semitones": 0.0,
+  "hits": 4,
+  "original": [
+   "Whooshes/epic-fast-whoosh-345469.mp3"
+  ]
+ },
+ {
+  "id": "cinematic-money-1",
+  "file": "sfx/money/cinematic-money-1.wav",
+  "category": "money",
+  "character": "cash register ring, cinematic",
+  "licence": "karl",
+  "sync": 0.32,
+  "transients": [
+   0.065,
+   0.32,
+   0.32
+  ],
+  "length": 1.525,
+  "decay": 0.42,
+  "lufs": -22.0,
+  "brightness_hz": 5398,
+  "pitch_move_semitones": 21.7,
+  "hits": 3,
+  "original": [
+   "Money/Cinematic Money 1.wav"
+  ]
+ },
+ {
+  "id": "cinematic-money-2",
+  "file": "sfx/money/cinematic-money-2.wav",
+  "category": "money",
+  "character": "coins, cinematic",
+  "licence": "karl",
+  "sync": 0.085,
+  "transients": [
+   0.085,
+   0.17,
+   0.42,
+   0.5
+  ],
+  "length": 1.055,
+  "decay": 0.14,
+  "lufs": -18.5,
+  "brightness_hz": 6151,
+  "pitch_move_semitones": -36.0,
+  "hits": 4,
+  "original": [
+   "Money/Cinematic Money 2.wav"
+  ]
+ },
+ {
+  "id": "high-volume-money",
+  "file": "sfx/money/high-volume-money.wav",
+  "category": "money",
+  "character": "cash register, full",
+  "licence": "karl",
+  "sync": 0.44,
+  "transients": [
+   0.155,
+   0.44
+  ],
+  "length": 1.24,
+  "decay": 0.445,
+  "lufs": -13.6,
+  "brightness_hz": 5781,
+  "pitch_move_semitones": -5.4,
+  "hits": 2,
+  "original": [
+   "Money/High Volume Money.wav"
+  ]
+ },
+ {
+  "id": "mediam-volume-mone",
+  "file": "sfx/money/mediam-volume-mone.wav",
+  "category": "money",
+  "character": "coins, light",
+  "licence": "karl",
+  "sync": 0.085,
+  "transients": [
+   0.085,
+   0.175,
+   0.325,
+   1.09,
+   1.14,
+   1.19,
+   1.24
+  ],
+  "length": 2.55,
+  "decay": 0.04,
+  "lufs": -21.8,
+  "brightness_hz": 6101,
+  "pitch_move_semitones": 4.5,
+  "hits": 7,
+  "original": [
+   "Money/Mediam Volume Mone.wav"
+  ]
+ },
+ {
+  "id": "premium-riser",
+  "file": "sfx/appear-rise/premium-riser.wav",
+  "category": "appear-rise",
+  "character": "premium shimmer open, an airy tail",
+  "licence": "karl",
+  "sync": 0.04,
+  "transients": [
+   0.04,
+   0.065,
+   1.13
+  ],
+  "length": 2.453,
+  "decay": 0.465,
+  "lufs": -33.6,
+  "brightness_hz": 8257,
+  "pitch_move_semitones": 15.8,
+  "hits": 3,
+  "original": [
+   "Risers/Premium Riser.wav"
+  ]
+ },
+ {
+  "id": "rjd-riser",
+  "file": "sfx/appear-rise/rjd-riser.wav",
+  "category": "appear-rise",
+  "character": "fast sweep up with a ring",
+  "licence": "karl",
+  "sync": 0.025,
+  "transients": [
+   0.025
+  ],
+  "length": 0.7,
+  "decay": 0.495,
+  "lufs": -20.3,
+  "brightness_hz": 4062,
+  "pitch_move_semitones": 36.4,
+  "hits": 1,
+  "original": [
+   "Risers/RJD Riser.wav"
+  ]
+ },
+ {
+  "id": "riser-2",
+  "file": "sfx/riser/riser-2.wav",
+  "category": "riser",
+  "character": "long build to a hit, 6 s",
+  "licence": "karl",
+  "sync": 2.875,
+  "transients": [],
+  "length": 4.49,
+  "decay": 0.11,
+  "lufs": -13.5,
+  "brightness_hz": 1179,
+  "pitch_move_semitones": 0.0,
+  "hits": 1,
+  "original": [
+   "Risers/Riser 2.wav"
+  ]
+ },
+ {
+  "id": "riser",
+  "file": "sfx/riser/riser.wav",
+  "category": "riser",
+  "character": "short build to a hit, 2 s",
+  "licence": "karl",
+  "sync": 0.47,
+  "transients": [],
+  "length": 0.78,
+  "decay": 0.01,
+  "lufs": -29.6,
+  "brightness_hz": 518,
+  "pitch_move_semitones": 19.7,
+  "hits": 1,
+  "original": [
+   "Risers/Riser.wav"
+  ]
+ },
+ {
+  "id": "smooth-riser",
+  "file": "sfx/riser/smooth-riser.wav",
+  "category": "riser",
+  "character": "pulsing tonal swell, 2.5 s",
+  "licence": "karl",
+  "sync": 1.9,
+  "transients": [],
+  "length": 2.39,
+  "decay": 0.41,
+  "lufs": -28.3,
+  "brightness_hz": 494,
+  "pitch_move_semitones": 0.0,
+  "hits": 1,
+  "original": [
+   "Risers/Smooth Riser.wav"
+  ]
+ },
+ {
+  "id": "cinematic-data-collect-2",
+  "file": "sfx/data/cinematic-data-collect-2.wav",
+  "category": "data",
+  "character": "cinematic data stream, 3.5 s",
+  "licence": "karl",
+  "sync": 0.1,
+  "transients": [
+   0.035,
+   0.1,
+   0.15,
+   0.245,
+   0.245,
+   0.295,
+   0.345,
+   0.44,
+   0.44,
+   0.54,
+   0.59,
+   0.59
+  ],
+  "length": 3.455,
+  "decay": 1.9,
+  "lufs": -19.5,
+  "brightness_hz": 8369,
+  "pitch_move_semitones": -1.2,
+  "hits": 25,
+  "original": [
+   "Data Collect/Cinematic Data Collect 2.wav"
+  ]
+ },
+ {
+  "id": "cinematic-data",
+  "file": "sfx/data/cinematic-data.wav",
+  "category": "data",
+  "character": "faint data chatter",
+  "licence": "karl",
+  "sync": 0.065,
+  "transients": [
+   0.065,
+   0.145,
+   0.225,
+   0.28,
+   0.325,
+   0.405,
+   0.52,
+   0.585,
+   0.65,
+   0.7,
+   0.75,
+   0.84
+  ],
+  "length": 2.223,
+  "decay": 0.345,
+  "lufs": -40.1,
+  "brightness_hz": 11664,
+  "pitch_move_semitones": 0.1,
+  "hits": 30,
+  "original": [
+   "Data Collect/Cinematic data.wav"
+  ]
+ },
+ {
+  "id": "data-collect",
+  "file": "sfx/data/data-collect.wav",
+  "category": "data",
+  "character": "fast data beeps, 1.2 s",
+  "licence": "karl",
+  "sync": 0.045,
+  "transients": [
+   0.045,
+   0.13,
+   0.17,
+   0.255,
+   0.34,
+   0.38,
+   0.465,
+   0.505,
+   0.55,
+   0.63,
+   0.715,
+   0.755
+  ],
+  "length": 1.04,
+  "decay": 0.035,
+  "lufs": -16.2,
+  "brightness_hz": 14136,
+  "pitch_move_semitones": -2.9,
+  "hits": 15,
+  "original": [
+   "Data Collect/Data Collect.mp3"
+  ]
+ },
+ {
+  "id": "data-collect-2",
+  "file": "sfx/data/data-collect-2.wav",
+  "category": "data",
+  "character": "rising data blips",
+  "licence": "karl",
+  "sync": 0.025,
+  "transients": [
+   0.025,
+   0.16,
+   0.315,
+   0.315,
+   0.415,
+   0.415,
+   0.54,
+   0.595,
+   0.595,
+   0.67,
+   0.695,
+   0.775
+  ],
+  "length": 0.963,
+  "decay": 0.035,
+  "lufs": -27.4,
+  "brightness_hz": 10341,
+  "pitch_move_semitones": 52.5,
+  "hits": 15,
+  "original": [
+   "Data Collect/Data Collect.wav"
+  ]
+ },
+ {
+  "id": "ma-tuttkile-stopwatch-3",
+  "file": "sfx/ticker/ma-tuttkile-stopwatch-3.wav",
+  "category": "ticker",
+  "character": "stopwatch ticking, 5.6 s",
+  "licence": "karl",
+  "sync": 0.13,
+  "transients": [
+   0.015,
+   0.13,
+   0.265,
+   0.38,
+   0.505,
+   0.625,
+   0.755,
+   0.88,
+   1.005,
+   1.125,
+   1.255,
+   1.375
+  ],
+  "length": 5.619,
+  "decay": 0.01,
+  "lufs": -34.0,
+  "brightness_hz": 10891,
+  "pitch_move_semitones": 0.0,
+  "hits": 45,
+  "original": [
+   "Data Collect/MA_Tuttkile_Stopwatch_3.wav"
+  ]
+ },
+ {
+  "id": "meadia-pop",
+  "file": "sfx/pop/meadia-pop.wav",
+  "category": "pop",
+  "character": "deep, round",
+  "licence": "karl",
+  "sync": 0.025,
+  "transients": [
+   0.025
+  ],
+  "length": 0.28,
+  "decay": 0.015,
+  "lufs": -15.3,
+  "brightness_hz": 683,
+  "pitch_move_semitones": 15.9,
+  "hits": 1,
+  "original": [
+   "Pop/Meadia Pop.wav"
+  ]
+ },
+ {
+  "id": "normal-pop",
+  "file": "sfx/pop/normal-pop.wav",
+  "category": "pop",
+  "character": "clean, single",
+  "licence": "karl",
+  "sync": 0.035,
+  "transients": [
+   0.035
+  ],
+  "length": 0.36,
+  "decay": 0.02,
+  "lufs": -25.0,
+  "brightness_hz": 991,
+  "pitch_move_semitones": 12.0,
+  "hits": 1,
+  "original": [
+   "Pop/Normal Pop.wav"
+  ]
+ },
+ {
+  "id": "premium-and-smooth-pop",
+  "file": "sfx/pop/premium-and-smooth-pop.wav",
+  "category": "pop",
+  "character": "smooth double pop, premium",
+  "licence": "karl",
+  "sync": 0.05,
+  "transients": [
+   0.05
+  ],
+  "length": 0.385,
+  "decay": 0.015,
+  "lufs": -24.9,
+  "brightness_hz": 1286,
+  "pitch_move_semitones": -17.5,
+  "hits": 1,
+  "original": [
+   "Pop/Premium And Smooth Pop.wav"
+  ]
+ },
+ {
+  "id": "slow-and-smooth-pop",
+  "file": "sfx/pop/slow-and-smooth-pop.wav",
+  "category": "pop",
+  "character": "soft, round",
+  "licence": "karl",
+  "sync": 0.085,
+  "transients": [
+   0.085
+  ],
+  "length": 0.315,
+  "decay": 0.035,
+  "lufs": -21.3,
+  "brightness_hz": 697,
+  "pitch_move_semitones": 4.5,
+  "hits": 1,
+  "original": [
+   "Pop/Slow And Smooth Pop.wav"
+  ]
+ },
+ {
+  "id": "smooth-pop",
+  "file": "sfx/pop/smooth-pop.wav",
+  "category": "pop",
+  "character": "bright, airy",
+  "licence": "karl",
+  "sync": 0.015,
+  "transients": [
+   0.015
+  ],
+  "length": 0.105,
+  "decay": 0.01,
+  "lufs": -22.2,
+  "brightness_hz": 5310,
+  "pitch_move_semitones": 0.0,
+  "hits": 1,
+  "original": [
+   "Pop/Smooth Pop.wav"
+  ]
+ },
+ {
+  "id": "sweet-ui-open",
+  "file": "sfx/pop/sweet-ui-open.wav",
+  "category": "pop",
+  "character": "sweet double pop, an opening",
+  "licence": "karl",
+  "sync": 0.01,
+  "transients": [
+   0.01,
+   0.075
+  ],
+  "length": 0.165,
+  "decay": 0.015,
+  "lufs": -17.4,
+  "brightness_hz": 1720,
+  "pitch_move_semitones": 0.0,
+  "hits": 2,
+  "original": [
+   "Pop/Sweet UI Open.wav"
+  ]
+ },
+ {
+  "id": "cinematic-click",
+  "file": "sfx/tap/cinematic-click.wav",
+  "category": "tap",
+  "character": "short, crisp",
+  "licence": "karl",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.094,
+  "decay": 0.02,
+  "lufs": -30.9,
+  "brightness_hz": 4159,
+  "pitch_move_semitones": -7.0,
+  "hits": 1,
+  "original": [
+   "Clicks/Cinematic Click.wav"
+  ]
+ },
+ {
+  "id": "click",
+  "file": "sfx/tap/click.wav",
+  "category": "tap",
+  "character": "low tonal click, rising",
+  "licence": "karl",
+  "sync": 0.01,
+  "transients": [
+   0.01
+  ],
+  "length": 0.32,
+  "decay": 0.11,
+  "lufs": -18.2,
+  "brightness_hz": 372,
+  "pitch_move_semitones": 12.0,
+  "hits": 1,
+  "original": [
+   "Clicks/Click  (1).wav"
+  ]
+ },
+ {
+  "id": "click-2",
+  "file": "sfx/double-tap/click-2.wav",
+  "category": "double-tap",
+  "character": "bright double click",
+  "licence": "karl",
+  "sync": 0.015,
+  "transients": [
+   0.015,
+   0.11
+  ],
+  "length": 0.215,
+  "decay": 0.01,
+  "lufs": -24.8,
+  "brightness_hz": 11175,
+  "pitch_move_semitones": 1.1,
+  "hits": 2,
+  "original": [
+   "Clicks/Click 2.wav"
+  ]
+ },
+ {
+  "id": "high-click",
+  "file": "sfx/tap/high-click.wav",
+  "category": "tap",
+  "character": "high, tight",
+  "licence": "karl",
+  "sync": 0.015,
+  "transients": [
+   0.015
+  ],
+  "length": 0.084,
+  "decay": 0.01,
+  "lufs": -21.5,
+  "brightness_hz": 6432,
+  "pitch_move_semitones": -24.9,
+  "hits": 1,
+  "original": [
+   "Clicks/High Click.wav"
+  ]
+ },
+ {
+  "id": "kenney-back-001",
+  "file": "sfx/tap/kenney-back-001.wav",
+  "category": "tap",
+  "character": "tiny, bright tick",
+  "licence": "cc0",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.061,
+  "decay": 0.01,
+  "lufs": -28.4,
+  "brightness_hz": 3521,
+  "pitch_move_semitones": 7.2,
+  "hits": 1,
+  "original": [
+   "kenney-back-001.ogg"
+  ]
+ },
+ {
+  "id": "kenney-bong-001",
+  "file": "sfx/impact/kenney-bong-001.wav",
+  "category": "impact",
+  "character": "soft low bong",
+  "licence": "cc0",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.12,
+  "decay": 0.035,
+  "lufs": -22.7,
+  "brightness_hz": 220,
+  "pitch_move_semitones": 0.0,
+  "hits": 1,
+  "original": [
+   "kenney-bong-001.ogg"
+  ]
+ },
+ {
+  "id": "kenney-click-001",
+  "file": "sfx/tap/kenney-click-001.wav",
+  "category": "tap",
+  "character": "clean, neutral click",
+  "licence": "cc0",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.097,
+  "decay": 0.01,
+  "lufs": -32.0,
+  "brightness_hz": 4092,
+  "pitch_move_semitones": 0.0,
+  "hits": 1,
+  "original": [
+   "kenney-click-001.ogg"
+  ]
+ },
+ {
+  "id": "kenney-close-001",
+  "file": "sfx/dismiss-fall/kenney-close-001.wav",
+  "category": "dismiss-fall",
+  "character": "quick, bright close",
+  "licence": "cc0",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.148,
+  "decay": 0.13,
+  "lufs": -16.0,
+  "brightness_hz": 12435,
+  "pitch_move_semitones": 7.1,
+  "hits": 1,
+  "original": [
+   "kenney-close-001.ogg"
+  ]
+ },
+ {
+  "id": "kenney-close-002",
+  "file": "sfx/dismiss-fall/kenney-close-002.wav",
+  "category": "dismiss-fall",
+  "character": "falling close",
+  "licence": "cc0",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.314,
+  "decay": 0.28,
+  "lufs": -16.0,
+  "brightness_hz": 9831,
+  "pitch_move_semitones": -24.6,
+  "hits": 1,
+  "original": [
+   "kenney-close-002.ogg"
+  ]
+ },
+ {
+  "id": "kenney-confirmation-001",
+  "file": "sfx/success/kenney-confirmation-001.wav",
+  "category": "success",
+  "character": "warm rising confirm",
+  "licence": "cc0",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.29,
+  "decay": 0.245,
+  "lufs": -15.4,
+  "brightness_hz": 723,
+  "pitch_move_semitones": 18.3,
+  "hits": 1,
+  "original": [
+   "kenney-confirmation-001.ogg"
+  ]
+ },
+ {
+  "id": "kenney-confirmation-002",
+  "file": "sfx/success/kenney-confirmation-002.wav",
+  "category": "success",
+  "character": "bright two-note confirm",
+  "licence": "cc0",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.539,
+  "decay": 0.29,
+  "lufs": -13.3,
+  "brightness_hz": 2354,
+  "pitch_move_semitones": 18.9,
+  "hits": 1,
+  "original": [
+   "kenney-confirmation-002.ogg"
+  ]
+ },
+ {
+  "id": "kenney-drop-001",
+  "file": "sfx/pop/kenney-drop-001.wav",
+  "category": "pop",
+  "character": "light drop",
+  "licence": "cc0",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.132,
+  "decay": 0.025,
+  "lufs": -21.7,
+  "brightness_hz": 3276,
+  "pitch_move_semitones": 0.0,
+  "hits": 1,
+  "original": [
+   "kenney-drop-001.ogg"
+  ]
+ },
+ {
+  "id": "kenney-drop-003",
+  "file": "sfx/pop/kenney-drop-003.wav",
+  "category": "pop",
+  "character": "low, soft drop",
+  "licence": "cc0",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.165,
+  "decay": 0.04,
+  "lufs": -20.5,
+  "brightness_hz": 712,
+  "pitch_move_semitones": 0.0,
+  "hits": 1,
+  "original": [
+   "kenney-drop-003.ogg"
+  ]
+ },
+ {
+  "id": "kenney-error-001",
+  "file": "sfx/error/kenney-error-001.wav",
+  "category": "error",
+  "character": "short buzz",
+  "licence": "cc0",
+  "sync": 0.06,
+  "transients": [
+   0.06
+  ],
+  "length": 0.162,
+  "decay": 0.045,
+  "lufs": -17.6,
+  "brightness_hz": 4612,
+  "pitch_move_semitones": 1.6,
+  "hits": 1,
+  "original": [
+   "kenney-error-001.ogg"
+  ]
+ },
+ {
+  "id": "kenney-error-005",
+  "file": "sfx/error/kenney-error-005.wav",
+  "category": "error",
+  "character": "soft low error",
+  "licence": "cc0",
+  "sync": 0.015,
+  "transients": [
+   0.015
+  ],
+  "length": 0.21,
+  "decay": 0.095,
+  "lufs": -23.2,
+  "brightness_hz": 941,
+  "pitch_move_semitones": 0.0,
+  "hits": 1,
+  "original": [
+   "kenney-error-005.ogg"
+  ]
+ },
+ {
+  "id": "kenney-glass-001",
+  "file": "sfx/chime/kenney-glass-001.wav",
+  "category": "chime",
+  "character": "glassy ping",
+  "licence": "cc0",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.275,
+  "decay": 0.09,
+  "lufs": -19.5,
+  "brightness_hz": 1914,
+  "pitch_move_semitones": 0.4,
+  "hits": 1,
+  "original": [
+   "kenney-glass-001.ogg"
+  ]
+ },
+ {
+  "id": "kenney-glass-004",
+  "file": "sfx/chime/kenney-glass-004.wav",
+  "category": "chime",
+  "character": "bright glass shimmer",
+  "licence": "cc0",
+  "sync": 0.26,
+  "transients": [
+   0.26
+  ],
+  "length": 0.595,
+  "decay": 0.0,
+  "lufs": -14.6,
+  "brightness_hz": 7311,
+  "pitch_move_semitones": 6.7,
+  "hits": 1,
+  "original": [
+   "kenney-glass-004.ogg"
+  ]
+ },
+ {
+  "id": "kenney-maximize-001",
+  "file": "sfx/appear-rise/kenney-maximize-001.wav",
+  "category": "appear-rise",
+  "character": "quick rising open",
+  "licence": "cc0",
+  "sync": 0.075,
+  "transients": [
+   0.075
+  ],
+  "length": 0.258,
+  "decay": 0.18,
+  "lufs": -11.8,
+  "brightness_hz": 5435,
+  "pitch_move_semitones": 8.9,
+  "hits": 1,
+  "original": [
+   "kenney-maximize-001.ogg"
+  ]
+ },
+ {
+  "id": "kenney-maximize-006",
+  "file": "sfx/appear-rise/kenney-maximize-006.wav",
+  "category": "appear-rise",
+  "character": "stepped rise, low",
+  "licence": "cc0",
+  "sync": 0.06,
+  "transients": [
+   0.06,
+   0.135,
+   0.2,
+   0.255,
+   0.3,
+   0.345
+  ],
+  "length": 0.38,
+  "decay": 0.04,
+  "lufs": -16.4,
+  "brightness_hz": 397,
+  "pitch_move_semitones": 8.8,
+  "hits": 6,
+  "original": [
+   "kenney-maximize-006.ogg"
+  ]
+ },
+ {
+  "id": "kenney-minimize-001",
+  "file": "sfx/dismiss-fall/kenney-minimize-001.wav",
+  "category": "dismiss-fall",
+  "character": "quick falling close",
+  "licence": "cc0",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.258,
+  "decay": 0.23,
+  "lufs": -13.7,
+  "brightness_hz": 5612,
+  "pitch_move_semitones": -9.5,
+  "hits": 1,
+  "original": [
+   "kenney-minimize-001.ogg"
+  ]
+ },
+ {
+  "id": "kenney-minimize-006",
+  "file": "sfx/dismiss-fall/kenney-minimize-006.wav",
+  "category": "dismiss-fall",
+  "character": "stepped fall, low",
+  "licence": "cc0",
+  "sync": 0.165,
+  "transients": [
+   0.065,
+   0.15,
+   0.165,
+   0.23,
+   0.305
+  ],
+  "length": 0.37,
+  "decay": 0.025,
+  "lufs": -15.2,
+  "brightness_hz": 391,
+  "pitch_move_semitones": -8.8,
+  "hits": 5,
+  "original": [
+   "kenney-minimize-006.ogg"
+  ]
+ },
+ {
+  "id": "kenney-open-001",
+  "file": "sfx/appear-rise/kenney-open-001.wav",
+  "category": "appear-rise",
+  "character": "quick, airy open",
+  "licence": "cc0",
+  "sync": 0.07,
+  "transients": [
+   0.07
+  ],
+  "length": 0.148,
+  "decay": 0.075,
+  "lufs": -16.9,
+  "brightness_hz": 12392,
+  "pitch_move_semitones": -17.2,
+  "hits": 1,
+  "original": [
+   "kenney-open-001.ogg"
+  ]
+ },
+ {
+  "id": "kenney-open-002",
+  "file": "sfx/appear-rise/kenney-open-002.wav",
+  "category": "appear-rise",
+  "character": "rising open",
+  "licence": "cc0",
+  "sync": 0.075,
+  "transients": [
+   0.075
+  ],
+  "length": 0.314,
+  "decay": 0.235,
+  "lufs": -14.4,
+  "brightness_hz": 9544,
+  "pitch_move_semitones": 24.6,
+  "hits": 1,
+  "original": [
+   "kenney-open-002.ogg"
+  ]
+ },
+ {
+  "id": "kenney-pluck-001",
+  "file": "sfx/pop/kenney-pluck-001.wav",
+  "category": "pop",
+  "character": "plucked, friendly",
+  "licence": "cc0",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.1,
+  "decay": 0.04,
+  "lufs": -21.3,
+  "brightness_hz": 3360,
+  "pitch_move_semitones": 0.0,
+  "hits": 1,
+  "original": [
+   "kenney-pluck-001.ogg"
+  ]
+ },
+ {
+  "id": "kenney-question-001",
+  "file": "sfx/chime/kenney-question-001.wav",
+  "category": "chime",
+  "character": "questioning two notes, falling",
+  "licence": "cc0",
+  "sync": 0.07,
+  "transients": [
+   0.07
+  ],
+  "length": 0.491,
+  "decay": 0.29,
+  "lufs": -10.0,
+  "brightness_hz": 1483,
+  "pitch_move_semitones": -11.5,
+  "hits": 1,
+  "original": [
+   "kenney-question-001.ogg"
+  ]
+ },
+ {
+  "id": "kenney-scratch-002",
+  "file": "sfx/swipe/kenney-scratch-002.wav",
+  "category": "swipe",
+  "character": "short scratch, a quick swipe",
+  "licence": "cc0",
+  "sync": 0.05,
+  "transients": [],
+  "length": 0.139,
+  "decay": 0.075,
+  "lufs": -15.4,
+  "brightness_hz": 7948,
+  "pitch_move_semitones": 20.7,
+  "hits": 1,
+  "original": [
+   "kenney-scratch-002.ogg"
+  ]
+ },
+ {
+  "id": "kenney-scroll-001",
+  "file": "sfx/ticker/kenney-scroll-001.wav",
+  "category": "ticker",
+  "character": "bright scroll, 1 s",
+  "licence": "cc0",
+  "sync": 0.05,
+  "transients": [
+   0.05,
+   0.15,
+   0.15,
+   0.2,
+   0.3,
+   0.3,
+   0.4,
+   0.4,
+   0.5,
+   0.5,
+   0.55,
+   0.65
+  ],
+  "length": 1.0,
+  "decay": 0.005,
+  "lufs": -18.5,
+  "brightness_hz": 10099,
+  "pitch_move_semitones": 0.0,
+  "hits": 19,
+  "original": [
+   "kenney-scroll-001.ogg"
+  ]
+ },
+ {
+  "id": "kenney-scroll-003",
+  "file": "sfx/ticker/kenney-scroll-003.wav",
+  "category": "ticker",
+  "character": "soft scroll, 1 s",
+  "licence": "cc0",
+  "sync": 0.05,
+  "transients": [
+   0.05,
+   0.15,
+   0.2,
+   0.2,
+   0.3,
+   0.35,
+   0.35,
+   0.45,
+   0.45,
+   0.55,
+   0.6,
+   0.6
+  ],
+  "length": 1.0,
+  "decay": 0.005,
+  "lufs": -20.9,
+  "brightness_hz": 2917,
+  "pitch_move_semitones": 0.0,
+  "hits": 19,
+  "original": [
+   "kenney-scroll-003.ogg"
+  ]
+ },
+ {
+  "id": "kenney-select-001",
+  "file": "sfx/tap/kenney-select-001.wav",
+  "category": "tap",
+  "character": "tight select",
+  "licence": "cc0",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.04,
+  "decay": 0.015,
+  "lufs": -21.8,
+  "brightness_hz": 3108,
+  "pitch_move_semitones": 0.0,
+  "hits": 1,
+  "original": [
+   "kenney-select-001.ogg"
+  ]
+ },
+ {
+  "id": "kenney-select-004",
+  "file": "sfx/double-tap/kenney-select-004.wav",
+  "category": "double-tap",
+  "character": "rising select",
+  "licence": "cc0",
+  "sync": 0.015,
+  "transients": [
+   0.015,
+   0.065
+  ],
+  "length": 0.265,
+  "decay": 0.035,
+  "lufs": -17.3,
+  "brightness_hz": 2906,
+  "pitch_move_semitones": 9.5,
+  "hits": 2,
+  "original": [
+   "kenney-select-004.ogg"
+  ]
+ },
+ {
+  "id": "kenney-switch-002",
+  "file": "sfx/double-tap/kenney-switch-002.wav",
+  "category": "double-tap",
+  "character": "switch flip",
+  "licence": "cc0",
+  "sync": 0.105,
+  "transients": [
+   0.105
+  ],
+  "length": 0.21,
+  "decay": 0.02,
+  "lufs": -21.9,
+  "brightness_hz": 2266,
+  "pitch_move_semitones": -2.7,
+  "hits": 1,
+  "original": [
+   "kenney-switch-002.ogg"
+  ]
+ },
+ {
+  "id": "kenney-switch-005",
+  "file": "sfx/double-tap/kenney-switch-005.wav",
+  "category": "double-tap",
+  "character": "low switch",
+  "licence": "cc0",
+  "sync": 0.11,
+  "transients": [
+   0.11
+  ],
+  "length": 0.215,
+  "decay": 0.025,
+  "lufs": -23.5,
+  "brightness_hz": 1206,
+  "pitch_move_semitones": 0.0,
+  "hits": 1,
+  "original": [
+   "kenney-switch-005.ogg"
+  ]
+ },
+ {
+  "id": "kenney-tick-001",
+  "file": "sfx/ticker/kenney-tick-001.wav",
+  "category": "ticker",
+  "character": "single tick",
+  "licence": "cc0",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.045,
+  "decay": 0.005,
+  "lufs": -28.3,
+  "brightness_hz": 0,
+  "pitch_move_semitones": 0.0,
+  "hits": 1,
+  "original": [
+   "kenney-tick-001.ogg"
+  ]
+ },
+ {
+  "id": "kenney-tick-002",
+  "file": "sfx/ticker/kenney-tick-002.wav",
+  "category": "ticker",
+  "character": "tiny tick",
+  "licence": "cc0",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.02,
+  "decay": 0.01,
+  "lufs": -26.9,
+  "brightness_hz": 0,
+  "pitch_move_semitones": 0.0,
+  "hits": 1,
+  "original": [
+   "kenney-tick-002.ogg"
+  ]
+ },
+ {
+  "id": "kenney-toggle-001",
+  "file": "sfx/double-tap/kenney-toggle-001.wav",
+  "category": "double-tap",
+  "character": "toggle on",
+  "licence": "cc0",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.136,
+  "decay": 0.08,
+  "lufs": -17.0,
+  "brightness_hz": 4554,
+  "pitch_move_semitones": 2.6,
+  "hits": 1,
+  "original": [
+   "kenney-toggle-001.ogg"
+  ]
+ },
+ {
+  "id": "kenney-toggle-003",
+  "file": "sfx/double-tap/kenney-toggle-003.wav",
+  "category": "double-tap",
+  "character": "toggle off",
+  "licence": "cc0",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.139,
+  "decay": 0.08,
+  "lufs": -16.0,
+  "brightness_hz": 8069,
+  "pitch_move_semitones": -12.7,
+  "hits": 1,
+  "original": [
+   "kenney-toggle-003.ogg"
+  ]
+ },
+ {
   "id": "gen-whoosh-short",
   "file": "sfx/whoosh/gen-whoosh-short.wav",
   "category": "whoosh",
