@@ -211,7 +211,7 @@ export const Board: React.FC<{ g: number }> = ({ g }) => {
         const x = 800 + 640 * T.k(g, "w:plan+0.2", 2.6, LIN);
         const k = T.k(g, "w:plan+0.2", 0.4);
         return (
-          <div style={{ position: "absolute", left: x, top: 420, height: 540, width: 0, borderLeft: `4px dashed ${C.red}`, opacity: k }}>
+          <div style={{ position: "absolute", left: 0, top: 420, height: 540, width: 0, borderLeft: `4px dashed ${C.red}`, opacity: k, transform: `translateX(${x}px)`, willChange: "transform" }}>
             <div style={{ position: "absolute", left: -56, top: 546, width: 112, textAlign: "center", fontWeight: 700, fontSize: 28, color: C.red, background: C.canvas }}>Today</div>
           </div>
         );
