@@ -31,6 +31,8 @@ saved file into the build folder.
 | `brand_measure.py` | measures brand colours from images, checks frames against them (ΔE2000), computes contrast | `design/asset-strategy.md`, `evaluation/quality-check.md` |
 | `film_tells.py` | reports a film's tells: invented figures and names, filler words, decorative labels, held against the facts file | `evaluation/tells.md` |
 | `timeline.ts` | a film's timing as labels and relative placements (GSAP's position parameter), for Remotion | `production/remotion.md` |
+| `phrase_check.py` | splits the aligned voice-over into phrases (the shot list), and measures on a render that every phrase brings a new visual | `planning/phrase-by-phrase.md`, `evaluation/quality-check.md` |
+| `kinetic.tsx` | the kinetic kit for Remotion: word-by-word type with marks, rolls, masks out of objects, camera keys, keyed tracks | `production/remotion.md`, `planning/phrase-by-phrase.md` |
 | `three_card.tsx` | a tested 3D scene for Remotion: a lit card with a soft shadow, frame-driven | `production/remotion.md` |
 | `stock.py` | searches royalty-free footage (Mixkit) and photos (Openverse, Pexels by ID), measures them, keeps credits | `design/asset-strategy.md` |
 | `audio_look.py` | a sound file as a spectrogram over its loudness curve, with marks | `motion/sound.md` |
@@ -74,6 +76,9 @@ and `pip install pyloudnorm`, and `sound_mix.py` reads the library's `sound/` fo
   `python3 brand_measure.py verify out/test/f*.png --brand brand.json` and
   `python3 brand_measure.py contrast "#121212/#F6F4F1" "#FFFFFF/#BD1717"`. In brand.json, `palette`
   holds measured colours, `tokens` the film's colour tokens (name: hex), `accent` the brand's accent.
+- `python3 phrase_check.py plan src/words.json` lists the phrases with their times (one visual each);
+  `python3 phrase_check.py check out/draft.mp4 src/words.json --sheet phrases.png` flags STATIC phrases
+  and the longest voice without a new visual; exit code 1 while any fail.
 - `python3 film_tells.py films/<project>`: reads `harvest/facts.md` and `storyboard/thesis.md` when
   they exist; exit code 1 while tells are unanswered.
 - `python3 stock.py search "tourist phone street" --kind video --out stock/`, then

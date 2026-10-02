@@ -18,6 +18,10 @@ Work through the passes in order: if a still is weak, fix the design before poli
 - Does each settled frame show what its line means, to someone seeing it for the first time?
 - Does each beat's point read with the sound off?
 - Is any scene too abstract, or merely illustrating nouns?
+- **Every phrase visualised:** `python3 scripts/phrase_check.py check film.mp4 src/words.json --sheet
+  phrases.png` on the draft and on the final encode. Every phrase brings a new visual, and no more
+  than 2.5 seconds of voice passes without one (`planning/phrase-by-phrase.md`). A STATIC phrase is
+  fixed in the design, with a new visual event on its key word, not by adding drift.
 
 ## Pass 2: Static design
 
@@ -116,8 +120,9 @@ edge cases.
 ## Severity
 
 Rank every finding before fixing, and fix from the top:
-- **Critical, never ships:** a line whose meaning doesn't read; invented facts; unreadable text where
-  it plays; overlapping type; a frozen frame; a visible jump at a cut; audio out of sync or clipping;
+- **Critical, never ships:** a line whose meaning doesn't read; a page that holds while the voice
+  explains it (a phrase with no new visual, or more than 2.5 s of voice without one); invented facts;
+  unreadable text where it plays; overlapping type; a frozen frame; a visible jump at a cut; audio out of sync or clipping;
   a wrong logo or brand color.
 - **High:** a locked camera; one framing distance; a crossfade between layouts; motion gaps; the same
   entrance three times in a row; missing secondary motion; the motion check below target.

@@ -51,6 +51,18 @@ tween helper `tw(frame, from, to, a, b, ease)` with clamping, the camera compone
 pieces (cursor, pill, portrait). Scenes then share one language the way component variants do in UI
 motion libraries, and a new client changes the tokens, not the scenes.
 
+## One stage, and the kinetic kit
+
+For a film built phrase by phrase (`planning/phrase-by-phrase.md`), structure the project as one
+continuous stage rather than a series of scenes: one `Story` component that renders every layer from
+the frame, each layer mounted for the span it is on screen, objects that persist across beats driven by
+keyed tracks (`track(g, [["label", x, y, s, opacity], …])`), and colour fields as masks that grow out of
+objects. `scripts/kinetic.tsx` is the kit Karl's October 2026 films were built with: `Line` (words that
+rise out of a blur on their spoken words, with a mark, an underline or a strike), `Roll` (one word rolling
+into another), `Iris` (a field or scene growing out of a point, bleeding past the frame so the camera can
+breathe out), `Disc` (a photo in a circle), `camera()` keys and `track()`. Copy it into `src/` next to
+`timeline.ts` and a `lib.tsx` with the brand's tokens.
+
 ## Time it with labels, not frame numbers
 
 Write the film's timing once, as labels, the way a GSAP timeline uses its position parameter

@@ -44,7 +44,7 @@ export const timeline = (fps: number, labels: Labels) => {
       return [f(label), i >= 0 && i + 1 < order.length ? f(order[i + 1]) : f(label)];
     },
     at: (g: number, label: string) => g - f(label),
-    k: (g: number, pos: string, seconds: number, ease = Easing.bezier(0.22, 1, 0.36, 1)) =>
+    k: (g: number, pos: string | number, seconds: number, ease = Easing.bezier(0.22, 1, 0.36, 1)) =>
       interpolate(g, [f(pos), f(pos) + Math.max(1, Math.round(seconds * fps))], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: ease }),
     labels: () => ({ ...sec }),
   };

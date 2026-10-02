@@ -9,6 +9,8 @@ planning; read the entries of the categories you are working on when a decision 
 - Give every beat its own idea; one example can run through a film, one device can't answer every
   line.
 - Constant, purposeful motion: nothing static, nothing useless; the camera never locks.
+- Every phrase gets its own visual, on one continuous stage: never a page that holds while the voice
+  explains it, never a presentation; think outside the box for the visuals and the transitions.
 - References are examples of a look or a technique, never layouts to reproduce.
 - The client's weak material (their own hero video, for K.B) is not a reference.
 - Everything must read where the film plays: big subject, readable sizes, text never colliding.
@@ -149,7 +151,35 @@ GENERAL LESSON: Show the part the line names, big.
 
 ## Transition corrections
 
-(none yet)
+CATEGORY: Transition / visual density
+DATE / PROJECT: October 2026, Bruno Morgante film v2
+ORIGINAL IDEA: Nine beats, each a designed page (a photo and type, or cards), joined by a camera push
+and a soft dissolve; one storyboard frame per beat.
+WHY IT WAS WEAK: Each page held while the voice explained it; measured afterwards, 8 of 29 phrases
+brought nothing new and 3.4 s of voice played over a held page.
+USER CORRECTION: "The vibe of the video and storyboard is like a presentation. We want real motion
+design… more visualization for the words being said… more constant motion design visualization with
+more frames, more transitions, more creativity. It's too much talking over a single page."
+FINAL APPROACH: v3 on one continuous stage: kinetic type on the force-aligned words, marks and strikes,
+colour fields that grow out of objects, the viewer's project carried from the hook to the end; 30 of 31
+phrases with a new visual.
+GENERAL LESSON: The phrase is the unit; every transition names the object it grows out of
+(`planning/phrase-by-phrase.md`).
+
+CATEGORY: Visual density (standing direction)
+DATE / PROJECT: October 2026, MindMirror and Amargier Advisory intake films; skill update
+ORIGINAL IDEA: (repeated in every brief) "more visualization and animation during the voice-over
+instead of static with voice-over on background… don't make the vibe like a presentation… really come
+up with nice transitions, ways to visualize words being said"; "make the video bright, no static
+standard dark background".
+WHY IT WAS WEAK: The rule lived in Karl's prompts, not in the skill.
+USER CORRECTION: "Improve the skill on what I always prompt: no static frames with simple voice-over on
+background… visuals represent what's being said… more frames, more animation, never a boring
+presentation vibe, always think outside the box for animations, visuals to explain and transitions."
+FINAL APPROACH: `planning/phrase-by-phrase.md` (the rule, the idea list, object-born transitions, bright
+colour fields, a frame per phrase), `scripts/phrase_check.py` (measured, calibrated on four of Karl's
+films), and the shared kinetic kit `scripts/kinetic.tsx`.
+GENERAL LESSON: Show every phrase; measure it before Karl has to say it again.
 
 ## AI-looking design corrections
 

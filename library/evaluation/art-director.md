@@ -43,6 +43,8 @@ Ask each question of each scene, and write one line for every one that fails.
 - Is this too literal? Literal to the meaning is the aim; literal to the words is the failure: the
   sentence set as type, an icon for the noun, a raw screenshot (`planning/visual-strategy.md`).
 - Is this just animated text?
+- Does the picture change on every phrase, or does a page hold while the voice explains it? A beat
+  that is one held layout reads as a presentation (`planning/phrase-by-phrase.md`).
 - Is there a stronger visual metaphor, or a stronger concrete idea? For a beat whose subject can't be
   shown, a grounded metaphor that reads within a second can beat a weak picture; Karl cuts vague
   ones (`planning/visual-strategy.md`).
@@ -70,7 +72,9 @@ Photos and objects stay within the chosen style's imagery rules (`design/asset-s
 - Is the motion motivated: does every movement have a cause and a consequence
   (`motion/animation-grammar.md`)?
 - Does the transition connect naturally, out of something already happening in the scene
-  (`motion/continuity.md`)?
+  (`motion/continuity.md`)? Name the object it grows out of; a transition without one is a page change.
+- Is there a more surprising way to show this phrase? Run the idea list in `planning/phrase-by-phrase.md`
+  before accepting the first idea.
 
 **Level**
 - Is the scene high-end enough? Would it hold up next to Karl's benchmark (`references/benchmarks.md`)?
@@ -103,7 +107,7 @@ one pass per lens, the frames reread each time:
 | **Truth** | every word, figure, name and logo on screen against the client's own material | `harvest/facts.md`, the frames, `scripts/film_tells.py` output |
 | **Legibility** | the frames at phone size (scaled to 390 px wide) and in a website embed: the subject the largest thing, the type readable, nothing colliding | the frames, scaled |
 | **Brand** | colours, type and logo against the measured brand, contrast by number | `brand.json`, `scripts/brand_measure.py verify` and `contrast` output |
-| **Motion** (on a render) | the measured motion, shake, pops and strips | `scripts/qc.sh` output |
+| **Motion** (on a render) | the measured motion, shake, pops and strips, and a new visual on every phrase | `scripts/qc.sh` output, `scripts/phrase_check.py check` output and sheet |
 
 Every finding carries a severity (critical: the message, a claim or legibility breaks; major: it
 looks cheap or generic; minor: finish), the beat, the evidence and one precise fix. Then one
@@ -148,6 +152,7 @@ the expense of judgment.
 | Dimension | 5 | 1 |
 |---|---|---|
 | Communication | the visual meaning is immediate and reinforces the message | attractive but unclear or unrelated |
+| Visual density | every phrase gets its own visual, on one continuous stage | a page holds while the voice explains it |
 | Composition | strong hierarchy, spacing, balance, crop and focal control | weak or template-like arrangement |
 | Typography | designed, readable, hierarchical, integrated | subtitle-like or inconsistent |
 | Motion | controlled, purposeful, choreographed, the frame always alive | arbitrary movement or default easing |

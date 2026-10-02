@@ -27,6 +27,16 @@ the wallet, five avatars merge into one. Don't crossfade one layout into the nex
 - **Light or color transition:** a visual property carries across scenes; use sparingly.
 - **Hard cut:** when audio, matching composition or matching direction carries it (`motion/camera.md`).
 
+## Name the object
+
+Every transition names the object it grows out of: the card, the person, the mark, the dot, the line.
+If you can't name it, it is a page change, and the film starts to read as a presentation. The ones that
+worked in Karl's October 2026 films, with the films they come from, are listed in
+`planning/phrase-by-phrase.md`: masks out of a card, a person, a map pin and a logo's apex; a highlight
+that becomes a card; a mark that floods the frame; cards that line up into a portfolio or gather into one;
+a card that opens on its centre line; dots that gather into one person; a line that rises like a curtain;
+a word that rolls into another.
+
 ## A small family per film
 
 Choose two or three transition behaviors for a film and use them consistently; consistency makes it

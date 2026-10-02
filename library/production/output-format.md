@@ -30,6 +30,7 @@ per second; track or none)
 SCENE NUMBER:
 TIMECODE:                   start–end in seconds; frames where it matters
 VOICEOVER:                  the exact words
+PHRASES:                    each phrase with its time, and the visual event on its key word
 PURPOSE:                    beat type and importance, from the beat sheet
 CORE MESSAGE:               what the viewer must understand
 VISUAL STRATEGY:            from planning/visual-strategy.md
@@ -76,7 +77,9 @@ rules, exceptions, and the QC targets (`evaluation/quality-check.md`).
 
 ## The storyboard page
 
-One page. Per beat: a settled frame made with the build itself (rendered from the Remotion project
+One page. Per beat, a frame for every phrase (at least three per beat; 30 to 40 for a film of 30 to 45
+seconds), each with its time and what moves: one frame per beat is a presentation storyboard
+(`planning/phrase-by-phrase.md`). Each is a frame made with the build itself (rendered from the Remotion project
 or the render page, or as a styleframe in the After Effects comp), so the frames Karl
 approves are what gets animated; then the time, the voice-over line, the on-screen words, what is
 shown, the motion, and the transition into the next beat. Then:

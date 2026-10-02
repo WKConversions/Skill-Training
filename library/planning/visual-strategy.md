@@ -4,6 +4,10 @@ For each beat, decide how its meaning is best communicated before deciding how a
 question is never "what animation fits this sentence?" but "what does the viewer need to understand,
 and what is the strongest visual idea for that?"
 
+Then go one level finer: every phrase inside the beat gets its own visual event, on one continuous
+stage, never a page that holds while the voice explains it. That is Karl's standing direction; the
+method, the idea list and the measurement are in `planning/phrase-by-phrase.md`.
+
 ## Literal meaning, not literal nouns
 
 Most viewers see each shot once, for a second or two. In the September 2026 test, abstract devices (a
@@ -34,11 +38,12 @@ the client's choice, and its forms pass the same test (`styles/minimal-single-vi
 
 ## Choosing a strategy
 
-For every beat:
+For every beat (and then for every phrase in it, `planning/phrase-by-phrase.md`):
 1. List two or three candidate strategies from the catalog below, starting from the beat type.
 2. Pick the strongest by these tests, in order:
    - A first-time viewer understands it in about a second, with the sound off.
    - It adds meaning beyond the voice-over (the how, the proof, the consequence), not a repeat.
+   - It changes on every phrase: a strategy that is one held page for the whole beat fails.
    - It fits the chosen style and the film's art direction.
    - It doesn't make a third beat in a row answered by the same strategy.
    - It gives the scene one clear primary element (`design/visual-hierarchy.md`).

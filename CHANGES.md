@@ -1,3 +1,30 @@
+# Skill improvements, 2 October 2026: phrase by phrase
+
+Karl's standing direction, given on every film this month, is now a rule of the skill: the visuals show
+what is being said as it is said, more frames and more animation, never a presentation, and always think
+outside the box for the ideas and the transitions.
+
+- **New module `planning/phrase-by-phrase.md`:** what makes a film a presentation; the rule (one
+  continuous stage, the phrase as the unit, a thread object, show it then name it, no more than 2.5 s
+  of voice without a new visual, calm is not static); an idea list for thinking outside the box; the
+  object-born transitions that worked in Karl's films; bright colour fields; a frame per phrase in the
+  storyboard; the measurement, calibrated on four films.
+- **New script `scripts/phrase_check.py`:** lists the voice-over's phrases (the shot list) and measures a
+  render for a new visual on every phrase (tone change or new structure, with camera moves aligned out).
+  Calibrated: Bruno Morgante v2, the film Karl called a presentation, 21 of 29 phrases and 3.4 s of held
+  voice; v3 30 of 31 and 1.0 s; MindMirror 21 of 21; Amargier Advisory 19 of 20 and 0.9 s.
+- **New script `scripts/kinetic.tsx`:** the kinetic kit the October films were built with (words on the
+  voice with marks, underlines and strikes, rolls, masks out of objects, odometer digits, camera keys,
+  keyed tracks); `scripts/timeline.ts` now also takes plain seconds.
+- **Updated:** `SKILL.md` (two core laws: every phrase gets its own visual; bright by default; workflow
+  steps 6, 11 and 15 and the checklist), `planning/visual-strategy.md`, `motion/transitions.md` (name the
+  object), `evaluation/art-director.md` (the presentation question, the idea list, a visual-density row
+  in the scorecard), `evaluation/quality-check.md` (the check, and a held page is now critical),
+  `production/output-format.md` (PHRASES in the scene spec, a frame per phrase), `production/remotion.md`
+  (one stage and the kit), `examples/corrections.md` (two entries and a recurring lesson),
+  `examples/bad-vs-good.md` (seven phrase-by-phrase examples from Bruno v3, MindMirror and Amargier).
+- Published as library v9: https://claude.ai/artifact/UeFiNvnC9tHrN97jpEyr5X
+
 # Skill improvements, 30 September 2026
 
 The `senior-motion-designer` skill (`senior-motion-designer/SKILL.md`) and its library

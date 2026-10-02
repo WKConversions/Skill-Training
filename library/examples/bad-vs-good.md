@@ -47,6 +47,31 @@ Why: the animation controls attention instead of asking the viewer to search the
 - "You always talk to the people doing the work." → the two founders, then a chat in which they
   answer a client's question.
 
+## Phrase by phrase (October 2026)
+
+- **"Every big project starts as one simple idea." (Bruno Morgante).** Weak (v2): his photo and a typed
+  card, held for the whole line. Stronger (v3): the words build on the voice, "idea." gets a red mark,
+  and the mark itself becomes the viewer's project card, which the next line tangles.
+- **"…the portfolio, the plan, the PMO and the team."** Weak: four words in a row light up on one page.
+  Stronger: the tangled cards line up into a ranked portfolio, the plan's bars draw with a Today line,
+  every status rolls to On track, the team docks on the bars, and the project turns Delivered, each on
+  its word, along an axis from Strategy to Execution.
+- **"Twenty years… more than two hundred people mentored."** Weak: two numbers on a page. Stronger: the
+  mark under "stick." floods the frame red, 20+ rolls like an odometer, a third zero drops in for 200+,
+  and two hundred dots appear, one per person, then gather into the one organiser who gives the quote.
+- **"MindMirror turns patterns from your assessment into a clearer picture."** Their own mirrored
+  contour figure, drawn as tangled signal beside "why", is swept into order by a central scan line, the
+  logo opening out of its own centre line: complexity to pattern, as their form asked.
+- **"Not another label." (MindMirror).** Lime floods out of the person; three generic label tags fly at
+  them, are struck out on "label" and fall away; the figure grows back round them as context.
+- **"Great partnerships start with a clear purpose." (Amargier Advisory).** The two bars of their A mark
+  slide in and lean into each other on "partnerships", like two partners; the bars return later as
+  "the thinking" and "the doing", and twelve year-ticks lay the mark brick by brick for "build what
+  comes next".
+- **"…technology businesses across EMEA."** The mark lands on Málaga as a pin and EMEA spreads out from
+  it as a dot map (Natural Earth), businesses lighting up in a wave; their links go from dashed
+  (potential) to solid with an opportunity on each.
+
 ## The first intake-form videos (September 2026)
 
 - **Headline over object, every scene (WKConversions).** Weak: a centered headline above a centered

@@ -66,6 +66,13 @@ make better motion design; prefer simple, controlled, intentional solutions.
 - **Show the meaning of each line when it is spoken:** literal to the meaning, not to the words. No
   subtitles, no icon per noun, no vague symbols; a metaphor only when the subject can't be shown, and
   only one that reads in a second.
+- **Every phrase gets its own visual, never a presentation.** Karl's standing direction: the visuals
+  show what is being said, as it is said. One continuous stage where objects persist and transform,
+  a visual event on the key word of every phrase, transitions that grow out of an object you can name,
+  and never more than 2.5 seconds of voice over a picture that doesn't change; think outside the box
+  for the idea and the move (`planning/phrase-by-phrase.md`, measured by `scripts/phrase_check.py`).
+- **Bright by default.** Colour fields change with the story, grown out of objects; no static, standard
+  dark background unless the brief asks for one.
 - **Words only when they communicate better than a picture.** Never convert the voice-over into
   animated text by default.
 - **One strong idea per scene:** a primary element, secondary support, optional detail. The viewer
@@ -112,16 +119,16 @@ instructions. Before step 1, read the recurring lessons at the top of `examples/
 | 3 | Script analysis | beats; for each: core meaning, what the viewer must understand, importance, tone, nouns and verbs, beat type | `planning/script-analysis.md` |
 | 4 | The whole film | the core message as spine, the hook, the energy curve, setups and payoffs, the CTA as resolution | `planning/storytelling.md` |
 | 5 | Art direction | the thesis and its allowed patterns; the visual world, the motion identity (personality, signature curve, duration palette, entrance pattern, intensity by moment), transition family; mixed media decided once for the film | `evaluation/tells.md`, `motion/motion-identity.md`, `design/anti-ai-design.md`, `design/asset-strategy.md`, `motion/animation-grammar.md`, `motion/transitions.md` |
-| 6 | Visual strategy | two or three candidates per beat, the strongest by the tests, the runner-up recorded; content references where they help | `planning/visual-strategy.md`, `examples/bad-vs-good.md`, `references/reading-references.md` |
+| 6 | Visual strategy | the phrases of the voice-over (`scripts/phrase_check.py plan`); a thread object for the film; two or three candidates per beat, the strongest by the tests, the runner-up recorded; then a visual event for every phrase, from the idea list; content references where they help | `planning/visual-strategy.md`, `planning/phrase-by-phrase.md`, `examples/bad-vs-good.md`, `references/reading-references.md` |
 | 7 | Composition | a styleframe per key scene: primary, secondary, detail; framing, type, and UI where an interface is the subject | `design/visual-hierarchy.md`, `design/composition.md`, `design/typography.md`, `design/ui-product.md` |
 | 8 | Variety check | the whole storyboard against the variety budget | `design/composition.md` |
 | 9 | Motion and continuity | cause→motion→consequence chains, camera, timing and sync (the brief's tone row), easing, the continuity table, transitions, sound | `motion/animation-grammar.md`, `motion/camera.md`, `motion/timing.md`, `motion/easing.md`, `motion/continuity.md`, `motion/transitions.md`, `motion/sound.md` |
 | 10 | Assets | what each scene is made of; royalty-free photos and footage sourced and credited (`scripts/stock.py`); asset and tool requests for the rest | `design/asset-strategy.md`, `production/tool-requests.md` |
-| 11 | First storyboard | the scene spec for every scene, condensed into the storyboard page, with frames made by the build itself | `production/output-format.md`, `production/remotion.md` (or `production/coded-render.md`), `examples/scene-examples.md` |
+| 11 | First storyboard | the scene spec for every scene, condensed into the storyboard page, with a frame per phrase (at least three per beat) made by the build itself | `production/output-format.md`, `production/remotion.md` (or `production/coded-render.md`), `examples/scene-examples.md` |
 | 12 | Art-director pass | independent reviews (story, truth, legibility, brand), then cold eyes; notes become decisions; revise until the stop rule; the tells check; the revision log as Before / After / Why rows | `evaluation/art-director.md`, `evaluation/tells.md`, `evaluation/troubleshooting.md` |
 | 13 | Final plan and approval | the production plan and its storyboard; the storyboard goes to Karl; stop and ask about music and voice-over (without a track: find one or compose one to the film's vibe) | `production/output-format.md`, `planning/intake.md`, `motion/sound.md` |
 | 14 | Build | After Effects when the session has it, otherwise a Remotion project (the plain coded render as a fallback), or a hand-off; say which, and what Karl will get. Motion tokens first; test frames and a draft before the blurred render; the voice-over placed on its words; the sound mixed from a cue sheet (Karl's effects on their frames, the music fitted or composed) | `production/remotion.md`, `production/build-gotchas.md`, `planning/voice-over.md`, `motion/sound.md`, `production/after-effects.md`, `production/coded-render.md`, `scripts/index.md` |
-| 15 | Quality check | test frames, then the encode; the automatic checks (`scripts/qc.sh`: motion, shake, pops, transition strips) on the draft and the final; tells, brand colours and contrast measured; the mix's level report; what couldn't run reported as not checked; findings ranked by severity; the scorecard; the three biggest changes | `evaluation/quality-check.md`, `evaluation/troubleshooting.md` |
+| 15 | Quality check | test frames, then the encode; the automatic checks (`scripts/qc.sh`: motion, shake, pops, transition strips; `scripts/phrase_check.py check`: a new visual on every phrase) on the draft and the final; tells, brand colours and contrast measured; the mix's level report; what couldn't run reported as not checked; findings ranked by severity; the scorecard; the three biggest changes | `evaluation/quality-check.md`, `evaluation/troubleshooting.md` |
 | 16 | Learn | turn Karl's feedback into corrections, and approved solutions into examples | `examples/corrections.md` |
 
 Steps 3–12 are planning; what goes out is the storyboard of step 13, with the working tables in its
@@ -136,12 +143,12 @@ Film progress:
 - [ ] 2 Look: style or brand loaded; the site harvested into assets/, facts.md, missing.md, brand.json
 - [ ] 3–4 Beat sheet and the whole-film arc
 - [ ] 5 Thesis and allowed patterns; art direction and the motion identity's three constants
-- [ ] 6–8 A strategy per beat (with runner-up), styleframes, variety check
+- [ ] 6–8 Phrases listed; a thread object; a strategy per beat (with runner-up) and a visual event per phrase; styleframes, variety check
 - [ ] 9–10 Motion chains (at the brief's tone), continuity table, assets sourced and credited, requests
-- [ ] 11–12 Storyboard with frames from the build; independent reviews, cold eyes, decisions; tells answered; revision log
+- [ ] 11–12 Storyboard with a frame per phrase, from the build; independent reviews, cold eyes, decisions; tells answered; revision log
 - [ ] 13 Storyboard to Karl; music and voice-over asked
 - [ ] 14 Build: tokens, test frames, cue sheet and mix, draft with audio, then the blurred render
-- [ ] 15 QC: qc.sh on draft and final (no SHAKE, every POP explained), the mix report, loudness, delivery encode
+- [ ] 15 QC: qc.sh and phrase_check.py on draft and final (no SHAKE, every POP explained, no STATIC phrase), the mix report, loudness, delivery encode
 - [ ] 16 Feedback turned into proposed corrections
 ```
 
