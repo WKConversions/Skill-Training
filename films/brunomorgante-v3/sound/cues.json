@@ -1,0 +1,389 @@
+{
+ "fps": 30,
+ "frames": 1350,
+ "library": "../../../library/sound",
+ "vo": {
+  "file": "../public/audio/vo.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "music.flac",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.3,
+  "fade_out": 1.5,
+  "note": "Raising Me Higher (Mixkit Stock Music Free License) cut by music_fit.py --length 45 --lift 7.6: an entry at 7.6 s as Bruno comes in; the last hit at 39.3 s on 'experience', ringing out under the close"
+ },
+ "sfx": [
+  {
+   "frame": 87,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the red mark sweeps under 'idea.'",
+   "db": -3
+  },
+  {
+   "frame": 113,
+   "id": "gen-whoosh-short",
+   "note": "the mark becomes the project card",
+   "db": -4
+  },
+  {
+   "frame": 119,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "typing, first half",
+   "db": -2
+  },
+  {
+   "frame": 133,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "typing, second half",
+   "db": -2,
+   "pitch": -2
+  },
+  {
+   "frame": 136,
+   "id": "soundreality-ui-pop-up",
+   "note": "date 1 lands",
+   "db": -4
+  },
+  {
+   "frame": 143,
+   "id": "soundreality-ui-pop-up",
+   "note": "date 2 lands",
+   "db": -4,
+   "pitch": -1
+  },
+  {
+   "frame": 151,
+   "id": "soundreality-ui-pop-up",
+   "note": "date 3 lands",
+   "db": -4,
+   "pitch": -2
+  },
+  {
+   "frame": 161,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the red ring round '30 Sep?'",
+   "db": -6
+  },
+  {
+   "frame": 165,
+   "id": "soundreality-ui-pop-up",
+   "note": "dependency 1 lands",
+   "db": -4,
+   "pitch": -3
+  },
+  {
+   "frame": 170,
+   "id": "soundreality-ui-pop-up",
+   "note": "dependency 2 lands",
+   "db": -4,
+   "pitch": -4
+  },
+  {
+   "frame": 175,
+   "id": "soundreality-ui-pop-up",
+   "note": "dependency 3 lands",
+   "db": -4,
+   "pitch": -5
+  },
+  {
+   "frame": 206,
+   "id": "floraphonic-multi-pop-1",
+   "note": "the people pile on",
+   "db": -4
+  },
+  {
+   "frame": 235,
+   "id": "gen-swell",
+   "note": "his red grows out of the card: relief",
+   "db": -2
+  },
+  {
+   "frame": 241,
+   "id": "gen-whoosh-medium",
+   "note": "the red sweeps the frame",
+   "db": -4
+  },
+  {
+   "frame": 252,
+   "id": "ui-pop-sound",
+   "note": "his photo lands",
+   "db": -5
+  },
+  {
+   "frame": 309,
+   "id": "gen-whoosh-short",
+   "note": "the red folds into his Consulting label",
+   "db": -4
+  },
+  {
+   "frame": 355,
+   "id": "gen-whoosh-medium",
+   "note": "the tangle straightens into a portfolio",
+   "db": -4
+  },
+  {
+   "frame": 368,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the axis draws: strategy to execution",
+   "db": -5
+  },
+  {
+   "frame": 426,
+   "id": "soundshelfstudio-ui-radio-select",
+   "note": "stop 1 lights (rising)",
+   "db": -3
+  },
+  {
+   "frame": 439,
+   "id": "gen-whoosh-short",
+   "note": "the project moves up to number one",
+   "db": -6
+  },
+  {
+   "frame": 457,
+   "id": "soundshelfstudio-ui-radio-select",
+   "note": "stop 2 lights (rising)",
+   "db": -3,
+   "pitch": 2
+  },
+  {
+   "frame": 482,
+   "id": "soundshelfstudio-ui-radio-select",
+   "note": "stop 3 lights (rising)",
+   "db": -3,
+   "pitch": 4
+  },
+  {
+   "frame": 486,
+   "id": "universfield-bubble-pop-03",
+   "note": "status 1 turns green",
+   "db": -7
+  },
+  {
+   "frame": 490,
+   "id": "universfield-bubble-pop-03",
+   "note": "status 2 turns green",
+   "db": -7,
+   "pitch": 2
+  },
+  {
+   "frame": 494,
+   "id": "universfield-bubble-pop-03",
+   "note": "status 3 turns green",
+   "db": -7,
+   "pitch": 4
+  },
+  {
+   "frame": 497,
+   "id": "universfield-bubble-pop-03",
+   "note": "status 4 turns green",
+   "db": -7,
+   "pitch": 7
+  },
+  {
+   "frame": 513,
+   "id": "soundshelfstudio-ui-radio-select",
+   "note": "stop 4 lights (rising)",
+   "db": -6,
+   "pitch": 7
+  },
+  {
+   "frame": 518,
+   "id": "floraphonic-multi-pop-1",
+   "note": "the team docks on the plan",
+   "db": -10
+  },
+  {
+   "frame": 522,
+   "id": "soundshelfstudio-ui-success-bloom",
+   "note": "the project: Delivered"
+  },
+  {
+   "frame": 536,
+   "id": "gen-whoosh-deep",
+   "note": "coaching opens out of one person",
+   "db": -3
+  },
+  {
+   "frame": 563,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the red ring draws round him",
+   "db": -5
+  },
+  {
+   "frame": 610,
+   "id": "ui-pop-sound",
+   "note": "you, one to one",
+   "db": -5
+  },
+  {
+   "frame": 641,
+   "id": "universfield-bubble-pop-03",
+   "note": "group member 1",
+   "db": -6
+  },
+  {
+   "frame": 643,
+   "id": "universfield-bubble-pop-03",
+   "note": "group member 2",
+   "db": -6,
+   "pitch": 2
+  },
+  {
+   "frame": 644,
+   "id": "universfield-bubble-pop-03",
+   "note": "group member 3",
+   "db": -6,
+   "pitch": 4
+  },
+  {
+   "frame": 646,
+   "id": "universfield-bubble-pop-03",
+   "note": "group member 4",
+   "db": -6,
+   "pitch": 7
+  },
+  {
+   "frame": 667,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the knob sets off along the range",
+   "db": -5
+  },
+  {
+   "frame": 715,
+   "id": "ui-pop-sound",
+   "note": "the knob reaches students",
+   "db": -6
+  },
+  {
+   "frame": 734,
+   "id": "gen-whoosh-deep",
+   "note": "the red line rises like a curtain",
+   "db": -2
+  },
+  {
+   "frame": 828,
+   "id": "gen-whoosh-short",
+   "note": "'hard lessons' rolls into 'stories'",
+   "db": -5
+  },
+  {
+   "frame": 859,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the red mark on 'stick.'",
+   "db": -3
+  },
+  {
+   "frame": 878,
+   "id": "gen-whoosh-medium",
+   "note": "the mark floods the frame",
+   "db": -2
+  },
+  {
+   "frame": 883,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "the counter rolls (1)",
+   "db": 0
+  },
+  {
+   "frame": 890,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "the counter rolls (2)",
+   "db": 0,
+   "pitch": 2
+  },
+  {
+   "frame": 896,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "the counter rolls (3)",
+   "db": 0,
+   "pitch": 4
+  },
+  {
+   "frame": 970,
+   "id": "ui-pop-sound",
+   "note": "a third zero: 200",
+   "db": -3
+  },
+  {
+   "frame": 977,
+   "id": "floraphonic-multi-pop-1",
+   "note": "two hundred dots",
+   "db": -5
+  },
+  {
+   "frame": 1016,
+   "id": "gen-impact-soft",
+   "note": "Top 25 badge lands",
+   "db": -7
+  },
+  {
+   "frame": 1020,
+   "id": "gen-impact-soft",
+   "note": "Top 10 badge lands",
+   "db": -8
+  },
+  {
+   "frame": 1027,
+   "id": "gen-whoosh-medium",
+   "note": "the dots gather into one organiser",
+   "db": -4
+  },
+  {
+   "frame": 1039,
+   "id": "gen-impact-soft",
+   "note": "the quote mark swings in",
+   "db": -6
+  },
+  {
+   "frame": 1131,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "'speaker' is struck out",
+   "db": -5
+  },
+  {
+   "frame": 1155,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the red mark on 'experience.'",
+   "db": -3
+  },
+  {
+   "frame": 1201,
+   "id": "gen-impact-soft",
+   "note": "the card lands",
+   "db": -4
+  },
+  {
+   "frame": 1228,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the arrow draws: idea to result",
+   "db": -5
+  },
+  {
+   "frame": 1237,
+   "id": "soundshelfstudio-ui-success-bloom",
+   "note": "Idea becomes Result",
+   "db": -1
+  },
+  {
+   "frame": 1267,
+   "id": "gen-whoosh-medium",
+   "note": "his red closes the film",
+   "db": -2
+  },
+  {
+   "frame": 1268,
+   "id": "gen-shimmer",
+   "note": "his logo",
+   "db": -3
+  },
+  {
+   "frame": 1282,
+   "id": "ui-pop-sound",
+   "note": "the address button",
+   "db": -4
+  }
+ ]
+}
