@@ -1,0 +1,336 @@
+{
+ "fps": 30,
+ "frames": 1050,
+ "library": "../../../library/sound",
+ "vo": {
+  "file": "../public/audio/vo.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "music.flac",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.3,
+  "fade_out": 1.5,
+  "note": "Close Up (Michael Ramir C., Mixkit Stock Music Free License) cut by music_fit.py --length 35 --lift 3.85: an entry on 'MindMirror', the last hit at 32.4 s on 'works'"
+ },
+ "sfx": [
+  {
+   "frame": 40,
+   "id": "ui-pop-sound",
+   "note": "the check lands beside 'good at.'",
+   "db": -5
+  },
+  {
+   "frame": 83,
+   "id": "gen-whoosh-short",
+   "note": "the tangled signal draws in",
+   "db": -7
+  },
+  {
+   "frame": 92,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the lime mark under 'why.'",
+   "db": -4
+  },
+  {
+   "frame": 117,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the centre line draws",
+   "db": -6
+  },
+  {
+   "frame": 120,
+   "id": "gen-whoosh-medium",
+   "note": "the tangle moves to the centre",
+   "db": -3
+  },
+  {
+   "frame": 123,
+   "id": "gen-shimmer",
+   "note": "the mark opens out of its centre line",
+   "db": -3
+  },
+  {
+   "frame": 127,
+   "id": "ui-pop-sound",
+   "note": "the wordmark",
+   "db": -7
+  },
+  {
+   "frame": 133,
+   "id": "gen-swell",
+   "note": "the scan line sweeps the signal into pattern",
+   "db": -4
+  },
+  {
+   "frame": 180,
+   "id": "soundshelfstudio-ui-success-bloom",
+   "note": "the figure is ordered",
+   "db": -4
+  },
+  {
+   "frame": 192,
+   "id": "gen-whoosh-short",
+   "note": "the label rolls: a clearer picture",
+   "db": -8
+  },
+  {
+   "frame": 228,
+   "id": "gen-whoosh-short",
+   "note": "the figure makes room",
+   "db": -6
+  },
+  {
+   "frame": 237,
+   "id": "soundreality-ui-pop-up",
+   "note": "insight card 1 lands",
+   "db": -3
+  },
+  {
+   "frame": 280,
+   "id": "soundreality-ui-pop-up",
+   "note": "insight card 2 lands",
+   "db": -3,
+   "pitch": 2
+  },
+  {
+   "frame": 311,
+   "id": "soundreality-ui-pop-up",
+   "note": "insight card 3 lands",
+   "db": -3,
+   "pitch": 4
+  },
+  {
+   "frame": 333,
+   "id": "soundreality-ui-pop-up",
+   "note": "insight card 4 lands",
+   "db": -3,
+   "pitch": 7
+  },
+  {
+   "frame": 376,
+   "id": "gen-whoosh-medium",
+   "note": "the cards gather into the assessment",
+   "db": -3
+  },
+  {
+   "frame": 378,
+   "id": "soundshelfstudio-ui-radio-select",
+   "note": "01 Assess",
+   "db": -4
+  },
+  {
+   "frame": 388,
+   "id": "universfield-bubble-pop-03",
+   "note": "area 1 ticked",
+   "db": -9
+  },
+  {
+   "frame": 393,
+   "id": "universfield-bubble-pop-03",
+   "note": "area 2 ticked",
+   "db": -9,
+   "pitch": 2
+  },
+  {
+   "frame": 398,
+   "id": "universfield-bubble-pop-03",
+   "note": "area 3 ticked",
+   "db": -9,
+   "pitch": 4
+  },
+  {
+   "frame": 404,
+   "id": "universfield-bubble-pop-03",
+   "note": "area 4 ticked",
+   "db": -9,
+   "pitch": 5
+  },
+  {
+   "frame": 409,
+   "id": "universfield-bubble-pop-03",
+   "note": "area 5 ticked",
+   "db": -9,
+   "pitch": 7
+  },
+  {
+   "frame": 416,
+   "id": "soundshelfstudio-ui-radio-select",
+   "note": "02 Analyze",
+   "db": -4,
+   "pitch": 2
+  },
+  {
+   "frame": 419,
+   "id": "gen-whoosh-short",
+   "note": "the scan passes the answers",
+   "db": -11
+  },
+  {
+   "frame": 438,
+   "id": "soundshelfstudio-ui-radio-select",
+   "note": "03 Understand",
+   "db": -4,
+   "pitch": 4
+  },
+  {
+   "frame": 441,
+   "id": "gen-whoosh-deep",
+   "note": "the card opens on its centre line",
+   "db": -2
+  },
+  {
+   "frame": 484,
+   "id": "ui-pop-sound",
+   "note": "natural strengths",
+   "db": -5
+  },
+  {
+   "frame": 498,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the lime underline",
+   "db": -7
+  },
+  {
+   "frame": 525,
+   "id": "ui-pop-sound",
+   "note": "higher-effort areas",
+   "db": -5,
+   "pitch": -2
+  },
+  {
+   "frame": 578,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the best-conditions band opens",
+   "db": -4
+  },
+  {
+   "frame": 643,
+   "id": "soundshelfstudio-ui-success-bloom",
+   "note": "the peak: at your best",
+   "db": -2
+  },
+  {
+   "frame": 663,
+   "id": "gen-whoosh-medium",
+   "note": "the profile folds into the person",
+   "db": -3
+  },
+  {
+   "frame": 667,
+   "id": "gen-whoosh-deep",
+   "note": "lime floods out of the person",
+   "db": -4
+  },
+  {
+   "frame": 679,
+   "id": "gen-impact-soft",
+   "note": "label tag 1 lands",
+   "db": -6
+  },
+  {
+   "frame": 684,
+   "id": "gen-impact-soft",
+   "note": "label tag 2 lands",
+   "db": -6,
+   "pitch": -1
+  },
+  {
+   "frame": 688,
+   "id": "gen-impact-soft",
+   "note": "label tag 3 lands",
+   "db": -6,
+   "pitch": -2
+  },
+  {
+   "frame": 689,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the labels are struck out",
+   "db": -4
+  },
+  {
+   "frame": 703,
+   "id": "gen-whoosh-short",
+   "note": "they fall away",
+   "db": -5
+  },
+  {
+   "frame": 710,
+   "id": "gen-whoosh-medium",
+   "note": "the figure grows back round the person",
+   "db": -3
+  },
+  {
+   "frame": 716,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "area chip 1",
+   "db": -3
+  },
+  {
+   "frame": 722,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "area chip 2",
+   "db": -6,
+   "pitch": 2
+  },
+  {
+   "frame": 728,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "area chip 3",
+   "db": -6,
+   "pitch": 4
+  },
+  {
+   "frame": 734,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "area chip 4",
+   "db": -6,
+   "pitch": 5
+  },
+  {
+   "frame": 740,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "area chip 5",
+   "db": -6,
+   "pitch": 7
+  },
+  {
+   "frame": 746,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "area chip 6",
+   "db": -6,
+   "pitch": 9
+  },
+  {
+   "frame": 780,
+   "id": "gen-whoosh-short",
+   "note": "the figure moves aside",
+   "db": -5
+  },
+  {
+   "frame": 877,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the lime mark under 'perspective.'",
+   "db": -4
+  },
+  {
+   "frame": 900,
+   "id": "gen-whoosh-medium",
+   "note": "white opens round the figure",
+   "db": -3
+  },
+  {
+   "frame": 905,
+   "id": "gen-shimmer",
+   "note": "the mark opens out of its centre line",
+   "db": -2
+  },
+  {
+   "frame": 980,
+   "id": "ui-pop-sound",
+   "note": "Book your MindMirror Scan",
+   "db": -3
+  }
+ ]
+}
