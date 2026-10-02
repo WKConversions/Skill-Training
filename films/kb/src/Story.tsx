@@ -70,11 +70,11 @@ const ROW = [["lead", "New lead"], ["quote", "Quote"], ["order", "Order"], ["inv
 const rowX = (i: number) => 125 + i * 345, ROWY = 520;
 const System: React.FC<{ g: number }> = ({ g }) => {
   if (g < T.f("w:helps") || g > T.f("pillars+0.6")) return null;
-  const out = k(g, "w:with-0.1", 0.45, DEPART);
+  const out = k(g, "w:with-0.32", 0.32, DEPART);
   const link = k(g, "w:smarter", 0.6, MOVE), run = k(g, "w:systems", 0.9, LIN);
   const words: W[] = [{ t: "Build", at: "w:build" }, { t: "smarter", at: "w:smarter", accent: true }, { t: "systems.", at: "w:systems", mark: "w:systems+0.25" }];
   return (
-    <div style={{ position: "absolute", inset: 0, opacity: 1 - out, transform: `translateY(${-out * 60}px)` }}>
+    <div style={{ position: "absolute", inset: 0, opacity: 1 - out, transform: `translateX(${-out * 160}px)` }}>
       <Line g={g} words={words} x={head(words, 92)} y={170} size={92} weight={800} ls={-0.035} />
       <div style={{ position: "absolute", left: rowX(0) + 140, top: ROWY + 53, width: rowX(4) - rowX(0), height: 6, borderRadius: 6, background: C.cyan, transformOrigin: "0 50%", transform: `scaleX(${link})` }} />
       {ROW.map(([icon, label], i) => {
@@ -93,12 +93,12 @@ const System: React.FC<{ g: number }> = ({ g }) => {
 const PX = [120, 700, 1280], PY = 330, PW = 520, PHh = 470;
 const Pillars: React.FC<{ g: number }> = ({ g }) => {
   if (g < T.f("w:with-0.2") || g > T.f("axis+0.7")) return null;
-  const out = k(g, "axis-0.15", 0.5, DEPART);
+  const out = k(g, "w:from-0.42", 0.34, DEPART);
   const words: W[] = [{ t: "Software,", at: "w:software", accent: true }, { t: "automation", at: "w:automation", accent: true }, { t: "and", at: "w:and" }, { t: "AI.", at: "w:ai", accent: true, under: "w:ai+0.25" }];
   const e = [k(g, "w:software-0.12", 0.55, ARRIVE), k(g, "w:automation-0.12", 0.55, ARRIVE), k(g, "w:ai-0.12", 0.55, ARRIVE)];
   const t = g / 30;
   return (
-    <div style={{ position: "absolute", inset: 0, opacity: 1 - out }}>
+    <div style={{ position: "absolute", inset: 0, opacity: 1 - out, transform: `translateX(${-out * 160}px)` }}>
       <Line g={g} words={words} x={head(words)} y={150} size={H.size} weight={800} ls={H.ls} />
       {/* software: a dashboard that keeps working */}
       {e[0] > 0 && <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${PX[0]}px, ${PY + (1 - e[0]) * 120}px) ${tl(g, 0)}`, opacity: e[0] }}>
@@ -148,7 +148,7 @@ const Axis: React.FC<{ g: number }> = ({ g }) => {
   const words: W[] = [{ t: "From", at: "w:from" }, { t: "strategy", at: "w:strategy", accent: true }, { t: "to", at: "w:to" }, { t: "implementation.", at: "w:implementation", mark: "w:implementation+0.35" }];
   const cx = lerp(AX0 + 40, AX1 - 520, go);
   return (
-    <div style={{ position: "absolute", inset: 0, opacity: 1 - out }}>
+    <div style={{ position: "absolute", inset: 0, opacity: 1 - out, transform: `scale(${1 - out * 0.6})`, transformOrigin: `${AX1}px ${AXY}px` }}>
       <Line g={g} words={words} x={head(words)} y={150} size={H.size} weight={800} ls={H.ls} />
       <div style={{ position: "absolute", left: AX0, top: AXY, width: AX1 - AX0, height: 6, borderRadius: 6, background: C.navy2, transformOrigin: "0 50%", transform: `scaleX(${draw})`, opacity: 0.35 }} />
       <div style={{ position: "absolute", left: AX0, top: AXY, width: (AX1 - AX0) * go, height: 6, borderRadius: 6, background: C.cyan }} />
@@ -183,7 +183,7 @@ const NODES = [["lead", "Request"], ["quote", "Quote"], ["mail", "Approval"], ["
 const Ideas: React.FC<{ g: number }> = ({ g }) => {
   if (g < T.f("complex-0.1") || g > T.f("auto+0.7")) return null;
   const draw = k(g, "w:we", 1.2, MOVE), straight = k(g, "w:into", 0.8, MOVE), win = k(g, "w:inside-0.1", 0.7, ARRIVE);
-  const zoom = k(g, "connect-0.05", 0.8, MOVE), side = k(g, "auto-0.05", 0.7, MOVE), out = k(g, "grow-0.3", 0.5, DEPART);
+  const zoom = k(g, "connect-0.05", 0.8, MOVE), side = k(g, "auto-0.05", 0.7, MOVE), out = k(g, "grow-0.28", 0.3, DEPART);
   // the window shrinks as the camera pulls out to the client's tools, then moves aside for the repetitive work
   const s = lerp(1, 0.56, zoom) * lerp(1, 0.8, side), gx = lerp(960, lerp(960, 520, side), 1), gy = lerp(560, 600, zoom);
   const pts = tangle.map(([x, y], i) => [lerp(x, lerp(400, 1520, i / (N - 1)), straight), lerp(y, 610, straight)]);
@@ -223,7 +223,7 @@ const TOOLS = ["makecom", "n8n-logo2", "supabase", "claude", "odoo-1", "postgres
 const tileAt = (i: number) => { const a = -Math.PI / 2 + (i / TOOLS.length) * Math.PI * 2 + 0.2; return [960 + Math.cos(a) * 770, 600 + Math.sin(a) * 330]; };
 const Connect: React.FC<{ g: number }> = ({ g }) => {
   if (g < T.f("connect-0.1") || g > T.f("auto+0.7")) return null;
-  const out = k(g, "auto-0.3", 0.3, DEPART);
+  const out = k(g, "auto-0.4", 0.4, MOVE);
   const words: W[] = [{ t: "We", at: "w:we2" }, { t: "connect", at: "w:connect", accent: true }, { t: "workflows,", at: "w:workflows", under: "w:workflows+0.2" }];
   return (
     <div style={{ position: "absolute", inset: 0, opacity: 1 - out }}>
@@ -235,7 +235,7 @@ const Connect: React.FC<{ g: number }> = ({ g }) => {
             {l >= 1 && [0, 1].map((n) => { const p = ((g / 30) * 0.9 + n * 0.5 + i * 0.13) % 1; return <circle key={n} cx={lerp(x, ex, p)} cy={lerp(y, ey, p)} r={8} fill={C.cyanDeep} />; })}</g>; })}
       </svg>
       {TOOLS.map((logo, i) => { const [x, y] = tileAt(i); const v = k(g, off("w:connect", -0.1 + i * 0.05), 0.45, POP);
-        return v > 0 && <div key={logo} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${x - 60}px, ${y - 60 + Math.sin(g / 18 + i) * 6}px) scale(${v})` }}><Tile logo={logo} /></div>; })}
+        return v > 0 && <div key={logo} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${lerp(x, 960, out) - 60}px, ${lerp(y, 600, out) - 60 + Math.sin(g / 18 + i) * 6}px) scale(${v * (1 - out * 0.7)})` }}><Tile logo={logo} /></div>; })}
     </div>
   );
 };
@@ -243,7 +243,7 @@ const Connect: React.FC<{ g: number }> = ({ g }) => {
 // ---------------------------------------------------------------- 7 · automate repetitive processes
 const Repeat: React.FC<{ g: number }> = ({ g }) => {
   if (g < T.f("auto-0.1") || g > T.f("grow+0.6")) return null;
-  const out = k(g, "grow-0.15", 0.45, DEPART), fold = k(g, "w:processes+0.25", 0.6, MOVE);
+  const out = k(g, "grow-0.28", 0.3, DEPART), fold = k(g, "w:processes+0.25", 0.6, MOVE);
   const words: W[] = [{ t: "Automate", at: "w:automate", mark: "w:automate+0.25" }, { t: "repetitive", at: "w:repetitive" }, { t: "processes.", at: "w:processes" }];
   return (
     <div style={{ position: "absolute", inset: 0, opacity: 1 - out }}>
@@ -266,7 +266,7 @@ const Repeat: React.FC<{ g: number }> = ({ g }) => {
 // ---------------------------------------------------------------- 8 · technology that grows with you
 const Grow: React.FC<{ g: number }> = ({ g }) => {
   if (g < T.f("grow-0.1") || g > T.f("stay+0.7")) return null;
-  const e = k(g, "grow-0.05", 0.6, ARRIVE), out = k(g, "stay-0.1", 0.5, DEPART), pull = k(g, "w:grows", 1.6, MOVE);
+  const e = k(g, "grow", 0.6, ARRIVE), out = k(g, "stay-0.32", 0.3, DEPART), pull = k(g, "w:grows", 1.6, MOVE);
   const words: W[] = [{ t: "Technology", at: "w:technology2" }, { t: "that", at: "w:that2" }, { t: "grows", at: "w:grows", accent: true }, { t: "with", at: "w:with2" }, { t: "you.", at: "w:you", under: "w:you+0.2" }];
   const mods: [string, string, number, number, string][] = [["chart", "Dashboard", -560, -40, "w:grows"], ["phone", "Mobile app", 560, -40, "w:grows+0.25"], ["spark", "AI agent", 0, 250, "w:with2"]];
   const team = Math.round(lerp(2, 7, k(g, "w:with2", 0.9, LIN)));
@@ -363,7 +363,7 @@ const Sign: React.FC<{ g: number }> = ({ g }) => {
   const l1: W[] = [{ t: "Your", at: "w:your4" }, { t: "technical", at: "w:technical" }, { t: "partner", at: "w:partner", mark: "w:partner+0.25" }];
   const l2: W[] = [{ t: "for", at: "w:for" }, { t: "building,", at: "w:building", accent: true }, { t: "running", at: "w:running", accent: true }, { t: "and", at: "w:and4" }, { t: "improving", at: "w:improving2", accent: true }];
   const l3: W[] = [{ t: "the", at: "w:the" }, { t: "systems", at: "w:systems2" }, { t: "behind", at: "w:behind", under: "w:behind+0.2" }, { t: "your", at: "w:your5" }, { t: "business.", at: "w:business3" }];
-  const behind = k(g, "w:behind", 0.9, MOVE), btn = k(g, "cta", 0.55, POP), cur = k(g, "cta+0.5", 0.7, MOVE), press = Math.sin(Math.PI * k(g, "cta+1.2", 0.25, LIN));
+  const behind = k(g, "w:building-0.2", 3.6, MOVE), btn = k(g, "cta", 0.55, POP), cur = k(g, "cta+0.5", 0.7, MOVE), press = Math.sin(Math.PI * k(g, "cta+1.2", 0.25, LIN));
   return (
     <>
       {/* the systems behind the business, faint, behind the words */}
@@ -372,11 +372,6 @@ const Sign: React.FC<{ g: number }> = ({ g }) => {
           <line key={i} x1={x1} y1={y1} x2={lerp(x1, x2, behind)} y2={lerp(y1, y2, behind)} stroke={C.cyan} strokeWidth={4} strokeDasharray="2 12" strokeLinecap="round" />)}
         {[[220, 820], [520, 690], [960, 760], [1400, 690], [1700, 820], [600, 520], [1320, 520]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r={14 * behind} fill={C.white} stroke={C.cyan} strokeWidth={4} />)}
       </svg>
-      {TOOLS.map((logo, i) => { const v = k(g, off("w:kb2", 0.1 + i * 0.06), 0.5, POP); if (v <= 0) return null;
-        const a = (i / TOOLS.length) * Math.PI * 2 + (g - T.f("sign")) / 34;
-        return <div key={logo} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${960 + Math.cos(a) * 820 - 60}px, ${550 + Math.sin(a) * 470 - 60}px) scale(${v})`, willChange: "transform" }}><Tile logo={logo} s={120} /></div>; })}
-      {behind > 0.6 && [[220, 820, 520, 690], [520, 690, 960, 760], [960, 760, 1400, 690], [1400, 690, 1700, 820]].map(([x1, y1, x2, y2], i) => { const p = ((g / 30) * 0.8 + i * 0.27) % 1;
-        return <div key={i} style={{ position: "absolute", left: 0, top: 0, width: 18, height: 18, borderRadius: 99, background: C.cyanDeep, transform: `translate(${lerp(x1, x2, p) - 9}px, ${lerp(y1, y2, p) - 9}px)` }} />; })}
       {badge > 0 && <div style={{ position: "absolute", left: SIGN.x - SIGN.size / 2, top: SIGN.y - SIGN.size / 2, transform: `scale(${badge})`, transformOrigin: "50% 50%" }}><Logo size={SIGN.size} /></div>}
       <Line g={g} words={l1} x={centred(l1, 72, 960, 800)} y={500} size={72} weight={800} ls={H.ls} />
       <Line g={g} words={l2} x={centred(l2, 44, 960, 700)} y={610} size={44} weight={700} ls={-0.02} />

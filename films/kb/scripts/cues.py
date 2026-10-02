@@ -79,7 +79,6 @@ cue("soft-gear-2", "w:continuously", 0.0, -11, note="the version dial rolls")
 # 12 K.B. Your technical partner
 cue("cinematic-fast-normal-whoosh", "sign", -0.15, 0, note="white opens out of the pulse")
 cue("gen-impact-deep", "w:kb2", 0.0, -6, note="the badge")
-cue("gen-shimmer", "w:kb2", 0.05, -10, note="the tool tiles orbit")
 cue("soundshelfstudio-ui-swipe-confirm", "w:partner", 0.25, -7, note="the mark under 'partner'")
 cue("cinematic-data-collect-2", "w:behind", 0.0, -4, note="the systems behind light up")
 cue("ui-pop-sound", "cta", 0.0, -4, note="Book a free discovery call")

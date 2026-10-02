@@ -6,7 +6,7 @@ redrawn; Karl). Written "K.B" everywhere, never "K.B Consultancy" (the form). Bu
 continuous stage (`library/planning/phrase-by-phrase.md`), timed word by word to Karl's voice-over (`src/words.json`),
 and the first film made to the 3% motion target, with techniques from Karl's reference films
 (`library/references/technique-catalogue.md`): screens on slowly tilting 3D planes, chips orbiting the loop, a version
-dial, typed messages, tool tiles orbiting the close. The site's hero video was not used (Karl).
+dial, typed messages. Revision 2 (Karl): every hand-off sequential, no crossfades; a clean sign-off. The site's hero video was not used (Karl).
 
 Final encode: 26 of 26 phrases with a new visual, 100% of frames moving, 3.8% of the frame in a typical frame. Storyboard: https://claude.ai/artifact/SwfnP487ARhYaMpKGh7pHe
 
@@ -22,12 +22,12 @@ Thesis and allowed patterns: `storyboard/thesis.md`. Facts: `harvest/facts.md`.
 | 16.7–19.9 | We connect workflows, automate repetitive processes | their tools linked round the app; copy-paste rows turn into one rule |
 | 19.9–22.7 | and create technology that grows with you. | a dashboard, a mobile app and an AI agent join; the team grows |
 | 22.7–28.1 | And we stay involved, continuously improving what we build as your needs evolve. | K.B in the client's channel; the Diagnose, Build, Run loop turns, v1.0 to v1.4 |
-| 28.1–37.5 | K.B. Your technical partner for building, running and improving the systems behind your business. | the badge with orbiting tools; the systems light up; Book a free discovery call |
+| 28.1–37.5 | K.B. Your technical partner for building, running and improving the systems behind your business. | the badge on its own; the systems draw in behind; Book a free discovery call |
 
 ## Sound
 
 `public/audio/mix.wav` (−15 LUFS, peaks under −1.5 dB, 48 kHz, 37.5 s) from `sound/cues.json`, written by
-`scripts/cues.py` from the film's labels: 67 effects from Karl's library, including his second pack (gears, data,
+`scripts/cues.py` from the film's labels: 66 effects from Karl's library, including his second pack (gears, data,
 cinematic whooshes) and Kenney's CC0 sounds; no Apple system sounds. Music: "Raising Me Higher" by Ahjay Stelino
 (Mixkit Stock Music Free License: commercial use, no credit needed), cut by `music_fit.py --length 37.5 --lift 4.3`.
 

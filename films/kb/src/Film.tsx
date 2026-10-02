@@ -19,7 +19,7 @@ const KEYS: Key[] = [
   ["complex+0.4", 1.0, 0, 0, MOVE], ["w:ideas+0.3", ...at(960, 560, 1.05)], ["w:inside+0.6", ...at(960, 580, 1.0), MOVE], ["connect+0.5", 1.0, 0, 0, MOVE],
   ["auto-0.1", ...at(960, 560, 1.04)], ["auto+0.5", 1.0, 0, 0, MOVE], ["grow-0.1", ...at(1300, 600, 1.05)], ["grow+0.5", 1.0, 0, 0, MOVE], ["stay-0.1", 1.05, 0, 0],
   ["stay+0.5", 1.0, 0, 0, MOVE], ["improve-0.1", ...at(960, 600, 1.05)], ["improve+0.5", 1.0, 0, 0, MOVE], ["sign-0.1", ...at(960, 620, 1.06)], ["sign+0.6", 1.0, 0, 0, MOVE],
-  ["cta", ...at(960, 600, 1.04)], ["end", ...at(960, 640, 1.06)],
+  ["cta", ...at(960, 560, 1.11)], ["end", ...at(960, 600, 1.14)],
 ];
 
 export const Film: React.FC<{ blurSamples?: number; audio?: "mix" | "vo" | "none" }> = ({ blurSamples = 1, audio = "vo" }) => {

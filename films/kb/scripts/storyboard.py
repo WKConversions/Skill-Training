@@ -53,7 +53,7 @@ BEATS = [
     (27.6, "“as your needs evolve.”: monitoring, backups, a new workflow, an integration update"),
   ]),
   ("Your technical partner", "0:28", "K.B. Your technical partner for building, running and improving the systems behind your business.", "white", "#FFFFFF", "end", [
-    (28.7, "“K.B”: their badge, with the tools they build with orbiting it"),
+    (28.7, "“K.B”: their badge, on its own"),
     (30.4, "“Your technical partner”"),
     (32.0, "“for building, running and improving”"),
     (34.0, "“the systems behind your business.”: the systems light up behind the words"),
@@ -106,7 +106,7 @@ figcaption{{font-size:14px;line-height:1.4}} figcaption .t{{font-weight:800;colo
 <h1>K.B: the systems behind <span>your business.</span></h1>
 <p>A 37-second website film in K.B's own look: their off-white page and lavender-grey cards, navy and cyan, Montserrat, and their logo badge exactly as on their site. Bright throughout, professional and technical, and every phrase of the voice-over gets its own visual.</p>
 <p><b>The thread:</b> a business's own work. It runs, then jams behind a manual step; the K.B badge drops in and clears it; the steps line up into a smarter system that a cyan pulse runs; the system is shown as software, automation and an AI agent, rides from strategy to implementation, straightens from tangled ideas into a flow inside the client's own app, connects to the tools K.B builds with, automates the repetitive rows, grows with the team, and K.B stays in the client's channel and turns its own Diagnose, Build, Run loop as the system improves. The badge closes the film with the call to book a free discovery call.</p>
-<div class="facts"><span>16:9 · 1920×1080 · 30 fps</span><span>37.5 s</span><span>Your voice-over (Christina)</span><span>Music + 67 sound effects</span><span>−15 LUFS</span><span>{n_frames} frames below</span></div></header>
+<div class="facts"><span>16:9 · 1920×1080 · 30 fps</span><span>37.5 s</span><span>Your voice-over (Christina)</span><span>Music + 66 sound effects</span><span>−15 LUFS</span><span>{n_frames} frames below</span></div></header>
 <video src="film.mp4" controls playsinline preload="metadata" poster="{frame(17.8, 1280)}"></video>
 <section style="display:grid;gap:16px"><h2>Phrase by phrase</h2>{''.join(beats)}</section>
 <section class="two">
@@ -118,10 +118,10 @@ figcaption{{font-size:14px;line-height:1.4}} figcaption .t{{font-weight:800;colo
 <li><b>Illustrative:</b> the client's workflow, the team in the channel and the version numbers claim nothing.</li>
 </ul></div>
 <div class="box"><h2>Motion and sound</h2><ul>
-<li><b>Measured:</b> every phrase of the voice-over brings a new visual; something moves in every frame; a typical frame changes 3% or more of its area, the new target, with screens on gently tilting 3D planes, chips orbiting the loop and tool tiles orbiting the close.</li>
-<li><b>Transitions grow out of objects:</b> the badge clears the jam, the steps come back from where it threw them, the plan turns into the live system on the axis, the tangle straightens into the flow, the camera pulls out of the client's app to their tools, colour fields open out of the pulse.</li>
+<li><b>Measured:</b> every phrase of the voice-over brings a new visual; something moves in every frame; up to the sign-off a typical frame changes 3% of its area, the new target, with screens on gently tilting 3D planes and chips orbiting the loop. The sign-off is kept clean: the badge, the words, the systems drawing in behind and a slow push.</li>
+<li><b>Every hand-off is sequential:</b> the outgoing scene leaves before the next line is spoken, moving the way the story moves; nothing crossfades. The badge clears the jam, the steps come back from where it threw them, the plan turns into the live system on the axis, the tangle straightens into the flow, the camera pulls out of the client's app to their tools, which gather back into it, colour fields open out of the pulse.</li>
 <li><b>Music:</b> "Raising Me Higher" by Ahjay Stelino (Mixkit free licence, commercial use, no credit), cut to open up on "K.B helps".</li>
-<li><b>Sound effects:</b> 67 from your library, including the new pack's gears, data and cinematic whooshes, each on its picture event.</li>
+<li><b>Sound effects:</b> 66 from your library, including the new pack's gears, data and cinematic whooshes, each on its picture event.</li>
 </ul></div></section>
 <div class="box"><h2>Files</h2><ul>
 <li><code>KB-1080p.mp4</code>: the master, with sound.</li>
