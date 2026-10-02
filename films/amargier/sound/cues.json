@@ -1,0 +1,331 @@
+{
+ "fps": 30,
+ "frames": 900,
+ "library": "../../../library/sound",
+ "vo": {
+  "file": "../public/audio/vo.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "music.flac",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.3,
+  "fade_out": 1.5,
+  "note": "Valley Sunset (Alejandro Magana, Mixkit Stock Music Free License) cut by music_fit.py --length 30 --lift 3.4: an entry on 'At Amargier Advisory', the last hit at 27.6 s under the close"
+ },
+ "sfx": [
+  {
+   "frame": 14,
+   "id": "gen-whoosh-short",
+   "note": "the long bar slides in",
+   "db": -6
+  },
+  {
+   "frame": 30,
+   "id": "gen-impact-soft",
+   "note": "the short bar meets it: the A",
+   "db": -6
+  },
+  {
+   "frame": 78,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the underline under 'a clear purpose.'",
+   "db": -5
+  },
+  {
+   "frame": 105,
+   "id": "gen-whoosh-medium",
+   "note": "the mark moves to the centre",
+   "db": -4
+  },
+  {
+   "frame": 119,
+   "id": "gen-shimmer",
+   "note": "the name",
+   "db": -5
+  },
+  {
+   "frame": 145,
+   "id": "gen-swell",
+   "note": "EMEA spreads out from Malaga",
+   "db": -5
+  },
+  {
+   "frame": 147,
+   "id": "gen-whoosh-medium",
+   "note": "the mark lands on Malaga as a pin",
+   "db": -3
+  },
+  {
+   "frame": 158,
+   "id": "soundreality-ui-pop-up",
+   "note": "businesses light up (1)",
+   "db": -4
+  },
+  {
+   "frame": 160,
+   "id": "soundreality-ui-pop-up",
+   "note": "businesses light up (2)",
+   "db": -4,
+   "pitch": 2
+  },
+  {
+   "frame": 163,
+   "id": "soundreality-ui-pop-up",
+   "note": "businesses light up (3)",
+   "db": -4,
+   "pitch": 4
+  },
+  {
+   "frame": 166,
+   "id": "soundreality-ui-pop-up",
+   "note": "businesses light up (4)",
+   "db": -4,
+   "pitch": 5
+  },
+  {
+   "frame": 169,
+   "id": "soundreality-ui-pop-up",
+   "note": "businesses light up (5)",
+   "db": -4,
+   "pitch": 7
+  },
+  {
+   "frame": 171,
+   "id": "soundreality-ui-pop-up",
+   "note": "businesses light up (6)",
+   "db": -4,
+   "pitch": 9
+  },
+  {
+   "frame": 221,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the underline under 'EMEA.'",
+   "db": -2
+  },
+  {
+   "frame": 278,
+   "id": "gen-whoosh-short",
+   "note": "'potential' rolls to 'commercial'",
+   "db": -7
+  },
+  {
+   "frame": 289,
+   "id": "soundshelfstudio-ui-success-bloom",
+   "note": "links turn solid",
+   "db": -4
+  },
+  {
+   "frame": 302,
+   "id": "universfield-bubble-pop-03",
+   "note": "opportunity 1",
+   "db": -8
+  },
+  {
+   "frame": 306,
+   "id": "universfield-bubble-pop-03",
+   "note": "opportunity 2",
+   "db": -8,
+   "pitch": 2
+  },
+  {
+   "frame": 311,
+   "id": "universfield-bubble-pop-03",
+   "note": "opportunity 3",
+   "db": -8,
+   "pitch": 4
+  },
+  {
+   "frame": 315,
+   "id": "universfield-bubble-pop-03",
+   "note": "opportunity 4",
+   "db": -8,
+   "pitch": 7
+  },
+  {
+   "frame": 338,
+   "id": "gen-whoosh-medium",
+   "note": "the businesses gather round a client",
+   "db": -3
+  },
+  {
+   "frame": 363,
+   "id": "soundshelfstudio-ui-radio-select",
+   "note": "Go-to-market strategy",
+   "db": -4
+  },
+  {
+   "frame": 386,
+   "id": "gen-swell",
+   "note": "the ISV ring forms",
+   "db": -6
+  },
+  {
+   "frame": 448,
+   "id": "ui-pop-sound",
+   "note": "partner 1 recruited",
+   "db": -6
+  },
+  {
+   "frame": 452,
+   "id": "ui-pop-sound",
+   "note": "partner 2 recruited",
+   "db": -6,
+   "pitch": 2
+  },
+  {
+   "frame": 455,
+   "id": "ui-pop-sound",
+   "note": "partner 3 recruited",
+   "db": -6,
+   "pitch": 4
+  },
+  {
+   "frame": 475,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "co-selling paths converge",
+   "db": -5
+  },
+  {
+   "frame": 484,
+   "id": "ui-pop-sound",
+   "note": "the Co-sell chip",
+   "db": -4
+  },
+  {
+   "frame": 500,
+   "id": "gen-shimmer",
+   "note": "Cedric at the centre",
+   "db": -4
+  },
+  {
+   "frame": 539,
+   "id": "gen-whoosh-medium",
+   "note": "the hub folds away",
+   "db": -3
+  },
+  {
+   "frame": 563,
+   "id": "gen-whoosh-short",
+   "note": "the short bar: the thinking",
+   "db": -5
+  },
+  {
+   "frame": 591,
+   "id": "gen-whoosh-short",
+   "note": "the long bar: the doing",
+   "db": -5,
+   "pitch": -2
+  },
+  {
+   "frame": 601,
+   "id": "gen-impact-soft",
+   "note": "they connect at the apex",
+   "db": -13
+  },
+  {
+   "frame": 618,
+   "id": "gen-whoosh-deep",
+   "note": "the photo opens out of the apex",
+   "db": -3
+  },
+  {
+   "frame": 639,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "the counter rolls (1)",
+   "db": -4
+  },
+  {
+   "frame": 645,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "the counter rolls (2)",
+   "db": -4,
+   "pitch": 2
+  },
+  {
+   "frame": 651,
+   "id": "floraphonic-ui-pop-up-15",
+   "note": "the counter rolls (3)",
+   "db": -4,
+   "pitch": 4
+  },
+  {
+   "frame": 676,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the underline",
+   "db": -6
+  },
+  {
+   "frame": 687,
+   "id": "gen-whoosh-medium",
+   "note": "the photo leaves; the ticks fly",
+   "db": -10
+  },
+  {
+   "frame": 710,
+   "id": "soundreality-ui-pop-up",
+   "note": "brick 1",
+   "db": -7
+  },
+  {
+   "frame": 716,
+   "id": "soundreality-ui-pop-up",
+   "note": "brick 3",
+   "db": -7,
+   "pitch": 2
+  },
+  {
+   "frame": 722,
+   "id": "soundreality-ui-pop-up",
+   "note": "brick 5",
+   "db": -7,
+   "pitch": 4
+  },
+  {
+   "frame": 728,
+   "id": "soundreality-ui-pop-up",
+   "note": "brick 7",
+   "db": -7,
+   "pitch": 5
+  },
+  {
+   "frame": 734,
+   "id": "soundreality-ui-pop-up",
+   "note": "brick 9",
+   "db": -7,
+   "pitch": 7
+  },
+  {
+   "frame": 740,
+   "id": "soundreality-ui-pop-up",
+   "note": "brick 11",
+   "db": -7,
+   "pitch": 9
+  },
+  {
+   "frame": 748,
+   "id": "soundshelfstudio-ui-swipe-confirm",
+   "note": "the underline under 'next.'",
+   "db": -6
+  },
+  {
+   "frame": 764,
+   "id": "gen-whoosh-medium",
+   "note": "the mark moves up, on its own",
+   "db": -4
+  },
+  {
+   "frame": 771,
+   "id": "gen-shimmer",
+   "note": "it resolves into the solid mark",
+   "db": -5
+  },
+  {
+   "frame": 800,
+   "id": "ui-pop-sound",
+   "note": "the Let's talk button",
+   "db": -3
+  }
+ ]
+}
