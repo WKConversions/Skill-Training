@@ -32,9 +32,10 @@ export const measure = (t: string, size: number, weight = 500, ls = -0.045, seri
 export type W = { t: string; at: string; accent?: boolean; color?: string; serif?: boolean; mark?: string; under?: string; strike?: string };
 
 /** Words that build on the voice: each rises 32% of its size out of a blur on its spoken word, and leaves
- *  (with `out`) upward into a blur, staggered. Words, not sentences: six or fewer to a line. */
+ *  (with `out`) upward into a blur, staggered; with `split` the words leave sideways, apart from the centre,
+ *  into a blur (Qwilr's "It's both." exit). Words, not sentences: six or fewer to a line. */
 export const Line: React.FC<{ g: number; words: W[]; x: number; y: number; size: number; weight?: number; color?: string; out?: string; outDur?: number;
-  dy?: number; ls?: number; style?: React.CSSProperties }> = ({ g, words, x, y, size, weight = 500, color = KIT.ink, out, outDur = 0.3, dy = 0.32, ls = -0.045, style }) => (
+  dy?: number; ls?: number; split?: boolean; style?: React.CSSProperties }> = ({ g, words, x, y, size, weight = 500, color = KIT.ink, out, outDur = 0.3, dy = 0.32, ls = -0.045, split = false, style }) => (
   <div style={{ position: "absolute", left: x, top: y, display: "flex", gap: size * 0.26, whiteSpace: "nowrap", fontFamily: KIT.font, fontWeight: weight, fontSize: size,
     lineHeight: 1, letterSpacing: `${ls}em`, ...style }}>
     {words.map((w, i) => {
@@ -44,7 +45,7 @@ export const Line: React.FC<{ g: number; words: W[]; x: number; y: number; size:
       return (
         <span key={i} style={{ position: "relative", isolation: "isolate", display: "inline-block", opacity: Math.min(1, k * 1.7) * (1 - o),
           ...(w.serif ? { fontFamily: KIT.serif, fontStyle: "italic", fontWeight: 400, letterSpacing: "-0.02em" } : {}),
-          transform: `translateY(${((1 - k) * dy - o * 0.3) * size}px)`, filter: k < 1 || o > 0 ? `blur(${(1 - k) * 9 + o * 9}px)` : undefined,
+          transform: split ? `translate(${(i - (words.length - 1) / 2) * o * size * 0.9}px, ${(1 - k) * dy * size}px)` : `translateY(${((1 - k) * dy - o * 0.3) * size}px)`, filter: k < 1 || o > 0 ? `blur(${(1 - k) * 9 + o * 9}px)` : undefined,
           color: w.color ?? (w.accent ? KIT.word : color) }}>
           {w.mark && <span style={{ position: "absolute", zIndex: -1, left: -size * 0.1, right: -size * 0.1, top: size * 0.06, bottom: -size * 0.1, borderRadius: size * 0.08,
             background: KIT.mark, transformOrigin: "0 50%", transform: `scaleX(${m})` }} />}
@@ -130,3 +131,69 @@ export const camera = (g: number, keys: Key[]) => {
 /** Clamped interpolation on frames, for anything not keyed on a label. */
 export const tw = (g: number, a: number, b: number, from = 0, to = 1, ease = ARRIVE) =>
   interpolate(g, [a, b], [from, to], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: ease });
+
+// ---- from Karl's reference films (references/technique-catalogue.md) ----
+
+/** Typed text with a caret, the way a prompt or a search box fills: `cps` characters a second from `at`.
+ *  Each character fades in over two frames instead of popping; the caret blinks once it stops. Put an inline
+ *  icon or product image in the text as a React node with `slots` ({ "(1)": <Img …/> }), as SKUVE does. */
+export const Typed: React.FC<{ g: number; text: string; at: string | number; cps?: number; caret?: boolean; color?: string; slots?: Record<string, React.ReactNode>; style?: React.CSSProperties }> = ({
+  g, text, at, cps = 18, caret = true, color, slots = {}, style }) => {
+  const t0 = typeof at === "number" ? at : T.s(at), t = g / 30 - t0;
+  const parts = text.split(/(\(\d+\))/).filter(Boolean);
+  let n = 0;
+  const shown = Math.max(0, t * cps);
+  const done = shown >= text.length;
+  return (
+    <span style={{ whiteSpace: "pre", color, ...style }}>
+      {parts.map((p, j) => {
+        if (slots[p] !== undefined) { const v = Math.min(1, Math.max(0, shown - n)); n += 1; return <span key={j} style={{ display: "inline-block", transform: `scale(${v})`, opacity: v }}>{slots[p]}</span>; }
+        return [...p].map((c, i) => { const v = Math.min(1, Math.max(0, (shown - n - i) * 1.5)); if (i === p.length - 1) n += p.length; return v > 0 && <span key={j + "-" + i} style={{ opacity: v }}>{c}</span>; });
+      })}
+      {caret && t > 0 && (!done || Math.floor(t * 2) % 2 === 0) && <span style={{ display: "inline-block", width: "0.06em", height: "1em", marginLeft: "0.04em", verticalAlign: "-0.12em", background: "currentColor" }} />}
+    </span>
+  );
+};
+
+/** A choice that rolls through a pill like a dial: a vertical list scrolls from `from` to `to` (indices) and
+ *  stops on the answer, the neighbours fading above and below (Kaelio's "Set it up under [15 mins]"). */
+export const Selector: React.FC<{ g: number; items: string[]; from?: number; to: number; at: string; dur?: number; size: number; weight?: number; pill?: string; color?: string; style?: React.CSSProperties }> = ({
+  g, items, from = 0, to, at, dur = 0.7, size, weight = 700, pill = KIT.word, color = KIT.ink, style }) => {
+  const v = lerp(from, to, T.k(g, at, dur, MOVE)), h = size * 1.25;
+  return (
+    <span style={{ position: "relative", display: "inline-block", height: h, minWidth: measure(items[to], size, weight, 0) + size * 0.8, fontWeight: weight, verticalAlign: "middle", ...style }}>
+      <span style={{ position: "absolute", inset: 0, borderRadius: 999, border: `${Math.max(2, size * 0.05)}px solid ${pill}` }} />
+      {items.map((it, i) => { const d = i - v; return Math.abs(d) < 2.6 && (
+        <span key={i} style={{ position: "absolute", left: 0, right: 0, top: 0, height: h, lineHeight: `${h}px`, textAlign: "center", fontSize: size, color,
+          transform: `translateY(${d * h}px) scale(${1 - Math.min(1, Math.abs(d)) * 0.15})`, opacity: Math.max(0, 1 - Math.abs(d) * 0.7), whiteSpace: "nowrap" }}>{it}</span>); })}
+    </span>
+  );
+};
+
+/** A line, arrow or logo stroke that draws itself on: an SVG path (in the box's own coordinates) revealed from
+ *  0 to 1 by `k`; `dash` makes it a dotted path that still draws on (pretaa's dashed route that bends up into
+ *  growth, Vela's V written as one stroke). */
+export const Stroke: React.FC<{ d: string; k: number; w: number; h: number; width?: number; color?: string; dash?: number; style?: React.CSSProperties }> = ({ d, k, w, h, width = 6, color = KIT.ink, dash, style }) =>
+  k <= 0 ? null : (
+    <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} style={{ position: "absolute", overflow: "visible", ...style }}>
+      {dash ? <>
+        <defs><mask id={`m${d.length}${w}`}><path d={d} pathLength={1} fill="none" stroke="#fff" strokeWidth={width * 3} strokeDasharray={`${k} 1`} /></mask></defs>
+        <path d={d} fill="none" stroke={color} strokeWidth={width} strokeLinecap="round" strokeDasharray={`0 ${dash}`} mask={`url(#m${d.length}${w})`} />
+      </> : <path d={d} pathLength={1} fill="none" stroke={color} strokeWidth={width} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={`${k} 1`} />}
+    </svg>
+  );
+
+/** A soft colour bloom: a blurred disc of the brand's colour that drifts behind an object or in a corner, so a
+ *  white page is never flat (OSK Manager's corner glows, Qwilr's bloom behind the AI circle). Keep it moving and
+ *  not too large: a still, frame-filling gradient bands. */
+export const Bloom: React.FC<{ g: number; x: number; y: number; r: number; color: string; k?: number; drift?: number; style?: React.CSSProperties }> = ({ g, x, y, r, color, k = 1, drift = 40, style }) =>
+  k <= 0 ? null : (
+    <div style={{ position: "absolute", left: 0, top: 0, width: 2 * r, height: 2 * r, borderRadius: "50%", background: color, filter: `blur(${r * 0.45}px)`, opacity: 0.55 * k,
+      transform: `translate(${x - r + Math.sin(g / 70) * drift}px, ${y - r + Math.cos(g / 90) * drift}px) scale(${0.6 + 0.4 * k})`, willChange: "transform", ...style }} />
+  );
+
+/** Something becomes something else by a sideways flip: `a` turns edge-on and `b` turns out of the edge (Dripc's
+ *  money bag into a coin, pretaa's coin into the stroke of its logo). k runs 0 → 1; the swap is at 0.5. */
+export const Flip: React.FC<{ k: number; a: React.ReactNode; b: React.ReactNode; style?: React.CSSProperties }> = ({ k, a, b, style }) => (
+  <div style={{ position: "relative", transform: `scaleX(${Math.max(0.02, Math.abs(Math.cos(k * Math.PI)))})`, ...style }}>{k < 0.5 ? a : b}</div>
+);

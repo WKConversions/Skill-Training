@@ -32,9 +32,10 @@ saved file into the build folder.
 | `film_tells.py` | reports a film's tells: invented figures and names, filler words, decorative labels, held against the facts file | `evaluation/tells.md` |
 | `timeline.ts` | a film's timing as labels and relative placements (GSAP's position parameter), for Remotion | `production/remotion.md` |
 | `phrase_check.py` | splits the aligned voice-over into phrases (the shot list), and measures on a render that every phrase brings a new visual | `planning/phrase-by-phrase.md`, `evaluation/quality-check.md` |
-| `kinetic.tsx` | the kinetic kit for Remotion: word-by-word type with marks, rolls, masks out of objects, camera keys, keyed tracks | `production/remotion.md`, `planning/phrase-by-phrase.md` |
+| `kinetic.tsx` | the kinetic kit for Remotion: word-by-word type with marks, rolls, masks out of objects, camera keys, keyed tracks; from Karl's references, typed prompts, a dial selector, a split exit, drawn strokes, blooms and flips | `production/remotion.md`, `planning/phrase-by-phrase.md` |
 | `three_card.tsx` | a tested 3D scene for Remotion: a lit card with a soft shadow, frame-driven | `production/remotion.md` |
 | `stock.py` | searches royalty-free footage (Mixkit) and photos (Openverse, Pexels by ID), measures them, keeps credits | `design/asset-strategy.md` |
+| `ref_sheet.py` | contact sheets of a reference video with true timecodes, an overview or a transition frame by frame | `references/reading-references.md` |
 | `audio_look.py` | a sound file as a spectrogram over its loudness curve, with marks | `motion/sound.md` |
 
 **Requirements.** Node with `playwright` and `sharp` in the build folder (tested with Playwright 1.56.0

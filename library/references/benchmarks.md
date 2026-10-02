@@ -5,6 +5,12 @@ general rules, so this file is the place to add them: each new breakdown in the 
 `references/reading-references.md`, with its kind (style, content or motion) and what to take and not
 take. Add one only when Karl selects the reference.
 
+## Karl's reference set (October 2026)
+
+Twenty-five more films Karl selected, measured and broken down into twenty techniques with their timing:
+`references/technique-catalogue.md`. Their median film moves 3.5% of the frame in a typical frame, against
+1.8–2.3% for our October films: the clearest gap they show.
+
 ## Motion benchmark: Addx Studio, "sends" product film
 
 Karl's benchmark for how a film should move: youtube.com/watch?v=Ljr-lhLyuC0 (54 seconds, 1080p,

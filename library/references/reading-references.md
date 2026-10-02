@@ -65,6 +65,9 @@ DO NOT COPY:
 You can't watch video, and a YouTube page returns metadata at best. Never describe a reference's
 motion from its URL alone. Capture frames, then analyze the frames.
 
+- **A video file, the quick way:** `python3 scripts/ref_sheet.py ref.mp4 out/ref --every 1.5` draws an
+  overview with true timecodes (it doesn't need ffmpeg's drawtext, which some builds lack), and
+  `--from 12 --to 14 --fps 10` samples a transition densely.
 - **A video file:** `ffprobe` gives duration, frame rate and size. For an overview with timecodes:
   `ffmpeg -i ref.mp4 -vf "scale=320:-2,drawtext=text='%{pts\:hms}':x=6:y=6:fontsize=18:fontcolor=red,fps=1,tile=6x5:padding=4:color=white" ref_%02d.png`
   (one sheet per 30 seconds). Keep `drawtext` before `fps` so each label is the sampled frame's true

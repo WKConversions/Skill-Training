@@ -1,3 +1,20 @@
+# Reference films, 2 October 2026: 25 films Karl selected, read frame by frame
+
+- **New module `references/technique-catalogue.md`:** what the 25 films have in common, measured (they move
+  3.5% of the frame in a typical frame against 1.8–2.3% for our October films; one hard cut in 23 seconds;
+  a line of type alone, then its picture, alternating; bright, with soft blooms; one diagram that carries
+  many phrases), and twenty techniques with their timing: blur-rise word builds, typed prompts with
+  products inside the sentence, the word that is a button, highlight blocks, a dial selector, a split exit,
+  a mark inside a word, a shape-morph chain, an object that becomes the logo, flips, a dot iris, puzzle
+  assembly, a mind map the camera travels, a lens reveal, multiplication, rings with a changing label,
+  3D-tilted UI, footage with floating UI, soft blooms. A table of all 25 with their measurements.
+- **Kinetic kit (`scripts/kinetic.tsx`):** `Typed`, `Selector`, `Stroke` (solid or dotted, drawing on),
+  `Bloom`, `Flip`, and a `split` exit for `Line`, tested in a render.
+- **New script `scripts/ref_sheet.py`:** timecoded contact sheets of a reference video, an overview or a
+  transition frame by frame (this ffmpeg has no drawtext).
+- **Linked from** the workflow (steps 6 and 9), `planning/phrase-by-phrase.md` (idea 10),
+  `motion/transitions.md`, `references/benchmarks.md` and `references/reading-references.md`.
+
 # Sound library, 2 October 2026: Karl's second pack and Kenney's CC0 interface sounds
 
 - **Karl's second pack (70 sounds, licence `karl`):** cinematic whooshes and risers, gears, money, data and

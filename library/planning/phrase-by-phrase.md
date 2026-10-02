@@ -67,7 +67,11 @@ out of the previous frame. Then cut anything that doesn't read.
    close the film as the mark.
 8. **People where the line is about people.** The founder's photo at the centre of the ecosystem on
    "hands-on leadership"; labels struck off a person on "not another label".
-9. **Marking as punctuation.** One mark per phrase at most, in the brand's accent: a marker sweep, an
+10. **Borrow a technique that acts it out.** `references/technique-catalogue.md` lists twenty from Karl's
+   reference films, with their timing: a dial that rolls to the number, a typed prompt with products
+   inside the sentence, the word that is a button, a lens that reveals, rings whose label changes with
+   each feature.
+11. **Marking as punctuation.** One mark per phrase at most, in the brand's accent: a marker sweep, an
    underline, a strike, a hand-drawn ring.
 
 ## Transitions grow out of objects

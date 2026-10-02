@@ -37,6 +37,13 @@ that becomes a card; a mark that floods the frame; cards that line up into a por
 a card that opens on its centre line; dots that gather into one person; a line that rises like a curtain;
 a word that rolls into another.
 
+## From Karl's reference films
+
+`references/technique-catalogue.md` has the transitions of 25 films Karl selected, timed frame by frame: the
+word that is a button and opens the product; a coin that flips edge-on into the first stroke of the logo; a
+dot that grows into the next scene's ground; a heart that splits like a puzzle into a funnel; a lens that
+shows the next scene inside it; a mind map that grows while the camera travels to each new node.
+
 ## A small family per film
 
 Choose two or three transition behaviors for a film and use them consistently; consistency makes it
