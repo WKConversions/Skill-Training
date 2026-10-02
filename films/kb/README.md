@@ -8,6 +8,8 @@ and the first film made to the 3% motion target, with techniques from Karl's ref
 (`library/references/technique-catalogue.md`): screens on slowly tilting 3D planes, chips orbiting the loop, a version
 dial, typed messages, tool tiles orbiting the close. The site's hero video was not used (Karl).
 
+Final encode: 26 of 26 phrases with a new visual, 100% of frames moving, 3.8% of the frame in a typical frame. Storyboard: https://claude.ai/artifact/SwfnP487ARhYaMpKGh7pHe
+
 Thesis and allowed patterns: `storyboard/thesis.md`. Facts: `harvest/facts.md`.
 
 | Time | Voice-over | On screen |
