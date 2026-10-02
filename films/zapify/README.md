@@ -28,6 +28,8 @@ the logo, on autopilot. Thesis and allowed patterns: `storyboard/thesis.md`. Fac
 
 ## Checks (draft)
 
+Final encode: 25 of 25 phrases, 98% moving, longest still 0.43 s, no shake. Storyboard: https://claude.ai/artifact/Cu9D1Uf7QVozTbVoRNhQoa
+
 `phrase_check.py`: 25 of 25 phrases bring a new visual, 0.0 s of voice without one. `qc.sh`: 98% of frames
 moving, longest still 0.6 s; the shake found on the first draft (the bolt and the logo moved with left/top, a 200 px
 camera pan, vertical glyph snapping under the slow zoom, fixed with a 0.02° camera rotation) is fixed. `film_tells.py`: 0
