@@ -51,6 +51,35 @@ tween helper `tw(frame, from, to, a, b, ease)` with clamping, the camera compone
 pieces (cursor, pill, portrait). Scenes then share one language the way component variants do in UI
 motion libraries, and a new client changes the tokens, not the scenes.
 
+## Time it with labels, not frame numbers
+
+Write the film's timing once, as labels, the way a GSAP timeline uses its position parameter
+(`scripts/timeline.ts`, copied into `src/`): beats and the force-aligned words of the voice-over are
+labels in seconds, every move is placed relative to one ("turn+0.3", "w:results", "cta-0.2"), and
+`T.k(g, "turn+0.3", 0.5)` gives a move's eased progress. When the recorded voice-over arrives or
+Karl asks for a beat to breathe, the labels move and every move follows; frame numbers scattered
+through the scenes break on the first retime. A new move starts from the previous one's start or
+end ("<", ">" in GSAP) by naming that label plus an offset, never from a remembered number.
+
+## 3D, when it earns its place
+
+Real depth suits a few beats: an object the viewer should feel turn (a device, a card, a product), a
+camera that travels through layers, a physical scale. It doesn't suit a beat that reads as well flat;
+3D for its own sake is a fingerprint (`design/anti-ai-design.md`).
+
+- `npm i @remotion/three three @react-three/fiber` (Remotion 4.0.531 with React 19 takes
+  `@react-three/fiber@9` and `three@0.180`), and put the scene in a `<ThreeCanvas width height camera>`.
+- Drive everything from `useCurrentFrame()`, never `useFrame` or a clock, so every frame renders the
+  same in every tab and every chunk.
+- Render with `--gl=swangle` (or `chromiumOptions: { gl: "swangle" }`): the headless browser has no
+  GPU. Tested here: a lit card with soft shadows, rendered headless at 1280×720.
+- Light it for the brand, not for a showroom: under a standard light a white card reads grey, so raise
+  the ambient light or use an unlit material for UI faces; one key light, a soft shadow on a
+  `shadowMaterial` floor, nothing else.
+- Keep text as HTML over the canvas, or as a texture rendered from HTML, so it stays sharp and uses
+  the brand font.
+- A worked example: `scripts/three_card.tsx`.
+
 ## The motion system in Remotion
 
 - **Curves** (`motion/easing.md`): arrive `Easing.bezier(0.22, 1, 0.36, 1)`, depart

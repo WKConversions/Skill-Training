@@ -39,3 +39,11 @@ editorial motion and intentional typographic reveals. It is never a default entr
 Never sacrifice legibility for motion. Give text enough hold after it moves, and don't scale text
 through unreadable sizes while its words are being spoken. Blur on text follows
 `motion/animation-grammar.md`.
+
+## When the brand has no usable face
+
+Use the client's own font when it's a clean face the film can load. When it isn't (a system font, a
+licensed face that can't be embedded, a logo-only wordmark), pick a Google Fonts pairing by the
+brand's mood from `data/font-pairings.csv` (75 pairings with mood keywords and best-for notes, from
+ui-ux-pro-max, MIT), and say which in the storyboard notes.
+

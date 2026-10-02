@@ -36,7 +36,7 @@ export const S1: React.FC<{ t: number }> = ({ t }) => {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div style={{ fontWeight: 600, fontSize: 24 }}>Customer portal · Plan</div><Pill tone="stone">Not started</Pill>
         </div>
-        <div style={{ display: "flex", gap: 0, marginTop: 26, color: C.stone, fontSize: 15, fontWeight: 500 }}>
+        <div style={{ display: "flex", gap: 0, marginTop: 26, color: C.ink2, fontSize: 15, fontWeight: 500 }}>
           {["Q1", "Q2", "Q3", "Q4"].map((q) => <div key={q} style={{ flex: 1, borderLeft: `1px dashed ${C.line}`, paddingLeft: 8 }}>{q}</div>)}
         </div>
         {[["Discovery", 0, 0.28], ["Build", 0.22, 0.62], ["Launch", 0.6, 0.9]].map(([n, a, b], i) => (
@@ -92,7 +92,7 @@ export const S2: React.FC<{ t: number }> = ({ t }) => (
     <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${lerp(1110, 1200, tw(t, 40, 120, 0, 1, MOVE))}px, 790px)` }}>
       <Card x={0} y={0} w={420} style={{ padding: "20px 26px", ...rise(t, 30) }}>
         <div style={{ fontSize: 16, color: C.ink2, fontWeight: 500 }}>Go-live</div>
-        <div style={{ fontSize: 28, fontWeight: 700, marginTop: 4 }}><s style={{ color: C.stone }}>March</s> → <s style={{ color: C.stone }}>June</s> → {t > 90 ? "October?" : "September"}</div>
+        <div style={{ fontSize: 28, fontWeight: 700, marginTop: 4 }}><s style={{ color: C.ink2 }}>March</s> → <s style={{ color: C.ink2 }}>June</s> → {t > 90 ? "October?" : "September"}</div>
       </Card>
     </div>
   </>
@@ -135,7 +135,7 @@ export const S4: React.FC<{ t: number }> = ({ t }) => {
           return (
             <div key={p} style={{ position: "absolute", left: 32, right: 32, top: 100 + pos * 120, height: 100, borderRadius: 16, border: `1px solid ${C.line}`, background: i === 0 && order > 0 && order < 1 ? C.paper : C.canvas,
               boxShadow: i === 0 && order > 0 && order < 1 ? SHADOW : undefined, display: "flex", alignItems: "center", gap: 18, padding: "0 22px" }}>
-              <span style={{ fontWeight: 700, fontSize: 30, color: Math.round(pos) === 0 ? C.red : C.stone, width: 34 }}>{Math.round(pos) + 1}</span>
+              <span style={{ fontWeight: 700, fontSize: 30, color: Math.round(pos) === 0 ? C.red : C.ink2, width: 34 }}>{Math.round(pos) + 1}</span>
               <span style={{ fontWeight: 600, fontSize: 22 }}>{p}</span>
             </div>
           );
@@ -144,7 +144,7 @@ export const S4: React.FC<{ t: number }> = ({ t }) => {
       {/* the plan, now running */}
       <Card x={720} y={300} w={1090} h={640} style={{ padding: 32, ...rise(t, 14) }}>
         <div style={{ display: "flex", justifyContent: "space-between" }}><div style={{ fontWeight: 700, fontSize: 26 }}>Roadmap</div><Pill tone="green">All on track</Pill></div>
-        <div style={{ display: "flex", marginTop: 24, marginLeft: 230, color: C.stone, fontSize: 16, fontWeight: 500 }}>{["Q1", "Q2", "Q3", "Q4"].map((q) => <div key={q} style={{ flex: 1, borderLeft: `1px dashed ${C.line}`, paddingLeft: 8, height: 470 }}>{q}</div>)}</div>
+        <div style={{ display: "flex", marginTop: 24, marginLeft: 230, color: C.ink2, fontSize: 16, fontWeight: 500 }}>{["Q1", "Q2", "Q3", "Q4"].map((q) => <div key={q} style={{ flex: 1, borderLeft: `1px dashed ${C.line}`, paddingLeft: 8, height: 470 }}>{q}</div>)}</div>
         {PRI.map((p, i) => (
           <div key={p} style={{ position: "absolute", left: 32, right: 32, top: 140 + i * 110, height: 60 }}>
             <div style={{ position: "absolute", left: 0, top: 16, width: 220, fontWeight: 600, fontSize: 19 }}>{p}</div>
@@ -209,7 +209,7 @@ export const S5: React.FC<{ t: number }> = ({ t }) => {
 export const S6: React.FC<{ t: number }> = ({ t }) => (
   <>
     <AbsoluteFill style={{ overflow: "hidden" }}>
-      <Img src={staticFile("img/bruno-stage-blue.jpg")} style={{ position: "absolute", left: 300, top: 0, width: 1620, height: 1080, objectFit: "cover", transform: `scale(${lerp(1.08, 1.0, tw(t, 0, 150, 0, 1, MOVE))})` }} />
+      <Img src={staticFile("img/bruno-stage-blue.jpg")} style={{ position: "absolute", left: 300, top: 0, width: 1620, height: 1080, objectFit: "cover", filter: "saturate(0.3) sepia(0.12) brightness(1.04)", transform: `scale(${lerp(1.08, 1.0, tw(t, 0, 150, 0, 1, MOVE))})` }} />
       <AbsoluteFill style={{ background: "linear-gradient(90deg, rgba(246,244,241,1) 0%, rgba(246,244,241,.97) 28%, rgba(246,244,241,0) 50%)" }} />
     </AbsoluteFill>
     <div style={{ position: "absolute", left: 110, top: 300, width: 720 }}>
@@ -222,7 +222,7 @@ export const S6: React.FC<{ t: number }> = ({ t }) => (
       </Card>
     </div>
     <Card x={1320} y={700} w={480} h={300} r={20} style={{ overflow: "hidden", border: "6px solid #fff", ...rise(t, 60) }}>
-      <Img src={staticFile("img/audience.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      <Img src={staticFile("img/audience.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", filter: "saturate(0.3) sepia(0.12) brightness(1.04)" }} />
     </Card>
   </>
 );

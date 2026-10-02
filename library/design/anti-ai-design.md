@@ -27,6 +27,10 @@ Avoid these defaults. None is forbidden outright, but each needs a reason in thi
 - decorative elements without a communication purpose, and effects compensating for weak layout,
 - a sound effect on every movement.
 
+Beyond motion, the same reflexes show up in data, layout and words: invented figures and names,
+decorative labels, three equal cards, hollow copy. `evaluation/tells.md` is the test for all of them:
+a pattern stays only when the film's thesis names it.
+
 ## Count them
 
 A fingerprint is about frequency and uniformity: one instance can be a choice, the same instance

@@ -8,7 +8,8 @@ import { AbsoluteFill, Easing, continueRender, delayRender, interpolate, staticF
 // depressing"); the tie red is his mark and appears only where he makes something happen.
 export const C = {
   canvas: "#F6F4F1", paper: "#FFFFFF", ink: "#121212", ink2: "#4A4844", stone: "#A8A69F", stonePale: "#E9E6E1",
-  line: "#E4E0DA", red: "#BD1717", redPale: "#F6E3E1", green: "#2F8A57", greenPale: "#E2F1E8", amber: "#B7801E", amberPale: "#F6ECD9",
+  // text on paper never uses stone (2.4:1): ink2 (8.3:1) for small labels; measured with brand_measure.py contrast
+  line: "#E4E0DA", red: "#BD1717", redPale: "#F6E3E1", green: "#226B45", greenPale: "#E2F1E8", amber: "#8A5C0E", amberPale: "#F6ECD9",
 };
 export const FONT = "Poppins";
 export const SHADOW = "0 30px 60px -28px rgba(18,18,18,.28), 0 10px 22px -12px rgba(18,18,18,.12)";

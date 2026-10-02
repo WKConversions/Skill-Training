@@ -97,6 +97,13 @@ edge cases.
   eighth and the right edge, where platform captions and buttons sit.
 - The end card follows its rule in `motion/animation-grammar.md`.
 - Audio at 48 kHz, loudness-normalized, without clipping, and exactly as long as the video.
+- Words and brand: `scripts/film_tells.py <project>` answered line by line (`evaluation/tells.md`);
+  `scripts/brand_measure.py verify` on the test frames (no frame off-brand without a reason, the
+  accent where the thesis puts it); `brand_measure.py contrast` for every text colour on its
+  background, at rest and in the middle of its entrance (type fading in over a photo passes through
+  unreadable frames: give it a scrim or a solid card).
+- Report what ran, what passed, and what couldn't run. A check with nothing to check (no facts file,
+  no audio, no brand file) is "not checked", never "passed".
 - Sound (`motion/sound.md`): the mixer's report says every effect clears the bed and none crowds the
   voice; on the mix sheet each effect's mark sits on its picture event, and the effects match the
   brief's density; the music's sections land on the film's turns (`audio_look.py --marks`); no Apple

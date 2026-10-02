@@ -87,6 +87,7 @@ details summary{{cursor:pointer;font-weight:600}} table{{border-collapse:collaps
 <header><span class="eyebrow">Storyboard · for Karl's approval</span>
 <h1>Bruno Morgante: from <i>ideas</i> to results</h1>
 <p>A film for brunomorgante.com and LinkedIn, in the direction of the film for Emma (bfound): a light, airy canvas, rebuilt work interfaces with a cursor, numbers that count and real proof, closing on the logo and address. Rebranded to Bruno: his black, white and warm stone, his Poppins type, and the red of the tie in his logo as the one accent. Warm and light, never dark.</p>
+<p><b>Thesis:</b> Bruno turns stalled plans into results, shown with the real things he works on: a project portfolio that gets unstuck, a week of mentoring sessions, his own stage and his own words. <b>Allowed patterns:</b> the example portfolio and calendar, labelled “example”.</p>
 <div class="facts"><span>16:9 · 1920×1080 · 30 fps</span><span>≈ 48 s</span><span>Voice-over (script below, 2.5 words/s)</span><span>Music + sound effects</span><span>Frames rendered from the build</span></div></header>
 <section style="display:grid;gap:16px"><h2>Beat by beat</h2>{rows}</section>
 <section class="two">
@@ -95,6 +96,7 @@ details summary{{cursor:pointer;font-weight:600}} table{{border-collapse:collaps
 <li><b>The hook</b> uses his own line from his About page: “Ideas are easy. Implementation is hard.” The end card answers it: “Turn your ideas into results.”</li>
 <li><b>The portfolio and calendar are examples</b> (marked “example” on screen), showing what he does, not a client's real data.</li>
 <li><b>Photos:</b> all from his website (stage photos, audience, badges). The testimonial photos appear only with their own quotes, as on his site.</li>
+<li><b>Checked by measurement:</b> every claim against <code>harvest/facts.md</code> (no tells); the frames against his measured palette, with the blue keynote photo graded toward it; every text colour's contrast (the status colours darkened to pass 4.5:1).</li>
 <li><b>Not dark:</b> his site is mostly black sections; the film keeps his colours on a warm light canvas, with the black used for type and one dark card.</li>
 <li><b>From the reference</b> (Emma's film, measured: 93% of frames moving, median 2.4% in motion, longest still 0.87 s): the light canvas, the rebuilt interfaces with a cursor, counting numbers, social proof, the logo end card. Not taken: its lavender and blue, its LinkedIn screens and its layouts. Our target is the standard for a confident brief: 95% moving, 1.5% median, nothing still over 0.8 s.</li>
 </ul></div>

@@ -90,6 +90,34 @@ Unsplash, Pixabay and the Pexels search pages block scripts; Pexels images still
 an image whose licence you can't record. When nothing fits after two searches, write the asset request
 below and build the scene without it.
 
+## What the harvest writes
+
+Three files in the project, before the storyboard; the truth and brand reviews hold the film against
+them (`evaluation/art-director.md`, `evaluation/tells.md`):
+
+- **`harvest/facts.md`**: every claim the film may make, each with its source page: services, names,
+  figures, quotes with their authors, awards. A figure, name or logo not in this file doesn't go on
+  screen. Examples that teach (a sample portfolio, a sample calendar) are listed apart, as examples,
+  and labelled "example" in the frame.
+- **`harvest/missing.md`**: what the film would want and the client doesn't have (no customer logos,
+  no results, no product screens). The storyboard works around it or asks; it never invents it.
+- **`brand.json`**: the brand's DNA in three parts.
+  - *System*, measured: colours from screenshots and the logo with `scripts/brand_measure.py measure`
+    (k-means in CIELAB, the median pixel of each cluster; never hex values judged by eye, which drift
+    toward familiar defaults by a ΔE of 10 or more), the film's colour tokens, fonts and weights,
+    radii, shadows, the site's own easing if it has one.
+  - *Style*, in words: mood, visual language, imagery (photography or illustration, light or dark),
+    whitespace, the brand's voice.
+  - *Effects*: what the site does beyond plain layout (3D, particles, scroll effects, video), so the
+    film can borrow it or decide not to.
+
+Real assets beat recreations: when the site has the photo, the logo or the screen, take it from the
+site. Measure the film against `brand.json` on the test frames (`brand_measure.py verify`: how much of
+each frame is drawn in colours the brand doesn't have, and whether the accent appears) and compute
+contrast for every text colour on its background (`brand_measure.py contrast`): 4.5:1 for body text,
+3:1 for large type. Photos are off-palette by nature: grade them toward the brand (a desaturate and a
+warm or cool cast) when one dominates a frame with a colour the brand never uses.
+
 ## Asset requests
 
 When a scene needs an external image or clip that isn't at hand, write an asset request. Put all

@@ -93,7 +93,9 @@ make better motion design; prefer simple, controlled, intentional solutions.
 - **Carry, don't duplicate.** An object that exists before and after a change moves from its old state
   to its new one; nothing appears from nothing.
 - **Truth.** Never invent a client's features, numbers or customers; flag a claim with nothing to
-  show.
+  show. Every claim on screen comes from the harvest's facts file.
+- **A tell is a default the thesis never asked for.** Write the film's thesis and the patterns it
+  allows; anything else a model reaches for by habit goes (`evaluation/tells.md`).
 - **Critique before production, measure after the render.**
 - **Karl's rules win.** Where general guidance meets a rule from his feedback
   (`examples/corrections.md`), follow his.
@@ -106,20 +108,20 @@ instructions. Before step 1, read the recurring lessons at the top of `examples/
 | # | Step | What happens | Read |
 |---|---|---|---|
 | 1 | Brief | deliverable, audience, message, format and timing; for an intake-form submission, read it, map the style, set format and timing | `planning/intake.md` |
-| 2 | Look and material | load the chosen style and its contact sheet; the brand (a client's own, or WKConversions'); harvest the client's site | `styles/README.md` and the chosen style, `brands/wkconversions-brand.md` for WKConversions, `design/asset-strategy.md` |
+| 2 | Look and material | load the chosen style and its contact sheet; the brand (a client's own, or WKConversions'); harvest the client's site into `harvest/facts.md`, `harvest/missing.md` and a measured `brand.json` | `styles/README.md` and the chosen style, `brands/wkconversions-brand.md` for WKConversions, `design/asset-strategy.md` |
 | 3 | Script analysis | beats; for each: core meaning, what the viewer must understand, importance, tone, nouns and verbs, beat type | `planning/script-analysis.md` |
 | 4 | The whole film | the core message as spine, the hook, the energy curve, setups and payoffs, the CTA as resolution | `planning/storytelling.md` |
-| 5 | Art direction | the visual world, the motion identity (personality, signature curve, duration palette, entrance pattern), transition family; mixed media decided once for the film | `motion/motion-identity.md`, `design/anti-ai-design.md`, `design/asset-strategy.md`, `motion/animation-grammar.md`, `motion/transitions.md` |
+| 5 | Art direction | the thesis and its allowed patterns; the visual world, the motion identity (personality, signature curve, duration palette, entrance pattern, intensity by moment), transition family; mixed media decided once for the film | `evaluation/tells.md`, `motion/motion-identity.md`, `design/anti-ai-design.md`, `design/asset-strategy.md`, `motion/animation-grammar.md`, `motion/transitions.md` |
 | 6 | Visual strategy | two or three candidates per beat, the strongest by the tests, the runner-up recorded; content references where they help | `planning/visual-strategy.md`, `examples/bad-vs-good.md`, `references/reading-references.md` |
 | 7 | Composition | a styleframe per key scene: primary, secondary, detail; framing, type, and UI where an interface is the subject | `design/visual-hierarchy.md`, `design/composition.md`, `design/typography.md`, `design/ui-product.md` |
 | 8 | Variety check | the whole storyboard against the variety budget | `design/composition.md` |
 | 9 | Motion and continuity | cause→motion→consequence chains, camera, timing and sync (the brief's tone row), easing, the continuity table, transitions, sound | `motion/animation-grammar.md`, `motion/camera.md`, `motion/timing.md`, `motion/easing.md`, `motion/continuity.md`, `motion/transitions.md`, `motion/sound.md` |
 | 10 | Assets | what each scene is made of; royalty-free photos and footage sourced and credited (`scripts/stock.py`); asset and tool requests for the rest | `design/asset-strategy.md`, `production/tool-requests.md` |
 | 11 | First storyboard | the scene spec for every scene, condensed into the storyboard page, with frames made by the build itself | `production/output-format.md`, `production/remotion.md` (or `production/coded-render.md`), `examples/scene-examples.md` |
-| 12 | Art-director pass | critique every scene and the film through the three lenses, then revise; the style's copy check; the revision log as Before / After / Why rows | `evaluation/art-director.md`, `evaluation/troubleshooting.md` |
+| 12 | Art-director pass | independent reviews (story, truth, legibility, brand), then cold eyes; notes become decisions; revise until the stop rule; the tells check; the revision log as Before / After / Why rows | `evaluation/art-director.md`, `evaluation/tells.md`, `evaluation/troubleshooting.md` |
 | 13 | Final plan and approval | the production plan and its storyboard; the storyboard goes to Karl; stop and ask about music and voice-over (without a track: find one or compose one to the film's vibe) | `production/output-format.md`, `planning/intake.md`, `motion/sound.md` |
 | 14 | Build | After Effects when the session has it, otherwise a Remotion project (the plain coded render as a fallback), or a hand-off; say which, and what Karl will get. Motion tokens first; test frames and a draft before the blurred render; the voice-over placed on its words; the sound mixed from a cue sheet (Karl's effects on their frames, the music fitted or composed) | `production/remotion.md`, `production/build-gotchas.md`, `planning/voice-over.md`, `motion/sound.md`, `production/after-effects.md`, `production/coded-render.md`, `scripts/index.md` |
-| 15 | Quality check | test frames, then the encode; the automatic checks (`scripts/qc.sh`: motion, shake, pops, transition strips) on the draft and the final; the mix's level report; findings ranked by severity; the scorecard; the three biggest changes | `evaluation/quality-check.md`, `evaluation/troubleshooting.md` |
+| 15 | Quality check | test frames, then the encode; the automatic checks (`scripts/qc.sh`: motion, shake, pops, transition strips) on the draft and the final; tells, brand colours and contrast measured; the mix's level report; what couldn't run reported as not checked; findings ranked by severity; the scorecard; the three biggest changes | `evaluation/quality-check.md`, `evaluation/troubleshooting.md` |
 | 16 | Learn | turn Karl's feedback into corrections, and approved solutions into examples | `examples/corrections.md` |
 
 Steps 3–12 are planning; what goes out is the storyboard of step 13, with the working tables in its
@@ -131,12 +133,12 @@ when the work runs long:
 ```
 Film progress:
 - [ ] 1 Brief: format, length, audience, message; assumptions stated
-- [ ] 2 Look: style or brand loaded; the client's site harvested into assets/
+- [ ] 2 Look: style or brand loaded; the site harvested into assets/, facts.md, missing.md, brand.json
 - [ ] 3–4 Beat sheet and the whole-film arc
-- [ ] 5 Art direction and the motion identity's three constants
+- [ ] 5 Thesis and allowed patterns; art direction and the motion identity's three constants
 - [ ] 6–8 A strategy per beat (with runner-up), styleframes, variety check
 - [ ] 9–10 Motion chains (at the brief's tone), continuity table, assets sourced and credited, requests
-- [ ] 11–12 Storyboard with frames from the build; art-director pass; revision log
+- [ ] 11–12 Storyboard with frames from the build; independent reviews, cold eyes, decisions; tells answered; revision log
 - [ ] 13 Storyboard to Karl; music and voice-over asked
 - [ ] 14 Build: tokens, test frames, cue sheet and mix, draft with audio, then the blurred render
 - [ ] 15 QC: qc.sh on draft and final (no SHAKE, every POP explained), the mix report, loudness, delivery encode

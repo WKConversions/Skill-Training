@@ -91,6 +91,40 @@ For intake-form films, also run the style's copy check (`styles/README.md`).
 - What can be removed without losing meaning?
 - Which 20% of the scenes lower the perceived quality most?
 
+## Independent reviews, then cold eyes
+
+For a full film, run the critique as separate reviews that never see each other's findings (a
+review that has read another one agrees with it). With subagents, one fresh agent per lens; without,
+one pass per lens, the frames reread each time:
+
+| Lens | Holds | Gets |
+|---|---|---|
+| **Story** | each beat's frame against what the viewer must understand, with the sound off | the beat sheet, the frames |
+| **Truth** | every word, figure, name and logo on screen against the client's own material | `harvest/facts.md`, the frames, `scripts/film_tells.py` output |
+| **Legibility** | the frames at phone size (scaled to 390 px wide) and in a website embed: the subject the largest thing, the type readable, nothing colliding | the frames, scaled |
+| **Brand** | colours, type and logo against the measured brand, contrast by number | `brand.json`, `scripts/brand_measure.py verify` and `contrast` output |
+| **Motion** (on a render) | the measured motion, shake, pops and strips | `scripts/qc.sh` output |
+
+Every finding carries a severity (critical: the message, a claim or legibility breaks; major: it
+looks cheap or generic; minor: finish), the beat, the evidence and one precise fix. Then one
+judgement pass deduplicates, checks each finding against the frames, rejects what contradicts the
+approved direction (say so by name) and settles contradictions once.
+
+**Cold eyes.** After the fixes, one more reviewer who has read nothing (no beat sheet, no reviews, no
+plan) gets the frames and one scenario: how the audience meets the film ("a founder scrolling
+LinkedIn on a phone, sound off, 2 seconds to decide"). It says, in at most eight points, what still
+looks amateur or like a template. It sees what the others stopped seeing: the same layout in three
+beats, a colour that talks too much, type that looks generic.
+
+**Turn cold-eyes notes into decisions, not tasks.** Write them as rules the next round applies to the
+whole film ("the saturated colour appears only on the action Bruno causes", "every beat has one
+photo or one interface, never both at full size"). A list of eight tasks fixes eight spots; a rule
+fixes the pattern that made them. Deciding what the notes mean is art direction: never delegate it.
+
+**The stop rule.** Stop when nothing above minor is left; or after two rounds; or when a round fixed
+nothing (the same critical or major points came back: those are decisions for Karl, as open
+questions). Minor points left go into the notes; they are not a reason for another round.
+
 ## Revise
 
 1. Mark every scene **keep**, **improve** or **replace**.
