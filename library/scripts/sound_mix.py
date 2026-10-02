@@ -53,7 +53,8 @@ def envelope(x, attack=0.08, release=0.45):
     for i in range(n):
         c = a if on[i] > out[i - 1 if i else 0] else rel
         out[i] = c * (out[i - 1] if i else 0) + (1 - c) * on[i]
-    return np.repeat(out, hop)[: len(x)]
+    env = np.repeat(out, hop)
+    return np.pad(env, (0, max(0, len(x) - len(env))), mode="edge")[: len(x)]   # any length, not only whole windows
 
 def limit(x, ceiling_db):
     """Gain that never lets a peak pass the ceiling, with 5 ms of look-ahead and a 120 ms release."""

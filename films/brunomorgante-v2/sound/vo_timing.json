@@ -1,0 +1,25 @@
+{
+ "labels": {
+  "hook": 0.1,
+  "tangle": 3.669,
+  "turn": 7.229,
+  "consult": 9.926,
+  "coach": 18.01,
+  "stage": 25.054,
+  "proof": 29.682,
+  "quote": 33.835,
+  "cta": 39.996,
+  "end": 45.84
+ },
+ "line_starts": {
+  "hook": 0.35,
+  "tangle": 3.919,
+  "turn": 7.479,
+  "consult": 10.176,
+  "coach": 18.26,
+  "stage": 25.304,
+  "proof": 29.932,
+  "quote": 34.085,
+  "cta": 40.246
+ }
+}
