@@ -99,7 +99,7 @@ const Around: React.FC<{ g: number; out?: number }> = ({ g, out = 0 }) =>
 export const S2: React.FC<{ g: number }> = ({ g }) => (
   <>
     {/* the hook photo leaves to the right as the tangle builds */}
-    {g < T.f("tangle+0.8") && <Photo src="bruno-smile.jpg" x={760 + T.k(g, "tangle", 0.7, DEPART) * 500} y={0} w={1160} h={1080} pos="62% 30%" zoom={1.35} origin="58% 8%" style={{ opacity: 1 - T.k(g, "tangle", 0.7) }} />}
+    {g < T.f("tangle+0.8") && <Photo src="bruno-smile.jpg" x={760 + T.k(g, "tangle", 0.7, DEPART) * 500} y={0} w={1160} h={1080} pos="62% 30%" zoom={1.35} origin="58% 8%" style={{ opacity: 1 - T.k(g, "tangle", 0.5, MOVE) }} />}
     <Around g={g} />
     <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${lerp(110, 580, T.k(g, "tangle", 1.0, MOVE))}px, ${lerp(380, 420, T.k(g, "tangle", 1.0, MOVE))}px)` }}><IdeaCard g={g} typed={1} /></div>
   </>
