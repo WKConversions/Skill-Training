@@ -118,7 +118,7 @@ figcaption{{font-size:14px;line-height:1.4}} figcaption .t{{font-weight:800;colo
 <li><b>Illustrative:</b> the client's workflow, the team in the channel and the version numbers claim nothing.</li>
 </ul></div>
 <div class="box"><h2>Motion and sound</h2><ul>
-<li><b>Measured:</b> every phrase of the voice-over brings a new visual; something moves in every frame; up to the sign-off a typical frame changes 3% of its area, the new target, with screens on gently tilting 3D planes and chips orbiting the loop. The sign-off is kept clean: the badge, the words, the systems drawing in behind and a slow push.</li>
+<li><b>Measured:</b> every phrase of the voice-over brings a new visual; something moves in every frame; the camera only breathes, slowly and evenly, with no pans or quick zooms, and everything eases in without overshoot. The sign-off is just the badge and the words rising in, with one slow push.</li>
 <li><b>Every hand-off is sequential:</b> the outgoing scene leaves before the next line is spoken, moving the way the story moves; nothing crossfades. The badge clears the jam, the steps come back from where it threw them, the plan turns into the live system on the axis, the tangle straightens into the flow, the camera pulls out of the client's app to their tools, which gather back into it, colour fields open out of the pulse.</li>
 <li><b>Music:</b> "Raising Me Higher" by Ahjay Stelino (Mixkit free licence, commercial use, no credit), cut to open up on "K.B helps".</li>
 <li><b>Sound effects:</b> 66 from your library, including the new pack's gears, data and cinematic whooshes, each on its picture event.</li>
