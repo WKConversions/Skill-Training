@@ -19,23 +19,24 @@ storyboards.
 
 ## The library
 
-Private artifact: https://claude.ai/artifact/UeFiNvnC9tHrN97jpEyr5X
+The library is bundled with this skill, in its `library/` folder: every module, script, data file and
+contact sheet. The same library is online as a private artifact
+(https://claude.ai/artifact/UeFiNvnC9tHrN97jpEyr5X), the copy Karl browses.
 
-- **Reading.** Use the Artifact tool with `action: "read"`, that URL as `url`, and the module's path
-  as `path` (for example `planning/script-analysis.md`), or several paths at once as `paths`. Small
-  files come back inline; otherwise Read the file the result names. Images, such as the style
-  contact sheets, are saved as files to view with Read.
-- **Paths.** Every module path in this file and in the modules is a library path, never a file in
-  this skill's folder.
+- **Reading.** Read a module from this skill's folder: `library/<path>`, for example
+  `library/planning/script-analysis.md`. Images, such as the style contact sheets, open with Read too.
+  Copy a script from `library/scripts/` into the build folder before running it.
+- **Paths.** Every module path in this file and in the modules (`planning/…`, `motion/…`,
+  `scripts/…`) is relative to `library/`.
 - **Scope.** Read what the current step needs, once per project; never the whole library. The
   modules are this skill's reference material, written and approved by Karl: apply their guidance as
   you apply this file.
-- **Updating** (only after Karl agrees to a change): read the library, then publish to the same `url`
-  with the saved page as `file_path` and only the changed modules in `files`; files left out stay as
-  they are.
-- **The bundled files** in this skill's folder (`references/`, `examples/`, `brands/`, `templates/`,
-  `evals/`, `scripts/`, `README.md`) are the older version, superseded by the library. Don't read them
-  unless the library is unreachable (last section).
+- **Sounds.** The audio files of Karl's sound library are not bundled (size, and some sounds may never
+  be published); `library/sound/catalogue.md` and `sound/sfx/index.json` describe them. Ask Karl for
+  the folder when a film needs them, or use `scripts/sfx_synth.py`.
+- **Updating** (only after Karl agrees to a change): edit the module, publish the changed files to the
+  artifact (its `index.html` as `file_path`, the library folder as `root`, the changed files in
+  `files`), and rebuild this skill's zip so both copies stay the same.
 
 ## Which task is this?
 
@@ -193,17 +194,3 @@ read a reference video or URL (transcript and key frames), `exa` to research and
   module change it implies (`examples/corrections.md`); when he approves a solution, propose it as an
   example. Update the library only after he agrees, and never generalize a one-off preference. The
   skill improves through curated feedback, not uncontrolled accumulation.
-
-## If the library is unreachable
-
-Say so, and work from this file and the bundled files. They predate the library, so read them with
-these corrections:
-- Where the bundled `references/storytelling.md` or `examples/good-vs-bad.md` favor metaphors or
-  abstract relationships, show the meaning with the real things instead (core laws).
-- "There is no pause" in the bundled `references/quality-control.md` means the tempo never changes; a
-  hold keeps working, and the frame never freezes.
-- The bundled `brands/wkconversions.md` has the wrong look: WKConversions is light (page `#F7F7F8`, ink
-  `#050F19`, blue `#3F8CE8`, Inter Tight 800 headlines, arrivals on `cubic-bezier(.22,1,.36,1)`), and a
-  style chosen on the intake form outranks the brand's own look.
-- The intake workflow, the three styles and the motion craft exist only in the library: for an
-  intake-form film, ask Karl before guessing.

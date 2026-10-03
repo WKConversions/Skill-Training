@@ -1,3 +1,9 @@
+# The complete skill in one zip, 3 October 2026
+
+`senior-motion-designer.zip` (built by `build_skill.sh`) now holds SKILL.md with the whole library bundled in
+`library/`: every module, script, data file and contact sheet, so a session reads the current skill without the
+artifact. The sound library's audio isn't bundled. The old bundled files (superseded since the library) are removed.
+
 # MCP tools, 3 October 2026
 
 Karl installed eight MCP servers; `production/mcp-tools.md` says what each is for in a film and when not to use it:

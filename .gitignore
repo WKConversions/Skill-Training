@@ -1,3 +1,4 @@
 sfx_src/
 refs_src/
 __pycache__/
+dist/
