@@ -42,20 +42,29 @@ skill's own scripts; they replace none of them.
 
 ## Setting up a machine
 
+Install the local servers once, at fixed versions, and start them directly: `npx -y …@latest` checks the registry
+on every start, and behind a slow proxy that can pass Claude Code's 30-second connect limit (the server then
+shows as "failed to connect" for the whole session).
+
 ```
-claude mcp add --scope user playwright -- npx -y @playwright/mcp@latest --headless --isolated --executable-path /opt/pw-browsers/chromium --no-sandbox
+npm i -g @playwright/mcp@0.0.83 @makemyclip/editor@0.3.0 @modelcontextprotocol/server-memory@2026.8.31 @modelcontextprotocol/server-sequential-thinking@2026.8.31 @yanlinglabs/video-extract-mcp@0.16.2
+claude mcp add --scope user playwright -- playwright-mcp --headless --isolated --executable-path /opt/pw-browsers/chromium --no-sandbox
+claude mcp add --scope user video-extract -- video-extract-mcp
+claude mcp add --scope user makemyclip -e MAKEMYCLIP_WORKSPACE=$HOME/makemyclip-workspace -- clip mcp
+claude mcp add --scope user memory -- mcp-server-memory
+claude mcp add --scope user sequential-thinking -- mcp-server-sequential-thinking
 claude mcp add --scope user --transport http exa https://mcp.exa.ai/mcp
 claude mcp add --scope user --transport http context7 https://mcp.context7.com/mcp
-claude mcp add --scope user video-extract -- npx -y @yanlinglabs/video-extract-mcp@latest
-claude mcp add --scope user makemyclip -e MAKEMYCLIP_WORKSPACE=$HOME/makemyclip-workspace -- npx -y @makemyclip/editor@latest mcp
-claude mcp add --scope user memory -- npx -y @modelcontextprotocol/server-memory
-claude mcp add --scope user sequential-thinking -- npx -y @modelcontextprotocol/server-sequential-thinking
 claude mcp add --scope user --transport http motion https://mcp.motion.so/mcp
 ```
 
+- `video-extract` downloads a runtime from nuget.org while installing; if that download drops, retry, or copy a
+  working install (from npx's cache, `~/.npm/_npx/*/node_modules`) and start `node …/video-extract-mcp/dist/mcp.js`.
 - `video-extract` needs `ffprobe` on the PATH. A machine with Remotion but no ffprobe can use Remotion's bundled one
   (`node_modules/@remotion/compositor-linux-x64-gnu/ffprobe`, with that folder on `LD_LIBRARY_PATH`) through a
   small wrapper script.
 - `playwright` uses the machine's Chromium (`--executable-path`); behind a proxy that inspects HTTPS, the browser's
   certificate store must hold the proxy's current certificate, or pages fail with `ERR_CERT_AUTHORITY_INVALID`.
+- `motion` signs in with `/mcp` in an interactive Claude Code session, or `mcp_call.py login motion` (the bridge
+  renews its token by itself).
 - Check with `claude mcp list` (all "Connected"; `motion` needs its sign-in) and one `tools` call per server.

@@ -57,9 +57,22 @@ def urlopen(req, timeout=60):
 
 TOKENS = os.path.expanduser("~/.claude/mcp_tokens")    # OAuth tokens from `login`, outside the repo, mode 600
 
+def token_file(url): return os.path.join(TOKENS, urllib.parse.quote(url, safe="") + ".json")
+
 def token_for(url):
-    try: return json.load(open(os.path.join(TOKENS, urllib.parse.quote(url, safe="") + ".json")))["access_token"]
+    try: return json.load(open(token_file(url)))["access_token"]
     except Exception: return None
+
+def refresh(url):
+    """Renews an expired access token with the kept refresh token; True when it worked."""
+    try: t = json.load(open(token_file(url)))
+    except Exception: return False
+    if not t.get("refresh_token"): return False
+    n = form(t["token_endpoint"], {"grant_type": "refresh_token", "refresh_token": t["refresh_token"], "client_id": t["client_id"]})
+    if "access_token" not in n: return False
+    t.update(n)
+    with open(os.open(token_file(url), os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600), "w") as o: json.dump(t, o)
+    return True
 
 def form(url, data):
     req = urllib.request.Request(url, data=urllib.parse.urlencode(data).encode(), headers={"Content-Type": "application/x-www-form-urlencoded", "User-Agent": UA}, method="POST")
@@ -89,6 +102,13 @@ def login(name, scopes):
     print("logged in; token kept in", f)
 
 def http(cfg, requests, timeout):
+    try: return http_once(cfg, requests, timeout)
+    except urllib.error.HTTPError as e:
+        if e.code == 401 and refresh(cfg["url"]): return http_once(cfg, requests, timeout)
+        if e.code == 401: sys.exit(f"{cfg['url']} needs a sign-in: python3 mcp_call.py login <server>")
+        raise
+
+def http_once(cfg, requests, timeout):
     tok = token_for(cfg["url"])
     url, headers, sid = cfg["url"], {**({"Authorization": f"Bearer {tok}"} if tok else {}), "Content-Type": "application/json", "Accept": "application/json, text/event-stream", "User-Agent": UA, **cfg.get("headers", {})}, None
     def post(msg):
