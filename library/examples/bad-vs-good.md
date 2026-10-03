@@ -97,3 +97,12 @@ Why: the animation controls attention instead of asking the viewer to search the
 - **Hand-offs that overlap.** Weak: the next headline arrives while the last is still on screen; two layouts fade
   through each other. Stronger: each scene leaves before the next line is spoken, the way the story moves (the
   row slides out left, the axis gathers into its end point, the tool tiles gather into the app).
+- **Still a bit busy (v3).** Approved, but Karl: "a bit too busy so you can't see what's happening". Measured
+  (`scripts/busy_check.py`): a median of 9 separate things on screen, 8 or more for 64% of the film, together
+  covering 11% of the frame; his 25 references keep a median of 4 (3–7), 8 or more for a quarter of the time,
+  covering 26%. The busiest stretches (up to 19 things): the row of process chips under the hook, the dashboard
+  beside the workflow card on "software, automation", the connected flow with tool chips and particles around it.
+  Stronger: the same ideas with fewer, bigger things: three chips, large, instead of a row running off the frame;
+  the dashboard alone and big, then the workflow card replacing it; the flow without the floating chips and
+  particles; a thing leaving before the next arrives. Motion wasn't the cause: K.B moves less than most of the
+  references.

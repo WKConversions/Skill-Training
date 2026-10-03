@@ -82,3 +82,8 @@ known script (for example pocketsphinx `set_align_text`) and land key hits on th
 the click on "click", the number on the number. Use exact sync for key impacts and near-sync with
 layered timing for secondary movement; one-to-one sync for everything feels mechanical. Without a
 recording, time the script at about 2.5 words per second (`planning/intake.md`).
+
+The picture leads the word. In Karl's 24 references with a voice-over, a new visual lands a median 0.14 s (about 4
+frames) before its phrase, and before it in 60% of cases: start an arrival 3–6 frames ahead so it reads as the
+word is heard. A new visual comes about every 1.7 s, roughly one per phrase; a third of the phrases carry on the
+last visual, and a phrase with a list gets a step per item (`references/visual-dictionary.md`).

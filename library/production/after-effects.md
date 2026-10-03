@@ -51,6 +51,15 @@ average speed:
 | depart `cubic-bezier(.64,0,.78,0)` | influence 64%, speed 0 | influence 22%, speed about 4.5× |
 | move `cubic-bezier(.65,0,.35,1)` | influence 65%, speed 0 | influence 65%, speed 0 |
 
+## Reading an AE file Karl sends
+
+Karl sends small .aep files with named compositions (a transition, a pop, a text animation) as references for
+motion style and speed graphs. Read them without After Effects: `python3 scripts/ae_read.py file.aep` prints every
+composition's moves with their eases, frame steps, the Remotion equivalent of each ease, the expressions it knows
+(his Elastic Controller) and how the layers hand off at a cut; `--sheet out.html --png out.png` draws the speed
+graphs. Take them as direction, never as literal copies; what his first file taught is in
+`motion/speed-graphs.md` (A1–A7). Keep the file in `ae_refs/` in the repo.
+
 ## Preview loop
 
 After each meaningful section: preview at full speed, inspect key transitions frame by frame, inspect

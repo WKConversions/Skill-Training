@@ -73,6 +73,11 @@ out of the previous frame. Then cut anything that doesn't read.
    each feature.
 11. **Marking as punctuation.** One mark per phrase at most, in the brand's accent: a marker sweep, an
    underline, a strike, a hand-drawn ring.
+12. **A vague line: look up how the references showed it.** `references/visual-dictionary.md` has, by kind of
+   line (time, all in one place, AI, data, team, problem, easy, growth, trust, money, connecting, place, the
+   call to action), what Karl's references put on screen and the principle behind it; `scripts/ref_lookup.py`
+   finds more on the line's own words. Take the principle, build it from the client's material. Land each
+   visual 3–6 frames before its word, the way the references do.
 
 ## Transitions grow out of objects
 

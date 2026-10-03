@@ -17,7 +17,41 @@ sounds, and the only `error` sounds. Sounds marked `apple` are Apple's system so
 delivery (the mixer refuses them). New sounds: `sfx_index.py` measures them and draws their waveforms,
 you judge their role in `sound/categories.json`, then `sfx_build.py` and `sfx_synth.py` rebuild the library.
 
-## Which sound for which moment
+## Hear a sound before choosing it
+
+Every sound in the library has been heard by an audio-language model (`scripts/sfx_hear.py`, CLAP), and the index
+carries what it heard: tone scales from 0 to 1 across the library (soft–harsh, warm–cold, premium–toy,
+playful–serious, subtle–prominent, organic–digital), a fit for each film vibe (corporate-tech, calm-premium,
+playful-social, energetic-startup, cinematic, friendly-human, data-ai, retro-game) and what it sounds like. So a
+sound is chosen by how it feels in the film, not only by its role and waveform:
+- `python3 scripts/sfx_hear.py pick sound "calm premium corporate" --role whoosh --n 6` ranks a role's sounds for
+  the film's vibe (it never offers Apple's sounds);
+- `python3 scripts/sfx_hear.py describe file.wav` says what any file sounds like, a new download or a reference.
+Pick from the top of the ranking, then check the choice by its tone: a calm film wants soft, warm, subtle and
+premium near the top of their scales; a playful one can take playful and prominent; never a toy or retro sound
+in a premium film. The model names a sound right about 7 times in 10: trust the scales and the ranking, and read
+a surprising result against the sound's name and character.
+
+## The sound follows the speed graph
+
+The move's speed graph (`motion/speed-graphs.md`) says where its sound sits and what kind it is:
+
+| Speed graph | Sound | On which frame |
+|---|---|---|
+| A1, A2 whip through a cut; B16 zoom-through | a whoosh whose loudest moment is the cut (short for a shape, medium for a scene) | the cut: the whoosh's sync point on the fastest frame |
+| A3, A7 pop with elastic; B5 overshoot | a pop or bubble | the landing (the key before the settle), not the first visible frame; the settle stays silent |
+| A4 drop in, land, hold, drop out | a soft swish under the fall, a pop or soft impact on the landing, nothing on the hold, the exit's whoosh at its cut | each cut and the landing |
+| A5 word cascade | nothing per word; one soft swish or none under the line | the first word |
+| A6 type-on | soft key clicks, a few for the fast start, fewer as it trickles, never one per letter | from the first character |
+| B6 anticipation | a small intake (a short reverse swell) under the pull-back, the whoosh on the launch | the launch's fastest frame |
+| B7 accelerate into an impact; B8 drop | a stamp, thud or soft impact; for a bounce, a smaller one on the first bounce only | the contact frame |
+| B9 follow-through | one sound for the leader; followers are silent | the leader's landing |
+| B10, B11 constant, steady progress | a quiet bed (a soft gear, a data stream, an airy tone) or nothing | under the whole move, low |
+| B12 fast–slow–fast | a whoosh in, silence in the slow middle, a whoosh out | each fast end |
+| B13 step, hold, step | a tick or tap per step, on the beat | each step's landing |
+| B14 finger flick | a light swipe | the push |
+| B15 breathing, B17 sweep | nothing for the breath; a soft slide per sweep at most | |
+
 
 | Picture event | Category | How |
 |---|---|---|
@@ -62,8 +96,11 @@ you judge their role in `sound/categories.json`, then `sfx_build.py` and `sfx_sy
   and risers.
 - Sound the actions the voice-over names and the actions a viewer would do (taps, saves, shares); let
   secondary motion (drift, parallax, the camera's breathing) stay silent.
-- Measured: the GoHere film (calm, 37 s) carries 41 effects, about 1.1 a second, every one under the
-  voice. Treat that as the upper end for a calm film; an energetic 30 s promo can carry 1.5 to 2 a second.
+- There is no right number (Karl: "never a precise amount; you have to know the style and vibe of the video").
+  Decide by the vibe and by the picture: a calm film sounds only the moves that carry meaning and lets the rest
+  breathe; an energetic one sounds most arrivals and every cut; a premium one fewer, softer, longer sounds. Ask of
+  each cue: would the viewer miss it? If not, it goes. (For information: the calm GoHere film carried 41 effects
+  in 37 s and that was at the busy end; the K.B film, approved, fewer.)
 - Leave a short silence before the payoff; the end card's last chord or impact needs room.
 - Under speech: only the action itself, nothing that covers a word.
 
