@@ -87,7 +87,7 @@ def main():
                 movers[i].append((vx[i], vy[i], sr[i], A[i, 4]))
         # lurch: visible and nearly still for 4 frames, then fast within 2 frames
         for i in range(5, n - 2):
-            if vis[i - 5: i + 2].all() and np.all(sp[i - 4: i] < 40) and np.nanmin(sp[i: i + 2]) > L["lurch"]:
+            if vis[i - 5: i + 2].all() and np.all(np.isfinite(sp[i - 4: i + 2])) and np.all(sp[i - 4: i] < 40) and np.min(sp[i: i + 2]) > L["lurch"]:
                 out.append((t[i], "LURCH", f"{t[i]:.2f} s: “{key[1] or key[0][-24:]}” jumps from still to {sp[i]:.0f} px/s"))
         # overshoot: an element that has just appeared grows past its size and springs back (a pop); its box must keep
         # its shape (a rotating card's box grows too) and it must have appeared in the last half second

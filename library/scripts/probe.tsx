@@ -4,9 +4,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import { continueRender, delayRender, useCurrentFrame } from "remotion";
 
+// An element's identity: its path from the film's root, or from the nearest element named with data-probe="…", so
+// a film that mounts and unmounts objects keeps each object's track (give the objects names: Obj's `name` prop in
+// the desk film, or data-probe on any element).
 const pathOf = (el: Element, root: Element) => {
   const p: string[] = [];
   for (let e: Element | null = el; e && e !== root; e = e.parentElement) {
+    const name = (e as HTMLElement).dataset?.probe;
+    if (name) { p.push(`@${name}`); break; }
     const par = e.parentElement; p.push(`${e.tagName.toLowerCase()}${par ? Array.prototype.indexOf.call(par.children, e) : 0}`);
   }
   return p.reverse().join("/");

@@ -1,0 +1,294 @@
+{
+ "fps": 30,
+ "frames": 1125,
+ "library": "../../../library/sound",
+ "vo": {
+  "file": "../public/audio/vo.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "music.flac",
+  "at": 0,
+  "duck_db": 8,
+  "fade_in": 0.3,
+  "fade_out": 1.5,
+  "note": "Raising Me Higher (Ahjay Stelino, Mixkit Stock Music Free License), cut by music_fit.py --length 37.5 --lift 4.3 for the first K.B film: same voice-over, same timing"
+ },
+ "sfx": [
+  {
+   "frame": 31,
+   "id": "gen-whoosh-short",
+   "note": "sheet 1 thrown into the screen (the cut)",
+   "db": -7
+  },
+  {
+   "frame": 51,
+   "id": "gen-whoosh-short",
+   "note": "sheet 2, quicker",
+   "db": -7,
+   "pitch": 2
+  },
+  {
+   "frame": 62,
+   "id": "gen-whoosh-short",
+   "note": "sheet 3, quicker still",
+   "db": -6,
+   "pitch": 4
+  },
+  {
+   "frame": 99,
+   "id": "ui-backspace",
+   "note": "the next sheet stops short",
+   "db": -7
+  },
+  {
+   "frame": 111,
+   "id": "ui-backspace",
+   "note": "the note 'by hand' on top",
+   "db": -7,
+   "pitch": -3
+  },
+  {
+   "frame": 144,
+   "id": "gen-impact-soft",
+   "note": "the K.B badge is placed on the desk",
+   "db": -2
+  },
+  {
+   "frame": 167,
+   "id": "cinematic-low-whoosh",
+   "note": "the pile goes into the screen",
+   "db": -6
+  },
+  {
+   "frame": 194,
+   "id": "floraphonic-casual-click-pop-ui-2",
+   "note": "the system's tiles",
+   "db": -9
+  },
+  {
+   "frame": 212,
+   "id": "gen-whoosh-short",
+   "note": "drops through to the web app",
+   "db": -8
+  },
+  {
+   "frame": 238,
+   "id": "gen-whoosh-short",
+   "note": "drops through to the automation",
+   "db": -8,
+   "pitch": 2
+  },
+  {
+   "frame": 242,
+   "id": "kenney-tick-001",
+   "note": "step 1 runs",
+   "db": -7
+  },
+  {
+   "frame": 250,
+   "id": "kenney-tick-001",
+   "note": "step 2 runs",
+   "db": -7,
+   "pitch": 2
+  },
+  {
+   "frame": 258,
+   "id": "kenney-tick-001",
+   "note": "step 3 runs",
+   "db": -7,
+   "pitch": 4
+  },
+  {
+   "frame": 268,
+   "id": "gen-whoosh-short",
+   "note": "drops through to the AI agent",
+   "db": -8,
+   "pitch": 4
+  },
+  {
+   "frame": 277,
+   "id": "soundshelfstudio-ui-radio-select",
+   "note": "the agent answers",
+   "db": -8
+  },
+  {
+   "frame": 322,
+   "id": "cinematic-low-whoosh",
+   "note": "the sketch lifts off the page into the screen",
+   "db": -6
+  },
+  {
+   "frame": 371,
+   "id": "ui-backspace",
+   "note": "the notes land",
+   "db": -9
+  },
+  {
+   "frame": 402,
+   "id": "ui-backspace",
+   "note": "the phone is set down",
+   "db": -8,
+   "pitch": -2
+  },
+  {
+   "frame": 408,
+   "id": "gen-whoosh-short",
+   "note": "the notes go into the phone",
+   "db": -8
+  },
+  {
+   "frame": 420,
+   "id": "floraphonic-casual-click-pop-ui-2",
+   "note": "the app's buttons",
+   "db": -10
+  },
+  {
+   "frame": 446,
+   "id": "cinematic-click",
+   "note": "Invoices tapped",
+   "db": -5
+  },
+  {
+   "frame": 456,
+   "id": "cinematic-low-whoosh",
+   "note": "the app docks inside it",
+   "db": -7
+  },
+  {
+   "frame": 509,
+   "id": "gen-swell",
+   "note": "the cables draw",
+   "db": -8
+  },
+  {
+   "frame": 512,
+   "id": "ui-backspace",
+   "note": "the tablet is set down",
+   "db": -8
+  },
+  {
+   "frame": 547,
+   "id": "ui-backspace",
+   "note": "the same form again",
+   "db": -7
+  },
+  {
+   "frame": 562,
+   "id": "ui-backspace",
+   "note": "the same form again",
+   "db": -7,
+   "pitch": 2
+  },
+  {
+   "frame": 570,
+   "id": "ui-backspace",
+   "note": "and again",
+   "db": -7,
+   "pitch": 4
+  },
+  {
+   "frame": 574,
+   "id": "data-collect",
+   "note": "the forms run by themselves",
+   "db": -12
+  },
+  {
+   "frame": 577,
+   "id": "kenney-switch-005",
+   "note": "Auto switches on",
+   "db": -4
+  },
+  {
+   "frame": 620,
+   "id": "floraphonic-casual-click-pop-ui-2",
+   "note": "a tile joins",
+   "db": -9
+  },
+  {
+   "frame": 648,
+   "id": "gen-whoosh-short",
+   "note": "two more laptops slide in",
+   "db": -9,
+   "pitch": -2
+  },
+  {
+   "frame": 710,
+   "id": "kenney-tick-001",
+   "note": "K.B on Monday 1",
+   "db": -8
+  },
+  {
+   "frame": 715,
+   "id": "kenney-tick-001",
+   "note": "K.B on Monday 2",
+   "db": -8,
+   "pitch": 2
+  },
+  {
+   "frame": 720,
+   "id": "kenney-tick-001",
+   "note": "K.B on Monday 3",
+   "db": -8,
+   "pitch": 4
+  },
+  {
+   "frame": 725,
+   "id": "kenney-tick-001",
+   "note": "K.B on Monday 4",
+   "db": -8,
+   "pitch": 7
+  },
+  {
+   "frame": 741,
+   "id": "gen-whoosh-short",
+   "note": "the page turns",
+   "db": -11,
+   "pitch": 3
+  },
+  {
+   "frame": 768,
+   "id": "floraphonic-casual-click-pop-ui-2",
+   "note": "Improved",
+   "db": -11
+  },
+  {
+   "frame": 806,
+   "id": "ui-backspace",
+   "note": "a new note on the laptop",
+   "db": -7
+  },
+  {
+   "frame": 823,
+   "id": "gen-whoosh-short",
+   "note": "the note goes into the screen",
+   "db": -7,
+   "pitch": 2
+  },
+  {
+   "frame": 831,
+   "id": "floraphonic-casual-click-pop-ui-2",
+   "note": "the reports tile",
+   "db": -9,
+   "pitch": 4
+  },
+  {
+   "frame": 843,
+   "id": "cinematic-low-whoosh",
+   "note": "the desk clears",
+   "db": -10
+  },
+  {
+   "frame": 847,
+   "id": "gen-swell",
+   "note": "the badge comes to the middle",
+   "db": -7
+  },
+  {
+   "frame": 1041,
+   "id": "floraphonic-casual-click-pop-ui-2",
+   "note": "Book a free discovery call",
+   "db": -4
+  }
+ ]
+}
