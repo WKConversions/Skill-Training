@@ -84,3 +84,16 @@ Why: the animation controls attention instead of asking the viewer to search the
 - **Everything at once (K.B).** Weak: eight service cards and dozens of 16 px labels on screen for
   "integrations, websites, apps and dashboards". Stronger: one service at a time fills the frame as it
   is named, each handing over to the next, then a pull-out shows them together for a beat.
+
+## Smooth and clean (K.B, October 2026, approved)
+
+- **A camera move on every transition.** Weak (v2): the camera pushes 5% into each beat and releases it in 0.6 s,
+  leans towards the next point on a linear segment, sways ±38 px. Karl: spikes "out of nowhere". Stronger (v3, the
+  client: "great"): one slow breath for the whole film; the scenes move, the camera doesn't.
+- **Cards that pop.** Weak: every card, chip and module overshoots its size and springs back. Stronger: the same
+  arrivals on a smooth ease-out, no bounce.
+- **A sign-off that flies around.** Weak: tool tiles orbiting the logo, pulses running along lines, a cursor.
+  Stronger: the logo and the words rise in, the button follows, one slow push.
+- **Hand-offs that overlap.** Weak: the next headline arrives while the last is still on screen; two layouts fade
+  through each other. Stronger: each scene leaves before the next line is spoken, the way the story moves (the
+  row slides out left, the axis gathers into its end point, the tool tiles gather into the app).

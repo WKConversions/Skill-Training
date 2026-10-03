@@ -9,8 +9,9 @@ planning; read the entries of the categories you are working on when a decision 
 - Give every beat its own idea; one example can run through a film, one device can't answer every
   line.
 - Constant, purposeful motion: nothing static, nothing useless; the camera never locks.
-- Move enough of the frame: a typical frame changes 3% or more (Karl's reference films: 3.5%); keep a
-  second and third layer moving under the subject, not one small drift.
+- Smooth before everything: the camera only breathes, nothing lurches, nothing pops past its size in a clean
+  film, nothing flies around; liveliness comes from the content, never from camera moves (K.B, approved).
+- Clear before busy: one thing to watch at a time; when the eye can't tell what to look at, take things away.
 - Every phrase gets its own visual, on one continuous stage: never a page that holds while the voice
   explains it, never a presentation; think outside the box for the visuals and the transitions.
 - References are examples of a look or a technique, never layouts to reproduce.
@@ -108,7 +109,44 @@ WHY IT WAS WEAK: Karl's reference films measure a median of 3.5%: they keep seve
 USER CORRECTION: Karl: raise the motion target to 3%.
 FINAL APPROACH: The default target is 3% (calm briefs 2%, energetic 4%) in `motion_check.py`,
 `evaluation/quality-check.md` and `motion/timing.md`; the techniques are in `references/technique-catalogue.md`.
-GENERAL LESSON: Measure how much of the frame moves, not only whether something does.
+GENERAL LESSON: Measure how much of the frame moves, not only whether something does. (Superseded by the
+K.B entries below: the 3% was reached with camera moves, and those read as spikes.)
+
+CATEGORY: Animation / camera
+DATE / PROJECT: October 2026, K.B website film, v2 → v3 (v3 approved; the client: "great, for the first time")
+ORIGINAL IDEA: To reach 3% of the frame in motion, the camera pushed and released on every beat, leaned towards
+points, swayed ±38 px, and scenes zoomed while their cards popped with an overshoot.
+WHY IT WAS WEAK: Karl: "around second 10 the animation isn't smooth and out of nowhere starts going right, like a
+spike"; "second 6 on 7 the frame spikes out of nowhere"; "20 to 22 not smooth, too fast and spiky". Measured: the
+camera at 176–564 px/s and 15–19%/s on those transitions (a linear segment starting at full speed, a 5% zoom
+released in 0.6 s, a 16% scene zoom) and 106 overshoot pops.
+USER CORRECTION: Smooth, clean transitions; "keep it clean".
+FINAL APPROACH: One slow camera breath for the whole film (under 25 px/s and 5.3%/s), no pans or zoom releases on
+transitions, every pop replaced by a smooth ease-out, the scene zoom cut to 5% over 2.6 s, the orbit and feed slowed
+to a third. `scripts/motion_probe.py` now finds all of v2's spikes and none in v3.
+GENERAL LESSON: Spikes come from the camera and from overshoot; a calm, clean film moves its content, not its
+camera, and lands everything without bounce. Measure the motion curves on every build.
+
+CATEGORY: Animation / sign-off
+DATE / PROJECT: October 2026, K.B website film, v1 → v3
+ORIGINAL IDEA: Tool tiles orbiting the logo at the close; then system lines, travelling pulses, a cursor and a
+camera push under the sign-off.
+WHY IT WAS WEAK: Karl: "the outro is just flying over the screen, that's not clean"; "still the outro is flying
+around too much. Just animate the logo and text coming in but don't make it go all over the place."
+USER CORRECTION: The logo and the text coming in, nothing else.
+FINAL APPROACH: The badge rises in with a fade, the lines build word by word, the button rises in; one slow push.
+GENERAL LESSON: The sign-off is the calmest moment of the film: the logo and the words arrive, and nothing else
+moves across the screen.
+
+CATEGORY: Animation / density
+DATE / PROJECT: October 2026, K.B website film, after v3
+ORIGINAL IDEA: Several layers moving at once in most beats (3D-tilted planes, orbiting chips, a feed, a version
+dial, a rotating ring) to keep the frame alive.
+WHY IT WAS WEAK: Karl: "It's a bit too busy so you can't see what's happening. It is better than first though."
+USER CORRECTION: Find the pacing, the frame quantity and the visual that make each line clear.
+FINAL APPROACH: The probe's BUSY measure (separate motions at once); v3's busiest moment (the improvement loop,
+six motions) is the one to calm.
+GENERAL LESSON: One thing to watch at a time; secondary motion only where it doesn't compete with the line.
 
 ## Style corrections
 

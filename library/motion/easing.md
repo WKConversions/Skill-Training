@@ -13,6 +13,13 @@
 Linear motion only where the visual logic calls for constant velocity: time itself as the subject
 (countdowns, playheads). Never elastic or bounce as decoration.
 
+## No overshoot in a clean film
+
+In a calm, clean or professional film (K.B, approved), nothing pops past its size and springs back:
+everything arrives on a smooth ease-out (`ARRIVE`). Karl read the pops as spikes. Overshoot belongs to playful
+and energetic briefs, and even there on small things only (a badge, a like). `scripts/motion_probe.py` flags an
+element that appears, grows past its size and springs back.
+
 ## Default curves
 
 These worked in the WKConversions builds and suit most films; styles and brands can override them:

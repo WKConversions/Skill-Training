@@ -33,16 +33,19 @@ space, focal point, crop, accidental tangencies, and consistency with the style 
 - Dominant motion, overlap, stagger logic, velocity, easing, anticipation, settle, motion blur on
   fast moves, unnecessary movement.
 - The camera never locks and never wanders.
-- Run `scripts/motion_check.py` on the encode. Targets: something moves in at least 95% of the frames,
-  nothing holds still for more than 0.8 seconds before the end card, and a typical frame has at least
-  3% of its area in motion (raised from 1.5% in October 2026, Karl's decision: the 25 reference films he
-  selected measure a median of 3.5%, our October films 1.8–2.3%; `references/technique-catalogue.md`).
-  These are the targets for a brief that doesn't set a tone; a calm brief and an energetic one have their
-  own rows in `motion/timing.md` ("The brief's tone leads"), and the brief's row is the one to pass.
-  A result below target points at the working holds and the camera, not at adding elements: keep a second
-  and third layer moving under the subject (a drifting bloom, icons orbiting a hub, satellites bobbing, a
-  screen turning slowly on a tilted plane, a camera push of 4–6% over a beat) and make arrivals travel
-  further. Read the `--profile` lines for the stretches under 3%.
+- **Smooth first: run the motion probe on every build** (`node scripts/motion_probe.mjs out/probe.jsonl`, then
+  `python3 scripts/motion_probe.py out/probe.jsonl --style calm|standard|energetic`). It reads the exact box and
+  opacity of every element in every frame and reports what Karl sees as spikes: CAMERA (the camera pans or
+  zooms too fast or abruptly), LURCH (something on screen jumps from still to fast), OVERSHOOT (a pop in a clean
+  film), FLYING (something circles or swings fast for seconds) and BUSY (several separate motions at once for a
+  second or more). Calibrated on K.B: v2, where Karl named the spikes, shows 16 camera spikes and 25 pops; v3,
+  which he and the client approved, shows none, and its one BUSY moment is the one he still found busy. Fix
+  every CAMERA, LURCH, FLYING and OVERSHOOT line before the final render; make each BUSY moment calmer.
+- Run `scripts/motion_check.py` on the encode: something moves in at least 90% of the frames and nothing holds
+  still for more than 0.8 seconds before the end card. How much of the frame moves is information, not a target
+  (K.B v3, approved: 1.7%; the reference films: 0.5–6.6%, median 3.5%). Never raise it with the camera: the
+  October 2026 3% target was reached with camera moves, and those were the spikes. Liveliness comes from the
+  content (a second layer moving inside a scene), within the probe's limits.
 
 - **Run the automatic checks** on the draft and again on the final encode: `bash scripts/qc.sh film.mp4
   qc/`. They find what the eye only catches at full speed, after delivery:

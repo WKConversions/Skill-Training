@@ -118,7 +118,22 @@ export const track = (g: number, keys: Track[]) => {
   return va.map((v, j) => lerp(v, vb[j], t));
 };
 
-/** The camera breathes: a slow linear push through each beat, released with MOVE on each transition.
+/** The camera Karl approved (K.B, October 2026, "great"): one slow breath for the whole film, a drift that eases
+ *  out over a second before the sign-off (`rest`, a label), then one slow straight push to the end. It never pans
+ *  or zooms on a transition: those read as spikes (motion/camera.md). Apply to the one camera AbsoluteFill:
+ *  transform `translate(${x}px, ${y}px) scale(${s}) perspective(4000px) rotateX(0.01deg)` (the 3D term stops text
+ *  snapping to whole pixels under the drift). */
+export const breathe = (g: number, rest?: string, push = 0.04) => {
+  const sm = (t: number) => { const c = Math.min(1, Math.max(0, t)); return c * c * (3 - 2 * c); };
+  const r = rest ? sm((g - T.f(rest) + 18) / 30) : 0;
+  const p = rest ? Math.max(0, g - T.f(rest)) / Math.max(1, T.f("end") - T.f(rest)) : 0;
+  const b = 1.02 + Math.sin(g / 100) * 0.018;
+  return { s: lerp(b, 1 + p * push, r), x: Math.sin(g / 80) * 20 * (1 - r), y: Math.cos(g / 110) * 11 * (1 - r) };
+};
+
+/** Older keyed camera, for a film whose brief is energetic: keys are pushes and releases, so keep them slow, give
+ *  every segment an ease, and run scripts/motion_probe.py --style energetic on the build.
+ *  The camera breathes: a slow linear push through each beat, released with MOVE on each transition.
  *  Keys are [label, scale, x, y, ease?]; at(px, py, s) aims the push at a point of the frame. Apply to one
  *  AbsoluteFill: transform `translate(${x}px, ${y}px) scale(${s})`, transformOrigin 50% 50%, willChange transform. */
 export type Key = [string, number, number, number, ((t: number) => number)?];

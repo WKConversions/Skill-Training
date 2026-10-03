@@ -13,8 +13,8 @@ while True:
 frac = np.array(frac); cut = int(2 * fps) if len(frac) > 4 * fps else 0
 body = frac[:len(frac) - cut]; still = body < 0.001; runs, r = [0], 0
 for s in still: r = r + 1 if s else 0; runs.append(r)
-print(f"moving in {100 * (1 - still.mean()):.0f}% of frames (target 95+), "
-      f"median {100 * np.median(frac):.1f}% of the frame in motion (target 3+; calm 2+, energetic 4+), "
+print(f"moving in {100 * (1 - still.mean()):.0f}% of frames (target 90+), "
+      f"median {100 * np.median(frac):.1f}% of the frame in motion (information, not a target: K.B v3, approved, 1.7; references 0.5–6.6), "
       f"longest still {max(runs) / fps:.2f} s (target 0.8 or less)")
 if '--profile' in sys.argv:
     n = max(1, round(fps))
