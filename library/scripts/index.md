@@ -17,7 +17,7 @@ saved file into the build folder.
 | `render_chunks.sh` | renders a Remotion film in contiguous chunks, one tab each, in parallel, and lays the mix under it | `production/remotion.md`, `production/build-gotchas.md` |
 | `cut_match.py` | compares the carried object's box across a cut | `production/build-gotchas.md` |
 | `vo_align.py` | transcribes voice-over files and force-aligns the script for word timings | `planning/voice-over.md` |
-| `qc.sh` | runs the four automatic checks below on an encode, results in one folder | `evaluation/quality-check.md` |
+| `qc.sh` | runs the five automatic checks on an encode (motion, shake, pops, busy, strips), results in one folder | `evaluation/quality-check.md` |
 | `jitter_check.py` | finds shake: motion that moves in steps instead of gliding | `evaluation/quality-check.md` |
 | `handoff_check.py` | finds pops: a place that changes in one frame (a blink, a jump in size, a layer appearing) | `evaluation/quality-check.md` |
 | `strips.py` | strips of frames around every transition, or around given frames | `evaluation/quality-check.md` |
@@ -32,11 +32,17 @@ saved file into the build folder.
 | `film_tells.py` | reports a film's tells: invented figures and names, filler words, decorative labels, held against the facts file | `evaluation/tells.md` |
 | `timeline.ts` | a film's timing as labels and relative placements (GSAP's position parameter), for Remotion | `production/remotion.md` |
 | `phrase_check.py` | splits the aligned voice-over into phrases (the shot list), and measures on a render that every phrase brings a new visual | `planning/phrase-by-phrase.md`, `evaluation/quality-check.md` |
-| `kinetic.tsx` | the kinetic kit for Remotion: word-by-word type with marks, rolls, masks out of objects, camera keys, keyed tracks; from Karl's references, typed prompts, a dial selector, a split exit, drawn strokes, blooms and flips | `production/remotion.md`, `planning/phrase-by-phrase.md` |
+| `kinetic.tsx` | the kinetic kit for Remotion: word-by-word type with marks, rolls, masks out of objects, the breathing camera, keyed tracks; from Karl's references, typed prompts, a dial selector, a split exit, drawn strokes, blooms and flips; the approved speed graphs (`EASE`, `whip`, `popElastic`, `bounce`, `speedRamp`, `stepper`, `flick`, `zoomThrough`) | `production/remotion.md`, `planning/phrase-by-phrase.md` |
 | `three_card.tsx` | a tested 3D scene for Remotion: a lit card with a soft shadow, frame-driven | `production/remotion.md` |
 | `stock.py` | searches royalty-free footage (Mixkit) and photos (Openverse, Pexels by ID), measures them, keeps credits | `design/asset-strategy.md` |
 | `ref_sheet.py` | contact sheets of a reference video with true timecodes, an overview or a transition frame by frame | `references/reading-references.md` |
 | `audio_look.py` | a sound file as a spectrogram over its loudness curve, with marks | `motion/sound.md` |
+| `motion_probe.mjs` + `probe.tsx` + `motion_probe.py` | the motion probe: renders a Remotion film without pixels, logs every element's box and opacity per frame, and finds camera spikes, lurches, pops past size, flying and busy stretches; `--style calm/standard/energetic` | `evaluation/quality-check.md`, `motion/camera.md` |
+| `busy_check.py` | counts the separate things on screen four times a second; busy when the median is above 6 or 8+ things fill more than 35% of the time (calibrated on Karl's references and K.B) | `evaluation/quality-check.md` |
+| `ref_sound.py` | hears a reference's sound design: the music bed, the sound on each big move of the picture (against chance), the other effects; with the voice removed (Demucs) and the repeating music filtered out | `motion/sound.md` |
+| `sfx_hear.py` | hears sound effects with an audio-language model: tone scales, style fit and what each sounds like, written into the index; `pick` ranks a role's sounds for a film's vibe | `motion/sound.md` |
+| `map_make.py` + `maps.tsx` | the data and components for map animations: a dot map spreading from a place, country shapes with highlights, pins and routes | `design/maps.md` |
+| `ae_read.py` | reads an After Effects project: every composition's keyframes, eases (with their Remotion equivalents), elastic expressions, text selectors, frame steps and hand-offs; `--sheet` draws the speed graphs | `motion/speed-graphs.md`, `production/after-effects.md` |
 
 **Requirements.** Node with `playwright` and `sharp` in the build folder (tested with Playwright 1.56.0
 against a pre-installed Chromium, and sharp 0.34.5); Python with Pillow, numpy and

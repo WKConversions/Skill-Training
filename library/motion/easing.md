@@ -2,6 +2,9 @@
 
 ## Choose easing by intent
 
+The full vocabulary is `motion/speed-graphs.md`: 24 speed graphs Karl approved, each with its moment (A1–A7 from
+his After Effects file, B1–B17 beyond it), all built into `scripts/kinetic.tsx`. The short version:
+
 - **Decisive arrival:** strong, controlled ease-out; a confident, readable finish, good for type and UI.
 - **Launch or departure:** ease-in, building momentum.
 - **Neutral repositioning, moves and reframes:** a symmetric ease-in-out.
@@ -56,4 +59,7 @@ them before animating scale or rotation.
 ## Velocity continuity
 
 When one object becomes another or crosses a cut, match its perceived velocity. Abrupt velocity
-changes make a transition feel assembled instead of continuous.
+changes make a transition feel assembled instead of continuous. Karl's own transitions (Training.aep, A1 and A2 in
+`motion/speed-graphs.md`) do exactly this: the outgoing move speeds up for 10 frames (influence 90% → 0.1%), the
+cut sits on the fastest frame, and the incoming move starts at that speed and slows for 10 frames. Exits
+accelerate, arrivals decelerate.

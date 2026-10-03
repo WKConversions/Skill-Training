@@ -26,6 +26,10 @@ the wallet, five avatars merge into one. Don't crossfade one layout into the nex
 - **Focus or depth shift:** attention transfers between depth planes.
 - **Light or color transition:** a visual property carries across scenes; use sparingly.
 - **Hard cut:** when audio, matching composition or matching direction carries it (`motion/camera.md`).
+- **Speed-matched whip through a cut (Karl's Training.aep):** the outgoing thing speeds up into the cut, the shape
+  or scene changes on the fastest frame, and the incoming thing carries on at that speed and slows. Sideways (A1),
+  as a drop-through in one spot (A2), or in scale into the next scene (B16). The timings and curves are in
+  `motion/speed-graphs.md`; `whip()` and `zoomThrough()` in the kit build them.
 
 ## Name the object
 

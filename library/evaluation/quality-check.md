@@ -41,6 +41,14 @@ space, focal point, crop, accidental tangencies, and consistency with the style 
   second or more). Calibrated on K.B: v2, where Karl named the spikes, shows 16 camera spikes and 25 pops; v3,
   which he and the client approved, shows none, and its one BUSY moment is the one he still found busy. Fix
   every CAMERA, LURCH, FLYING and OVERSHOOT line before the final render; make each BUSY moment calmer.
+- **Clear before busy: count the things on screen** (`python3 scripts/busy_check.py film.mp4`, also part of
+  `qc.sh`). Karl found K.B v3 "a bit too busy so you can't see what's happening", and the cause wasn't motion: his
+  25 reference films keep a median of 4 separate things on screen (3–7) and have 8 or more for a quarter of the
+  time; K.B kept 9, with 8 or more for 64% of the time, each small (11% of the frame covered against 26%). A
+  `BUSY` result or a `CROWDED` stretch means fewer, bigger things: merge a row of small items into one, let a
+  thing leave before the next arrives, make the subject larger. Plan for it at the storyboard: count the separate
+  things in each frame (a headline is one, a card is one, five icons are five).
+- Choose each move's speed graph for its moment (`motion/speed-graphs.md`), not one curve for everything.
 - Run `scripts/motion_check.py` on the encode: something moves in at least 90% of the frames and nothing holds
   still for more than 0.8 seconds before the end card. How much of the frame moves is information, not a target
   (K.B v3, approved: 1.7%; the reference films: 0.5–6.6%, median 3.5%). Never raise it with the camera: the

@@ -12,6 +12,8 @@ planning; read the entries of the categories you are working on when a decision 
 - Smooth before everything: the camera only breathes, nothing lurches, nothing pops past its size in a clean
   film, nothing flies around; liveliness comes from the content, never from camera moves (K.B, approved).
 - Clear before busy: one thing to watch at a time; when the eye can't tell what to look at, take things away.
+- No tunnel vision in motion: choose the speed graph for the moment from the approved vocabulary
+  (`motion/speed-graphs.md`); transitions are speed-matched, with the cut on the fastest frame.
 - Every phrase gets its own visual, on one continuous stage: never a page that holds while the voice
   explains it, never a presentation; think outside the box for the visuals and the transitions.
 - References are examples of a look or a technique, never layouts to reproduce.
@@ -79,6 +81,20 @@ FINAL APPROACH: The variety budget and readable sizes (`design/composition.md`,
 GENERAL LESSON: Consistent language, varied structure; the subject is the largest thing on screen.
 
 ## Animation corrections
+
+CATEGORY: Animation
+DATE / PROJECT: October 2026, training (Karl's Training.aep and the speed-graph sheets)
+ORIGINAL IDEA: Three curves (ARRIVE, MOVE, DEPART) for nearly every move in every film.
+WHY IT WAS WEAK: Every film moved the same way, whatever the moment; Karl called it tunnel vision.
+USER CORRECTION: He sent an After Effects file with named compositions (transitions, a pop, three text
+animations) "for inspiration and direction, not to take literally", and asked for speed graphs with the moments
+each suits, to approve. He approved all 24 ("love them").
+FINAL APPROACH: `motion/speed-graphs.md` (A1–A7 read from his file, B1–B17 beyond it), the sheets in
+`motion/speed-graphs/`, every curve built into the kit (`EASE`, `whip`, `popElastic`, `bounce`, `speedRamp`,
+`stepper`, `flick`, `zoomThrough`), and `scripts/ae_read.py` for the next files he sends.
+GENERAL LESSON: Pick the speed graph for the moment and the film's vibe. In his transitions the speed builds into
+the cut, the shape changes on the fastest frame and the next move starts at that speed: exits accelerate,
+arrivals decelerate.
 
 CATEGORY: Animation
 DATE / PROJECT: September 2026, WKConversions ad

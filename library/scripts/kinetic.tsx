@@ -212,3 +212,82 @@ export const Bloom: React.FC<{ g: number; x: number; y: number; r: number; color
 export const Flip: React.FC<{ k: number; a: React.ReactNode; b: React.ReactNode; style?: React.CSSProperties }> = ({ k, a, b, style }) => (
   <div style={{ position: "relative", transform: `scaleX(${Math.max(0.02, Math.abs(Math.cos(k * Math.PI)))})`, ...style }}>{k < 0.5 ? a : b}</div>
 );
+
+// ---- the speed graphs Karl approved (motion/speed-graphs.md; codes A1–A7 from his Training.aep, B1–B17 new) ----
+
+/** Named curves; each comment gives the card it comes from. Pick by the moment, not by habit. */
+export const EASE = {
+  whipIn: Easing.bezier(0.9, 0, 1, 1),            // A1/A2: into a cut, speeding up (AE influence 90% → 0.1%)
+  whipOut: Easing.bezier(0, 0, 0.1, 1),           // A1/A2: out of a cut, slowing down; A6 type-on (0.1% → 90%)
+  word: Easing.bezier(0.15, 0.45, 0.12, 1),       // A5: each word of a cascade, fast start, soft landing
+  easy: Easing.bezier(0.33, 0, 0.67, 1),          // B1: the neutral move of something already on screen
+  longS: Easing.bezier(0.8, 0, 0.2, 1),           // B2: a big, deliberate move (a pin from city to city)
+  soft: Easing.bezier(0.4, 0, 0.15, 1),           // B3: leaves rest without a jolt, long settle
+  back: Easing.bezier(0.34, 1.56, 0.64, 1),       // B5: one ≈10% overshoot; energetic films, small things only
+  windup: Easing.bezier(0.4, 0, 0.6, 1),          // B6: the pull-back of an anticipation
+  launch: Easing.bezier(0.25, 0, 0.1, 1),         // B6: the go after the pull-back
+  impact: Easing.bezier(0.6, 0, 0.85, 0.55),      // B7: speeds up into contact and stops on it
+  lead: Easing.bezier(0.16, 1, 0.3, 1),           // B9 leader, B13 each step
+  follow: Easing.bezier(0.22, 1, 0.36, 1),        // B9 followers (= ARRIVE), 2–4 f behind the leader
+  steady: Easing.bezier(0.25, 0.08, 0.75, 0.92),  // B11: linear with soft ends (progress, a route drawing)
+  sweep: Easing.bezier(0.65, 0, 0.35, 1),         // B17: each pass of a sweep (= MOVE)
+};
+
+const cl = (t: number) => Math.min(1, Math.max(0, t));
+
+/** A1/A2 whip through a cut: before `cut` (a frame) the outgoing thing runs side 0 with EASE.whipIn over `n` frames,
+ *  from the cut the incoming thing runs side 1 with EASE.whipOut. k is each side's progress 0 → 1; the speed peaks
+ *  on the cut and matches on both sides, so swap the shape (or the scene) exactly there. Blur the 4 fastest frames. */
+export const whip = (g: number, cut: number, n = 10) =>
+  g < cut ? { side: 0 as const, k: EASE.whipIn(cl((g - cut + n) / n)) } : { side: 1 as const, k: EASE.whipOut(cl((g - cut) / n)) };
+
+/** Karl's Elastic Controller (A3, A7), as in his file (amplitude 20, frequency 40, decay 60): after a key the move
+ *  carries on as a decaying sine sized by the speed it arrived with. v: units a second just before the key;
+ *  t: seconds since the key. Returns the offset to add. Playful and energetic films only. */
+export const aeElastic = (v: number, t: number, amp = 20, freq = 40, decay = 60) =>
+  t <= 0 ? 0 : (v * (amp / 200) * Math.sin((freq / 30) * t * 2 * Math.PI)) / Math.exp((decay / 10) * t);
+
+/** A3 pop: linear from `from` to `to` over `n` frames (g = frames since the start), then the elastic settle. */
+export const popElastic = (g: number, n: number, from: number, to: number, fps = 30) =>
+  g <= n ? lerp(from, to, cl(g / n)) : to + aeElastic(((to - from) * fps) / n, (g - n) / fps);
+
+/** B8 gravity drop: u 0 → 1 gives 0 (top) → 1 (floor) with `n` bounces, each `e` the height of the one before. */
+export const bounce = (u: number, e = 0.35, n = 2) => {
+  let tot = 1, h = 1;
+  for (let i = 0; i < n; i++) { h *= e; tot += 2 * Math.sqrt(h); }
+  let t = cl(u) * tot;
+  if (t <= 1) return t * t;
+  t -= 1; h = 1;
+  for (let i = 0; i < n; i++) {
+    h *= e; const half = Math.sqrt(h);
+    if (t <= 2 * half) { const x = (t - half) / half; return 1 - h * (1 - x * x); }
+    t -= 2 * half;
+  }
+  return 1;
+};
+
+/** B12 fast–slow–fast: progress 0 → 1 that enters fast, drifts through the middle (readable), and speeds out.
+ *  ratio: how much faster the ends are than the middle; tau: how long the fast ends last (share of the time). */
+export const speedRamp = (u: number, ratio = 16, tau = 0.06) => {
+  const P = (s: number) => s + ratio * tau * (1 - Math.exp(-s / tau) + Math.exp(-(1 - s) / tau) - Math.exp(-1 / tau));
+  return P(cl(u)) / P(1);
+};
+
+/** B13 step, hold, step: how many steps are done at frame g (fractional while moving). starts: the frame of each
+ *  step (put them on beats or stressed words); n: frames per step. */
+export const stepper = (g: number, starts: number[], n = 7) => starts.reduce((v, a) => v + EASE.lead(cl((g - a) / n)), 0);
+
+/** B14 finger flick: a push that builds to full speed over `push` (share of the time), then an exponential coast.
+ *  The speed never jumps at the join. For real interface scrolls and swipes. */
+export const flick = (u: number, push = 0.08, k = 7.7) => {
+  const K = k / ((1 - Math.exp(-k)) * (1 - push)), share = (push * K) / 2 / (1 + (push * K) / 2), s = cl(u);
+  if (s < push) return share * (s / push) ** 2;
+  return share + ((1 - share) * (1 - Math.exp((-k * (s - push)) / (1 - push)))) / (1 - Math.exp(-k));
+};
+
+/** B16 zoom-through: the element scales up into the cut (side 0, 1 → z) and the next scene keeps growing as it slows
+ *  (side 1, 1/z → 1). Exponential scale keeps the zoom speed even. The element zooms; the camera stays calm. */
+export const zoomThrough = (g: number, cut: number, n = 10, z = 4) =>
+  g < cut
+    ? { side: 0 as const, s: Math.exp(Math.log(z) * EASE.whipIn(cl((g - cut + n) / n))) }
+    : { side: 1 as const, s: Math.exp(Math.log(z) * EASE.whipOut(cl((g - cut) / n))) / z };
