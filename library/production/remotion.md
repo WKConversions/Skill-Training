@@ -79,6 +79,9 @@ Real depth suits a few beats: an object the viewer should feel turn (a device, a
 camera that travels through layers, a physical scale. It doesn't suit a beat that reads as well flat;
 3D for its own sake is a fingerprint (`design/anti-ai-design.md`).
 
+The tested kit and the rules for it (studio, logo tile, devices with live screens, panels, rendering) are in
+`design/three-d.md` and `scripts/three_kit.tsx`.
+
 - `npm i @remotion/three three @react-three/fiber` (Remotion 4.0.531 with React 19 takes
   `@react-three/fiber@9` and `three@0.180`), and put the scene in a `<ThreeCanvas width height camera>`.
 - Drive everything from `useCurrentFrame()`, never `useFrame` or a clock, so every frame renders the

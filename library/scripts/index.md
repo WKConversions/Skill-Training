@@ -34,6 +34,7 @@ saved file into the build folder.
 | `phrase_check.py` | splits the aligned voice-over into phrases (the shot list), and measures on a render that every phrase brings a new visual | `planning/phrase-by-phrase.md`, `evaluation/quality-check.md` |
 | `kinetic.tsx` | the kinetic kit for Remotion: word-by-word type with marks, rolls, masks out of objects, the breathing camera, keyed tracks; from Karl's references, typed prompts, a dial selector, a split exit, drawn strokes, blooms and flips; the approved speed graphs (`EASE`, `whip`, `popElastic`, `bounce`, `speedRamp`, `stepper`, `flick`, `zoomThrough`) | `production/remotion.md`, `planning/phrase-by-phrase.md` |
 | `three_card.tsx` | a tested 3D scene for Remotion: a lit card with a soft shadow, frame-driven | `production/remotion.md` |
+| `three_kit.tsx` | the 3D kit: a bright studio, a breathing camera, the logo as a real tile, a laptop, phone and panels with live interface screens (projected onto the 3D screens), frame-driven speed graphs | `design/three-d.md` |
 | `stock.py` | searches royalty-free footage (Mixkit) and photos (Openverse, Pexels by ID), measures them, keeps credits | `design/asset-strategy.md` |
 | `ref_sheet.py` | contact sheets of a reference video with true timecodes, an overview or a transition frame by frame | `references/reading-references.md` |
 | `audio_look.py` | a sound file as a spectrogram over its loudness curve, with marks | `motion/sound.md` |
