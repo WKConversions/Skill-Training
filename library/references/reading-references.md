@@ -65,6 +65,10 @@ DO NOT COPY:
 You can't watch video, and a YouTube page returns metadata at best. Never describe a reference's
 motion from its URL alone. Capture frames, then analyze the frames.
 
+- **A URL or a file, first look:** the `video-extract` MCP server (`production/mcp-tools.md`):
+  `resolve_video` says what it is without downloading, `analyze_video` gives the transcript and
+  deduplicated key frames (`frames: "even"` with `start`, `end` and `maxFrames` samples a range evenly).
+  Then measure the motion with the scripts below; key frames show what is there, not how it moves.
 - **A video file, the quick way:** `python3 scripts/ref_sheet.py ref.mp4 out/ref --every 1.5` draws an
   overview with true timecodes (it doesn't need ffmpeg's drawtext, which some builds lack), and
   `--from 12 --to 14 --fps 10` samples a transition densely.

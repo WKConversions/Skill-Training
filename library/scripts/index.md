@@ -39,6 +39,7 @@ saved file into the build folder.
 | `ref_sheet.py` | contact sheets of a reference video with true timecodes, an overview or a transition frame by frame | `references/reading-references.md` |
 | `audio_look.py` | a sound file as a spectrogram over its loudness curve, with marks | `motion/sound.md` |
 | `motion_probe.mjs` + `probe.tsx` + `motion_probe.py` | the motion probe: renders a Remotion film without pixels, logs every element's box and opacity per frame, and finds camera spikes, lurches, pops past size, flying and busy stretches; `--style calm/standard/energetic` | `evaluation/quality-check.md`, `motion/camera.md` |
+| `mcp_call.py` | calls any configured MCP server's tools from the command line or a script (stdio and HTTP), with a device sign-in for servers that need one | `production/mcp-tools.md` |
 | `busy_check.py` | counts the separate things on screen four times a second; busy when the median is above 6 or 8+ things fill more than 35% of the time (calibrated on Karl's references and K.B) | `evaluation/quality-check.md` |
 | `ref_sound.py` | hears a reference's sound design: the music bed, the sound on each big move of the picture (against chance), the other effects; with the voice removed (Demucs) and the repeating music filtered out | `motion/sound.md` |
 | `sfx_hear.py` | hears sound effects with an audio-language model: tone scales, style fit and what each sounds like, written into the index; `pick` ranks a role's sounds for a film's vibe | `motion/sound.md` |

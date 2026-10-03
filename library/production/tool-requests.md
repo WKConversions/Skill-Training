@@ -78,5 +78,9 @@ record the result, so every asset has a traceable source.
 
 ## New tools
 
+The MCP servers in `production/mcp-tools.md` fulfil several request types directly: `video-extract` for
+`frame_extraction` and reading a reference video, `playwright` for `screenshot` and the site harvest, `exa` for
+research, `makemyclip` for a rough cut. Reach them natively or through `scripts/mcp_call.py`.
+
 When a new tool becomes available, note here which request types it fulfils and its limits, and ask
 Karl to republish the library. The request format stays the same, so earlier requests stay executable.

@@ -1,3 +1,12 @@
+# MCP tools, 3 October 2026
+
+Karl installed eight MCP servers; `production/mcp-tools.md` says what each is for in a film and when not to use it:
+`video-extract` (reference videos and URLs: transcript and key frames), `exa` (research), `context7` (library docs),
+`playwright` (site harvest, screenshots), `makemyclip` (rough cuts), `memory` (a client's facts; Karl's rules stay in
+`examples/corrections.md`), `sequential-thinking`, and `motion` (Mosaic Motion, paid, only on request).
+`scripts/mcp_call.py` reaches them from a session that started before they were added, with a device sign-in for
+servers that need one. Linked from the skill's Tools section, step 10, reference videos, and `production/tool-requests.md`.
+
 # Training, 3 October 2026: smooth, clear, and a wider range of motion and sound
 
 After K.B (approved; the client: "great"), Karl's goals: no spike mistakes, sounds chosen by tone, style, timing

@@ -124,7 +124,7 @@ instructions. Before step 1, read the recurring lessons at the top of `examples/
 | 7 | Composition | a styleframe per key scene: primary, secondary, detail; few, big things (Karl's references keep about 4 separate things on screen); framing, type, and UI where an interface is the subject | `design/visual-hierarchy.md`, `design/composition.md`, `design/typography.md`, `design/ui-product.md` |
 | 8 | Variety check | the whole storyboard against the variety budget | `design/composition.md` |
 | 9 | Motion and continuity | cause→motion→consequence chains, camera, timing and sync (the brief's tone row), a speed graph chosen for each move, the continuity table, transitions, sound | `motion/animation-grammar.md`, `motion/camera.md`, `motion/timing.md`, `motion/speed-graphs.md`, `motion/easing.md`, `motion/continuity.md`, `motion/transitions.md`, `references/technique-catalogue.md`, `motion/sound.md` |
-| 10 | Assets | what each scene is made of; royalty-free photos and footage sourced and credited (`scripts/stock.py`); asset and tool requests for the rest | `design/asset-strategy.md`, `production/tool-requests.md` |
+| 10 | Assets | what each scene is made of; royalty-free photos and footage sourced and credited (`scripts/stock.py`); asset and tool requests for the rest | `design/asset-strategy.md`, `production/tool-requests.md`, `production/mcp-tools.md` |
 | 11 | First storyboard | the scene spec for every scene, condensed into the storyboard page, with a frame per phrase (at least three per beat) made by the build itself | `production/output-format.md`, `production/remotion.md` (or `production/coded-render.md`), `examples/scene-examples.md` |
 | 12 | Art-director pass | independent reviews (story, truth, legibility, brand), then cold eyes; notes become decisions; revise until the stop rule; the tells check; the revision log as Before / After / Why rows | `evaluation/art-director.md`, `evaluation/tells.md`, `evaluation/troubleshooting.md` |
 | 13 | Final plan and approval | the production plan and its storyboard; the storyboard goes to Karl; stop and ask about music and voice-over (without a track: find one or compose one to the film's vibe) | `production/output-format.md`, `planning/intake.md`, `motion/sound.md` |
@@ -161,7 +161,7 @@ Use the steps a task needs:
   `evaluation/quality-check.md` for a render; report findings ranked by severity as Before / After /
   Why rows, with the fix from `evaluation/troubleshooting.md`. You can't watch video: capture frames and measure first
   (`references/reading-references.md`).
-- **A reference video:** `references/reading-references.md`; compare its motion with Karl's benchmark
+- **A reference video:** `references/reading-references.md` (read it with `video-extract`, `production/mcp-tools.md`); compare its motion with Karl's benchmark
   in `references/benchmarks.md`.
 - **A prompt or brief for another AI or an animator:** run steps 1–12 yourself and hand over the
   result in the scene-spec format (`production/output-format.md`); a prompt that only restates the
@@ -176,6 +176,13 @@ Use the steps a task needs:
 Check which tools the session has before planning a step that needs one. Never pretend a tool exists,
 or that a search, download, generation or render happened: write a structured request and continue
 with the fallback (`production/tool-requests.md`).
+
+The MCP servers on Karl's machine (`production/mcp-tools.md`) are reachable natively (`mcp__<server>__…`)
+or, in a session that started before they were added, through `scripts/mcp_call.py`: `video-extract` to
+read a reference video or URL (transcript and key frames), `exa` to research and check facts,
+`context7` for current library docs before a build, `playwright` for the site harvest and screenshots,
+`makemyclip` for rough cuts, `memory` for a client's facts across sessions (Karl's rules stay in
+`examples/corrections.md`). `motion` (Mosaic Motion) is paid with Karl's credits: only when he asks.
 
 ## Working with Karl
 
