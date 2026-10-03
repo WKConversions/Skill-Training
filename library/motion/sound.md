@@ -52,6 +52,11 @@ The move's speed graph (`motion/speed-graphs.md`) says where its sound sits and 
 | B14 finger flick | a light swipe | the push |
 | B15 breathing, B17 sweep | nothing for the breath; a soft slide per sweep at most | |
 
+The speed graph also says how hard: the larger and faster the move, the fuller the sound (in a calm film still
+soft). A whip's whoosh should peak exactly where the speed graph peaks, so the sound and the fastest frame feel
+like one event.
+
+## Which sound for which moment
 
 | Picture event | Category | How |
 |---|---|---|
@@ -103,6 +108,36 @@ The move's speed graph (`motion/speed-graphs.md`) says where its sound sits and 
   in 37 s and that was at the busy end; the K.B film, approved, fewer.)
 - Leave a short silence before the payoff; the end card's last chord or impact needs room.
 - Under speech: only the action itself, nothing that covers a word.
+
+## Palettes from the references
+
+Heard with `scripts/ref_sound.py` on Karl's 25 reference films: voice removed, the music's repeating pattern
+filtered out, and the sound around each big move of the picture compared with random moments. The model's
+readings are estimates, so take the pattern, not the counts:
+- **The music leads.** Every reference runs one light bed under the whole film, nearly always upbeat corporate pop
+  or a steady electronic pulse (a few lo-fi or funky); it carries much of the motion on its own.
+- **Effects are sparse and soft, and they sit on the moves.** In 16 of the 25 films a sound lands on a big move
+  clearly more often than at a random moment, but in none on every move: the important moves are sounded, the rest
+  ride the music.
+- **The sound on a move is a soft swish**, far more often than a big whoosh; then soft digital blips for interface
+  events, an impact where a word or object lands hard, a chime for a message or a success. Risers, shimmers and
+  pops are rare.
+
+By vibe (with the films that show it):
+- **Calm, clean interface films** (Fellow, Lovio, Benefits Science, CalcuQuote, pretaa, SmileGenius): a soft swish
+  on the bigger moves only, soft blips when the interface responds, a chime for a notification; much of the film
+  is music alone.
+- **Playful illustration and 3D** (UpSend, JOS, Dripc, JustCall): a swish on most moves, soft impacts and pops on
+  landings, a coin or cash sound where money is the subject.
+- **Punchy kinetic type** (Qwilr, Kaelio, SKUVE, Vela): sounds on most word hits, impacts and clicks as
+  punctuation, swishes under the moves, all tight to the beat.
+- **Footage and people** (Happy, Faronics, Shopgenie, Seed Fitness): very few effects; the music and the footage
+  carry it, with a soft swish on a transition now and then.
+- **Dark tech** (Qualetics, elyxir, FCS, kyvos): swishes on the moves, digital blips and an occasional shimmer or
+  chime for the tech moments.
+
+So for a film: choose the vibe, take its palette, pick each sound by ear for that vibe (`sfx_hear.py pick`), place
+it by the move's speed graph, and leave the moves that don't carry meaning to the music.
 
 ## Levels
 
