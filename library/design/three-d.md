@@ -63,8 +63,9 @@ Rules that keep it working:
   React Three Fiber 9 come with Remotion's set in this repository).
 - Render with `--gl=angle` (stills: `npx remotion still … --gl=angle`; the Node API: `chromiumOptions: { gl: "angle" }`).
   It renders on the CPU, no graphics card needed.
-- Time (this machine, 4 cores): see the reel's measure in `films/three-kit/README.md`; plan 3D shots of a few seconds
-  inside a 2D film rather than a whole film in 3D.
+- Time (this machine, 4 cores, no graphics card): the 10-second test reel rendered in 121 s, about 0.4 s a frame at
+  concurrency 2, without motion blur. With 8-sample motion blur count about 8 times that. A whole film in 3D is
+  possible; still use 3D for the moments where depth explains something.
 - Motion blur: CameraMotionBlur multiplies the render time by its samples; use it only on the shots with fast moves.
 - Check 3D shots like any other: the motion probe sees the screens' boxes; `busy_check.py` and `qc.sh` on the encode.
 
