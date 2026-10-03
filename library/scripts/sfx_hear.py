@@ -91,6 +91,7 @@ def main():
         lib = a.paths[0]; ip = os.path.join(lib, "sfx", "index.json"); idx = json.load(open(ip))
         A = audio([os.path.join(lib, o["file"]) for o in idx]); sc, st, V = raw_scores(text, A)
         np.save(os.path.join(lib, "sfx", "clap.npy"), A)              # embeddings, for picking by any description
+        json.dump(np.round(A.astype(np.float64), 4).tolist(), open(os.path.join(lib, "sfx", "clap.json"), "w"))   # the same, for the published library
         stz = (st - st.mean(0)) / (st.std(0) + 1e-9)
         for i, o in enumerate(idx):
             o["heard"] = {"tone": {k: round(float(rank01(v)[i]), 2) for k, v in sc.items()},
@@ -99,7 +100,8 @@ def main():
         json.dump(idx, open(ip, "w"), indent=1); print(f"{len(idx)} sounds heard and tagged in {ip}")
     elif a.cmd == "pick":
         lib, vibe = a.paths[0], " ".join(a.paths[1:]); idx = json.load(open(os.path.join(lib, "sfx", "index.json")))
-        A = np.load(os.path.join(lib, "sfx", "clap.npy"))
+        npy = os.path.join(lib, "sfx", "clap.npy")
+        A = np.load(npy) if os.path.exists(npy) else np.array(json.load(open(os.path.join(lib, "sfx", "clap.json"))), dtype=np.float32)
         role = a.role or ""; q = text([f"a {vibe} {role} sound effect", f"{role} sound for a {vibe} video", f"a {vibe} sound"]).mean(0)
         s = A @ q
         rows = [(s[i], o) for i, o in enumerate(idx) if (not role or o["category"] == role) and o["licence"] != "apple"]

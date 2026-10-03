@@ -1,3 +1,35 @@
+# Training, 3 October 2026: smooth, clear, and a wider range of motion and sound
+
+After K.B (approved; the client: "great"), Karl's goals: no spike mistakes, sounds chosen by tone, style, timing
+and quantity, transitions that never spike, and the right pacing and visuals for each moment ("a bit too busy").
+
+- **Smooth (K.B lessons):** the camera only breathes (`breathe()`, `motion/camera.md`); no overshoot in a clean
+  film (`motion/easing.md`); the sign-off is the logo and the words only; the 3% motion target is retired
+  (`evaluation/quality-check.md`, `scripts/motion_check.py`). Corrections and a bad-vs-good section record them.
+- **The motion probe** (`scripts/motion_probe.mjs`, `probe.tsx`, `motion_probe.py`): renders a Remotion film
+  without pixels and reads every element's box per frame; finds camera spikes, lurches, pops past size, flying and
+  busy moments. Calibrated on K.B v2 (16 camera spikes, 25 pops, where Karl named them) against v3 (none).
+- **Clear before busy** (`scripts/busy_check.py`, in `qc.sh`): counts the separate things on screen. Karl's 25
+  references keep a median of 4 (3–7), 8 or more a quarter of the time; K.B v3 kept 9, 64% of the time. The
+  video spike check is retired (unreliable on flat graphics; the probe does it exactly).
+- **24 speed graphs Karl approved** (`motion/speed-graphs.md`, sheets in `motion/speed-graphs/`): seven read from
+  his After Effects file (whips through the cut with matched speed, a drop-through, a pop with his Elastic
+  Controller, word cascades, a type-on, a title pop) and seventeen beyond it, each with its moment, its AE settings
+  and its Remotion curve; all built into the kit (`EASE`, `whip`, `popElastic`, `bounce`, `speedRamp`, `stepper`,
+  `flick`, `zoomThrough`). `scripts/ae_read.py` reads any .aep he sends (`production/after-effects.md`).
+- **Maps** (`design/maps.md`, `scripts/map_make.py`, `scripts/maps.tsx`): when a map is the right picture, the
+  Amargier dot map and the TopJobsAbroad country map and route, the smooth rules.
+- **Sound by ear** (`scripts/sfx_hear.py`): every library sound heard by an audio-language model (tone scales,
+  style fit, what it sounds like) and picked by the film's vibe; the sound each speed graph takes; density by vibe,
+  never a count (`motion/sound.md`). `scripts/ref_sound.py` hears a reference's music bed and the sounds on its
+  big moves.
+- **Visual dictionary** (`references/visual-dictionary.md`, `scripts/ref_lookup.py`): how the references show 13
+  kinds of line (time, all in one place, AI, data, team, problem, easy, growth, trust, money, connecting, place,
+  the call to action), and how the picture keeps time with the words: it leads by about 4 frames, a new visual
+  about every 1.7 s, a third of phrases carry on the last one.
+- **Workflow** (`SKILL.md`): steps 6 (the dictionary, maps), 7 (few, big things), 9 (a speed graph per move), 14
+  (sounds by ear, placed by the speed graph) and 15 (the probe and the busy check).
+
 # Motion target raised to 3%, 2 October 2026
 
 Karl's decision after the reference films: a typical frame must change 3% of its area or more (was 1.5%);
