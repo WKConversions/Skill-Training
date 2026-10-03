@@ -298,19 +298,23 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
         </div>
       )}
       {g >= F("w:building") - 4 && (() => {
-        const d = drop(g, F("w:systems2") - 1, 9, 120);
+        const d = drop(g, F("w:systems2") - 1, 9, 140);
         const line1 = (
-          <div style={{ display: "flex", justifyContent: "center", gap: 26, fontSize: 46, fontWeight: 700, color: C.cyanDeep }}>
+          <div style={{ display: "flex", justifyContent: "center", gap: 26, fontSize: 58, fontWeight: 700, color: C.cyanDeep }}>
             {[["Building", "w:building"], ["running", "w:running"], ["improving", "w:improving2"]].map(([w, at], i) => (
               <span key={w} style={{ display: "inline-flex", gap: 26, opacity: word(at), transform: `translateY(${(1 - word(at)) * 22}px)` }}>
-                {i > 0 && <span style={{ color: C.cyan }}>·</span>}{w}
+                {i > 0 && <span style={{ color: C.cyan }}>·</span>}
+                <span style={{ position: "relative" }}>{w}
+                  <span style={{ position: "absolute", left: 0, bottom: -6, height: 9, borderRadius: 5, background: C.cyan, opacity: 0.55,
+                    width: `${100 * kf(g, F(at) + 4, 10, EASE.steady)}%` }} />
+                </span>
               </span>
             ))}
           </div>
         );
-        const line2 = <div style={{ textAlign: "center", fontSize: 46, fontWeight: 700, color: C.navy2 }}>the systems behind your business.</div>;
+        const line2 = <div style={{ textAlign: "center", fontSize: 58, fontWeight: 700, color: C.navy2 }}>the systems behind your business.</div>;
         return (
-          <div data-probe="line2" style={{ position: "absolute", left: 0, top: 752, width: 1920, height: 80, overflow: "hidden", zIndex: 60 }}>
+          <div data-probe="line2" style={{ position: "absolute", left: 0, top: 748, width: 1920, height: 100, overflow: "hidden", zIndex: 60 }}>
             <div style={{ position: "absolute", left: 0, top: 10, width: 1920, transform: `translateY(${d.y}px)` }}>{d.show === 0 ? line1 : line2}</div>
           </div>
         );
